@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#f5f6f2">
+  <meta name="description" content="Maloney Plumbing &amp; Drain Services in Phoenix, AZ. Call +1 602-671-3617.">
+  <title>Maloney Plumbing &amp; Drain Services | Phoenix, AZ</title>
+  <style>
+    :root {
+      color-scheme: light;
+      --ink: #142b2a;
+      --muted: #586967;
+      --paper: #f5f6f2;
+      --white: #ffffff;
+      --accent: #ff7955;
+      --accent-dark: #d95636;
+      --line: #dfe5df;
+      --deep: #173b38;
+      --shadow: 0 16px 40px rgba(20, 43, 42, .08);
+      --radius: 22px;
+    }
+    *, *::before, *::after { box-sizing: border-box; }
+    html { scroll-behavior: smooth; scroll-padding-top: 100px; }
+    body {
+      margin: 0;
+      background: var(--paper);
+      color: var(--ink);
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      -webkit-font-smoothing: antialiased;
+      line-height: 1.55;
+    }
+    a { color: inherit; }
+    a:focus-visible { outline: 3px solid var(--accent-dark); outline-offset: 4px; border-radius: 5px; }
+    .wrap { width: min(1160px, calc(100% - 48px)); margin-inline: auto; }
+    .site-header {
+      position: sticky;
+      z-index: 10;
+      top: 0;
+      background: rgba(245, 246, 242, .93);
+      border-bottom: 1px solid rgba(20, 43, 42, .09);
+      backdrop-filter: blur(14px);
+    }
+    .header-inner { min-height: 82px; display: flex; align-items: center; justify-content: space-between; gap: 28px; }
+    .brand { display: inline-flex; align-items: center; gap: 12px; text-decoration: none; min-width: 0; }
+    .brand-mark {
+      position: relative;
+      display: grid;
+      place-items: center;
+      flex: 0 0 42px;
+      width: 42px;
+      height: 42px;
+      border-radius: 14px;
+      background: var(--deep);
+      overflow: hidden;
+    }
+    .brand-mark::before { content: ""; width: 19px; height: 19px; border: 3px solid #b9d5c9; border-radius: 50%; }
+    .brand-mark::after { content: ""; position: absolute; width: 23px; height: 5px; right: -3px; bottom: 10px; border-radius: 5px; background: var(--accent); transform: rotate(-42deg); }
+    .brand-name { max-width: 240px; font-size: .95rem; font-weight: 760; letter-spacing: -.035em; line-height: 1.15; }
+    .main-nav { display: flex; align-items: center; gap: 30px; }
+    .main-nav a { color: var(--muted); font-size: .9rem; font-weight: 650; text-decoration: none; transition: color .2s ease; }
+    .main-nav a:hover { color: var(--ink); }
+    .call-button {
+      display: inline-flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 48px;
+      padding: 0 19px;
+      border: 0;
+      border-radius: 999px;
+      background: var(--accent);
+      color: #172a28;
+      font-size: .9rem;
+      font-weight: 750;
+      text-decoration: none;
+      white-space: nowrap;
+      transition: transform .2s ease, background .2s ease;
+    }
+    .call-button:hover { transform: translateY(-2px); background: #ff8969; }
+    .hero { padding: clamp(62px, 9vw, 112px) 0 92px; overflow: hidden; }
+    .hero-inner { display: grid; grid-template-columns: minmax(0, 1.08fr) minmax(320px, .92fr); align-items: center; gap: clamp(44px, 8vw, 100px); }
+    .eyebrow { display: inline-flex; align-items: center; gap: 10px; margin: 0 0 22px; color: var(--muted); font-size: .76rem; font-weight: 800; letter-spacing: .13em; text-transform: uppercase; }
+    .eyebrow::before { content: ""; display: block; width: 24px; height: 2px; background: var(--accent-dark); }
+    h1, h2, h3, p { margin-top: 0; }
+    h1 { max-width: 680px; margin-bottom: 22px; font-size: clamp(2.8rem, 6.2vw, 5.35rem); letter-spacing: -.075em; line-height: .99; font-weight: 780; }
+    .hero-copy { max-width: 520px; margin-bottom: 30px; color: var(--muted); font-size: clamp(1.05rem, 1.7vw, 1.2rem); line-height: 1.65; }
+    .hero-actions { display: flex; flex-wrap: wrap; align-items: center; gap: 13px; }
+    .hero-actions .call-button { min-height: 54px; padding-inline: 23px; }
+    .secondary-link { display: inline-flex; align-items: center; justify-content: center; min-height: 54px; padding: 0 21px; border: 1px solid #cbd4ce; border-radius: 999px; color: var(--ink); font-weight: 700; text-decoration: none; transition: background .2s ease, border-color .2s ease; }
+    .secondary-link:hover { background: var(--white); border-color: #9eada6; }
+    .hero-art {
+      position: relative;
+      min-height: 420px;
+      border-radius: 34px;
+      overflow: hidden;
+      background: radial-gradient(ellipse at 74% 22%, rgba(255, 190, 142, .84), transparent 29%), radial-gradient(ellipse at 20% 85%, rgba(76, 134, 117, .68), transparent 38%), linear-gradient(145deg, #244d47 4%, #153735 72%);
+      box-shadow: 0 28px 70px rgba(20, 43, 42, .16);
+    }
+    .hero-art::before, .hero-art::after { content: ""; position: absolute; border-radius: 50%; pointer-events: none; }
+    .hero-art::before { width: 310px; height: 310px; right: -42px; top: 48px; border: 1px solid rgba(245, 246, 242, .3); box-shadow: 0 0 0 28px rgba(245, 246, 242, .035), 0 0 0 58px rgba(245, 246, 242, .035); }
+    .hero-art::after { width: 128px; height: 128px; left: 54px; bottom: 57px; background: linear-gradient(145deg, #ff9771, #e76443); box-shadow: 0 20px 46px rgba(12, 34, 31, .22); }
+    .art-ring { position: absolute; z-index: 1; width: 194px; height: 194px; top: 50%; left: 50%; border: 28px solid rgba(222, 237, 225, .88); border-right-color: rgba(222, 237, 225, .25); border-radius: 50%; transform: translate(-38%, -54%) rotate(-28deg); box-shadow: 0 18px 40px rgba(9, 30, 28, .16); }
+    .art-core { position: absolute; z-index: 2; width: 48px; height: 48px; top: calc(50% - 24px); left: calc(50% + 13px); border-radius: 50%; background: #f4d5b7; box-shadow: 0 0 0 11px rgba(244, 213, 183, .12); }
+    .art-line { position: absolute; z-index: 1; width: 190px; height: 18px; right: 22px; bottom: 91px; border-radius: 30px; background: rgba(211, 230, 215, .67); transform: rotate(-35deg); }
+    .section { padding: 88px 0; }
+    .section-heading { max-width: 620px; margin-bottom: 34px; }
+    .section-kicker { margin-bottom: 11px; color: var(--accent-dark); font-size: .75rem; font-weight: 800; letter-spacing: .14em; text-transform: uppercase; }
+    h2 { margin-bottom: 0; font-size: clamp(2.1rem, 4.5vw, 3.5rem); letter-spacing: -.06em; line-height: 1.04; }
+    .service-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 17px; }
+    .service-card { min-height: 214px; padding: 26px; border: 1px solid rgba(20, 43, 42, .055); border-radius: var(--radius); background: var(--white); box-shadow: var(--shadow); transition: transform .22s ease, box-shadow .22s ease; }
+    .service-card:hover { transform: translateY(-4px); box-shadow: 0 22px 45px rgba(20, 43, 42, .12); }
+    .service-mark { position: relative; width: 38px; height: 38px; margin-bottom: 25px; border-radius: 12px; background: #e9f0e9; }
+    .service-mark::before { content: ""; position: absolute; width: 13px; height: 13px; left: 12px; top: 12px; border: 2px solid var(--deep); border-radius: 50%; }
+    .service-mark::after { content: ""; position: absolute; width: 8px; height: 4px; right: 5px; bottom: 8px; border-radius: 3px; background: var(--accent-dark); transform: rotate(-45deg); }
+    .service-card h3 { margin-bottom: 8px; font-size: 1.17rem; letter-spacing: -.035em; line-height: 1.25; }
+    .service-card p { max-width: 300px; margin-bottom: 0; color: var(--muted); font-size: .94rem; line-height: 1.55; }
+    .trust-section { padding: 66px 0 72px; background: var(--deep); color: var(--white); text-align: center; }
+    .trust-inner { width: min(780px, calc(100% - 48px)); margin-inline: auto; }
+    .trust-label { margin-bottom: 18px; color: #c9ddd3; font-size: .78rem; font-weight: 750; letter-spacing: .14em; text-transform: uppercase; }
+    .trust-section h2 { font-size: clamp(2.4rem, 6vw, 4.4rem); letter-spacing: -.065em; }
+    .trust-section h2 span { color: #bed1c7; font-size: .47em; font-weight: 600; letter-spacing: -.02em; white-space: nowrap; }
+    .review-count { margin: 15px 0 0; color: #e3ece6; font-size: 1.05rem; }
+    .contact-section { padding: 94px 0 100px; }
+    .contact-layout { display: grid; grid-template-columns: .86fr 1.14fr; gap: 56px; align-items: start; }
+    .contact-intro h2 { max-width: 390px; }
+    .contact-details { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+    .detail-card { min-height: 178px; padding: 25px; border: 1px solid var(--line); border-radius: var(--radius); background: rgba(255, 255, 255, .66); }
+    .detail-label { margin-bottom: 14px; color: var(--muted); font-size: .75rem; font-weight: 800; letter-spacing: .12em; text-transform: uppercase; }
+    .detail-value { margin: 0; font-size: 1.05rem; font-weight: 680; line-height: 1.6; overflow-wrap: anywhere; }
+    .detail-value a { text-decoration-thickness: 1px; text-underline-offset: 4px; }
+    .site-footer { border-top: 1px solid var(--line); background: #eef1eb; }
+    .footer-inner { min-height: 86px; display: flex; align-items: center; justify-content: space-between; gap: 18px; color: var(--muted); font-size: .86rem; }
+    .footer-name { color: var(--ink); font-weight: 730; }
+    .mobile-call-bar { display: none; }
+    @media (max-width: 800px) {
+      .hero-inner { grid-template-columns: 1fr  .78fr; gap: 34px; }
+      .hero-art { min-height: 350px; }
+      .service-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+      .contact-layout { grid-template-columns: 1fr; gap: 30px; }
+    }
+    @media (max-width: 620px) {
+      html { scroll-padding-top: 116px; }
+      body { padding-bottom: calc(76px + env(safe-area-inset-bottom)); }
+      .wrap { width: min(100% - 36px, 520px); }
+      .header-inner { display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: 11px 12px; padding: 12px 0 10px; }
+      .brand-mark { width: 37px; height: 37px; flex-basis: 37px; border-radius: 12px; }
+      .brand-name { max-width: 190px; font-size: .82rem; }
+      .main-nav { grid-column: 1 / -1; justify-content: center; gap: clamp(25px, 9vw, 46px); padding-top: 2px; }
+      .main-nav a { font-size: .82rem; }
+      .header-inner > .call-button { min-height: 42px; padding-inline: 14px; font-size: .78rem; }
+      .hero { padding: 56px 0 67px; }
+      .hero-inner { grid-template-columns: 1fr; gap: 38px; }
+      h1 { max-width: 500px; font-size: clamp(2.7rem, 13vw, 4.25rem); }
+      .hero-copy { font-size: 1.03rem; }
+      .hero-art { min-height: 300px; border-radius: 26px; }
+      .art-ring { width: 164px; height: 164px; border-width: 23px; }
+      .art-core { width: 40px; height: 40px; top: calc(50% - 20px); left: calc(50% + 10px); }
+      .section { padding: 67px 0; }
+      .section-heading { margin-bottom: 25px; }
+      .service-grid { grid-template-columns: 1fr; gap: 12px; }
+      .service-card { min-height: 0; padding: 22px; }
+      .service-mark { margin-bottom: 18px; }
+      .trust-section { padding: 56px 0 60px; }
+      .contact-section { padding: 68px 0 74px; }
+      .contact-details { grid-template-columns: 1fr; }
+      .detail-card { min-height: 0; padding: 21px; }
+      .footer-inner { min-height: 92px; align-items: flex-start; justify-content: center; flex-direction: column; gap: 4px; padding-block: 19px; font-size: .78rem; }
+      .mobile-call-bar { position: fixed; z-index: 20; right: 0; bottom: 0; left: 0; display: block; padding: 10px 18px calc(10px + env(safe-area-inset-bottom)); border-top: 1px solid rgba(20, 43, 42, .12); background: rgba(245, 246, 242, .96); backdrop-filter: blur(12px); }
+      .mobile-call-bar a { display: flex; min-height: 50px; align-items: center; justify-content: center; gap: 9px; border-radius: 999px; background: var(--accent); color: #172a28; font-size: .96rem; font-weight: 780; text-decoration: none; }
+      .mobile-call-bar a:focus-visible { outline-offset: -4px; }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after { scroll-behavior: auto !important; transition-duration: .01ms !important; }
+    }
+  </style>
+</head>
+<body>
+  <header class="site-header">
+    <div class="wrap header-inner">
+      <a class="brand" href="#top" aria-label="Maloney Plumbing &amp; Drain Services home">
+        <span class="brand-mark" aria-hidden="true"></span>
+        <span class="brand-name">Maloney Plumbing &amp; Drain Services</span>
+      </a>
+      <nav class="main-nav" aria-label="Main navigation">
+        <a href="#services">Services</a>
+        <a href="#reviews">Reviews</a>
+        <a href="#contact">Contact</a>
+      </nav>
+      <a class="call-button" href="tel:+16026713617">Call +1 602-671-3617</a>
+    </div>
+  </header>
+
+  <main id="top">
+    <section class="hero" aria-labelledby="hero-title">
+      <div class="wrap hero-inner">
+        <div class="hero-content">
+          <p class="eyebrow">Plumbing · Phoenix, AZ</p>
+          <h1 id="hero-title">Leaks, clogs, and cold showers fixed right the first time.</h1>
+          <p class="hero-copy">For plumbing needs in Phoenix, AZ, contact Maloney Plumbing &amp; Drain Services.</p>
+          <div class="hero-actions">
+            <a class="call-button" href="tel:+16026713617">Call +1 602-671-3617</a>
+            <a class="secondary-link" href="#contact">Request a visit</a>
+          </div>
+        </div>
+        <div class="hero-art" aria-hidden="true">
+          <span class="art-ring"></span>
+          <span class="art-core"></span>
+          <span class="art-line"></span>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="services" aria-labelledby="services-title">
+      <div class="wrap">
+        <div class="section-heading">
+          <p class="section-kicker">Plumbing services</p>
+          <h2 id="services-title">The help your plumbing needs.</h2>
+        </div>
+        <div class="service-grid">
+          <article class="service-card">
+            <div class="service-mark" aria-hidden="true"></div>
+            <h3>Drain Cleaning</h3>
+            <p>Clear buildup and blockages from drains.</p>
+          </article>
+          <article class="service-card">
+            <div class="service-mark" aria-hidden="true"></div>
+            <h3>Leak Detection &amp; Repair</h3>
+            <p>Locate leaks and repair affected plumbing.</p>
+          </article>
+          <article class="service-card">
+            <div class="service-mark" aria-hidden="true"></div>
+            <h3>Water Heaters</h3>
+            <p>Service water heaters when hot-water problems arise.</p>
+          </article>
+          <article class="service-card">
+            <div class="service-mark" aria-hidden="true"></div>
+            <h3>Sewer Line Service</h3>
+            <p>Address blockages and other sewer line concerns.</p>
+          </article>
+          <article class="service-card">
+            <div class="service-mark" aria-hidden="true"></div>
+            <h3>Repiping</h3>
+            <p>Replace plumbing pipes through repiping service.</p>
+          </article>
+          <article class="service-card">
+            <div class="service-mark" aria-hidden="true"></div>
+            <h3>Emergency Plumbing</h3>
+            <p>Plumbing service for urgent problems.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="trust-section" id="reviews" aria-labelledby="rating-title">
+      <div class="trust-inner">
+        <p class="trust-label">Google rating</p>
+        <h2 id="rating-title">4.9 <span>out of 5</span></h2>
+        <p class="review-count">1186 Google reviews</p>
+      </div>
+    </section>
+
+    <section class="contact-section" id="contact" aria-labelledby="contact-title">
+      <div class="wrap contact-layout">
+        <div class="contact-intro">
+          <p class="section-kicker">Get in touch</p>
+          <h2 id="contact-title">Contact</h2>
+        </div>
+        <div class="contact-details">
+          <div class="detail-card">
+            <p class="detail-label">Phone</p>
+            <p class="detail-value"><a href="tel:+16026713617">+1 602-671-3617</a></p>
+          </div>
+          <div class="detail-card">
+            <p class="detail-label">Address</p>
+            <p class="detail-value">9119 N 7th St Ste 201,<br>Phoenix, AZ 85020, USA</p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap footer-inner">
+      <span class="footer-name">Maloney Plumbing &amp; Drain Services</span>
+      <span>Concept preview — not the live site</span>
+    </div>
+  </footer>
+
+  <div class="mobile-call-bar">
+    <a href="tel:+16026713617">Call +1 602-671-3617</a>
+  </div>
+</body>
+</html>
