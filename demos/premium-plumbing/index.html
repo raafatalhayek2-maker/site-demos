@@ -1,0 +1,535 @@
+<!doctype html>
+<html lang='en'>
+<head>
+  <meta charset='utf-8'>
+  <meta name='viewport' content='width=device-width, initial-scale=1'>
+  <meta name='theme-color' content='#f4f7f4'>
+  <meta name='description' content='Premium Plumbing. Call +1 813-355-0883.'>
+  <title>Premium Plumbing | Plumber</title>
+  <style>
+    :root {
+      color-scheme: light;
+      --green: #1f6f5c;
+      --deep: #0d3b31;
+      --ink: #17362f;
+      --muted: #5e716a;
+      --paper: #f4f7f4;
+      --white: #ffffff;
+      --line: #e4ebe6;
+      --mint: #e8f2ec;
+      --shadow: 0 18px 48px rgba(15, 55, 44, 0.09);
+    }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; scroll-padding-top: 100px; }
+    body {
+      margin: 0;
+      background: var(--paper);
+      color: var(--ink);
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+      line-height: 1.55;
+      -webkit-font-smoothing: antialiased;
+    }
+    a { color: inherit; text-decoration: none; }
+    button, input, textarea { font: inherit; }
+    button, a { -webkit-tap-highlight-color: transparent; }
+    a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visible {
+      outline: 3px solid #80c5ab;
+      outline-offset: 3px;
+    }
+    .container { width: min(1160px, calc(100% - 48px)); margin-inline: auto; }
+    .site-header {
+      position: sticky;
+      top: 0;
+      z-index: 50;
+      background: rgba(248, 250, 248, 0.9);
+      border-bottom: 1px solid rgba(13, 59, 49, 0.08);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+    }
+    .header-inner {
+      width: min(1160px, calc(100% - 48px));
+      min-height: 78px;
+      margin-inline: auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+    }
+    .brand { display: inline-flex; align-items: center; gap: 12px; min-width: 0; }
+    .brand-mark {
+      position: relative;
+      width: 40px;
+      height: 40px;
+      flex: 0 0 auto;
+      overflow: hidden;
+      border-radius: 13px;
+      background: var(--deep);
+    }
+    .brand-mark::before {
+      content: '';
+      position: absolute;
+      width: 19px;
+      height: 19px;
+      top: 8px;
+      left: 9px;
+      border: 2px solid #b9e0ce;
+      border-right-color: transparent;
+      border-bottom-color: transparent;
+      border-radius: 5px 0 0 0;
+      transform: rotate(45deg);
+    }
+    .brand-mark::after {
+      content: '';
+      position: absolute;
+      right: 8px;
+      bottom: 8px;
+      width: 7px;
+      height: 7px;
+      border-radius: 50%;
+      background: #8cc9ae;
+    }
+    .brand-name { color: var(--deep); font-size: 16px; font-weight: 750; letter-spacing: -0.035em; }
+    .button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 9px;
+      min-height: 50px;
+      padding: 0 20px;
+      border: 1px solid transparent;
+      border-radius: 12px;
+      font-size: 14px;
+      font-weight: 700;
+      line-height: 1.2;
+      transition: transform 180ms ease, background-color 180ms ease, box-shadow 180ms ease;
+    }
+    .button:hover { transform: translateY(-2px); }
+    .button-primary { color: #fff; background: var(--green); box-shadow: 0 8px 18px rgba(31, 111, 92, 0.2); }
+    .button-primary:hover { background: #195c4d; box-shadow: 0 11px 22px rgba(31, 111, 92, 0.26); }
+    .header-call { min-height: 44px; padding-inline: 17px; border-radius: 11px; }
+    .phone-icon { width: 16px; height: 16px; display: inline-block; flex: 0 0 auto; }
+
+    .hero-wrap { width: min(1240px, calc(100% - 40px)); margin: 34px auto 0; }
+    .hero-panel {
+      position: relative;
+      isolation: isolate;
+      overflow: hidden;
+      display: grid;
+      grid-template-columns: minmax(0, 1.04fr) minmax(340px, 0.78fr);
+      align-items: center;
+      gap: clamp(34px, 6vw, 82px);
+      min-height: 570px;
+      padding: clamp(38px, 6.4vw, 78px);
+      border-radius: 30px;
+      color: #f7fcf9;
+      background:
+        radial-gradient(ellipse at 7% 95%, rgba(66, 143, 116, 0.28), transparent 43%),
+        linear-gradient(132deg, #0d3b31 0%, #124c3e 58%, #185c49 100%);
+      box-shadow: 0 24px 64px rgba(13, 59, 49, 0.16);
+    }
+    .hero-panel::before {
+      content: '';
+      position: absolute;
+      z-index: -1;
+      width: 560px;
+      height: 560px;
+      top: -320px;
+      right: 8%;
+      border: 1px solid rgba(219, 245, 230, 0.13);
+      border-radius: 50%;
+      box-shadow: 0 0 0 30px rgba(219, 245, 230, 0.035), 0 0 0 68px rgba(219, 245, 230, 0.035), 0 0 0 108px rgba(219, 245, 230, 0.025);
+      pointer-events: none;
+    }
+    .hero-copy { position: relative; z-index: 1; max-width: 580px; }
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      margin: 0 0 22px;
+      color: #a9d9c1;
+      font-size: 11px;
+      font-weight: 750;
+      letter-spacing: 0.17em;
+      text-transform: uppercase;
+    }
+    .eyebrow::before { content: ''; width: 25px; height: 1px; background: #8dc8aa; }
+    h1, h2, h3, p { margin-top: 0; }
+    h1 {
+      max-width: 620px;
+      margin-bottom: 20px;
+      font-size: clamp(43px, 6vw, 72px);
+      font-weight: 690;
+      letter-spacing: -0.065em;
+      line-height: 0.99;
+    }
+    .hero-description {
+      max-width: 470px;
+      margin-bottom: 30px;
+      color: #d1e3da;
+      font-size: clamp(16px, 1.65vw, 18px);
+      line-height: 1.7;
+    }
+    .hero-actions { display: flex; flex-wrap: wrap; gap: 12px; }
+    .hero-actions .button-primary { background: #f4fbf6; color: var(--deep); box-shadow: none; }
+    .hero-actions .button-primary:hover { background: #dceee3; }
+    .button-outline { color: #f4fbf6; border-color: rgba(236, 249, 241, 0.34); background: rgba(255, 255, 255, 0.035); }
+    .button-outline:hover { background: rgba(255, 255, 255, 0.11); }
+
+    .quote-card {
+      position: relative;
+      z-index: 1;
+      width: 100%;
+      padding: clamp(23px, 3vw, 32px);
+      border: 1px solid rgba(255, 255, 255, 0.72);
+      border-radius: 22px;
+      color: var(--ink);
+      background: rgba(255, 255, 255, 0.98);
+      box-shadow: 0 24px 60px rgba(5, 29, 24, 0.2);
+    }
+    .quote-card h2 { margin: 0 0 5px; color: var(--deep); font-size: 23px; letter-spacing: -0.045em; line-height: 1.2; }
+    .quote-intro { margin: 0 0 21px; color: var(--muted); font-size: 13px; }
+    .form-fields { display: grid; gap: 13px; }
+    .field { display: grid; gap: 6px; }
+    .field label { color: #28473f; font-size: 12px; font-weight: 700; }
+    .field input, .field textarea {
+      width: 100%;
+      border: 1px solid #dce6df;
+      border-radius: 10px;
+      background: #fbfcfb;
+      color: var(--ink);
+      font-size: 14px;
+      transition: border-color 160ms ease, box-shadow 160ms ease;
+    }
+    .field input { min-height: 45px; padding: 0 12px; }
+    .field textarea { min-height: 82px; padding: 10px 12px; resize: vertical; }
+    .field input::placeholder, .field textarea::placeholder { color: #98a69f; }
+    .field input:focus, .field textarea:focus { outline: none; border-color: #65a88d; box-shadow: 0 0 0 3px rgba(31, 111, 92, 0.1); }
+    .quote-submit { width: 100%; margin-top: 16px; cursor: pointer; border: 0; }
+    .demo-note { margin: 11px 0 0; color: #75847d; font-size: 11px; line-height: 1.5; text-align: center; }
+
+    .section { padding-block: 104px; }
+    .section-heading { margin-bottom: 31px; }
+    .section-kicker {
+      margin: 0 0 12px;
+      color: var(--green);
+      font-size: 11px;
+      font-weight: 800;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+    }
+    .section-heading h2, .contact-copy h2 {
+      margin: 0;
+      color: var(--deep);
+      font-size: clamp(32px, 4vw, 46px);
+      font-weight: 680;
+      letter-spacing: -0.06em;
+      line-height: 1.08;
+    }
+    .services-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 16px; }
+    .service-card {
+      min-height: 170px;
+      padding: 23px;
+      border: 1px solid rgba(13, 59, 49, 0.06);
+      border-radius: 18px;
+      background: var(--white);
+      box-shadow: 0 9px 28px rgba(19, 55, 44, 0.045);
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      justify-content: space-between;
+      gap: 20px;
+      transition: transform 180ms ease, box-shadow 180ms ease;
+    }
+    .service-card:hover { transform: translateY(-3px); box-shadow: var(--shadow); }
+    .service-mark {
+      position: relative;
+      width: 40px;
+      height: 40px;
+      border-radius: 13px;
+      background: var(--mint);
+    }
+    .service-mark::before {
+      content: '';
+      position: absolute;
+      width: 13px;
+      height: 17px;
+      left: 12px;
+      top: 10px;
+      border: 1.8px solid var(--green);
+      border-radius: 7px 7px 5px 5px;
+      transform: rotate(45deg);
+    }
+    .service-mark::after {
+      content: '';
+      position: absolute;
+      width: 4px;
+      height: 4px;
+      left: 18px;
+      top: 17px;
+      border-radius: 50%;
+      background: var(--green);
+    }
+    .service-card:nth-child(2) .service-mark { transform: rotate(12deg); }
+    .service-card:nth-child(3) .service-mark { transform: rotate(-10deg); }
+    .service-card:nth-child(4) .service-mark { transform: rotate(20deg); }
+    .service-card:nth-child(5) .service-mark { transform: rotate(-20deg); }
+    .service-card:nth-child(6) .service-mark { transform: rotate(8deg); }
+    .service-card h3 { max-width: 290px; margin: 0; color: #173b31; font-size: 17px; font-weight: 680; letter-spacing: -0.035em; line-height: 1.35; }
+
+    .trust-section { padding: 0 0 100px; }
+    .trust-card {
+      position: relative;
+      overflow: hidden;
+      display: grid;
+      grid-template-columns: 0.7fr 1.3fr;
+      align-items: center;
+      gap: 32px;
+      padding: clamp(32px, 5vw, 58px);
+      border: 1px solid #dcebe1;
+      border-radius: 26px;
+      background: linear-gradient(120deg, #e8f3ec 0%, #f8fbf8 100%);
+    }
+    .trust-card::after {
+      content: '';
+      position: absolute;
+      width: 230px;
+      height: 230px;
+      right: -90px;
+      top: -115px;
+      border: 1px solid rgba(31, 111, 92, 0.13);
+      border-radius: 50%;
+      box-shadow: 0 0 0 25px rgba(31, 111, 92, 0.025), 0 0 0 52px rgba(31, 111, 92, 0.025);
+      pointer-events: none;
+    }
+    .rating-badge {
+      position: relative;
+      z-index: 1;
+      display: grid;
+      place-items: center;
+      width: 150px;
+      height: 150px;
+      border: 1px solid rgba(31, 111, 92, 0.2);
+      border-radius: 50%;
+      color: var(--deep);
+      background: rgba(255, 255, 255, 0.63);
+      box-shadow: 0 10px 30px rgba(13, 59, 49, 0.06);
+      font-size: 49px;
+      font-weight: 720;
+      letter-spacing: -0.07em;
+    }
+    .trust-copy { position: relative; z-index: 1; max-width: 600px; }
+    .trust-copy .section-kicker { margin-bottom: 10px; }
+    .trust-copy h2 { margin: 0 0 12px; color: var(--deep); font-size: clamp(28px, 3.3vw, 38px); letter-spacing: -0.055em; line-height: 1.12; }
+    .trust-proof { margin: 0; color: #405b50; font-size: clamp(16px, 2vw, 19px); font-weight: 600; }
+
+    .contact-section { padding: 0 0 92px; }
+    .contact-card {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      align-items: center;
+      gap: 40px;
+      padding: clamp(32px, 5vw, 58px);
+      border-radius: 26px;
+      color: #f6fcf8;
+      background: var(--deep);
+    }
+    .contact-copy .section-kicker { color: #a9d9c1; }
+    .contact-copy h2 { color: #f6fcf8; }
+    .contact-details { display: grid; gap: 18px; }
+    .contact-item { display: grid; gap: 4px; }
+    .contact-label { color: #a9d9c1; font-size: 11px; font-weight: 750; letter-spacing: 0.14em; text-transform: uppercase; }
+    .contact-value { color: #fff; font-size: clamp(17px, 2vw, 21px); font-weight: 600; letter-spacing: -0.025em; }
+    .contact-value:hover { color: #c5e8d4; }
+    address.contact-value { font-style: normal; }
+    .site-footer { padding: 24px 0 30px; border-top: 1px solid var(--line); }
+    .footer-inner { display: flex; justify-content: space-between; align-items: center; gap: 18px; }
+    .footer-name { color: var(--deep); font-size: 14px; font-weight: 750; letter-spacing: -0.025em; }
+    .footer-label { color: #718078; font-size: 12px; }
+    .mobile-call-bar { display: none; }
+
+    @media (max-width: 900px) {
+      .hero-panel { grid-template-columns: minmax(0, 1fr) minmax(300px, 0.9fr); gap: 30px; padding: 48px; }
+      h1 { font-size: clamp(43px, 6vw, 60px); }
+      .section { padding-block: 82px; }
+    }
+    @media (max-width: 760px) {
+      html { scroll-padding-top: 86px; }
+      .container, .header-inner { width: min(100% - 36px, 580px); }
+      .header-inner { min-height: 68px; }
+      .brand-mark { width: 36px; height: 36px; border-radius: 11px; }
+      .brand-name { font-size: 15px; }
+      .header-call { min-height: 42px; padding: 0 12px; font-size: 13px; }
+      .header-call .phone-icon { display: none; }
+      .hero-wrap { width: calc(100% - 24px); margin-top: 16px; }
+      .hero-panel { grid-template-columns: 1fr; gap: 34px; min-height: 0; padding: clamp(28px, 7vw, 45px); border-radius: 24px; }
+      .hero-panel::before { width: 390px; height: 390px; right: -130px; top: -230px; }
+      h1 { max-width: 540px; font-size: clamp(43px, 11vw, 62px); }
+      .hero-description { margin-bottom: 24px; font-size: 16px; }
+      .quote-card { max-width: 540px; padding: 23px; }
+      .section { padding-block: 72px; }
+      .services-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px; }
+      .service-card { min-height: 154px; padding: 18px; border-radius: 15px; }
+      .service-card h3 { font-size: 15px; }
+      .trust-section { padding-bottom: 72px; }
+      .trust-card { grid-template-columns: auto 1fr; gap: 23px; padding: 30px; border-radius: 22px; }
+      .rating-badge { width: 105px; height: 105px; font-size: 37px; }
+      .contact-section { padding-bottom: 70px; }
+      .contact-card { grid-template-columns: 1fr; gap: 26px; padding: 32px; border-radius: 22px; }
+      .mobile-call-bar {
+        position: fixed;
+        z-index: 80;
+        right: 12px;
+        bottom: calc(12px + env(safe-area-inset-bottom));
+        left: 12px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 10px;
+        min-height: 56px;
+        border: 1px solid rgba(255, 255, 255, 0.12);
+        border-radius: 15px;
+        color: #fff;
+        background: var(--deep);
+        box-shadow: 0 12px 34px rgba(8, 37, 30, 0.25);
+        font-size: 15px;
+        font-weight: 750;
+      }
+      body { padding-bottom: 86px; }
+    }
+    @media (max-width: 440px) {
+      .header-inner, .container { width: calc(100% - 30px); }
+      .header-call { padding-inline: 10px; font-size: 12px; }
+      .hero-actions { align-items: stretch; flex-direction: column; }
+      .hero-actions .button { width: 100%; }
+      .services-grid { grid-template-columns: 1fr; }
+      .service-card { min-height: 128px; }
+      .trust-card { grid-template-columns: 1fr; gap: 20px; }
+      .rating-badge { width: 86px; height: 86px; font-size: 32px; }
+      .footer-inner { align-items: flex-start; flex-direction: column; gap: 5px; }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
+      *, *::before, *::after { transition-duration: 0.01ms !important; }
+    }
+  </style>
+</head>
+<body>
+  <header class='site-header'>
+    <div class='header-inner'>
+      <a class='brand' href='#top' aria-label='Premium Plumbing home'>
+        <span class='brand-mark' aria-hidden='true'></span>
+        <span class='brand-name'>Premium Plumbing</span>
+      </a>
+      <a class='button button-primary header-call' href='tel:+18133550883'>
+        <svg class='phone-icon' viewBox='0 0 24 24' fill='none' aria-hidden='true'><path d='M7.2 3.8 4.8 5.1c-.7.4-1 1.2-.8 2 1.4 5.5 5.7 9.8 11.2 11.2.8.2 1.6-.1 2-.8l1.3-2.4-4-2-1.1 1.5a13.1 13.1 0 0 1-4.8-4.8l1.5-1.1-2-4Z' stroke='currentColor' stroke-width='1.7' stroke-linecap='round' stroke-linejoin='round'/></svg>
+        <span>+1 813-355-0883</span>
+      </a>
+    </div>
+  </header>
+
+  <main id='top'>
+    <section class='hero-wrap' aria-labelledby='hero-title'>
+      <div class='hero-panel'>
+        <div class='hero-copy'>
+          <p class='eyebrow'>Premium Plumbing</p>
+          <h1 id='hero-title'>Plumbing, with a clear next step.</h1>
+          <p class='hero-description'>Call Premium Plumbing to talk through the plumbing work you need, or use the quote-request form.</p>
+          <div class='hero-actions'>
+            <a class='button button-primary' href='tel:+18133550883'>
+              <svg class='phone-icon' viewBox='0 0 24 24' fill='none' aria-hidden='true'><path d='M7.2 3.8 4.8 5.1c-.7.4-1 1.2-.8 2 1.4 5.5 5.7 9.8 11.2 11.2.8.2 1.6-.1 2-.8l1.3-2.4-4-2-1.1 1.5a13.1 13.1 0 0 1-4.8-4.8l1.5-1.1-2-4Z' stroke='currentColor' stroke-width='1.7' stroke-linecap='round' stroke-linejoin='round'/></svg>
+              <span>Call +1 813-355-0883</span>
+            </a>
+            <a class='button button-outline' href='#request-quote'>Request a quote</a>
+          </div>
+        </div>
+
+        <section class='quote-card' id='request-quote' aria-labelledby='quote-title'>
+          <h2 id='quote-title'>Request a quote</h2>
+          <p class='quote-intro'>Share your details and message.</p>
+          <form action='#request-quote' method='get'>
+            <div class='form-fields'>
+              <div class='field'>
+                <label for='name'>Name</label>
+                <input id='name' name='name' type='text' autocomplete='name' required>
+              </div>
+              <div class='field'>
+                <label for='phone'>Phone</label>
+                <input id='phone' name='phone' type='tel' autocomplete='tel' required>
+              </div>
+              <div class='field'>
+                <label for='message'>Message</label>
+                <textarea id='message' name='message' rows='3' required></textarea>
+              </div>
+            </div>
+            <button class='button button-primary quote-submit' type='submit'>Submit request</button>
+            <p class='demo-note'>Front-end demo only. No quote-request endpoint is connected.</p>
+          </form>
+        </section>
+      </div>
+    </section>
+
+    <section class='section' aria-labelledby='services-title'>
+      <div class='container'>
+        <div class='section-heading'>
+          <p class='section-kicker'>Services</p>
+          <h2 id='services-title'>Plumbing services</h2>
+        </div>
+        <div class='services-grid'>
+          <article class='service-card'><span class='service-mark' aria-hidden='true'></span><h3>Drain cleaning</h3></article>
+          <article class='service-card'><span class='service-mark' aria-hidden='true'></span><h3>Water heater service</h3></article>
+          <article class='service-card'><span class='service-mark' aria-hidden='true'></span><h3>Leak detection and repair</h3></article>
+          <article class='service-card'><span class='service-mark' aria-hidden='true'></span><h3>Repiping</h3></article>
+          <article class='service-card'><span class='service-mark' aria-hidden='true'></span><h3>Sewer and septic line work</h3></article>
+          <article class='service-card'><span class='service-mark' aria-hidden='true'></span><h3>Fixture and faucet installation</h3></article>
+        </div>
+      </div>
+    </section>
+
+    <section class='trust-section' aria-labelledby='trust-title'>
+      <div class='container'>
+        <div class='trust-card'>
+          <div class='rating-badge' aria-hidden='true'>4.9</div>
+          <div class='trust-copy'>
+            <p class='section-kicker'>Google reviews</p>
+            <h2 id='trust-title'>A rating from real reviews.</h2>
+            <p class='trust-proof'>Rated 4.9 out of 5 from 532 Google reviews</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class='contact-section' aria-labelledby='contact-title'>
+      <div class='container'>
+        <div class='contact-card'>
+          <div class='contact-copy'>
+            <p class='section-kicker'>Contact</p>
+            <h2 id='contact-title'>Get in touch with Premium Plumbing.</h2>
+          </div>
+          <div class='contact-details'>
+            <div class='contact-item'>
+              <span class='contact-label'>Phone</span>
+              <a class='contact-value' href='tel:+18133550883'>+1 813-355-0883</a>
+            </div>
+            <div class='contact-item'>
+              <span class='contact-label'>Address</span>
+              <address class='contact-value'>4706 N Thatcher Ave, Tampa, FL 33614</address>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class='site-footer'>
+    <div class='container footer-inner'>
+      <span class='footer-name'>Premium Plumbing</span>
+      <span class='footer-label'>Concept preview — not the live site</span>
+    </div>
+  </footer>
+
+  <a class='mobile-call-bar' href='tel:+18133550883' aria-label='Call Premium Plumbing now at +1 813-355-0883'>
+    <svg class='phone-icon' viewBox='0 0 24 24' fill='none' aria-hidden='true'><path d='M7.2 3.8 4.8 5.1c-.7.4-1 1.2-.8 2 1.4 5.5 5.7 9.8 11.2 11.2.8.2 1.6-.1 2-.8l1.3-2.4-4-2-1.1 1.5a13.1 13.1 0 0 1-4.8-4.8l1.5-1.1-2-4Z' stroke='currentColor' stroke-width='1.7' stroke-linecap='round' stroke-linejoin='round'/></svg>
+    <span>Call now</span>
+  </a>
+</body>
+</html>
