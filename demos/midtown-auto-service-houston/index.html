@@ -1,0 +1,576 @@
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+  <meta charset='utf-8'>
+  <meta name='viewport' content='width=device-width, initial-scale=1'>
+  <meta name='theme-color' content='#171b19'>
+  <title>Midtown Auto Service &amp; Repair | Houston Auto Repair</title>
+  <style>
+    :root {
+      color-scheme: light;
+      --ink: #171b19;
+      --ink-soft: #252c29;
+      --paper: #f5f3ed;
+      --white: #fffefa;
+      --muted: #696e68;
+      --line: #deddd5;
+      --accent: #df7951;
+      --accent-deep: #bb5f3d;
+      --sage: #9fb2a7;
+      --content: 1240px;
+      --radius: 20px;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; }
+    html { scroll-behavior: smooth; scroll-padding-top: 100px; }
+    body {
+      margin: 0;
+      background: var(--paper);
+      color: var(--ink);
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, Segoe UI, sans-serif;
+      -webkit-font-smoothing: antialiased;
+      text-rendering: optimizeLegibility;
+    }
+    a { color: inherit; text-decoration: none; }
+    a:focus-visible { outline: 3px solid var(--accent); outline-offset: 4px; }
+    .container { width: min(var(--content), calc(100% - 64px)); margin-inline: auto; }
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      margin: 0;
+      color: var(--accent);
+      font-size: 11px;
+      font-weight: 750;
+      letter-spacing: .16em;
+      line-height: 1.4;
+      text-transform: uppercase;
+    }
+    .eyebrow::before { width: 20px; height: 1px; background: currentColor; content: ''; }
+
+    .site-header {
+      position: sticky;
+      z-index: 20;
+      top: 0;
+      border-bottom: 1px solid rgba(23, 27, 25, .09);
+      background: rgba(255, 254, 250, .94);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+    }
+    .header-inner {
+      display: flex;
+      width: min(1320px, calc(100% - 64px));
+      height: 82px;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+      margin-inline: auto;
+    }
+    .brand {
+      display: inline-flex;
+      min-width: 0;
+      align-items: center;
+      gap: 12px;
+      font-size: 14px;
+      font-weight: 720;
+      letter-spacing: -.035em;
+      line-height: 1.2;
+    }
+    .brand-mark {
+      position: relative;
+      display: grid;
+      width: 36px;
+      height: 36px;
+      flex: 0 0 36px;
+      place-items: center;
+      border: 1px solid rgba(23, 27, 25, .16);
+      border-radius: 11px;
+      background: var(--paper);
+    }
+    .brand-mark::before, .brand-mark::after {
+      position: absolute;
+      border: 1.5px solid var(--ink);
+      border-radius: 50%;
+      content: '';
+    }
+    .brand-mark::before { width: 16px; height: 16px; }
+    .brand-mark::after { width: 5px; height: 5px; border-color: var(--accent); background: var(--accent); }
+    .brand-name { max-width: 245px; }
+    .desktop-nav { display: flex; align-items: center; gap: clamp(22px, 3vw, 42px); margin-left: auto; }
+    .desktop-nav a {
+      color: #5c625d;
+      font-size: 12px;
+      font-weight: 650;
+      transition: color .2s ease;
+    }
+    .desktop-nav a:hover { color: var(--accent-deep); }
+    .button {
+      display: inline-flex;
+      min-height: 50px;
+      align-items: center;
+      justify-content: center;
+      gap: 11px;
+      padding: 0 21px;
+      border: 1px solid transparent;
+      border-radius: 6px;
+      font-size: 13px;
+      font-weight: 730;
+      letter-spacing: -.01em;
+      transition: transform .2s ease, background-color .2s ease, border-color .2s ease;
+      white-space: nowrap;
+    }
+    .button:hover { transform: translateY(-2px); }
+    .button-dark { background: var(--ink); color: #fffefa; }
+    .button-dark:hover { background: #303a35; }
+    .button-accent { background: var(--accent); color: #1b1d1a; }
+    .button-accent:hover { background: #eb8b63; }
+    .button-outline { border-color: rgba(255, 255, 255, .28); color: #fffefa; }
+    .button-outline:hover { border-color: rgba(255, 255, 255, .72); background: rgba(255, 255, 255, .06); }
+    .button svg { width: 15px; height: 15px; flex: 0 0 auto; }
+
+    .hero {
+      position: relative;
+      overflow: hidden;
+      background:
+        radial-gradient(ellipse at 76% 14%, rgba(119, 153, 134, .19), transparent 35%),
+        linear-gradient(116deg, #171b19 0%, #1d2723 54%, #263832 100%);
+      color: #fffefa;
+    }
+    .hero::before {
+      position: absolute;
+      inset: 0;
+      background-image: linear-gradient(rgba(255,255,255,.025) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,.025) 1px, transparent 1px);
+      background-size: 64px 64px;
+      content: '';
+      mask-image: linear-gradient(90deg, transparent, #000 45%, #000);
+      pointer-events: none;
+    }
+    .hero-inner {
+      position: relative;
+      display: grid;
+      min-height: 636px;
+      grid-template-columns: minmax(0, 1.12fr) minmax(330px, .88fr);
+      align-items: center;
+      gap: clamp(48px, 8vw, 110px);
+      padding-block: 78px 84px;
+    }
+    .hero-copy { position: relative; z-index: 2; max-width: 660px; }
+    .hero .eyebrow { color: #efa17f; }
+    .hero h1 {
+      max-width: 720px;
+      margin: 25px 0 21px;
+      font-size: clamp(46px, 5.5vw, 76px);
+      font-weight: 570;
+      letter-spacing: -.075em;
+      line-height: .99;
+    }
+    .hero h1 span { color: #efa17f; }
+    .hero-description {
+      max-width: 480px;
+      margin: 0;
+      color: rgba(255, 254, 250, .72);
+      font-size: clamp(15px, 1.35vw, 17px);
+      line-height: 1.75;
+    }
+    .hero-actions { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 34px; }
+    .hero-art {
+      position: relative;
+      display: grid;
+      min-height: 430px;
+      overflow: hidden;
+      place-items: center;
+      border: 1px solid rgba(255,255,255,.14);
+      border-radius: 46% 46% 23px 23px;
+      background: linear-gradient(145deg, rgba(255,255,255,.055), rgba(255,255,255,.012));
+      box-shadow: inset 0 1px 0 rgba(255,255,255,.08), 0 30px 80px rgba(0,0,0,.12);
+    }
+    .hero-art::before {
+      position: absolute;
+      width: min(78%, 360px);
+      aspect-ratio: 1;
+      border: 1px solid rgba(239, 161, 127, .46);
+      border-radius: 50%;
+      box-shadow: 0 0 0 27px rgba(255,255,255,.025), 0 0 0 68px rgba(255,255,255,.018), 0 0 0 112px rgba(255,255,255,.012);
+      content: '';
+    }
+    .hero-art::after {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(90deg, transparent 49.8%, rgba(255,255,255,.1) 50%, transparent 50.2%), linear-gradient(0deg, transparent 49.8%, rgba(255,255,255,.1) 50%, transparent 50.2%);
+      opacity: .5;
+      content: '';
+    }
+    .hero-art-line {
+      position: absolute;
+      z-index: 1;
+      width: 77%;
+      height: 1px;
+      background: linear-gradient(90deg, transparent, rgba(239,161,127,.66), transparent);
+      transform: rotate(-42deg);
+    }
+    .hero-art-line.line-two { transform: rotate(42deg); opacity: .6; }
+    .hub {
+      position: relative;
+      z-index: 2;
+      display: grid;
+      width: 146px;
+      height: 146px;
+      place-items: center;
+      border: 1px solid rgba(239,161,127,.7);
+      border-radius: 50%;
+      background: radial-gradient(circle at 34% 30%, rgba(239,161,127,.15), rgba(23,27,25,.85) 66%);
+      box-shadow: 0 0 54px rgba(223,121,81,.13), inset 0 0 0 10px rgba(255,255,255,.025);
+    }
+    .hub svg { width: 64px; height: 64px; color: #efa17f; }
+    .orbit-dot {
+      position: absolute;
+      z-index: 3;
+      width: 9px;
+      height: 9px;
+      border: 2px solid #171b19;
+      border-radius: 50%;
+      background: #efa17f;
+      box-shadow: 0 0 18px rgba(239,161,127,.6);
+    }
+    .dot-one { top: 25%; right: 24%; }
+    .dot-two { bottom: 23%; left: 24%; width: 7px; height: 7px; background: var(--sage); }
+
+    .section { padding-block: 112px; }
+    .section-heading {
+      display: flex;
+      align-items: end;
+      justify-content: space-between;
+      gap: 40px;
+      margin-bottom: 45px;
+    }
+    .section-heading h2 {
+      max-width: 580px;
+      margin: 15px 0 0;
+      font-size: clamp(36px, 4.4vw, 56px);
+      font-weight: 560;
+      letter-spacing: -.065em;
+      line-height: 1.04;
+    }
+    .section-intro {
+      max-width: 310px;
+      margin: 0 0 5px;
+      color: var(--muted);
+      font-size: 14px;
+      line-height: 1.75;
+    }
+    .services-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; }
+    .service-card {
+      position: relative;
+      min-height: 245px;
+      padding: 27px 27px 29px;
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      background: rgba(255,254,250,.64);
+      transition: border-color .2s ease, transform .2s ease, box-shadow .2s ease;
+    }
+    .service-card:hover {
+      transform: translateY(-3px);
+      border-color: #c9b8aa;
+      box-shadow: 0 16px 38px rgba(30,35,31,.06);
+    }
+    .service-icon {
+      display: grid;
+      width: 45px;
+      height: 45px;
+      place-items: center;
+      border: 1px solid rgba(223,121,81,.28);
+      border-radius: 13px;
+      background: #fbebe3;
+      color: var(--accent-deep);
+    }
+    .service-icon svg { width: 21px; height: 21px; }
+    .service-card h3 { margin: 26px 0 9px; font-size: 18px; font-weight: 690; letter-spacing: -.035em; }
+    .service-card p { max-width: 330px; margin: 0; color: var(--muted); font-size: 13px; line-height: 1.7; }
+
+    .rating-section {
+      position: relative;
+      overflow: hidden;
+      padding-block: 82px;
+      background: var(--ink);
+      color: #fffefa;
+    }
+    .rating-section::before, .rating-section::after {
+      position: absolute;
+      top: 50%;
+      width: 340px;
+      aspect-ratio: 1;
+      border: 1px solid rgba(255,255,255,.075);
+      border-radius: 50%;
+      content: '';
+      transform: translateY(-50%);
+    }
+    .rating-section::before { left: -170px; box-shadow: 0 0 0 32px rgba(255,255,255,.018), 0 0 0 72px rgba(255,255,255,.012); }
+    .rating-section::after { right: -170px; box-shadow: 0 0 0 32px rgba(255,255,255,.018), 0 0 0 72px rgba(255,255,255,.012); }
+    .rating-inner { position: relative; z-index: 1; display: flex; min-height: 110px; align-items: center; justify-content: center; gap: clamp(25px, 5vw, 62px); text-align: left; }
+    .rating-number { color: #efa17f; font-size: clamp(62px, 8vw, 96px); font-weight: 540; letter-spacing: -.08em; line-height: .9; }
+    .rating-copy { max-width: 310px; margin: 0; color: rgba(255,254,250,.88); font-size: clamp(16px, 2vw, 21px); font-weight: 520; letter-spacing: -.025em; line-height: 1.45; }
+
+    .contact-section { padding-block: 112px 118px; }
+    .contact-panel {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      overflow: hidden;
+      border: 1px solid var(--line);
+      border-radius: 24px;
+      background: var(--white);
+      box-shadow: 0 20px 55px rgba(33,37,33,.045);
+    }
+    .contact-copy { padding: clamp(30px, 5vw, 64px); }
+    .contact-copy h2 { max-width: 460px; margin: 17px 0 16px; font-size: clamp(36px, 4vw, 51px); font-weight: 560; letter-spacing: -.065em; line-height: 1.04; }
+    .contact-copy > p:not(.eyebrow) { max-width: 390px; margin: 0; color: var(--muted); font-size: 14px; line-height: 1.75; }
+    .contact-details {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      gap: 25px;
+      padding: clamp(30px, 5vw, 64px);
+      border-left: 1px solid var(--line);
+      background: #faf9f5;
+    }
+    .detail-label { display: block; margin-bottom: 8px; color: #858880; font-size: 10px; font-weight: 750; letter-spacing: .16em; text-transform: uppercase; }
+    .detail-value { color: var(--ink); font-size: 16px; font-weight: 600; line-height: 1.55; }
+    .detail-phone { display: inline-flex; align-items: center; gap: 10px; }
+    .detail-phone svg { width: 17px; height: 17px; color: var(--accent-deep); }
+    .serving-note { margin-top: 2px; padding-top: 19px; border-top: 1px solid var(--line); color: var(--muted); font-size: 13px; }
+
+    .site-footer { padding-block: 28px; border-top: 1px solid rgba(23,27,25,.12); background: var(--paper); }
+    .footer-inner { display: flex; align-items: center; justify-content: space-between; gap: 20px; }
+    .footer-name { margin: 0; font-size: 13px; font-weight: 700; letter-spacing: -.02em; }
+    .footer-note { margin: 0; color: #747870; font-size: 11px; }
+    .mobile-call-bar { display: none; }
+
+    @media (max-width: 1000px) {
+      .hero-inner { grid-template-columns: minmax(0, 1.15fr) minmax(270px, .85fr); gap: 38px; }
+      .hero-art { min-height: 360px; }
+      .services-grid { grid-template-columns: repeat(2, 1fr); }
+    }
+    @media (max-width: 760px) {
+      html { scroll-padding-top: 82px; }
+      .container { width: min(100% - 40px, var(--content)); }
+      .header-inner { width: calc(100% - 32px); height: 68px; gap: 8px; }
+      .brand { gap: 9px; font-size: 11.5px; }
+      .brand-mark { width: 30px; height: 30px; flex-basis: 30px; border-radius: 9px; }
+      .brand-mark::before { width: 14px; height: 14px; }
+      .brand-name { max-width: 148px; }
+      .desktop-nav { display: none; }
+      .header-call { min-height: 40px; padding: 0 11px; gap: 7px; font-size: 11px; }
+      .header-call svg { width: 13px; height: 13px; }
+      .hero-inner { display: flex; min-height: auto; flex-direction: column; align-items: stretch; gap: 45px; padding-block: 67px 58px; }
+      .hero h1 { max-width: 600px; margin-top: 21px; font-size: clamp(43px, 11.3vw, 62px); }
+      .hero-description { max-width: 470px; font-size: 15px; }
+      .hero-actions { gap: 10px; margin-top: 27px; }
+      .hero-actions .button { min-height: 47px; padding-inline: 16px; font-size: 12px; }
+      .hero-art { width: 100%; min-height: 265px; border-radius: 34% 34% 18px 18px; }
+      .hero-art::before { width: 57%; box-shadow: 0 0 0 20px rgba(255,255,255,.025), 0 0 0 48px rgba(255,255,255,.018), 0 0 0 75px rgba(255,255,255,.012); }
+      .hub { width: 108px; height: 108px; }
+      .hub svg { width: 48px; height: 48px; }
+      .section { padding-block: 78px; }
+      .section-heading { display: block; margin-bottom: 30px; }
+      .section-heading h2 { margin-top: 13px; font-size: 39px; }
+      .section-intro { max-width: 390px; margin-top: 15px; font-size: 13px; }
+      .services-grid { grid-template-columns: 1fr; gap: 10px; }
+      .service-card { min-height: 0; padding: 22px; }
+      .service-card h3 { margin-top: 19px; }
+      .rating-section { padding-block: 64px; }
+      .rating-inner { min-height: 90px; gap: 21px; }
+      .rating-number { font-size: 69px; }
+      .rating-copy { max-width: 220px; font-size: 16px; }
+      .contact-section { padding-block: 78px 84px; }
+      .contact-panel { grid-template-columns: 1fr; border-radius: 19px; }
+      .contact-copy { padding: 31px 25px 28px; }
+      .contact-copy h2 { font-size: 39px; }
+      .contact-details { gap: 21px; padding: 27px 25px 30px; border-top: 1px solid var(--line); border-left: 0; }
+      .footer-inner { align-items: flex-start; flex-direction: column; gap: 8px; }
+      .site-footer { padding-block: 23px 27px; }
+      .mobile-call-bar {
+        position: fixed;
+        z-index: 30;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        display: flex;
+        min-height: 62px;
+        align-items: center;
+        justify-content: center;
+        gap: 10px;
+        padding: 11px 18px calc(11px + env(safe-area-inset-bottom));
+        background: var(--accent);
+        color: #191b18;
+        font-size: 14px;
+        font-weight: 760;
+        box-shadow: 0 -8px 24px rgba(23,27,25,.12);
+      }
+      .mobile-call-bar svg { width: 17px; height: 17px; }
+      body { padding-bottom: 62px; }
+    }
+    @media (max-width: 390px) {
+      .brand-name { max-width: 136px; font-size: 10.5px; }
+      .header-call { padding-inline: 9px; font-size: 10px; }
+      .header-inner { width: calc(100% - 24px); }
+      .container { width: calc(100% - 36px); }
+      .hero-actions .button { padding-inline: 13px; font-size: 11px; }
+      .rating-inner { gap: 16px; }
+      .rating-number { font-size: 62px; }
+      .rating-copy { max-width: 190px; font-size: 14px; }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after { scroll-behavior: auto !important; transition-duration: .01ms !important; }
+    }
+  </style>
+</head>
+<body>
+  <header class='site-header'>
+    <div class='header-inner'>
+      <a class='brand' href='#top' aria-label='Midtown Auto Service &amp; Repair home'>
+        <span class='brand-mark' aria-hidden='true'></span>
+        <span class='brand-name'>Midtown Auto Service &amp; Repair</span>
+      </a>
+      <nav class='desktop-nav' aria-label='Main navigation'>
+        <a href='#services'>Services</a>
+        <a href='#rating'>Google rating</a>
+        <a href='#contact'>Contact</a>
+      </nav>
+      <a class='button button-dark header-call' href='tel:+17135232886'>
+        <svg viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='1.8' stroke-linecap='round' stroke-linejoin='round' aria-hidden='true'><path d='M7.2 3.8h2.7l1.3 4.1-1.8 1.5a14.6 14.6 0 0 0 5.2 5.2l1.5-1.8 4.1 1.3v2.7a2 2 0 0 1-2.2 2A16.2 16.2 0 0 1 5.2 6a2 2 0 0 1 2-2.2Z'/></svg>
+        <span>Call +1 713-523-2886</span>
+      </a>
+    </div>
+  </header>
+
+  <main id='top'>
+    <section class='hero' aria-labelledby='hero-title'>
+      <div class='container hero-inner'>
+        <div class='hero-copy'>
+          <p class='eyebrow'>Auto repair · Houston, TX</p>
+          <h1 id='hero-title'>A clearer route to <span>auto repair</span> in Houston.</h1>
+          <p class='hero-description'>Explore common auto repair services, then call Midtown Auto Service &amp; Repair to discuss a visit.</p>
+          <div class='hero-actions'>
+            <a class='button button-accent' href='tel:+17135232886'>
+              <svg viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='1.8' stroke-linecap='round' stroke-linejoin='round' aria-hidden='true'><path d='M7.2 3.8h2.7l1.3 4.1-1.8 1.5a14.6 14.6 0 0 0 5.2 5.2l1.5-1.8 4.1 1.3v2.7a2 2 0 0 1-2.2 2A16.2 16.2 0 0 1 5.2 6a2 2 0 0 1 2-2.2Z'/></svg>
+              <span>Call +1 713-523-2886</span>
+            </a>
+            <a class='button button-outline' href='#contact'>Request a visit</a>
+          </div>
+        </div>
+        <div class='hero-art' aria-hidden='true'>
+          <span class='hero-art-line'></span>
+          <span class='hero-art-line line-two'></span>
+          <span class='orbit-dot dot-one'></span>
+          <span class='orbit-dot dot-two'></span>
+          <div class='hub'>
+            <svg viewBox='0 0 64 64' fill='none' stroke='currentColor' stroke-width='1.5' aria-hidden='true'>
+              <circle cx='32' cy='32' r='23'></circle>
+              <circle cx='32' cy='32' r='7'></circle>
+              <path d='M32 9v10M32 45v10M9 32h10M45 32h10M15.7 15.7l7.1 7.1M41.2 41.2l7.1 7.1M48.3 15.7l-7.1 7.1M22.8 41.2l-7.1 7.1'></path>
+            </svg>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class='section services-section' id='services' aria-labelledby='services-title'>
+      <div class='container'>
+        <div class='section-heading'>
+          <div>
+            <p class='eyebrow'>Auto repair services</p>
+            <h2 id='services-title'>Common needs.<br>Clear next steps.</h2>
+          </div>
+          <p class='section-intro'>A look at common areas of auto repair.</p>
+        </div>
+        <div class='services-grid'>
+          <article class='service-card'>
+            <span class='service-icon' aria-hidden='true'>
+              <svg viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='1.6' stroke-linecap='round' stroke-linejoin='round'><circle cx='10.8' cy='10.8' r='6.8'></circle><path d='m16 16 4.4 4.4M8 10.8h5.6M10.8 8v5.6'></path></svg>
+            </span>
+            <h3>Diagnostics</h3>
+            <p>Vehicle diagnostics and troubleshooting for common warning lights and concerns.</p>
+          </article>
+          <article class='service-card'>
+            <span class='service-icon' aria-hidden='true'>
+              <svg viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='1.6' stroke-linecap='round' stroke-linejoin='round'><circle cx='12' cy='12' r='8.5'></circle><circle cx='12' cy='12' r='4'></circle><path d='M12 3.5v4.3M20.5 12h-4.3M12 20.5v-4.3M3.5 12h4.3'></path></svg>
+            </span>
+            <h3>Brakes</h3>
+            <p>Brake inspections and repair for everyday wear and braking concerns.</p>
+          </article>
+          <article class='service-card'>
+            <span class='service-icon' aria-hidden='true'>
+              <svg viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='1.6' stroke-linecap='round' stroke-linejoin='round'><path d='M5 5.5h14v13H5zM8 3v5M16 3v5M8.5 12h7M8.5 15.5h4'></path></svg>
+            </span>
+            <h3>Scheduled maintenance</h3>
+            <p>Routine maintenance services that help keep up with scheduled vehicle care.</p>
+          </article>
+          <article class='service-card'>
+            <span class='service-icon' aria-hidden='true'>
+              <svg viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='1.6' stroke-linecap='round' stroke-linejoin='round'><path d='M13.5 3.5a5.5 5.5 0 0 0-6.9 6.9L3.5 13.5v6h6l3.1-3.1a5.5 5.5 0 0 0 6.9-6.9l-3.2 3.2-3.6-3.6 3.2-3.2Z'></path><path d='m7.5 16.5 2 2'></path></svg>
+            </span>
+            <h3>AC &amp; electrical</h3>
+            <p>Air conditioning and electrical system checks, from cooling concerns to battery and charging issues.</p>
+          </article>
+          <article class='service-card'>
+            <span class='service-icon' aria-hidden='true'>
+              <svg viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='1.6' stroke-linecap='round' stroke-linejoin='round'><circle cx='12' cy='12' r='9'></circle><circle cx='12' cy='12' r='3.5'></circle><path d='M12 3v5.5M20.1 8.4l-5.2 3M20.1 15.6l-5.2-3M12 21v-5.5M3.9 15.6l5.2-3M3.9 8.4l5.2 3'></path></svg>
+            </span>
+            <h3>Tires</h3>
+            <p>Tire inspections, repair, replacement, and related tire service.</p>
+          </article>
+          <article class='service-card'>
+            <span class='service-icon' aria-hidden='true'>
+              <svg viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='1.6' stroke-linecap='round' stroke-linejoin='round'><path d='M4 18.5 5.5 8h13L20 18.5M3 18.5h18M8 8l1-3h6l1 3M8 13h8M9 16h.01M15 16h.01'></path></svg>
+            </span>
+            <h3>Pre-purchase inspection</h3>
+            <p>A general mechanical inspection to help review a vehicle before buying.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class='rating-section' id='rating' aria-label='Google rating'>
+      <div class='container rating-inner'>
+        <span class='rating-number' aria-hidden='true'>4.8</span>
+        <p class='rating-copy'>4.8 out of 5 from 619 Google reviews</p>
+      </div>
+    </section>
+
+    <section class='contact-section' id='contact' aria-labelledby='contact-title'>
+      <div class='container contact-panel'>
+        <div class='contact-copy'>
+          <p class='eyebrow'>Contact</p>
+          <h2 id='contact-title'>Talk through your auto repair needs.</h2>
+          <p>Call to discuss a visit to Midtown Auto Service &amp; Repair.</p>
+        </div>
+        <div class='contact-details'>
+          <div>
+            <span class='detail-label'>Phone</span>
+            <a class='detail-value detail-phone' href='tel:+17135232886'>
+              <svg viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='1.8' stroke-linecap='round' stroke-linejoin='round' aria-hidden='true'><path d='M7.2 3.8h2.7l1.3 4.1-1.8 1.5a14.6 14.6 0 0 0 5.2 5.2l1.5-1.8 4.1 1.3v2.7a2 2 0 0 1-2.2 2A16.2 16.2 0 0 1 5.2 6a2 2 0 0 1 2-2.2Z'></path></svg>
+              <span>+1 713-523-2886</span>
+            </a>
+          </div>
+          <div>
+            <span class='detail-label'>Address</span>
+            <p class='detail-value'>4510 Almeda Rd, Houston, TX 77004, USA</p>
+          </div>
+          <p class='serving-note'>Serving Houston.</p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class='site-footer'>
+    <div class='container footer-inner'>
+      <p class='footer-name'>Midtown Auto Service &amp; Repair</p>
+      <p class='footer-note'>Concept preview — not the live site</p>
+    </div>
+  </footer>
+
+  <a class='mobile-call-bar' href='tel:+17135232886'>
+    <svg viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='1.8' stroke-linecap='round' stroke-linejoin='round' aria-hidden='true'><path d='M7.2 3.8h2.7l1.3 4.1-1.8 1.5a14.6 14.6 0 0 0 5.2 5.2l1.5-1.8 4.1 1.3v2.7a2 2 0 0 1-2.2 2A16.2 16.2 0 0 1 5.2 6a2 2 0 0 1 2-2.2Z'></path></svg>
+    <span>Call now</span>
+  </a>
+</body>
+</html>
