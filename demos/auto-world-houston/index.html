@@ -1,0 +1,528 @@
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+  <meta charset='utf-8'>
+  <meta name='viewport' content='width=device-width, initial-scale=1'>
+  <meta name='theme-color' content='#151716'>
+  <title>Auto World Houston | Auto Repair in Houston</title>
+  <style>
+    :root {
+      color-scheme: light;
+      --ink: #191b19;
+      --muted: #696b65;
+      --paper: #f4f2ed;
+      --paper-bright: #fbfaf7;
+      --dark: #151716;
+      --dark-soft: #1d201e;
+      --accent: #e5a16d;
+      --line: rgba(25, 27, 25, .13);
+      --light-line: rgba(255, 255, 255, .15);
+      --content: 1280px;
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      background: var(--paper);
+      color: var(--ink);
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+      -webkit-font-smoothing: antialiased;
+      text-rendering: optimizeLegibility;
+    }
+    a { color: inherit; }
+    a:focus-visible { outline: 2px solid var(--accent); outline-offset: 4px; }
+    .wrap { width: min(var(--content), calc(100% - 96px)); margin-inline: auto; }
+
+    .site-header {
+      position: sticky;
+      top: 0;
+      z-index: 20;
+      background: rgba(21, 23, 22, .96);
+      color: #f9f7f2;
+      border-bottom: 1px solid rgba(255, 255, 255, .1);
+      backdrop-filter: blur(16px);
+    }
+    .header-inner {
+      min-height: 78px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 28px;
+    }
+    .brand {
+      display: inline-flex;
+      align-items: center;
+      gap: 12px;
+      text-decoration: none;
+      white-space: nowrap;
+      font-size: 15px;
+      font-weight: 650;
+      letter-spacing: -.035em;
+    }
+    .brand-mark {
+      width: 30px;
+      height: 30px;
+      display: grid;
+      place-items: center;
+      position: relative;
+      border: 1px solid rgba(229, 161, 109, .7);
+      border-radius: 50%;
+    }
+    .brand-mark::before {
+      content: '';
+      width: 8px;
+      height: 8px;
+      border: 1px solid var(--accent);
+      border-radius: 50%;
+      box-shadow: 0 0 0 4px rgba(229, 161, 109, .12);
+    }
+    .header-nav { display: flex; align-items: center; gap: 30px; margin-left: auto; }
+    .header-nav a {
+      color: rgba(249, 247, 242, .68);
+      text-decoration: none;
+      font-size: 12px;
+      transition: color .2s ease;
+    }
+    .header-nav a:hover { color: #fff; }
+    .button {
+      min-height: 46px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      padding: 0 19px;
+      border: 1px solid transparent;
+      border-radius: 3px;
+      text-decoration: none;
+      font-size: 12px;
+      font-weight: 650;
+      letter-spacing: .015em;
+      transition: background .2s ease, border-color .2s ease, transform .2s ease;
+    }
+    .button:hover { transform: translateY(-1px); }
+    .button-dark-header { background: var(--accent); color: #211811; }
+    .button-dark-header:hover { background: #efb583; }
+    .button-light { background: var(--accent); color: #211811; }
+    .button-light:hover { background: #f0b584; }
+    .button-outline { border-color: rgba(255, 255, 255, .34); color: #fff; }
+    .button-outline:hover { border-color: var(--accent); background: rgba(229, 161, 109, .08); }
+    .button-arrow { font-size: 16px; line-height: 1; }
+
+    .hero {
+      position: relative;
+      overflow: hidden;
+      min-height: 650px;
+      display: flex;
+      align-items: center;
+      background:
+        radial-gradient(ellipse at 72% 51%, rgba(155, 91, 54, .2), transparent 37%),
+        linear-gradient(115deg, #151716 5%, #1b1e1c 57%, #211e1b 100%);
+      color: #faf8f4;
+    }
+    .hero::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      pointer-events: none;
+      opacity: .2;
+      background-image: linear-gradient(rgba(255,255,255,.035) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,.035) 1px, transparent 1px);
+      background-size: 72px 72px;
+      mask-image: linear-gradient(90deg, black, transparent 85%);
+    }
+    .hero-inner {
+      position: relative;
+      z-index: 1;
+      width: min(var(--content), calc(100% - 96px));
+      margin-inline: auto;
+      padding-block: 86px 94px;
+      display: grid;
+      grid-template-columns: minmax(0, 1.08fr) minmax(340px, .92fr);
+      align-items: center;
+      gap: 48px;
+    }
+    .eyebrow {
+      display: flex;
+      align-items: center;
+      gap: 11px;
+      color: var(--accent);
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: .18em;
+      text-transform: uppercase;
+    }
+    .eyebrow::before { content: ''; width: 26px; height: 1px; background: var(--accent); }
+    h1 {
+      max-width: 740px;
+      margin: 27px 0 21px;
+      font-size: clamp(54px, 6.7vw, 92px);
+      line-height: .99;
+      letter-spacing: -.075em;
+      font-weight: 520;
+    }
+    h1 em { color: var(--accent); font-style: normal; }
+    .hero-copy {
+      max-width: 490px;
+      margin: 0;
+      color: rgba(250, 248, 244, .69);
+      font-size: 16px;
+      line-height: 1.75;
+    }
+    .hero-actions { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 34px; }
+    .hero-art {
+      position: relative;
+      min-height: 430px;
+      display: grid;
+      place-items: center;
+      isolation: isolate;
+    }
+    .hero-art::before {
+      content: '';
+      position: absolute;
+      width: min(100%, 460px);
+      aspect-ratio: 1;
+      border-radius: 50%;
+      background:
+        radial-gradient(circle at center, var(--accent) 0 2px, transparent 3px),
+        repeating-conic-gradient(from 4deg, transparent 0deg 27deg, rgba(229,161,109,.2) 27.2deg 27.7deg, transparent 28deg 45deg),
+        radial-gradient(circle, transparent 0 34%, rgba(255,255,255,.13) 34.15% 34.35%, transparent 34.6% 48%, rgba(255,255,255,.17) 48.15% 48.45%, transparent 48.7% 61%, rgba(229,161,109,.54) 61.15% 61.45%, transparent 61.7%);
+      box-shadow: 0 0 90px rgba(229, 161, 109, .08), inset 0 0 45px rgba(229, 161, 109, .045);
+      opacity: .9;
+    }
+    .hero-art::after {
+      content: '';
+      position: absolute;
+      width: min(71%, 326px);
+      aspect-ratio: 1;
+      border: 1px solid rgba(255,255,255,.19);
+      border-radius: 50%;
+      box-shadow: 0 0 0 16px rgba(255,255,255,.018), 0 0 0 17px rgba(255,255,255,.09), 0 0 0 44px rgba(255,255,255,.015), 0 0 0 45px rgba(255,255,255,.06);
+    }
+    .art-center {
+      position: relative;
+      z-index: 1;
+      width: 102px;
+      aspect-ratio: 1;
+      display: grid;
+      place-items: center;
+      border: 1px solid rgba(229, 161, 109, .66);
+      border-radius: 50%;
+      color: var(--accent);
+      background: rgba(21, 23, 22, .7);
+      box-shadow: 0 0 38px rgba(229, 161, 109, .13);
+    }
+    .art-center::before, .art-center::after {
+      content: '';
+      position: absolute;
+      background: rgba(229, 161, 109, .46);
+    }
+    .art-center::before { width: 148px; height: 1px; }
+    .art-center::after { width: 1px; height: 148px; }
+    .art-center span {
+      position: relative;
+      z-index: 2;
+      width: 23px;
+      aspect-ratio: 1;
+      border: 1px solid var(--accent);
+      border-radius: 50%;
+      background: #1b1d1b;
+    }
+    .art-caption {
+      position: absolute;
+      z-index: 2;
+      right: 3%;
+      bottom: 8%;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      padding: 11px 13px;
+      border: 1px solid rgba(255,255,255,.16);
+      background: rgba(21,23,22,.72);
+      color: rgba(250,248,244,.72);
+      font-size: 9px;
+      letter-spacing: .16em;
+      text-transform: uppercase;
+    }
+    .art-caption::before { content: ''; width: 6px; height: 6px; border-radius: 50%; background: var(--accent); }
+
+    .services { padding: 114px 0 120px; background: var(--paper); }
+    .section-intro {
+      display: grid;
+      grid-template-columns: 1fr minmax(260px, 390px);
+      align-items: end;
+      gap: 45px;
+      margin-bottom: 48px;
+    }
+    .section-kicker {
+      margin: 0 0 16px;
+      color: #9a6847;
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: .18em;
+      text-transform: uppercase;
+    }
+    h2 {
+      margin: 0;
+      font-size: clamp(38px, 5vw, 62px);
+      font-weight: 520;
+      letter-spacing: -.065em;
+      line-height: 1.03;
+    }
+    .section-intro > p {
+      max-width: 370px;
+      margin: 0 0 5px;
+      color: var(--muted);
+      font-size: 14px;
+      line-height: 1.8;
+    }
+    .service-grid { display: grid; grid-template-columns: repeat(3, 1fr); border-top: 1px solid var(--line); border-left: 1px solid var(--line); }
+    .service-card {
+      min-height: 220px;
+      padding: 27px 27px 30px;
+      border-right: 1px solid var(--line);
+      border-bottom: 1px solid var(--line);
+      background: rgba(255,255,255,.18);
+      transition: background .2s ease, transform .2s ease;
+    }
+    .service-card:hover { position: relative; z-index: 1; background: var(--paper-bright); transform: translateY(-3px); }
+    .service-top { display: flex; align-items: center; justify-content: space-between; margin-bottom: 27px; }
+    .service-index { color: #9a6847; font-size: 10px; letter-spacing: .12em; }
+    .service-mark { width: 26px; height: 26px; border: 1px solid rgba(154,104,71,.5); border-radius: 50%; position: relative; }
+    .service-mark::before, .service-mark::after { content: ''; position: absolute; background: #9a6847; }
+    .service-mark::before { width: 8px; height: 1px; left: 8px; top: 12px; }
+    .service-mark::after { height: 8px; width: 1px; left: 12px; top: 8px; }
+    .service-card h3 { margin: 0 0 10px; font-size: 19px; font-weight: 570; letter-spacing: -.04em; }
+    .service-card p { max-width: 320px; margin: 0; color: var(--muted); font-size: 12px; line-height: 1.75; }
+
+    .reviews {
+      position: relative;
+      overflow: hidden;
+      padding: 92px 0 96px;
+      background: var(--dark);
+      color: #f8f6f1;
+      text-align: center;
+    }
+    .reviews::before, .reviews::after {
+      content: '';
+      position: absolute;
+      width: 340px;
+      aspect-ratio: 1;
+      border: 1px solid rgba(229,161,109,.15);
+      border-radius: 50%;
+      pointer-events: none;
+    }
+    .reviews::before { left: -220px; top: -195px; box-shadow: 0 0 0 35px rgba(229,161,109,.025), 0 0 0 70px rgba(229,161,109,.025); }
+    .reviews::after { right: -225px; bottom: -245px; box-shadow: 0 0 0 35px rgba(229,161,109,.025), 0 0 0 70px rgba(229,161,109,.025); }
+    .reviews .section-kicker { margin-bottom: 18px; color: var(--accent); }
+    .rating-number { margin: 0; color: var(--accent); font-size: clamp(86px, 12vw, 148px); line-height: .94; letter-spacing: -.09em; font-weight: 500; }
+    .rating-line { margin: 20px 0 0; color: rgba(248,246,241,.78); font-size: 14px; letter-spacing: .015em; }
+
+    .contact { padding: 112px 0 116px; background: var(--paper-bright); }
+    .contact-layout { display: grid; grid-template-columns: 1fr .78fr; gap: 90px; align-items: center; }
+    .contact-copy h2 { max-width: 580px; }
+    .contact-copy > p:last-child { max-width: 430px; margin: 22px 0 0; color: var(--muted); font-size: 14px; line-height: 1.8; }
+    .contact-card { padding: 30px 32px 28px; border: 1px solid var(--line); background: var(--paper); }
+    .contact-item + .contact-item { margin-top: 25px; padding-top: 24px; border-top: 1px solid var(--line); }
+    .contact-label { display: block; margin-bottom: 9px; color: #9a6847; font-size: 9px; font-weight: 700; letter-spacing: .17em; text-transform: uppercase; }
+    .contact-value { display: inline-block; color: var(--ink); font-size: 17px; line-height: 1.6; text-decoration: none; }
+    .contact-value[href]:hover { color: #9a6847; }
+    .contact-note { margin: 25px 0 0; color: var(--muted); font-size: 12px; }
+    .contact-card .button { width: 100%; margin-top: 27px; }
+
+    .site-footer { padding: 25px 0; background: #101211; color: #f8f6f1; }
+    .footer-inner { display: flex; align-items: center; justify-content: space-between; gap: 20px; }
+    .footer-name { margin: 0; font-size: 12px; font-weight: 600; letter-spacing: -.01em; }
+    .footer-note { margin: 0; color: rgba(248,246,241,.57); font-size: 10px; letter-spacing: .02em; }
+    .mobile-call { display: none; }
+
+    @media (max-width: 900px) {
+      .wrap, .hero-inner { width: min(var(--content), calc(100% - 56px)); }
+      .hero-inner { grid-template-columns: minmax(0, 1.08fr) minmax(260px, .92fr); gap: 15px; }
+      .hero-art { min-height: 350px; }
+      .contact-layout { gap: 45px; }
+    }
+    @media (max-width: 680px) {
+      html { scroll-padding-top: 72px; }
+      body { padding-bottom: 66px; }
+      .wrap, .hero-inner { width: calc(100% - 40px); }
+      .header-inner { min-height: 68px; gap: 10px; }
+      .brand { gap: 8px; font-size: 13px; }
+      .brand-mark { width: 26px; height: 26px; }
+      .header-nav { display: none; }
+      .header-inner > .button { min-height: 39px; padding: 0 11px; font-size: 10px; white-space: nowrap; }
+      .hero { min-height: auto; }
+      .hero-inner { padding-block: 69px 50px; grid-template-columns: 1fr; gap: 12px; }
+      h1 { margin: 23px 0 17px; font-size: clamp(49px, 13vw, 68px); }
+      .hero-copy { max-width: 440px; font-size: 14px; }
+      .hero-actions { gap: 10px; margin-top: 27px; }
+      .hero-actions .button { min-height: 45px; padding-inline: 15px; font-size: 11px; }
+      .hero-art { min-height: 280px; margin-top: 2px; }
+      .hero-art::before { width: min(81vw, 290px); }
+      .hero-art::after { width: min(59vw, 220px); }
+      .art-center { width: 76px; }
+      .art-center::before { width: 112px; }
+      .art-center::after { height: 112px; }
+      .art-caption { right: 1%; bottom: 0; padding: 9px 10px; font-size: 8px; }
+      .services { padding: 75px 0 78px; }
+      .section-intro { grid-template-columns: 1fr; gap: 16px; margin-bottom: 30px; }
+      .section-intro > p { font-size: 13px; }
+      h2 { font-size: clamp(37px, 10vw, 50px); }
+      .service-grid { grid-template-columns: 1fr; }
+      .service-card { min-height: 0; padding: 22px 21px 24px; }
+      .service-top { margin-bottom: 19px; }
+      .service-card h3 { font-size: 18px; }
+      .reviews { padding: 75px 0 78px; }
+      .rating-number { font-size: 106px; }
+      .rating-line { font-size: 12px; }
+      .contact { padding: 78px 0 82px; }
+      .contact-layout { grid-template-columns: 1fr; gap: 32px; }
+      .contact-copy > p:last-child { margin-top: 17px; font-size: 13px; }
+      .contact-card { padding: 24px 21px; }
+      .contact-value { font-size: 15px; }
+      .footer-inner { align-items: flex-start; flex-direction: column; gap: 8px; }
+      .mobile-call {
+        position: fixed;
+        z-index: 30;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        min-height: 62px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 11px;
+        background: var(--accent);
+        color: #211811;
+        text-decoration: none;
+        font-size: 13px;
+        font-weight: 700;
+        letter-spacing: .025em;
+        box-shadow: 0 -8px 28px rgba(0,0,0,.12);
+      }
+      .mobile-call::before { content: ''; width: 7px; height: 7px; border: 1.5px solid currentColor; border-radius: 50%; }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after { scroll-behavior: auto !important; transition-duration: .01ms !important; }
+    }
+  </style>
+</head>
+<body>
+  <header class='site-header'>
+    <div class='header-inner wrap'>
+      <a class='brand' href='#top' aria-label='Auto World Houston home'>
+        <span class='brand-mark' aria-hidden='true'></span>
+        <span>Auto World Houston</span>
+      </a>
+      <nav class='header-nav' aria-label='Main navigation'>
+        <a href='#services'>Services</a>
+        <a href='#reviews'>Reviews</a>
+        <a href='#contact'>Contact</a>
+      </nav>
+      <a class='button button-dark-header' href='tel:+17136234418'>Call +1 713-623-4418 <span class='button-arrow' aria-hidden='true'>↗</span></a>
+    </div>
+  </header>
+
+  <main id='top'>
+    <section class='hero' aria-labelledby='hero-title'>
+      <div class='hero-inner'>
+        <div class='hero-content'>
+          <div class='eyebrow'>Auto repair <span aria-hidden='true'>/</span> Houston</div>
+          <h1 id='hero-title'>Auto repair in Houston, <em>with a clear next step.</em></h1>
+          <p class='hero-copy'>When your vehicle needs attention, start with a call to discuss what’s going on and take the next step.</p>
+          <div class='hero-actions'>
+            <a class='button button-light' href='tel:+17136234418'>Call +1 713-623-4418 <span class='button-arrow' aria-hidden='true'>↗</span></a>
+            <a class='button button-outline' href='#contact'>Request a visit <span class='button-arrow' aria-hidden='true'>↓</span></a>
+          </div>
+        </div>
+        <div class='hero-art' aria-hidden='true'>
+          <div class='art-center'><span></span></div>
+          <div class='art-caption'>Auto repair · Houston</div>
+        </div>
+      </div>
+    </section>
+
+    <section class='services' id='services' aria-labelledby='services-title'>
+      <div class='wrap'>
+        <div class='section-intro'>
+          <div>
+            <p class='section-kicker'>Service areas</p>
+            <h2 id='services-title'>Common auto repair needs.</h2>
+          </div>
+          <p>Explore common service categories and call to discuss what your vehicle needs.</p>
+        </div>
+        <div class='service-grid'>
+          <article class='service-card'>
+            <div class='service-top'><span class='service-index'>01</span><span class='service-mark' aria-hidden='true'></span></div>
+            <h3>Vehicle diagnostics</h3>
+            <p>Investigating dashboard warnings, unusual sounds, or changes in vehicle performance.</p>
+          </article>
+          <article class='service-card'>
+            <div class='service-top'><span class='service-index'>02</span><span class='service-mark' aria-hidden='true'></span></div>
+            <h3>Brake service</h3>
+            <p>Attention to brake pads, rotors, pedal feel, and braking noise.</p>
+          </article>
+          <article class='service-card'>
+            <div class='service-top'><span class='service-index'>03</span><span class='service-mark' aria-hidden='true'></span></div>
+            <h3>Scheduled maintenance</h3>
+            <p>Routine maintenance based on the vehicle’s schedule and needs.</p>
+          </article>
+          <article class='service-card'>
+            <div class='service-top'><span class='service-index'>04</span><span class='service-mark' aria-hidden='true'></span></div>
+            <h3>A/C &amp; electrical</h3>
+            <p>Climate-control concerns, battery issues, and electrical symptoms.</p>
+          </article>
+          <article class='service-card'>
+            <div class='service-top'><span class='service-index'>05</span><span class='service-mark' aria-hidden='true'></span></div>
+            <h3>Tires</h3>
+            <p>Tire condition, wear patterns, and common tire-related concerns.</p>
+          </article>
+          <article class='service-card'>
+            <div class='service-top'><span class='service-index'>06</span><span class='service-mark' aria-hidden='true'></span></div>
+            <h3>Pre-purchase inspections</h3>
+            <p>A general review to help you assess a vehicle before buying.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class='reviews' id='reviews' aria-labelledby='reviews-title'>
+      <div class='wrap'>
+        <p class='section-kicker' id='reviews-title'>Google reviews</p>
+        <p class='rating-number' aria-hidden='true'>4.8</p>
+        <p class='rating-line'>4.8 out of 5 from 401 Google reviews</p>
+      </div>
+    </section>
+
+    <section class='contact' id='contact' aria-labelledby='contact-title'>
+      <div class='contact-layout wrap'>
+        <div class='contact-copy'>
+          <p class='section-kicker'>Get in touch</p>
+          <h2 id='contact-title'>Talk through your auto repair needs.</h2>
+          <p>Call to discuss your vehicle and take the next step.</p>
+        </div>
+        <div class='contact-card'>
+          <div class='contact-item'>
+            <span class='contact-label'>Phone</span>
+            <a class='contact-value' href='tel:+17136234418'>+1 713-623-4418</a>
+          </div>
+          <div class='contact-item'>
+            <span class='contact-label'>Address</span>
+            <span class='contact-value'>2805 W Loop S, Houston, TX 77027, USA</span>
+          </div>
+          <p class='contact-note'>Serving Houston.</p>
+          <a class='button button-light' href='tel:+17136234418'>Call +1 713-623-4418 <span class='button-arrow' aria-hidden='true'>↗</span></a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class='site-footer'>
+    <div class='footer-inner wrap'>
+      <p class='footer-name'>Auto World Houston</p>
+      <p class='footer-note'>Concept preview — not the live site</p>
+    </div>
+  </footer>
+
+  <a class='mobile-call' href='tel:+17136234418'>Call now</a>
+</body>
+</html>
