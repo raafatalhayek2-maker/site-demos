@@ -1,0 +1,545 @@
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+  <meta charset='utf-8'>
+  <meta name='viewport' content='width=device-width, initial-scale=1'>
+  <meta name='theme-color' content='#101c2a'>
+  <title>Electrician On Call | Electrical</title>
+  <style>
+    :root {
+      color-scheme: light;
+      --ink: #101c2a;
+      --muted: #536171;
+      --paper: #f5f4ef;
+      --white: #fff;
+      --line: #d9ddd9;
+      --accent: #d8f45a;
+      --accent-ink: #172311;
+      --serif: Georgia, 'Times New Roman', serif;
+      --sans: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+      --wrap: 1160px;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; }
+    html { scroll-behavior: smooth; scroll-padding-top: 92px; }
+    body {
+      margin: 0;
+      background: var(--paper);
+      color: var(--ink);
+      font-family: var(--sans);
+      -webkit-font-smoothing: antialiased;
+    }
+    a { color: inherit; }
+    a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visible {
+      outline: 3px solid #547a00;
+      outline-offset: 4px;
+    }
+    .wrap { width: min(var(--wrap), calc(100% - 48px)); margin-inline: auto; }
+    .site-header {
+      position: sticky;
+      z-index: 10;
+      top: 0;
+      border-bottom: 1px solid rgba(16, 28, 42, .1);
+      background: rgba(245, 244, 239, .94);
+      backdrop-filter: blur(14px);
+    }
+    .header-inner {
+      min-height: 78px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+    }
+    .brand {
+      display: inline-flex;
+      align-items: center;
+      gap: 11px;
+      color: var(--ink);
+      font-size: 17px;
+      font-weight: 750;
+      letter-spacing: -.035em;
+      text-decoration: none;
+    }
+    .brand-mark {
+      width: 34px;
+      height: 34px;
+      display: grid;
+      place-items: center;
+      border-radius: 10px;
+      background: var(--accent);
+    }
+    .header-call {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      min-height: 44px;
+      padding: 0 17px;
+      border: 1px solid var(--ink);
+      border-radius: 999px;
+      color: var(--ink);
+      font-size: 14px;
+      font-weight: 700;
+      text-decoration: none;
+      transition: background .2s ease, color .2s ease;
+    }
+    .header-call:hover { background: var(--ink); color: var(--white); }
+    .header-call svg { flex: 0 0 auto; }
+
+    .hero { overflow: hidden; padding: 76px 0 94px; }
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.05fr .95fr;
+      align-items: center;
+      gap: 58px;
+    }
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      margin: 0 0 22px;
+      color: #465c19;
+      font-size: 12px;
+      font-weight: 800;
+      letter-spacing: .15em;
+      text-transform: uppercase;
+    }
+    .eyebrow::before { width: 25px; height: 2px; background: #769723; content: ''; }
+    h1, h2, h3, p { margin-top: 0; }
+    h1 {
+      max-width: 650px;
+      margin-bottom: 23px;
+      font-family: var(--serif);
+      font-size: clamp(48px, 6.4vw, 82px);
+      font-weight: 400;
+      letter-spacing: -.065em;
+      line-height: .99;
+    }
+    .hero-copy {
+      max-width: 490px;
+      margin-bottom: 30px;
+      color: var(--muted);
+      font-size: 17px;
+      line-height: 1.7;
+    }
+    .actions { display: flex; flex-wrap: wrap; gap: 12px; }
+    .button {
+      min-height: 52px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      padding: 0 21px;
+      border: 1px solid var(--ink);
+      border-radius: 4px;
+      font-size: 14px;
+      font-weight: 750;
+      text-decoration: none;
+      transition: transform .2s ease, background .2s ease, color .2s ease;
+    }
+    .button:hover { transform: translateY(-2px); }
+    .button-primary { background: var(--ink); color: var(--white); }
+    .button-primary:hover { background: #26394c; }
+    .button-secondary { background: transparent; color: var(--ink); }
+    .button-secondary:hover { background: var(--white); }
+
+    .hero-art {
+      position: relative;
+      min-height: 430px;
+      display: grid;
+      place-items: center;
+      overflow: hidden;
+      border-radius: 5px;
+      background: #142333;
+      isolation: isolate;
+    }
+    .hero-art::before, .hero-art::after {
+      position: absolute;
+      z-index: -1;
+      border: 1px solid rgba(255, 255, 255, .12);
+      border-radius: 50%;
+      content: '';
+    }
+    .hero-art::before { width: 430px; height: 430px; }
+    .hero-art::after { width: 330px; height: 330px; }
+    .art-grid {
+      position: absolute;
+      inset: 0;
+      z-index: -1;
+      opacity: .16;
+      background-image: linear-gradient(rgba(255,255,255,.14) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,.14) 1px, transparent 1px);
+      background-size: 42px 42px;
+      mask-image: linear-gradient(135deg, transparent 8%, #000 100%);
+    }
+    .art-glow {
+      position: absolute;
+      width: 190px;
+      height: 190px;
+      top: 16%;
+      right: 11%;
+      border-radius: 50%;
+      background: rgba(216, 244, 90, .12);
+      filter: blur(45px);
+    }
+    .panel-illustration {
+      width: min(76%, 330px);
+      position: relative;
+      filter: drop-shadow(0 26px 34px rgba(0,0,0,.24));
+    }
+    .art-caption {
+      position: absolute;
+      right: 24px;
+      bottom: 22px;
+      left: 24px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      color: rgba(255,255,255,.72);
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: .16em;
+      text-transform: uppercase;
+    }
+    .art-caption span:last-child { color: var(--accent); }
+
+    .services { padding: 89px 0 100px; background: var(--white); }
+    .section-top {
+      display: flex;
+      align-items: end;
+      justify-content: space-between;
+      gap: 30px;
+      margin-bottom: 39px;
+    }
+    .section-kicker {
+      margin-bottom: 14px;
+      color: #64752c;
+      font-size: 11px;
+      font-weight: 800;
+      letter-spacing: .15em;
+      text-transform: uppercase;
+    }
+    h2 {
+      margin-bottom: 0;
+      font-family: var(--serif);
+      font-size: clamp(37px, 4.6vw, 57px);
+      font-weight: 400;
+      letter-spacing: -.055em;
+      line-height: 1.04;
+    }
+    .section-intro {
+      max-width: 300px;
+      margin: 0 0 3px;
+      color: var(--muted);
+      font-size: 14px;
+      line-height: 1.65;
+    }
+    .service-grid { display: grid; grid-template-columns: repeat(3, 1fr); border-top: 1px solid var(--line); border-left: 1px solid var(--line); }
+    .service-card {
+      min-height: 190px;
+      padding: 24px 25px 23px;
+      border-right: 1px solid var(--line);
+      border-bottom: 1px solid var(--line);
+      transition: background .2s ease;
+    }
+    .service-card:hover { background: #f8f9f2; }
+    .service-number {
+      width: 34px;
+      height: 34px;
+      display: grid;
+      place-items: center;
+      margin-bottom: 25px;
+      border-radius: 50%;
+      background: #f0f3e5;
+      color: #536d16;
+      font-size: 11px;
+      font-weight: 800;
+    }
+    .service-card h3 { margin-bottom: 8px; font-size: 17px; letter-spacing: -.025em; }
+    .service-card p { margin-bottom: 0; color: var(--muted); font-size: 13px; line-height: 1.55; }
+
+    .trust { padding: 76px 0; background: var(--accent); }
+    .trust-inner { display: flex; align-items: center; justify-content: space-between; gap: 30px; }
+    .trust h2 { max-width: 540px; font-size: clamp(34px, 4.2vw, 51px); }
+    .rating {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+      padding-left: 38px;
+      border-left: 1px solid rgba(16, 28, 42, .25);
+    }
+    .rating-value { font-family: var(--serif); font-size: 68px; letter-spacing: -.07em; line-height: 1; }
+    .rating-copy { max-width: 170px; font-size: 14px; font-weight: 750; line-height: 1.45; }
+
+    .contact { padding: 96px 0 104px; background: var(--ink); color: var(--white); }
+    .contact-grid { display: grid; grid-template-columns: .9fr 1.1fr; gap: 80px; align-items: start; }
+    .contact .section-kicker { color: var(--accent); }
+    .contact h2 { max-width: 470px; margin-bottom: 20px; }
+    .contact-lead { max-width: 400px; margin-bottom: 34px; color: #c0cad3; font-size: 15px; line-height: 1.7; }
+    .contact-details { display: grid; gap: 21px; }
+    .detail-label { display: block; margin-bottom: 6px; color: #9eabb8; font-size: 10px; font-weight: 800; letter-spacing: .14em; text-transform: uppercase; }
+    .detail-value { color: var(--white); font-size: 16px; line-height: 1.6; text-decoration: none; }
+    .detail-value:hover { color: var(--accent); }
+    .contact-form {
+      padding: 30px;
+      border-radius: 5px;
+      background: #fff;
+      color: var(--ink);
+    }
+    .contact-form h3 { margin-bottom: 7px; font-family: var(--serif); font-size: 29px; font-weight: 400; letter-spacing: -.04em; }
+    .form-note { margin-bottom: 22px; color: var(--muted); font-size: 13px; line-height: 1.55; }
+    .field { margin-bottom: 16px; }
+    .field label { display: block; margin-bottom: 7px; font-size: 12px; font-weight: 750; }
+    .field input, .field textarea {
+      width: 100%;
+      min-height: 46px;
+      padding: 11px 12px;
+      border: 1px solid #c8ced2;
+      border-radius: 3px;
+      background: #fff;
+      color: var(--ink);
+      font: inherit;
+      font-size: 14px;
+    }
+    .field textarea { min-height: 105px; resize: vertical; }
+    .form-submit { width: 100%; margin-top: 3px; cursor: pointer; }
+
+    .site-footer { padding: 24px 0 30px; background: #0b1520; color: #d8dfe5; }
+    .footer-inner { display: flex; align-items: center; justify-content: space-between; gap: 20px; font-size: 12px; }
+    .footer-name { color: var(--white); font-size: 14px; font-weight: 750; letter-spacing: -.02em; }
+    .footer-note { color: #b8c1c9; }
+    .mobile-call-bar { display: none; }
+
+    @media (max-width: 850px) {
+      .hero { padding: 62px 0 74px; }
+      .hero-grid { grid-template-columns: 1fr .8fr; gap: 30px; }
+      .hero-art { min-height: 360px; }
+      .contact-grid { gap: 42px; }
+    }
+    @media (max-width: 680px) {
+      html { scroll-padding-top: 76px; }
+      .wrap { width: min(100% - 36px, var(--wrap)); }
+      .header-inner { min-height: 68px; }
+      .brand { gap: 8px; font-size: 15px; }
+      .brand-mark { width: 31px; height: 31px; }
+      .header-call { min-height: 40px; gap: 7px; padding: 0 12px; font-size: 12px; }
+      .header-call svg { width: 14px; height: 14px; }
+      .hero { padding: 55px 0 62px; }
+      .hero-grid { grid-template-columns: 1fr; gap: 37px; }
+      h1 { max-width: 560px; font-size: clamp(49px, 13vw, 70px); }
+      .hero-copy { font-size: 16px; }
+      .hero-art { min-height: 310px; }
+      .services { padding: 66px 0 72px; }
+      .section-top { display: block; margin-bottom: 28px; }
+      .section-intro { margin-top: 17px; }
+      .service-grid { grid-template-columns: 1fr 1fr; }
+      .service-card { min-height: 174px; padding: 18px 15px; }
+      .service-number { margin-bottom: 21px; }
+      .service-card h3 { font-size: 15px; }
+      .service-card p { font-size: 12px; }
+      .trust { padding: 55px 0; }
+      .trust-inner { align-items: flex-start; flex-direction: column; gap: 24px; }
+      .rating { padding: 0; border: 0; }
+      .rating-value { font-size: 58px; }
+      .contact { padding: 69px 0 78px; }
+      .contact-grid { grid-template-columns: 1fr; gap: 34px; }
+      .contact-form { padding: 23px 19px; }
+      .footer-inner { align-items: flex-start; flex-direction: column; gap: 8px; }
+      body { padding-bottom: calc(68px + env(safe-area-inset-bottom)); }
+      .mobile-call-bar {
+        position: fixed;
+        z-index: 20;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        min-height: calc(68px + env(safe-area-inset-bottom));
+        padding: 10px 18px calc(10px + env(safe-area-inset-bottom));
+        background: rgba(11, 21, 32, .97);
+        box-shadow: 0 -8px 24px rgba(0,0,0,.14);
+      }
+      .mobile-call-bar a {
+        width: min(100%, 520px);
+        min-height: 47px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 10px;
+        border-radius: 4px;
+        background: var(--accent);
+        color: var(--accent-ink);
+        font-size: 15px;
+        font-weight: 800;
+        text-decoration: none;
+      }
+    }
+    @media (max-width: 390px) {
+      .header-call { padding-inline: 9px; font-size: 11px; }
+      .service-grid { grid-template-columns: 1fr; }
+      .service-card { min-height: 0; }
+      .service-number { margin-bottom: 16px; }
+      .service-card p { font-size: 13px; }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after { scroll-behavior: auto !important; transition-duration: .01ms !important; }
+    }
+  </style>
+</head>
+<body>
+  <header class='site-header'>
+    <div class='wrap header-inner'>
+      <a class='brand' href='#top' aria-label='Electrician On Call home'>
+        <span class='brand-mark' aria-hidden='true'>
+          <svg width='19' height='22' viewBox='0 0 19 22' fill='none'><path d='M11.2 1.5 3.7 12h5l-.9 8.5L15.3 9.8h-5l.9-8.3Z' fill='#101c2a' stroke='#101c2a' stroke-linejoin='round'/></svg>
+        </span>
+        <span>Electrician On Call</span>
+      </a>
+      <a class='header-call' href='tel:+12142357251'>
+        <svg width='16' height='16' viewBox='0 0 20 20' fill='none' aria-hidden='true'><path d='M5.1 2.5h2.5l1.2 3.2-1.6 1.5a12 12 0 0 0 5.6 5.6l1.5-1.6 3.2 1.2v2.5c0 .8-.7 1.5-1.5 1.5A14 14 0 0 1 3.6 4c0-.8.7-1.5 1.5-1.5Z' stroke='currentColor' stroke-width='1.6' stroke-linecap='round' stroke-linejoin='round'/></svg>
+        <span>Call +1 214-235-7251</span>
+      </a>
+    </div>
+  </header>
+
+  <main id='top'>
+    <section class='hero' aria-labelledby='hero-title'>
+      <div class='wrap hero-grid'>
+        <div>
+          <p class='eyebrow'>Electrical · Dallas</p>
+          <h1 id='hero-title'>Electrical work, with a clear next step.</h1>
+          <p class='hero-copy'>For electrical projects in Dallas, contact Electrician On Call to discuss what you need and request a callback.</p>
+          <div class='actions'>
+            <a class='button button-primary' href='tel:+12142357251'>Call now <span aria-hidden='true'>↗</span></a>
+            <a class='button button-secondary' href='#contact'>Request a callback</a>
+          </div>
+        </div>
+        <div class='hero-art' aria-hidden='true'>
+          <div class='art-grid'></div>
+          <div class='art-glow'></div>
+          <svg class='panel-illustration' viewBox='0 0 340 390' fill='none' xmlns='http://www.w3.org/2000/svg'>
+            <rect x='55' y='24' width='230' height='342' rx='12' fill='#E9ECE8'/>
+            <path d='M67 36h206v29H67z' fill='#D8F45A'/>
+            <circle cx='82' cy='50.5' r='3.5' fill='#536D16'/>
+            <path d='M100 48h61' stroke='#344253' stroke-width='3' stroke-linecap='round'/>
+            <rect x='78' y='81' width='184' height='239' rx='5' fill='#C9D0CD'/>
+            <rect x='91' y='94' width='158' height='211' rx='3' fill='#F7F8F5'/>
+            <path d='M101 112h52M101 126h52M101 140h52M101 154h52M101 168h52M101 182h52M101 196h52M101 210h52M101 224h52M101 238h52M101 252h52M101 266h52M101 280h52' stroke='#D5DAD7' stroke-width='2'/>
+            <path d='M179 113v14m0 13v14m0 13v14m0 13v14m0 13v14m0 13v14m0 13v14m0 13v14m0 13v14m0 13v14m0 13v14m0 13v14m0 13v14' stroke='#35495A' stroke-width='7' stroke-linecap='round'/>
+            <path d='M211 113v14m0 13v14m0 13v14m0 13v14m0 13v14m0 13v14m0 13v14m0 13v14m0 13v14m0 13v14m0 13v14m0 13v14m0 13v14' stroke='#35495A' stroke-width='7' stroke-linecap='round'/>
+            <path d='M179 113v14m32-14v14M179 153v14m32-14v14M179 193v14m32-14v14M179 233v14m32-14v14M179 273v14m32-14v14' stroke='#D8F45A' stroke-width='3' stroke-linecap='round'/>
+            <path d='M256 96v206' stroke='#A6B0AC' stroke-width='2'/>
+            <circle cx='267' cy='196' r='3' fill='#536D16'/>
+            <path d='M170 332v15m-25 0h50' stroke='#AAB3AF' stroke-width='3' stroke-linecap='round'/>
+          </svg>
+          <div class='art-caption'><span>Electrical</span><span>Dallas</span></div>
+        </div>
+      </div>
+    </section>
+
+    <section class='services' id='services' aria-labelledby='services-title'>
+      <div class='wrap'>
+        <div class='section-top'>
+          <div>
+            <p class='section-kicker'>Electrical services</p>
+            <h2 id='services-title'>Work for the systems you use every day.</h2>
+          </div>
+          <p class='section-intro'>Explore electrical work available from Electrician On Call.</p>
+        </div>
+        <div class='service-grid'>
+          <article class='service-card'>
+            <span class='service-number' aria-hidden='true'>01</span>
+            <h3>Panel upgrades</h3>
+            <p>Update an existing electrical panel.</p>
+          </article>
+          <article class='service-card'>
+            <span class='service-number' aria-hidden='true'>02</span>
+            <h3>Whole-home rewiring</h3>
+            <p>Replace or update wiring throughout a home.</p>
+          </article>
+          <article class='service-card'>
+            <span class='service-number' aria-hidden='true'>03</span>
+            <h3>Outlet and switch installation</h3>
+            <p>Install or replace outlets and switches.</p>
+          </article>
+          <article class='service-card'>
+            <span class='service-number' aria-hidden='true'>04</span>
+            <h3>Lighting installation</h3>
+            <p>Add or replace lighting fixtures.</p>
+          </article>
+          <article class='service-card'>
+            <span class='service-number' aria-hidden='true'>05</span>
+            <h3>Electrical inspections</h3>
+            <p>Review electrical components and connections.</p>
+          </article>
+          <article class='service-card'>
+            <span class='service-number' aria-hidden='true'>06</span>
+            <h3>Surge protection</h3>
+            <p>Add devices that help guard against voltage surges.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class='trust' aria-label='Rating and reviews'>
+      <div class='wrap trust-inner'>
+        <h2>A strong rating, reflected in the reviews.</h2>
+        <div class='rating'>
+          <span class='rating-value' aria-hidden='true'>4.9</span>
+          <span class='rating-copy'>Rated 4.9 from 726 reviews</span>
+        </div>
+      </div>
+    </section>
+
+    <section class='contact' id='contact' aria-labelledby='contact-title'>
+      <div class='wrap contact-grid'>
+        <div>
+          <p class='section-kicker'>Get in touch</p>
+          <h2 id='contact-title'>Let’s talk about your electrical project.</h2>
+          <p class='contact-lead'>Call Electrician On Call or leave your contact details and a message.</p>
+          <div class='contact-details'>
+            <div>
+              <span class='detail-label'>Phone</span>
+              <a class='detail-value' href='tel:+12142357251'>+1 214-235-7251</a>
+            </div>
+            <div>
+              <span class='detail-label'>Address</span>
+              <address class='detail-value' style='font-style: normal;'>6703 Levelland Rd Ste B, Dallas, TX 75252</address>
+            </div>
+          </div>
+        </div>
+        <form class='contact-form'>
+          <h3>Request a callback</h3>
+          <p class='form-note'>Share your name, phone number, and a message.</p>
+          <div class='field'>
+            <label for='name'>Name</label>
+            <input id='name' name='name' type='text' autocomplete='name'>
+          </div>
+          <div class='field'>
+            <label for='phone'>Phone</label>
+            <input id='phone' name='phone' type='tel' autocomplete='tel'>
+          </div>
+          <div class='field'>
+            <label for='message'>Message</label>
+            <textarea id='message' name='message' rows='4'></textarea>
+          </div>
+          <button class='button button-primary form-submit' type='submit'>Send callback request</button>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <footer class='site-footer'>
+    <div class='wrap footer-inner'>
+      <span class='footer-name'>Electrician On Call</span>
+      <span class='footer-note'>Concept preview — not the live site</span>
+    </div>
+  </footer>
+
+  <div class='mobile-call-bar'>
+    <a href='tel:+12142357251'>
+      <svg width='17' height='17' viewBox='0 0 20 20' fill='none' aria-hidden='true'><path d='M5.1 2.5h2.5l1.2 3.2-1.6 1.5a12 12 0 0 0 5.6 5.6l1.5-1.6 3.2 1.2v2.5c0 .8-.7 1.5-1.5 1.5A14 14 0 0 1 3.6 4c0-.8.7-1.5 1.5-1.5Z' stroke='currentColor' stroke-width='1.6' stroke-linecap='round' stroke-linejoin='round'/></svg>
+      Call +1 214-235-7251
+    </a>
+  </div>
+</body>
+</html>
