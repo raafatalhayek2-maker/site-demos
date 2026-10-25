@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#101c2b">
+  <title>Jewell Mechanical, LLC | HVAC &amp; Plumbing in Nashville</title>
+  <meta name="description" content="Commercial, industrial and residential HVAC and plumbing in Nashville from Jewell Mechanical, LLC.">
+  <style>
+    :root {
+      color-scheme: light;
+      --ink: #142235;
+      --muted: #536276;
+      --navy: #101c2b;
+      --navy-soft: #182a3e;
+      --steel: #356c91;
+      --steel-bright: #72b2d1;
+      --mist: #f3f6f8;
+      --line: #dce4e9;
+      --white: #fff;
+      --shadow: 0 16px 40px rgba(17, 34, 53, .09);
+      --radius: 18px;
+      --content: 1160px;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    }
+    *, *::before, *::after { box-sizing: border-box; }
+    html { scroll-behavior: smooth; scroll-padding-top: 92px; }
+    body { margin: 0; background: var(--white); color: var(--ink); line-height: 1.6; -webkit-font-smoothing: antialiased; }
+    a { color: inherit; }
+    .wrap { width: min(var(--content), calc(100% - 48px)); margin-inline: auto; }
+    .topbar { position: sticky; top: 0; z-index: 20; background: rgba(16, 28, 43, .97); border-bottom: 1px solid rgba(255,255,255,.11); backdrop-filter: blur(12px); }
+    .topbar-inner { min-height: 76px; display: flex; align-items: center; justify-content: space-between; gap: 24px; }
+    .brand { display: inline-flex; align-items: center; gap: 12px; text-decoration: none; color: var(--white); font-size: 1.06rem; font-weight: 700; letter-spacing: -.025em; }
+    .brand-mark { width: 36px; height: 36px; display: grid; place-items: center; border: 1px solid rgba(114,178,209,.55); border-radius: 11px; color: var(--steel-bright); }
+    .brand-mark svg { width: 21px; height: 21px; }
+    .header-call { min-height: 48px; display: inline-flex; align-items: center; justify-content: center; gap: 10px; padding: 0 19px; border-radius: 9px; background: var(--steel-bright); color: #0d1b29; font-size: .96rem; font-weight: 750; text-decoration: none; transition: background .2s ease, transform .2s ease; }
+    .header-call:hover, .button-primary:hover { background: #91c8df; transform: translateY(-2px); }
+    .header-call svg, .button svg { width: 18px; height: 18px; }
+    .hero { position: relative; isolation: isolate; overflow: hidden; background: linear-gradient(116deg, #101c2b 4%, #172a3d 58%, #203f56 100%); color: var(--white); }
+    .hero::before, .hero::after { content: ""; position: absolute; z-index: -1; pointer-events: none; }
+    .hero::before { width: 580px; height: 580px; right: -80px; top: -225px; border: 1px solid rgba(137,195,220,.17); border-radius: 50%; box-shadow: 0 0 0 50px rgba(137,195,220,.035), 0 0 0 100px rgba(137,195,220,.025); }
+    .hero::after { width: 300px; height: 300px; right: 12%; bottom: -220px; background: radial-gradient(circle, rgba(76,143,178,.35), transparent 68%); }
+    .hero-inner { min-height: 520px; display: grid; grid-template-columns: minmax(0, 1.2fr) minmax(260px, .8fr); align-items: center; gap: 48px; padding-block: 82px 90px; }
+    .eyebrow { margin: 0 0 20px; color: var(--steel-bright); font-size: .76rem; font-weight: 800; letter-spacing: .17em; text-transform: uppercase; }
+    h1, h2, h3, p { margin-top: 0; }
+    h1 { max-width: 760px; margin-bottom: 22px; font-size: clamp(2.65rem, 5.2vw, 4.75rem); line-height: 1.035; letter-spacing: -.055em; font-weight: 740; }
+    .hero-copy { max-width: 610px; margin-bottom: 32px; color: #d1dbe4; font-size: clamp(1.04rem, 1.5vw, 1.2rem); line-height: 1.7; }
+    .actions { display: flex; flex-wrap: wrap; gap: 12px; }
+    .button { min-height: 54px; display: inline-flex; align-items: center; justify-content: center; gap: 10px; padding: 0 21px; border: 1px solid transparent; border-radius: 9px; font-weight: 750; text-decoration: none; transition: background .2s ease, color .2s ease, border-color .2s ease, transform .2s ease; }
+    .button-primary { background: var(--steel-bright); color: #0d1b29; }
+    .button-secondary { border-color: rgba(255,255,255,.32); color: var(--white); background: rgba(255,255,255,.035); }
+    .button-secondary:hover { border-color: var(--steel-bright); background: rgba(114,178,209,.12); }
+    .hero-art { position: relative; justify-self: end; width: min(100%, 390px); aspect-ratio: 1 / 1; display: grid; place-items: center; }
+    .hero-art::before { content: ""; position: absolute; inset: 8%; border: 1px solid rgba(190,220,235,.2); border-radius: 50%; }
+    .hero-art::after { content: ""; position: absolute; inset: 19%; border: 1px solid rgba(190,220,235,.13); border-radius: 50%; }
+    .art-ring { width: 59%; height: 59%; display: grid; place-items: center; border: 1px solid rgba(114,178,209,.45); border-radius: 50%; background: radial-gradient(circle at 40% 35%, rgba(114,178,209,.2), rgba(16,28,43,.2) 65%); box-shadow: 0 0 65px rgba(68,139,174,.15), inset 0 0 34px rgba(114,178,209,.08); }
+    .art-ring svg { width: 45%; height: 45%; color: #a6d0e2; }
+    .art-dot { position: absolute; width: 11px; height: 11px; border-radius: 50%; background: var(--steel-bright); box-shadow: 0 0 18px rgba(114,178,209,.75); }
+    .art-dot.one { top: 15%; right: 22%; }
+    .art-dot.two { bottom: 21%; left: 15%; width: 7px; height: 7px; }
+    .section { padding-block: 94px; }
+    .section-heading { max-width: 690px; margin-bottom: 38px; }
+    .section-kicker { margin-bottom: 12px; color: var(--steel); font-size: .75rem; font-weight: 800; letter-spacing: .16em; text-transform: uppercase; }
+    h2 { margin-bottom: 14px; font-size: clamp(2rem, 3.7vw, 3rem); line-height: 1.12; letter-spacing: -.045em; }
+    .section-intro { margin-bottom: 0; color: var(--muted); font-size: 1.08rem; }
+    .services { background: var(--mist); }
+    .service-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 18px; }
+    .service-card { min-height: 202px; padding: 25px 25px 27px; border: 1px solid #e2e8ed; border-radius: var(--radius); background: var(--white); box-shadow: 0 7px 22px rgba(18,37,56,.045); transition: transform .22s ease, box-shadow .22s ease, border-color .22s ease; }
+    .service-card:hover { transform: translateY(-4px); border-color: #c5d9e4; box-shadow: var(--shadow); }
+    .card-index { display: inline-grid; width: 34px; height: 34px; margin-bottom: 16px; place-items: center; border-radius: 10px; background: #eaf2f6; color: var(--steel); font-size: .79rem; font-weight: 800; }
+    .service-card h3 { margin-bottom: 8px; font-size: 1.13rem; letter-spacing: -.02em; }
+    .service-card p { margin-bottom: 0; color: var(--muted); font-size: .96rem; }
+    .trust { padding-block: 74px; background: #eaf0f4; }
+    .trust-inner { display: grid; grid-template-columns: .8fr 1.2fr; align-items: center; gap: 56px; }
+    .rating-panel { padding: 30px; border: 1px solid #d5e0e7; border-radius: var(--radius); background: rgba(255,255,255,.74); }
+    .stars { display: flex; gap: 5px; margin-bottom: 12px; color: #a46a17; }
+    .stars svg { width: 22px; height: 22px; fill: currentColor; }
+    .rating-text { margin: 0; font-size: clamp(1.15rem, 2vw, 1.45rem); font-weight: 760; letter-spacing: -.025em; }
+    .trust-copy h2 { margin-bottom: 13px; font-size: clamp(1.8rem, 3vw, 2.5rem); }
+    .trust-copy p { margin-bottom: 0; color: var(--muted); font-size: 1.06rem; }
+    .contact { padding-block: 90px; }
+    .contact-panel { position: relative; overflow: hidden; display: grid; grid-template-columns: 1fr .88fr; gap: 50px; padding: clamp(30px, 5vw, 60px); border-radius: 22px; background: var(--navy); color: var(--white); }
+    .contact-panel::after { content: ""; position: absolute; right: -90px; bottom: -175px; width: 360px; height: 360px; border: 1px solid rgba(114,178,209,.17); border-radius: 50%; box-shadow: 0 0 0 35px rgba(114,178,209,.035), 0 0 0 70px rgba(114,178,209,.025); pointer-events: none; }
+    .contact .section-kicker { color: var(--steel-bright); }
+    .contact h2 { max-width: 540px; }
+    .contact-copy { margin-bottom: 0; max-width: 480px; color: #c6d2dd; }
+    .contact-details { position: relative; z-index: 1; align-self: center; padding: 25px 27px; border: 1px solid rgba(255,255,255,.15); border-radius: 14px; background: rgba(255,255,255,.045); }
+    .detail-label { display: block; margin-bottom: 5px; color: #a9bbc9; font-size: .74rem; font-weight: 800; letter-spacing: .13em; text-transform: uppercase; }
+    .detail-group + .detail-group { margin-top: 22px; }
+    .detail-value { margin: 0; color: var(--white); font-size: 1.04rem; font-weight: 560; }
+    .detail-value a { text-decoration-color: rgba(255,255,255,.45); text-underline-offset: 4px; }
+    .detail-value a:hover { color: var(--steel-bright); }
+    .footer { padding-block: 25px; border-top: 1px solid #e3e8ec; background: #fff; }
+    .footer-inner { display: flex; align-items: center; justify-content: space-between; gap: 18px; color: var(--muted); font-size: .88rem; }
+    .footer-name { margin: 0; color: var(--ink); font-weight: 750; }
+    .footer-note { margin: 0; }
+    .mobile-call { display: none; }
+    a:focus-visible { outline: 3px solid #f0b759; outline-offset: 4px; }
+    @media (max-width: 860px) {
+      .hero-inner { grid-template-columns: 1fr; min-height: auto; padding-block: 76px 78px; }
+      .hero-art { position: absolute; width: 300px; right: -105px; top: 36px; opacity: .48; }
+      .hero-content { position: relative; z-index: 1; }
+      .hero-copy { max-width: 560px; }
+      .service-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+      .trust-inner { gap: 30px; }
+    }
+    @media (max-width: 720px) {
+      html { scroll-padding-top: 78px; }
+      body { padding-bottom: 76px; }
+      .wrap { width: min(var(--content), calc(100% - 36px)); }
+      .topbar-inner { min-height: 68px; }
+      .brand { font-size: .96rem; gap: 9px; }
+      .brand-mark { width: 33px; height: 33px; }
+      .header-call { min-height: 43px; padding-inline: 13px; font-size: .88rem; }
+      .header-call svg { display: none; }
+      .hero-inner { padding-block: 68px 70px; }
+      .hero-art { right: -155px; top: 78px; opacity: .3; }
+      h1 { font-size: clamp(2.55rem, 11vw, 3.75rem); }
+      .hero-copy { font-size: 1.02rem; }
+      .actions { align-items: stretch; flex-direction: column; max-width: 350px; }
+      .button { width: 100%; }
+      .section { padding-block: 70px; }
+      .service-grid { grid-template-columns: 1fr; gap: 13px; }
+      .service-card { min-height: 0; padding: 22px; }
+      .trust { padding-block: 58px; }
+      .trust-inner { grid-template-columns: 1fr; gap: 24px; }
+      .rating-panel { padding: 24px; }
+      .contact { padding-block: 65px; }
+      .contact-panel { grid-template-columns: 1fr; gap: 29px; padding: 30px 23px; }
+      .contact-details { padding: 22px; }
+      .footer-inner { align-items: flex-start; flex-direction: column; gap: 5px; }
+      .mobile-call { position: fixed; z-index: 30; inset: auto 0 0; display: block; padding: 10px 16px calc(10px + env(safe-area-inset-bottom)); border-top: 1px solid rgba(255,255,255,.12); background: rgba(16,28,43,.98); }
+      .mobile-call a { min-height: 52px; display: flex; align-items: center; justify-content: center; gap: 10px; border-radius: 9px; background: var(--steel-bright); color: #0d1b29; font-weight: 800; text-decoration: none; }
+      .mobile-call a:hover { background: #91c8df; }
+      .mobile-call svg { width: 19px; height: 19px; }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after { scroll-behavior: auto !important; transition-duration: .01ms !important; }
+    }
+  </style>
+</head>
+<body>
+  <header class="topbar">
+    <div class="wrap topbar-inner">
+      <a class="brand" href="#home" aria-label="Jewell Mechanical, LLC home">
+        <span class="brand-mark" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none"><path d="M12 3v18M4.2 7.5l15.6 9M4.2 16.5l15.6-9" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/><circle cx="12" cy="12" r="2.2" stroke="currentColor" stroke-width="1.5"/></svg></span>
+        <span>Jewell Mechanical, LLC</span>
+      </a>
+      <a class="header-call" href="tel:+16154695965" aria-label="Call Jewell Mechanical at (615) 469-5965">
+        <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M7 3.8h3l1.4 4.1-2 1.5a15.2 15.2 0 0 0 5.2 5.2l1.5-2 4.1 1.4v3c0 1-.8 1.8-1.8 1.8A15.4 15.4 0 0 1 5.2 5.6c0-1 .8-1.8 1.8-1.8Z" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/></svg>
+        <span>(615) 469-5965</span>
+      </a>
+    </div>
+  </header>
+
+  <main id="home">
+    <section class="hero" aria-labelledby="hero-title">
+      <div class="wrap hero-inner">
+        <div class="hero-content">
+          <p class="eyebrow">HVAC &amp; Plumbing · Nashville</p>
+          <h1 id="hero-title">Dependable HVAC and plumbing for Nashville.</h1>
+          <p class="hero-copy">Commercial, industrial and residential heating, cooling and plumbing—connected through one experienced trade.</p>
+          <div class="actions">
+            <a class="button button-primary" href="tel:+16154695965" aria-label="Call Jewell Mechanical at (615) 469-5965">
+              <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M7 3.8h3l1.4 4.1-2 1.5a15.2 15.2 0 0 0 5.2 5.2l1.5-2 4.1 1.4v3c0 1-.8 1.8-1.8 1.8A15.4 15.4 0 0 1 5.2 5.6c0-1 .8-1.8 1.8-1.8Z" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/></svg>
+              Call (615) 469-5965
+            </a>
+            <a class="button button-secondary" href="#contact">Request service</a>
+          </div>
+        </div>
+        <div class="hero-art" aria-hidden="true">
+          <span class="art-dot one"></span><span class="art-dot two"></span>
+          <div class="art-ring"><svg viewBox="0 0 100 100" fill="none"><path d="M50 13v74M18 31.5l64 37M18 68.5l64-37" stroke="currentColor" stroke-width="4" stroke-linecap="round"/><circle cx="50" cy="50" r="10" stroke="currentColor" stroke-width="3"/><circle cx="50" cy="50" r="3" fill="currentColor"/></svg></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section services" id="services" aria-labelledby="services-title">
+      <div class="wrap">
+        <div class="section-heading">
+          <p class="section-kicker">What we do</p>
+          <h2 id="services-title">One team for essential building systems.</h2>
+          <p class="section-intro">HVAC and plumbing services for commercial, industrial and residential needs.</p>
+        </div>
+        <div class="service-grid">
+          <article class="service-card"><span class="card-index" aria-hidden="true">01</span><h3>Commercial HVAC service</h3><p>Service for heating and cooling systems in commercial settings.</p></article>
+          <article class="service-card"><span class="card-index" aria-hidden="true">02</span><h3>Industrial HVAC service</h3><p>HVAC service for industrial facilities and their heating and cooling needs.</p></article>
+          <article class="service-card"><span class="card-index" aria-hidden="true">03</span><h3>Residential heating &amp; cooling</h3><p>Heating and cooling service for residential spaces.</p></article>
+          <article class="service-card"><span class="card-index" aria-hidden="true">04</span><h3>Plumbing service</h3><p>Plumbing service for residential, commercial and industrial work.</p></article>
+          <article class="service-card"><span class="card-index" aria-hidden="true">05</span><h3>Preventive maintenance</h3><p>Planned maintenance programmes for HVAC systems.</p></article>
+          <article class="service-card"><span class="card-index" aria-hidden="true">06</span><h3>24/7 emergency service</h3><p>Emergency HVAC and plumbing service, available 24/7.</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="trust" aria-labelledby="trust-title">
+      <div class="wrap trust-inner">
+        <div class="rating-panel" aria-label="4.9 stars from 822 Google reviews">
+          <div class="stars" aria-hidden="true">
+            <svg viewBox="0 0 24 24"><path d="m12 2.8 2.8 5.7 6.3.9-4.6 4.5 1.1 6.3-5.6-3-5.6 3 1.1-6.3L2.9 9.4l6.3-.9L12 2.8Z"/></svg><svg viewBox="0 0 24 24"><path d="m12 2.8 2.8 5.7 6.3.9-4.6 4.5 1.1 6.3-5.6-3-5.6 3 1.1-6.3L2.9 9.4l6.3-.9L12 2.8Z"/></svg><svg viewBox="0 0 24 24"><path d="m12 2.8 2.8 5.7 6.3.9-4.6 4.5 1.1 6.3-5.6-3-5.6 3 1.1-6.3L2.9 9.4l6.3-.9L12 2.8Z"/></svg><svg viewBox="0 0 24 24"><path d="m12 2.8 2.8 5.7 6.3.9-4.6 4.5 1.1 6.3-5.6-3-5.6 3 1.1-6.3L2.9 9.4l6.3-.9L12 2.8Z"/></svg><svg viewBox="0 0 24 24"><path d="m12 2.8 2.8 5.7 6.3.9-4.6 4.5 1.1 6.3-5.6-3-5.6 3 1.1-6.3L2.9 9.4l6.3-.9L12 2.8Z"/></svg>
+          </div>
+          <p class="rating-text">4.9 stars from 822 Google reviews</p>
+        </div>
+        <div class="trust-copy">
+          <p class="section-kicker">A strong community rating</p>
+          <h2 id="trust-title">Consistently well rated.</h2>
+          <p>Jewell Mechanical, LLC is rated 4.9 stars across 822 Google reviews.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="contact" id="contact" aria-labelledby="contact-title">
+      <div class="wrap contact-panel">
+        <div>
+          <p class="section-kicker">Get in touch</p>
+          <h2 id="contact-title">Let’s talk about your project.</h2>
+          <p class="contact-copy">Call to discuss a project or request service from Jewell Mechanical, LLC.</p>
+        </div>
+        <div class="contact-details">
+          <div class="detail-group">
+            <span class="detail-label">Phone</span>
+            <p class="detail-value"><a href="tel:+16154695965" aria-label="Call Jewell Mechanical at (615) 469-5965">(615) 469-5965</a></p>
+          </div>
+          <div class="detail-group">
+            <span class="detail-label">Address</span>
+            <p class="detail-value">1000 Elm Hill Pike<br>Nashville, TN 37210</p>
+          </div>
+          <div class="detail-group">
+            <span class="detail-label">Next step</span>
+            <p class="detail-value">Call to discuss a project.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="wrap footer-inner">
+      <p class="footer-name">Jewell Mechanical, LLC</p>
+      <p class="footer-note">Concept preview — not the live site</p>
+    </div>
+  </footer>
+
+  <div class="mobile-call">
+    <a href="tel:+16154695965" aria-label="Call Jewell Mechanical at (615) 469-5965">
+      <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M7 3.8h3l1.4 4.1-2 1.5a15.2 15.2 0 0 0 5.2 5.2l1.5-2 4.1 1.4v3c0 1-.8 1.8-1.8 1.8A15.4 15.4 0 0 1 5.2 5.6c0-1 .8-1.8 1.8-1.8Z" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/></svg>
+      Call (615) 469-5965
+    </a>
+  </div>
+</body>
+</html>
