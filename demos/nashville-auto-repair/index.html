@@ -1,0 +1,526 @@
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+  <meta charset='utf-8'>
+  <meta name='viewport' content='width=device-width, initial-scale=1'>
+  <meta name='theme-color' content='#171a1d'>
+  <meta name='description' content='Straightforward auto repair in Nashville. Call Nashville Auto Repair to book a visit.'>
+  <title>Nashville Auto Repair | Straightforward Auto Repair</title>
+  <style>
+    :root {
+      color-scheme: light;
+      --ink: #171a1d;
+      --ink-soft: #252a2e;
+      --paper: #f5f3ef;
+      --white: #fffefa;
+      --muted: #656b70;
+      --line: #e4e0d8;
+      --amber: #df8740;
+      --amber-dark: #a84f1f;
+      --amber-pale: #f4e5d8;
+      --shadow: 0 18px 50px rgba(24, 26, 28, .08);
+      --radius: 22px;
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; scroll-padding-top: 100px; }
+    body {
+      margin: 0;
+      background: var(--paper);
+      color: var(--ink);
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+    }
+    a { color: inherit; }
+    a:focus-visible { outline: 3px solid var(--amber); outline-offset: 4px; }
+    .site-header {
+      position: sticky;
+      top: 0;
+      z-index: 20;
+      border-bottom: 1px solid rgba(255,255,255,.1);
+      background: rgba(23, 26, 29, .97);
+      color: var(--white);
+      backdrop-filter: blur(14px);
+    }
+    .header-inner {
+      width: min(1160px, calc(100% - 48px));
+      min-height: 82px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+    }
+    .wordmark {
+      display: inline-flex;
+      align-items: center;
+      gap: 12px;
+      text-decoration: none;
+      font-size: 1.03rem;
+      font-weight: 750;
+      letter-spacing: -.025em;
+    }
+    .brand-mark {
+      display: grid;
+      width: 38px;
+      height: 38px;
+      place-items: center;
+      border: 1px solid rgba(223,135,64,.65);
+      border-radius: 12px;
+      color: var(--amber);
+    }
+    .brand-mark svg { width: 21px; height: 21px; }
+    .header-call, .button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      min-height: 48px;
+      padding: 0 20px;
+      border: 1px solid transparent;
+      border-radius: 12px;
+      font-weight: 750;
+      text-decoration: none;
+      transition: transform .2s ease, background .2s ease, box-shadow .2s ease;
+    }
+    .header-call {
+      min-height: 50px;
+      padding-inline: 22px;
+      background: var(--amber);
+      color: #171a1d;
+      font-size: .96rem;
+      box-shadow: 0 8px 22px rgba(223,135,64,.18);
+    }
+    .header-call:hover, .button-primary:hover { transform: translateY(-2px); background: #ed9951; }
+    .header-call svg, .button svg { width: 18px; height: 18px; flex: 0 0 auto; }
+
+    main { overflow: hidden; }
+    .hero {
+      position: relative;
+      overflow: hidden;
+      background: var(--ink);
+      color: var(--white);
+    }
+    .hero::before {
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(ellipse at 80% 48%, rgba(223,135,64,.15), transparent 42%), linear-gradient(110deg, transparent 50%, rgba(255,255,255,.025));
+      content: '';
+      pointer-events: none;
+    }
+    .hero-inner {
+      position: relative;
+      width: min(1160px, calc(100% - 48px));
+      min-height: 560px;
+      margin: 0 auto;
+      padding: 86px 0 92px;
+      display: grid;
+      grid-template-columns: 1.06fr .94fr;
+      align-items: center;
+      gap: 42px;
+    }
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      margin: 0 0 22px;
+      color: var(--amber);
+      font-size: .75rem;
+      font-weight: 800;
+      letter-spacing: .16em;
+      text-transform: uppercase;
+    }
+    .eyebrow::before { width: 25px; height: 1px; background: currentColor; content: ''; }
+    h1, h2, h3, p { margin-top: 0; }
+    h1 {
+      max-width: 700px;
+      margin-bottom: 22px;
+      font-size: clamp(2.65rem, 5.4vw, 5rem);
+      line-height: 1.04;
+      letter-spacing: -.065em;
+    }
+    .hero-copy > p:not(.eyebrow) {
+      max-width: 550px;
+      margin-bottom: 32px;
+      color: #c3c5c6;
+      font-size: 1.1rem;
+      line-height: 1.75;
+    }
+    .hero-actions { display: flex; flex-wrap: wrap; gap: 12px; }
+    .button-primary { background: var(--amber); color: var(--ink); }
+    .button-secondary { border-color: rgba(255,255,255,.28); color: var(--white); }
+    .button-secondary:hover { transform: translateY(-2px); border-color: var(--amber); background: rgba(255,255,255,.06); }
+    .hero-art {
+      position: relative;
+      display: grid;
+      min-height: 340px;
+      place-items: center;
+    }
+    .art-frame {
+      position: relative;
+      width: min(100%, 440px);
+      aspect-ratio: 1.12;
+      overflow: hidden;
+      border: 1px solid rgba(255,255,255,.12);
+      border-radius: 34px;
+      background: linear-gradient(145deg, rgba(255,255,255,.07), rgba(255,255,255,.015));
+      box-shadow: 0 28px 70px rgba(0,0,0,.2);
+    }
+    .art-frame::before, .art-frame::after {
+      position: absolute;
+      border: 1px solid rgba(223,135,64,.34);
+      border-radius: 50%;
+      content: '';
+    }
+    .art-frame::before { width: 290px; height: 290px; top: 8%; left: 21%; }
+    .art-frame::after { width: 220px; height: 220px; top: 18%; left: 29%; border-color: rgba(255,255,255,.12); }
+    .art-graphic { position: absolute; inset: 0; width: 100%; height: 100%; }
+    .art-label {
+      position: absolute;
+      right: 22px;
+      bottom: 22px;
+      left: 22px;
+      display: flex;
+      justify-content: space-between;
+      gap: 16px;
+      padding: 14px 16px;
+      border: 1px solid rgba(255,255,255,.12);
+      border-radius: 13px;
+      background: rgba(23,26,29,.76);
+      color: #e8e6e2;
+      font-size: .7rem;
+      font-weight: 750;
+      letter-spacing: .13em;
+      text-transform: uppercase;
+    }
+    .art-label span:last-child { color: var(--amber); }
+
+    .section-wrap { width: min(1160px, calc(100% - 48px)); margin: 0 auto; }
+    .services { padding: 96px 0 102px; }
+    .section-heading { max-width: 670px; margin-bottom: 38px; }
+    .section-heading .eyebrow { margin-bottom: 14px; }
+    h2 {
+      margin-bottom: 12px;
+      font-size: clamp(2rem, 3.5vw, 3.1rem);
+      line-height: 1.12;
+      letter-spacing: -.05em;
+    }
+    .section-intro { margin-bottom: 0; color: var(--muted); font-size: 1.02rem; }
+    .service-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 17px; }
+    .service-card {
+      position: relative;
+      min-height: 210px;
+      padding: 28px 27px;
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      background: var(--white);
+      box-shadow: 0 4px 16px rgba(24,26,28,.025);
+      transition: transform .22s ease, box-shadow .22s ease, border-color .22s ease;
+    }
+    .service-card:hover { transform: translateY(-5px); border-color: #d8b69c; box-shadow: var(--shadow); }
+    .service-icon {
+      display: grid;
+      width: 42px;
+      height: 42px;
+      margin-bottom: 21px;
+      place-items: center;
+      border-radius: 13px;
+      background: var(--amber-pale);
+      color: var(--amber-dark);
+    }
+    .service-icon svg { width: 21px; height: 21px; }
+    .service-card h3 { margin-bottom: 8px; font-size: 1.08rem; letter-spacing: -.025em; }
+    .service-card p { margin-bottom: 0; color: var(--muted); font-size: .94rem; line-height: 1.65; }
+
+    .trust-section { padding: 0 0 98px; }
+    .trust-card {
+      position: relative;
+      overflow: hidden;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 30px;
+      padding: 42px 48px;
+      border: 1px solid #ead8c9;
+      border-radius: 26px;
+      background: linear-gradient(115deg, #fffefa 0%, #fffefa 62%, #f7eadd 100%);
+      box-shadow: 0 12px 36px rgba(24,26,28,.045);
+    }
+    .trust-card::after {
+      position: absolute;
+      top: -78px;
+      right: 14%;
+      width: 210px;
+      height: 210px;
+      border: 1px solid rgba(168,79,31,.13);
+      border-radius: 50%;
+      content: '';
+      pointer-events: none;
+    }
+    .trust-copy { position: relative; z-index: 1; }
+    .trust-copy .eyebrow { margin-bottom: 12px; }
+    .trust-copy h2 { margin: 0; font-size: clamp(1.65rem, 3vw, 2.35rem); }
+    .rating-block { position: relative; z-index: 1; min-width: 285px; text-align: right; }
+    .stars { margin-bottom: 5px; color: var(--amber-dark); font-size: 1.55rem; letter-spacing: .14em; line-height: 1; }
+    .rating-text { margin-bottom: 6px; font-size: 1.07rem; font-weight: 800; letter-spacing: -.02em; }
+    .rating-note { margin: 0; color: var(--muted); font-size: .92rem; }
+
+    .contact-section { padding: 0 0 104px; }
+    .contact-panel {
+      display: grid;
+      grid-template-columns: 1fr .82fr;
+      gap: 50px;
+      padding: 54px;
+      border-radius: 28px;
+      background: var(--ink);
+      color: var(--white);
+      box-shadow: 0 22px 55px rgba(24,26,28,.14);
+    }
+    .contact-panel .eyebrow { margin-bottom: 14px; }
+    .contact-panel h2 { max-width: 510px; margin-bottom: 14px; }
+    .contact-panel .contact-intro { max-width: 490px; margin-bottom: 27px; color: #c3c5c6; }
+    .contact-details {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      gap: 21px;
+      padding: 10px 0 10px 34px;
+      border-left: 1px solid rgba(255,255,255,.16);
+    }
+    .detail-label { display: block; margin-bottom: 5px; color: #aeb1b3; font-size: .72rem; font-weight: 800; letter-spacing: .14em; text-transform: uppercase; }
+    .detail-value { margin: 0; color: var(--white); font-size: 1.1rem; font-weight: 700; text-decoration: none; }
+    .detail-value:hover { color: #f2b27c; }
+    address { font-style: normal; line-height: 1.65; }
+    .contact-call { margin-top: 5px; }
+
+    .site-footer { padding: 25px 0; border-top: 1px solid var(--line); background: #eeece7; }
+    .footer-inner {
+      width: min(1160px, calc(100% - 48px));
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+      color: #5f6468;
+      font-size: .88rem;
+    }
+    .footer-name { color: var(--ink); font-weight: 800; }
+    .footer-note { margin: 0; }
+    .mobile-call-bar { display: none; }
+
+    @media (max-width: 900px) {
+      .hero-inner { min-height: 520px; gap: 20px; }
+      .hero-art { min-height: 290px; }
+      .service-grid { grid-template-columns: repeat(2, 1fr); }
+      .contact-panel { gap: 32px; padding: 42px; }
+    }
+    @media (max-width: 720px) {
+      html { scroll-padding-top: 82px; }
+      body { padding-bottom: 76px; }
+      .header-inner, .section-wrap, .footer-inner, .hero-inner { width: min(100% - 36px, 560px); }
+      .header-inner { min-height: 70px; gap: 12px; }
+      .wordmark { gap: 9px; font-size: .96rem; }
+      .brand-mark { width: 34px; height: 34px; border-radius: 10px; }
+      .header-call { min-height: 44px; padding: 0 13px; gap: 7px; font-size: .82rem; }
+      .header-call svg { width: 16px; height: 16px; }
+      .hero-inner { min-height: 0; padding: 65px 0 60px; grid-template-columns: 1fr; gap: 33px; }
+      h1 { max-width: 600px; font-size: clamp(2.75rem, 12vw, 4rem); }
+      .hero-copy > p:not(.eyebrow) { font-size: 1rem; }
+      .hero-art { min-height: 0; }
+      .art-frame { width: min(100%, 410px); }
+      .art-frame::before { width: 70%; height: auto; aspect-ratio: 1; left: 15%; }
+      .art-frame::after { width: 54%; height: auto; aspect-ratio: 1; left: 23%; }
+      .services { padding: 70px 0 72px; }
+      .section-heading { margin-bottom: 27px; }
+      .service-grid { grid-template-columns: 1fr; gap: 12px; }
+      .service-card { min-height: 0; padding: 23px; }
+      .service-icon { margin-bottom: 16px; }
+      .trust-section { padding-bottom: 72px; }
+      .trust-card { align-items: flex-start; flex-direction: column; gap: 25px; padding: 30px 26px; }
+      .rating-block { min-width: 0; text-align: left; }
+      .contact-section { padding-bottom: 72px; }
+      .contact-panel { grid-template-columns: 1fr; gap: 31px; padding: 32px 26px; border-radius: 23px; }
+      .contact-details { gap: 18px; padding: 24px 0 0; border-top: 1px solid rgba(255,255,255,.16); border-left: 0; }
+      .footer-inner { align-items: flex-start; flex-direction: column; gap: 4px; }
+      .mobile-call-bar {
+        position: fixed;
+        z-index: 30;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        display: block;
+        padding: 10px 14px max(10px, env(safe-area-inset-bottom));
+        border-top: 1px solid rgba(255,255,255,.14);
+        background: rgba(23,26,29,.98);
+        box-shadow: 0 -8px 28px rgba(0,0,0,.16);
+      }
+      .mobile-call-bar a {
+        display: flex;
+        width: 100%;
+        min-height: 50px;
+        align-items: center;
+        justify-content: center;
+        gap: 10px;
+        border-radius: 12px;
+        background: var(--amber);
+        color: var(--ink);
+        font-weight: 800;
+        text-decoration: none;
+      }
+      .mobile-call-bar svg { width: 18px; height: 18px; }
+    }
+    @media (max-width: 380px) {
+      .header-inner, .section-wrap, .footer-inner, .hero-inner { width: calc(100% - 28px); }
+      .header-call { padding: 0 10px; font-size: .76rem; }
+      .wordmark { font-size: .88rem; }
+      .hero-actions { align-items: stretch; flex-direction: column; }
+      .hero-actions .button { width: 100%; }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after { scroll-behavior: auto !important; transition-duration: .01ms !important; }
+    }
+  </style>
+</head>
+<body>
+  <header class='site-header'>
+    <div class='header-inner'>
+      <a class='wordmark' href='#top' aria-label='Nashville Auto Repair home'>
+        <span class='brand-mark' aria-hidden='true'>
+          <svg viewBox='0 0 24 24' fill='none' xmlns='http://www.w3.org/2000/svg'><path d='M5 18V6l14 12V6' stroke='currentColor' stroke-width='2.2' stroke-linecap='round' stroke-linejoin='round'/></svg>
+        </span>
+        <span>Nashville Auto Repair</span>
+      </a>
+      <a class='header-call' href='tel:+16158407476' aria-label='Call Nashville Auto Repair at (615) 840-7476'>
+        <svg viewBox='0 0 24 24' fill='none' aria-hidden='true' xmlns='http://www.w3.org/2000/svg'><path d='M7.1 3.8h2.7l1.3 4.1-1.8 1.5a15.4 15.4 0 0 0 5.3 5.3l1.5-1.8 4.1 1.3v2.7c0 1-.8 1.8-1.8 1.8A15.8 15.8 0 0 1 5.3 5.6c0-1 .8-1.8 1.8-1.8Z' stroke='currentColor' stroke-width='1.8' stroke-linecap='round' stroke-linejoin='round'/></svg>
+        <span>(615) 840-7476</span>
+      </a>
+    </div>
+  </header>
+
+  <main id='top'>
+    <section class='hero' aria-labelledby='hero-title'>
+      <div class='hero-inner'>
+        <div class='hero-copy'>
+          <p class='eyebrow'>Auto repair · Nashville, TN</p>
+          <h1 id='hero-title'>Straightforward auto repair in Nashville.</h1>
+          <p>From routine maintenance to diagnostics and repairs, start with a straightforward conversation about your vehicle.</p>
+          <div class='hero-actions'>
+            <a class='button button-primary' href='tel:+16158407476' aria-label='Call Nashville Auto Repair at (615) 840-7476'>
+              <svg viewBox='0 0 24 24' fill='none' aria-hidden='true' xmlns='http://www.w3.org/2000/svg'><path d='M7.1 3.8h2.7l1.3 4.1-1.8 1.5a15.4 15.4 0 0 0 5.3 5.3l1.5-1.8 4.1 1.3v2.7c0 1-.8 1.8-1.8 1.8A15.8 15.8 0 0 1 5.3 5.6c0-1 .8-1.8 1.8-1.8Z' stroke='currentColor' stroke-width='1.8' stroke-linecap='round' stroke-linejoin='round'/></svg>
+              <span>Call (615) 840-7476</span>
+            </a>
+            <a class='button button-secondary' href='#contact'>Request service</a>
+          </div>
+        </div>
+        <div class='hero-art' aria-hidden='true'>
+          <div class='art-frame'>
+            <svg class='art-graphic' viewBox='0 0 440 392' fill='none' xmlns='http://www.w3.org/2000/svg'>
+              <path d='M220 67v258M92 196h256M129 105l182 182m0-182L129 287' stroke='rgba(255,255,255,.10)' stroke-width='1'/>
+              <circle cx='220' cy='196' r='112' stroke='#DF8740' stroke-opacity='.56' stroke-width='2'/>
+              <circle cx='220' cy='196' r='78' stroke='rgba(255,255,255,.24)' stroke-width='1.5'/>
+              <circle cx='220' cy='196' r='43' stroke='#DF8740' stroke-width='2'/>
+              <circle cx='220' cy='196' r='8' fill='#DF8740'/>
+              <path d='M220 84v27m0 170v27M108 196h27m170 0h27M141 117l20 20m118 118 20 20m0-158-20 20m-118 118-20 20' stroke='#DF8740' stroke-width='3' stroke-linecap='round'/>
+              <path d='M181 196h78M220 157v78' stroke='rgba(255,255,255,.3)' stroke-width='1.5' stroke-linecap='round'/>
+            </svg>
+            <div class='art-label'><span>Service</span><span>Maintenance</span><span>Repair</span></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class='services section-wrap' aria-labelledby='services-title'>
+      <div class='section-heading'>
+        <p class='eyebrow'>What we do</p>
+        <h2 id='services-title'>Auto care, from the basics to the details.</h2>
+        <p class='section-intro'>Explore common repair and maintenance services.</p>
+      </div>
+      <div class='service-grid'>
+        <article class='service-card'>
+          <span class='service-icon' aria-hidden='true'><svg viewBox='0 0 24 24' fill='none' xmlns='http://www.w3.org/2000/svg'><path d='M12 3.5v3m0 11v3M3.5 12h3m11 0h3M6 6l2.1 2.1m7.8 7.8L18 18m0-12-2.1 2.1m-7.8 7.8L6 18' stroke='currentColor' stroke-width='1.8' stroke-linecap='round'/><circle cx='12' cy='12' r='4.2' stroke='currentColor' stroke-width='1.8'/></svg></span>
+          <h3>General repair and maintenance</h3>
+          <p>Repair and maintenance for everyday vehicle needs.</p>
+        </article>
+        <article class='service-card'>
+          <span class='service-icon' aria-hidden='true'><svg viewBox='0 0 24 24' fill='none' xmlns='http://www.w3.org/2000/svg'><circle cx='12' cy='12' r='8.5' stroke='currentColor' stroke-width='1.8'/><circle cx='12' cy='12' r='3.1' stroke='currentColor' stroke-width='1.8'/><path d='M12 3.5v5.4m0 6.2v5.4M3.5 12h5.4m6.2 0h5.4' stroke='currentColor' stroke-width='1.6'/></svg></span>
+          <h3>Brake service</h3>
+          <p>Brake system service for wear and performance concerns.</p>
+        </article>
+        <article class='service-card'>
+          <span class='service-icon' aria-hidden='true'><svg viewBox='0 0 24 24' fill='none' xmlns='http://www.w3.org/2000/svg'><path d='M4 9h3l2-3h6l2 3h3v8h-3l-1.5 2h-5L9 17H6l-2-2V9Z' stroke='currentColor' stroke-width='1.8' stroke-linejoin='round'/><path d='M9 12h6m-3-3v6' stroke='currentColor' stroke-width='1.8' stroke-linecap='round'/></svg></span>
+          <h3>Engine diagnostics</h3>
+          <p>Diagnostic service to help identify engine concerns.</p>
+        </article>
+        <article class='service-card'>
+          <span class='service-icon' aria-hidden='true'><svg viewBox='0 0 24 24' fill='none' xmlns='http://www.w3.org/2000/svg'><path d='M12 3.5c1.8 3 5.7 7.1 5.7 11a5.7 5.7 0 1 1-11.4 0c0-3.9 3.9-8 5.7-11Z' stroke='currentColor' stroke-width='1.8'/><path d='M9.3 15.2c.3 1.4 1.2 2.1 2.7 2.2' stroke='currentColor' stroke-width='1.8' stroke-linecap='round'/></svg></span>
+          <h3>Oil changes and scheduled maintenance</h3>
+          <p>Oil changes and scheduled maintenance for routine upkeep.</p>
+        </article>
+        <article class='service-card'>
+          <span class='service-icon' aria-hidden='true'><svg viewBox='0 0 24 24' fill='none' xmlns='http://www.w3.org/2000/svg'><path d='M5 5v4a4 4 0 0 0 4 4h2a4 4 0 0 1 4 4v2m4-14v4a4 4 0 0 1-4 4h-2a4 4 0 0 0-4 4v2' stroke='currentColor' stroke-width='1.8' stroke-linecap='round'/><circle cx='5' cy='5' r='1.5' fill='currentColor'/><circle cx='19' cy='5' r='1.5' fill='currentColor'/><circle cx='19' cy='19' r='1.5' fill='currentColor'/><circle cx='5' cy='19' r='1.5' fill='currentColor'/></svg></span>
+          <h3>Suspension and steering</h3>
+          <p>Service for suspension and steering components.</p>
+        </article>
+        <article class='service-card'>
+          <span class='service-icon' aria-hidden='true'><svg viewBox='0 0 24 24' fill='none' xmlns='http://www.w3.org/2000/svg'><path d='M4 15.5 5.5 10h13l1.5 5.5v3H4v-3Z' stroke='currentColor' stroke-width='1.8' stroke-linejoin='round'/><path d='m7 10 1.5-3h7L17 10M7 15.5h.01M17 15.5h.01' stroke='currentColor' stroke-width='1.8' stroke-linecap='round'/></svg></span>
+          <h3>Pre-purchase inspections</h3>
+          <p>Inspection support when you are considering a vehicle purchase.</p>
+        </article>
+      </div>
+    </section>
+
+    <section class='trust-section section-wrap' aria-labelledby='trust-title'>
+      <div class='trust-card'>
+        <div class='trust-copy'>
+          <p class='eyebrow'>Google reviews</p>
+          <h2 id='trust-title'>A clear signal from local drivers.</h2>
+        </div>
+        <div class='rating-block'>
+          <div class='stars' aria-hidden='true'>★★★★★</div>
+          <p class='rating-text'>4.8 stars from 1,070 Google reviews</p>
+          <p class='rating-note'>Consistently well rated by Nashville drivers.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class='contact-section section-wrap' id='contact' aria-labelledby='contact-title'>
+      <div class='contact-panel'>
+        <div>
+          <p class='eyebrow'>Contact</p>
+          <h2 id='contact-title'>Let’s talk about your vehicle.</h2>
+          <p class='contact-intro'>Call to book a visit.</p>
+          <a class='button button-primary contact-call' href='tel:+16158407476' aria-label='Call Nashville Auto Repair at (615) 840-7476'>
+            <svg viewBox='0 0 24 24' fill='none' aria-hidden='true' xmlns='http://www.w3.org/2000/svg'><path d='M7.1 3.8h2.7l1.3 4.1-1.8 1.5a15.4 15.4 0 0 0 5.3 5.3l1.5-1.8 4.1 1.3v2.7c0 1-.8 1.8-1.8 1.8A15.8 15.8 0 0 1 5.3 5.6c0-1 .8-1.8 1.8-1.8Z' stroke='currentColor' stroke-width='1.8' stroke-linecap='round' stroke-linejoin='round'/></svg>
+            <span>Call (615) 840-7476</span>
+          </a>
+        </div>
+        <div class='contact-details'>
+          <div>
+            <span class='detail-label'>Phone</span>
+            <a class='detail-value' href='tel:+16158407476' aria-label='Call Nashville Auto Repair at (615) 840-7476'>(615) 840-7476</a>
+          </div>
+          <div>
+            <span class='detail-label'>Address</span>
+            <address class='detail-value'>2609 8th Ave S<br>Nashville, TN 37204</address>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class='site-footer'>
+    <div class='footer-inner'>
+      <span class='footer-name'>Nashville Auto Repair</span>
+      <p class='footer-note'>Concept preview — not the live site</p>
+    </div>
+  </footer>
+
+  <div class='mobile-call-bar'>
+    <a href='tel:+16158407476' aria-label='Call Nashville Auto Repair at (615) 840-7476'>
+      <svg viewBox='0 0 24 24' fill='none' aria-hidden='true' xmlns='http://www.w3.org/2000/svg'><path d='M7.1 3.8h2.7l1.3 4.1-1.8 1.5a15.4 15.4 0 0 0 5.3 5.3l1.5-1.8 4.1 1.3v2.7c0 1-.8 1.8-1.8 1.8A15.8 15.8 0 0 1 5.3 5.6c0-1 .8-1.8 1.8-1.8Z' stroke='currentColor' stroke-width='1.8' stroke-linecap='round' stroke-linejoin='round'/></svg>
+      <span>Call (615) 840-7476</span>
+    </a>
+  </div>
+</body>
+</html>
