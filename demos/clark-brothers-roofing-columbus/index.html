@@ -1,0 +1,319 @@
+<!doctype html>
+<html lang='en'>
+<head>
+  <meta charset='utf-8'>
+  <meta name='viewport' content='width=device-width, initial-scale=1'>
+  <meta name='theme-color' content='#0f172a'>
+  <title>Clark Brothers Roofing &amp; Construction | Columbus, Ohio</title>
+  <style>
+    :root {
+      color-scheme: light;
+      --slate: #0f172a;
+      --slate-soft: #1e293b;
+      --amber: #f59e0b;
+      --paper: #f8fafc;
+      --white: #ffffff;
+      --ink: #172033;
+      --muted: #526071;
+      --line: #e2e8f0;
+      --shadow: 0 14px 36px rgba(15, 23, 42, 0.08);
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    }
+    *, *::before, *::after { box-sizing: border-box; }
+    html { scroll-behavior: smooth; scroll-padding-top: 88px; }
+    body { margin: 0; color: var(--ink); background: var(--paper); line-height: 1.6; }
+    a { color: inherit; }
+    a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visible {
+      outline: 3px solid var(--amber);
+      outline-offset: 4px;
+    }
+    .skip-link { position: absolute; z-index: 20; top: 8px; left: 8px; padding: 10px 14px; transform: translateY(-150%); background: var(--white); color: var(--slate); border-radius: 8px; }
+    .skip-link:focus { transform: translateY(0); }
+    .site-header { position: sticky; top: 0; z-index: 10; background: rgba(15, 23, 42, 0.97); color: var(--white); border-bottom: 1px solid rgba(255, 255, 255, 0.1); backdrop-filter: blur(12px); }
+    .header-inner { width: min(1160px, calc(100% - 48px)); min-height: 76px; margin: 0 auto; display: flex; align-items: center; justify-content: space-between; gap: 24px; }
+    .brand { max-width: 430px; color: var(--white); text-decoration: none; font-size: 15px; font-weight: 760; line-height: 1.25; letter-spacing: -0.02em; }
+    .brand span { color: var(--amber); }
+    .header-call { display: inline-flex; align-items: center; justify-content: center; gap: 9px; padding: 10px 15px; color: var(--white); text-decoration: none; border: 1px solid rgba(245, 158, 11, 0.75); border-radius: 999px; font-size: 14px; font-weight: 700; white-space: nowrap; transition: background 160ms ease, color 160ms ease; }
+    .header-call:hover { color: var(--slate); background: var(--amber); }
+    .phone-dot { width: 8px; height: 8px; border-radius: 50%; background: var(--amber); }
+    .hero { position: relative; overflow: hidden; color: var(--white); background: radial-gradient(ellipse at 78% 46%, rgba(51, 65, 85, 0.72) 0, rgba(15, 23, 42, 0) 48%), linear-gradient(135deg, #0f172a 0%, #111c31 100%); }
+    .hero::before { position: absolute; inset: 0; pointer-events: none; content: ''; opacity: 0.18; background-image: linear-gradient(rgba(255, 255, 255, 0.045) 1px, transparent 1px), linear-gradient(90deg, rgba(255, 255, 255, 0.045) 1px, transparent 1px); background-size: 56px 56px; mask-image: linear-gradient(90deg, black, transparent 82%); }
+    .hero-inner { position: relative; width: min(1160px, calc(100% - 48px)); min-height: 550px; margin: 0 auto; display: grid; grid-template-columns: 1.05fr 0.95fr; align-items: center; gap: 34px; padding: 76px 0 86px; }
+    .hero-copy { position: relative; z-index: 1; max-width: 600px; }
+    .eyebrow { display: inline-flex; align-items: center; gap: 10px; margin: 0 0 22px; color: #fbbf24; font-size: 12px; font-weight: 800; letter-spacing: 0.16em; text-transform: uppercase; }
+    .eyebrow::before { width: 27px; height: 2px; content: ''; background: var(--amber); }
+    h1 { max-width: 660px; margin: 0; font-size: clamp(42px, 6vw, 70px); line-height: 1.04; font-weight: 760; letter-spacing: -0.055em; }
+    .hero-subhead { margin: 23px 0 0; color: #cbd5e1; font-size: clamp(17px, 2vw, 20px); line-height: 1.55; }
+    .hero-actions { display: flex; flex-wrap: wrap; align-items: center; gap: 13px; margin-top: 34px; }
+    .button { min-height: 52px; display: inline-flex; align-items: center; justify-content: center; gap: 10px; padding: 13px 21px; border-radius: 12px; text-decoration: none; font-size: 15px; font-weight: 750; transition: transform 160ms ease, background 160ms ease, border-color 160ms ease; }
+    .button:hover { transform: translateY(-2px); }
+    .button-primary { color: #111827; background: var(--amber); box-shadow: 0 8px 22px rgba(245, 158, 11, 0.22); }
+    .button-primary:hover { background: #fbbf24; }
+    .button-secondary { color: var(--white); border: 1px solid rgba(203, 213, 225, 0.45); background: rgba(255, 255, 255, 0.035); }
+    .button-secondary:hover { border-color: var(--amber); background: rgba(255, 255, 255, 0.08); }
+    .hero-art { position: relative; display: flex; align-items: center; justify-content: center; min-height: 350px; }
+    .hero-art::before { position: absolute; width: min(86%, 410px); aspect-ratio: 1; border: 1px solid rgba(245, 158, 11, 0.13); border-radius: 50%; content: ''; box-shadow: 0 0 0 34px rgba(255, 255, 255, 0.018), 0 0 0 72px rgba(255, 255, 255, 0.014); }
+    .hero-art svg { position: relative; width: min(100%, 560px); height: auto; overflow: visible; filter: drop-shadow(0 18px 24px rgba(0,  0,  0, 0.16)); }
+    .section { padding: 92px 0; }
+    .container { width: min(1160px, calc(100% - 48px)); margin: 0 auto; }
+    .section-heading { max-width: 650px; margin-bottom: 38px; }
+    .section-kicker { margin: 0 0 12px; color: #9a5b00; font-size: 12px; font-weight: 800; letter-spacing: 0.15em; text-transform: uppercase; }
+    h2 { margin: 0; color: var(--slate); font-size: clamp(32px, 4vw, 46px); line-height: 1.12; letter-spacing: -0.04em; }
+    .section-intro { margin: 15px 0 0; color: var(--muted); font-size: 17px; }
+    .services { background: var(--paper); }
+    .service-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 18px; }
+    .service-card { min-height: 208px; padding: 26px; border: 1px solid #e7ebf0; border-radius: 14px; background: var(--white); box-shadow: 0 8px 24px rgba(15, 23, 42, 0.035); transition: transform 180ms ease, box-shadow 180ms ease, border-color 180ms ease; }
+    .service-card:hover { transform: translateY(-4px); border-color: rgba(245, 158, 11, 0.55); box-shadow: var(--shadow); }
+    .card-accent { width: 38px; height: 4px; margin-bottom: 24px; border-radius: 99px; background: var(--amber); }
+    .service-card h3 { margin: 0 0 9px; color: var(--slate); font-size: 20px; line-height: 1.25; letter-spacing: -0.025em; }
+    .service-card p { margin: 0; color: var(--muted); font-size: 15px; line-height: 1.65; }
+    .trust { position: relative; overflow: hidden; padding: 86px 0; color: var(--white); background: var(--slate); }
+    .trust::after { position: absolute; right: -125px; bottom: -245px; width: 460px; height: 460px; border: 1px solid rgba(245, 158, 11, 0.18); border-radius: 50%; content: ''; box-shadow: 0 0 0 48px rgba(255, 255, 255, 0.018), 0 0 0 96px rgba(255, 255, 255, 0.012); }
+    .trust-inner { position: relative; z-index: 1; display: grid; grid-template-columns: 0.95fr 1.05fr; align-items: center; gap: 60px; }
+    .trust .section-kicker { color: #fbbf24; }
+    .trust h2 { color: var(--white); }
+    .rating-line { display: flex; align-items: baseline; gap: 12px; margin-top: 25px; }
+    .rating-number { color: var(--amber); font-size: clamp(58px, 8vw, 88px); font-weight: 800; line-height: 0.95; letter-spacing: -0.065em; }
+    .rating-out-of { color: #cbd5e1; font-size: 21px; font-weight: 650; }
+    .review-caption { margin: 12px 0 0; color: #e2e8f0; font-size: 17px; }
+    .trust-points { display: grid; gap: 0; margin: 0; padding: 0; list-style: none; border-top: 1px solid rgba(203, 213, 225, 0.2); }
+    .trust-points li { display: flex; gap: 15px; align-items: flex-start; padding: 19px 0; color: #d7dee8; border-bottom: 1px solid rgba(203, 213, 225, 0.2); font-size: 16px; }
+    .trust-points li::before { flex: 0 0 7px; width: 7px; height: 7px; margin-top: 9px; border-radius: 50%; content: ''; background: var(--amber); }
+    .contact { background: #f1f5f9; }
+    .contact-grid { display: grid; grid-template-columns: 0.9fr 1.1fr; align-items: start; gap: 58px; }
+    .contact-copy h2 { max-width: 440px; }
+    .contact-copy > p { max-width: 440px; margin: 16px 0 28px; color: var(--muted); font-size: 16px; }
+    .contact-details { display: grid; gap: 18px; }
+    .detail-label { display: block; margin-bottom: 3px; color: #64748b; font-size: 12px; font-weight: 800; letter-spacing: 0.1em; text-transform: uppercase; }
+    .detail-value { color: var(--slate); font-size: 17px; font-weight: 650; }
+    .detail-value a { color: inherit; text-decoration-thickness: 1px; text-underline-offset: 4px; }
+    .form-card { padding: 30px; border: 1px solid #e2e8f0; border-radius: 14px; background: var(--white); box-shadow: var(--shadow); }
+    .form-card h3 { margin: 0; color: var(--slate); font-size: 22px; letter-spacing: -0.025em; }
+    .form-note { margin: 7px 0 23px; color: #64748b; font-size: 14px; }
+    .form-field { margin-bottom: 17px; }
+    .form-field label { display: block; margin-bottom: 7px; color: #263247; font-size: 14px; font-weight: 700; }
+    .form-field input, .form-field textarea { width: 100%; border: 1px solid #cbd5e1; border-radius: 9px; padding: 12px 13px; color: var(--slate); background: #fff; font: inherit; font-size: 15px; }
+    .form-field input { min-height: 47px; }
+    .form-field textarea { min-height: 112px; resize: vertical; }
+    .form-field input::placeholder, .form-field textarea::placeholder { color: #8792a2; }
+    .preview-button { min-height: 48px; width: 100%; padding: 12px 18px; border: 0; border-radius: 10px; color: #111827; background: var(--amber); font: inherit; font-size: 15px; font-weight: 750; cursor: default; }
+    .preview-button:hover { background: var(--amber); }
+    .form-disclaimer { margin: 13px 0 0; color: #64748b; font-size: 12px; text-align: center; }
+    .site-footer { padding: 29px 0; color: #cbd5e1; background: #0b1220; }
+    .footer-inner { width: min(1160px, calc(100% - 48px)); margin: 0 auto; display: flex; align-items: center; justify-content: space-between; gap: 18px 30px; font-size: 13px; }
+    .footer-name { color: var(--white); font-weight: 750; }
+    .footer-address { margin-top: 3px; }
+    .footer-concept { color: #fbbf24; text-align: right; }
+    .mobile-callbar { display: none; }
+    @media (max-width: 900px) {
+      .hero-inner { min-height: 500px; grid-template-columns: 1.1fr 0.9fr; gap: 10px; }
+      .hero-art { min-height: 280px; }
+      .trust-inner { gap: 36px; }
+      .contact-grid { gap: 36px; }
+    }
+    @media (max-width: 720px) {
+      html { scroll-padding-top: 76px; }
+      body { padding-bottom: calc(76px + env(safe-area-inset-bottom)); }
+      .header-inner { width: min(100% - 36px, 1160px); min-height: 68px; gap: 10px; }
+      .brand { max-width: 235px; font-size: 13px; }
+      .header-call { padding: 9px 11px; font-size: 13px; }
+      .hero-inner { width: min(100% - 40px, 1160px); min-height: 0; grid-template-columns: 1fr; padding: 66px 0 58px; }
+      .hero-copy { max-width: 600px; }
+      h1 { max-width: 560px; font-size: clamp(44px, 11vw, 62px); }
+      .hero-subhead { max-width: 430px; font-size: 17px; }
+      .hero-art { position: absolute; top: 110px; right: -110px; width: 360px; min-height: 0; opacity: 0.25; pointer-events: none; }
+      .hero-art::before { width: 80%; }
+      .hero-art svg { width: 100%; }
+      .hero-copy { z-index: 2; }
+      .section { padding: 70px 0; }
+      .container { width: min(100% - 40px, 1160px); }
+      .service-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 13px; }
+      .service-card { min-height: 205px; padding: 21px; }
+      .card-accent { margin-bottom: 20px; }
+      .service-card h3 { font-size: 18px; }
+      .service-card p { font-size: 14px; }
+      .trust { padding: 70px 0; }
+      .trust-inner { grid-template-columns: 1fr; gap: 34px; }
+      .contact-grid { grid-template-columns: 1fr; gap: 35px; }
+      .form-card { padding: 24px; }
+      .footer-inner { width: min(100% - 40px, 1160px); align-items: flex-start; flex-direction: column; gap: 8px; }
+      .footer-concept { text-align: left; }
+      .mobile-callbar { position: fixed; z-index: 12; right: 0; bottom: 0; left: 0; display: block; padding: 10px 16px calc(10px + env(safe-area-inset-bottom)); border-top: 1px solid rgba(255, 255, 255, 0.12); background: rgba(15, 23, 42, 0.97); backdrop-filter: blur(12px); }
+      .mobile-callbar a { min-height: 48px; width: 100%; display: flex; align-items: center; justify-content: center; gap: 10px; border-radius: 10px; color: #111827; background: var(--amber); text-decoration: none; font-size: 15px; font-weight: 800; }
+    }
+    @media (max-width: 430px) {
+      .brand { max-width: 175px; font-size: 12px; }
+      .header-call { gap: 7px; padding: 9px 10px; font-size: 12px; }
+      .service-grid { grid-template-columns: 1fr; }
+      .service-card { min-height: 0; }
+      .hero-actions { align-items: stretch; flex-direction: column; }
+      .hero-actions .button { width: 100%; }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
+      *, *::before, *::after { transition-duration: 0.01ms !important; }
+    }
+  </style>
+</head>
+<body>
+  <a class='skip-link' href='#main'>Skip to content</a>
+  <header class='site-header'>
+    <div class='header-inner'>
+      <a class='brand' href='#top' aria-label='Clark Brothers Roofing &amp; Construction home'>Clark Brothers <span>Roofing &amp; Construction</span></a>
+      <a class='header-call' href='tel:+13803336900' aria-label='Call Clark Brothers Roofing &amp; Construction at (380) 333-6900'><span class='phone-dot' aria-hidden='true'></span>(380) 333-6900</a>
+    </div>
+  </header>
+
+  <main id='main'>
+    <section class='hero' id='top' aria-labelledby='hero-title'>
+      <div class='hero-inner'>
+        <div class='hero-copy'>
+          <p class='eyebrow'>Roofing · Columbus, Ohio</p>
+          <h1 id='hero-title'>A clearer plan for your roof.</h1>
+          <p class='hero-subhead'>Roofing for homeowners in Columbus, Ohio.</p>
+          <div class='hero-actions'>
+            <a class='button button-primary' href='tel:+13803336900' aria-label='Call Clark Brothers Roofing &amp; Construction at (380) 333-6900'>Call (380) 333-6900</a>
+            <a class='button button-secondary' href='#contact'>Request an estimate</a>
+          </div>
+        </div>
+        <div class='hero-art' aria-hidden='true'>
+          <svg viewBox='0 0 560 390' role='presentation' focusable='false' xmlns='http://www.w3.org/2000/svg'>
+            <defs>
+              <linearGradient id='roofLine' x1='0' y1='0' x2='1' y2='1'>
+                <stop offset='0' stop-color='#f59e0b' stop-opacity='.95'/>
+                <stop offset='1' stop-color='#fbbf24' stop-opacity='.24'/>
+              </linearGradient>
+              <linearGradient id='houseFill' x1='0' y1='0' x2='0' y2='1'>
+                <stop offset='0' stop-color='#64748b' stop-opacity='.2'/>
+                <stop offset='1' stop-color='#0f172a' stop-opacity='0'/>
+              </linearGradient>
+            </defs>
+            <path d='M60 190 280 45l220 145v148H60z' fill='url(#houseFill)' stroke='rgba(203,213,225,.24)' stroke-width='1.4'/>
+            <path d='M35 204 280 39l245 165' fill='none' stroke='url(#roofLine)' stroke-width='5' stroke-linecap='round' stroke-linejoin='round'/>
+            <path d='M105 182 280 65l175 117' fill='none' stroke='rgba(203,213,225,.32)' stroke-width='1.5' stroke-linecap='round'/>
+            <path d='M134 190v113m292-113v113M258 224h45v114h-45z' fill='none' stroke='rgba(203,213,225,.32)' stroke-width='1.5'/>
+            <path d='M174 226h38v38h-38zm174 0h38v38h-38z' fill='none' stroke='rgba(245,158,11,.65)' stroke-width='1.5'/>
+            <path d='M184 226v38m-10-19h38m164-19v38m-10-19h38' fill='none' stroke='rgba(245,158,11,.42)' stroke-width='1'/>
+            <path d='M60 338h440' fill='none' stroke='rgba(203,213,225,.2)' stroke-width='1.5' stroke-linecap='round'/>
+          </svg>
+        </div>
+      </div>
+    </section>
+
+    <section class='section services' id='services' aria-labelledby='services-title'>
+      <div class='container'>
+        <div class='section-heading'>
+          <p class='section-kicker'>Roofing services</p>
+          <h2 id='services-title'>Work for your roof and exterior.</h2>
+          <p class='section-intro'>Explore roofing and exterior work for your Columbus home.</p>
+        </div>
+        <div class='service-grid'>
+          <article class='service-card'>
+            <div class='card-accent' aria-hidden='true'></div>
+            <h3>Roof replacement</h3>
+            <p>A focused path for replacing an existing roof.</p>
+          </article>
+          <article class='service-card'>
+            <div class='card-accent' aria-hidden='true'></div>
+            <h3>Roof repair</h3>
+            <p>Roof repair work for a specific roofing concern.</p>
+          </article>
+          <article class='service-card'>
+            <div class='card-accent' aria-hidden='true'></div>
+            <h3>Storm &amp; hail damage</h3>
+            <p>Roofing attention after storm or hail impact.</p>
+          </article>
+          <article class='service-card'>
+            <div class='card-accent' aria-hidden='true'></div>
+            <h3>Roof inspections</h3>
+            <p>A closer look at visible roof conditions.</p>
+          </article>
+          <article class='service-card'>
+            <div class='card-accent' aria-hidden='true'></div>
+            <h3>Gutters</h3>
+            <p>Gutter work to complement your roofline.</p>
+          </article>
+          <article class='service-card'>
+            <div class='card-accent' aria-hidden='true'></div>
+            <h3>Siding</h3>
+            <p>Siding work as part of an exterior project.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class='trust' aria-labelledby='trust-title'>
+      <div class='container trust-inner'>
+        <div>
+          <p class='section-kicker'>Google reviews</p>
+          <h2 id='trust-title'>Feedback at a glance.</h2>
+          <div class='rating-line' aria-label='4.9 out of 5 rating'>
+            <span class='rating-number'>4.9</span>
+            <span class='rating-out-of'>/ 5</span>
+          </div>
+          <p class='review-caption'>from 84 Google reviews</p>
+        </div>
+        <ul class='trust-points'>
+          <li>A quick snapshot of customer feedback.</li>
+          <li>The rating and review count are shown together.</li>
+          <li>A public signal to consider as you compare your options.</li>
+        </ul>
+      </div>
+    </section>
+
+    <section class='section contact' id='contact' aria-labelledby='contact-title'>
+      <div class='container contact-grid'>
+        <div class='contact-copy'>
+          <p class='section-kicker'>Contact</p>
+          <h2 id='contact-title'>Talk through your roofing project.</h2>
+          <p>Connect with Clark Brothers Roofing &amp; Construction about roofing in Columbus, Ohio.</p>
+          <div class='contact-details'>
+            <div>
+              <span class='detail-label'>Phone</span>
+              <span class='detail-value'><a href='tel:+13803336900' aria-label='Call Clark Brothers Roofing &amp; Construction at (380) 333-6900'>(380) 333-6900</a></span>
+            </div>
+            <div>
+              <span class='detail-label'>Address</span>
+              <span class='detail-value'>80 Parsons Ave<br>Columbus, OH 43205</span>
+            </div>
+          </div>
+        </div>
+        <div class='form-card'>
+          <h3>Request an estimate</h3>
+          <p class='form-note' id='form-note'>Concept preview form — entries are not sent.</p>
+          <form onsubmit='return false' aria-describedby='form-note'>
+            <div class='form-field'>
+              <label for='name'>Name</label>
+              <input id='name' name='name' type='text' autocomplete='name' placeholder='Your name'>
+            </div>
+            <div class='form-field'>
+              <label for='phone'>Phone</label>
+              <input id='phone' name='phone' type='tel' autocomplete='tel' placeholder='Your phone number'>
+            </div>
+            <div class='form-field'>
+              <label for='message'>Message</label>
+              <textarea id='message' name='message' placeholder='Tell us about your roofing project'></textarea>
+            </div>
+            <button class='preview-button' type='button'>Preview only</button>
+            <p class='form-disclaimer'>This concept form does not submit or send information.</p>
+          </form>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class='site-footer'>
+    <div class='footer-inner'>
+      <div>
+        <div class='footer-name'>Clark Brothers Roofing &amp; Construction</div>
+        <div class='footer-address'>80 Parsons Ave, Columbus, OH 43205</div>
+      </div>
+      <div class='footer-concept'>Concept preview — not the live site</div>
+    </div>
+  </footer>
+
+  <div class='mobile-callbar'>
+    <a href='tel:+13803336900' aria-label='Call Clark Brothers Roofing &amp; Construction at (380) 333-6900'>Call (380) 333-6900</a>
+  </div>
+</body>
+</html>
