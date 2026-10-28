@@ -1,0 +1,256 @@
+<!doctype html>
+<html lang='en'>
+<head>
+<meta charset='utf-8'>
+<meta name='viewport' content='width=device-width, initial-scale=1'>
+<meta name='theme-color' content='#171a18'>
+<meta name='description' content='Car repair and maintenance service in Philadelphia, Pennsylvania. Contact Kens Automotive.'>
+<title>Kens Automotive | Car Repair and Maintenance in Philadelphia</title>
+<style>
+:root{color-scheme:light;--ink:#171a18;--ink-soft:#262b28;--paper:#f4f2ec;--white:#fffefa;--muted:#656a65;--line:#deded6;--accent:#f3b743;--accent-dark:#c88718;--max:1160px;--radius:20px;--shadow:0 20px 55px rgba(15,20,17,.11)}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:100px}
+body{margin:0;background:var(--paper);color:var(--ink);font-family:ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;font-size:16px;line-height:1.55;-webkit-font-smoothing:antialiased}
+a{color:inherit}
+button,input,textarea{font:inherit}
+:focus-visible{outline:3px solid var(--accent-dark);outline-offset:4px}
+.skip-link{position:absolute;z-index:100;top:10px;left:10px;padding:10px 14px;background:var(--white);color:var(--ink);transform:translateY(-150%);border-radius:8px}
+.skip-link:focus{transform:translateY(0)}
+.wrap{width:min(var(--max),calc(100% - 48px));margin-inline:auto}
+.site-header{position:sticky;top:0;z-index:30;background:rgba(244,242,236,.94);backdrop-filter:blur(14px);border-bottom:1px solid rgba(23,26,24,.09)}
+.header-inner{min-height:82px;display:flex;align-items:center;justify-content:space-between;gap:24px}
+.brand{display:inline-flex;align-items:center;gap:13px;text-decoration:none;min-width:0}
+.brand-mark{width:43px;height:43px;display:grid;place-items:center;flex:none;border-radius:13px;background:var(--ink);color:var(--accent)}
+.brand-mark svg{width:25px;height:25px}
+.brand-copy{display:grid;line-height:1.15;gap:5px}
+.brand-name{font-size:17px;font-weight:760;letter-spacing:-.035em}
+.brand-trade{font-size:11px;letter-spacing:.095em;text-transform:uppercase;color:var(--muted);font-weight:650}
+.button{display:inline-flex;align-items:center;justify-content:center;gap:10px;min-height:48px;padding:0 19px;border:1px solid transparent;border-radius:999px;text-decoration:none;font-weight:720;transition:transform .18s ease,background .18s ease,border-color .18s ease,box-shadow .18s ease}
+.button:hover{transform:translateY(-2px)}
+.button svg{width:17px;height:17px;flex:none}
+.button-dark{background:var(--ink);color:var(--white)}
+.button-dark:hover{background:#303631;box-shadow:0 8px 20px rgba(23,26,24,.16)}
+.button-accent{background:var(--accent);color:var(--ink)}
+.button-accent:hover{background:#ffc95e;box-shadow:0 8px 22px rgba(243,183,67,.22)}
+.header-call{min-height:46px;padding-inline:17px;font-size:14px;white-space:nowrap}
+.hero{position:relative;overflow:hidden;background:var(--ink);color:var(--white);isolation:isolate}
+.hero:before{content:'';position:absolute;z-index:-1;inset:0;background:radial-gradient(ellipse at 75% 42%,rgba(243,183,67,.13),transparent 38%),linear-gradient(120deg,transparent 53%,rgba(255,255,255,.025) 53.1%,transparent 53.3%)}
+.hero-inner{min-height:595px;padding-block:86px 82px;display:grid;grid-template-columns:minmax(0,1.08fr) minmax(340px,.92fr);align-items:center;gap:clamp(40px,7vw,94px)}
+.eyebrow{display:flex;align-items:center;gap:11px;color:var(--accent);font-size:12px;line-height:1.2;font-weight:750;letter-spacing:.16em;text-transform:uppercase}
+.eyebrow:before{content:'';width:25px;height:2px;background:currentColor}
+h1,h2,h3,p{margin-top:0}
+.hero h1{max-width:720px;margin:21px 0 20px;font-size:clamp(42px,5.6vw,72px);line-height:1.045;letter-spacing:-.065em;font-weight:730}
+.hero-copy{max-width:550px;color:#c3c8c3;font-size:17px;line-height:1.75;margin:0}
+.hero-actions{display:flex;flex-wrap:wrap;gap:12px;margin-top:31px}
+.button-outline{border-color:rgba(255,255,255,.3);color:var(--white);background:transparent}
+.button-outline:hover{border-color:var(--accent);background:rgba(255,255,255,.06)}
+.hero-visual{position:relative;min-height:365px;display:flex;align-items:center;justify-content:center}
+.visual-frame{position:relative;width:100%;max-width:475px;aspect-ratio:1.16/1;border:1px solid rgba(255,255,255,.15);border-radius:30px;background:linear-gradient(145deg,rgba(255,255,255,.065),rgba(255,255,255,.018));overflow:hidden;box-shadow:0 30px 75px rgba(0,0,0,.18)}
+.visual-frame:before,.visual-frame:after{content:'';position:absolute;border:1px solid rgba(243,183,67,.22);border-radius:50%;width:320px;height:320px;left:50%;top:45%;transform:translate(-50%,-50%)}
+.visual-frame:after{width:230px;height:230px;border-color:rgba(255,255,255,.11)}
+.visual-grid{position:absolute;inset:0;background-image:linear-gradient(rgba(255,255,255,.035) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.035) 1px,transparent 1px);background-size:34px 34px;mask-image:linear-gradient(to bottom,transparent,black 15%,black 82%,transparent)}
+.car-art{position:absolute;z-index:1;width:90%;max-width:440px;height:auto;left:50%;top:48%;transform:translate(-50%,-50%);filter:drop-shadow(0 18px 22px rgba(0,0,0,.25))}
+.visual-tag{position:absolute;z-index:2;display:flex;align-items:center;gap:8px;color:#d8dbd6;font-size:10px;letter-spacing:.12em;text-transform:uppercase;font-weight:700}
+.visual-tag:before{content:'';width:6px;height:6px;border-radius:50%;background:var(--accent)}
+.visual-tag-top{top:23px;left:24px}
+.visual-tag-bottom{left:24px;bottom:23px}
+.visual-index{position:absolute;right:25px;bottom:20px;color:rgba(255,255,255,.32);font-size:12px;font-variant-numeric:tabular-nums;letter-spacing:.12em}
+.section{padding-block:100px}
+.section-head{display:flex;align-items:end;justify-content:space-between;gap:30px;margin-bottom:34px}
+.section-kicker{margin-bottom:12px;color:#8b621b;font-size:11px;font-weight:760;letter-spacing:.16em;text-transform:uppercase}
+.section h2{margin:0;font-size:clamp(32px,4vw,48px);line-height:1.08;letter-spacing:-.055em;font-weight:730}
+.section-intro{max-width:345px;margin:0;color:var(--muted);font-size:15px}
+.services-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:15px}
+.service-card{position:relative;min-height:213px;padding:25px 24px 23px;list-style:none;background:var(--white);border:1px solid var(--line);border-radius:var(--radius);transition:transform .2s ease,border-color .2s ease,box-shadow .2s ease}
+.service-card:hover{transform:translateY(-4px);border-color:#c9b98f;box-shadow:0 15px 35px rgba(23,26,24,.07)}
+.service-top{display:flex;align-items:center;justify-content:space-between;margin-bottom:29px}
+.service-icon{width:42px;height:42px;display:grid;place-items:center;border-radius:13px;background:#f7efd9;color:#6d4c13}
+.service-icon svg{width:22px;height:22px}
+.service-number{color:#9b9d96;font-size:11px;font-weight:700;letter-spacing:.1em;font-variant-numeric:tabular-nums}
+.service-card h3{margin:0 0 8px;font-size:19px;line-height:1.25;letter-spacing:-.035em;font-weight:700}
+.service-card p{max-width:290px;margin:0;color:var(--muted);font-size:14px;line-height:1.55}
+.trust{position:relative;overflow:hidden;background:#eae7df}
+.trust:after{content:'';position:absolute;right:-95px;top:-170px;width:420px;height:420px;border:1px solid rgba(23,26,24,.09);border-radius:50%;box-shadow:0 0 0 42px rgba(23,26,24,.025),0 0 0 84px rgba(23,26,24,.02);pointer-events:none}
+.trust-inner{position:relative;z-index:1;display:grid;grid-template-columns:.8fr 1.2fr;align-items:center;gap:80px}
+.trust-copy .section-kicker{margin-bottom:14px}
+.trust-copy h2{max-width:400px}
+.trust-card{min-height:230px;padding:34px 38px;display:flex;align-items:center;justify-content:space-between;gap:24px;background:var(--ink);color:var(--white);border-radius:25px;box-shadow:var(--shadow)}
+.rating-block{display:grid;gap:4px}
+.rating-label{color:#bdc2bc;font-size:12px;font-weight:650;letter-spacing:.12em;text-transform:uppercase}
+.rating-number{font-size:clamp(54px,7vw,82px);font-weight:760;line-height:.98;letter-spacing:-.075em;font-variant-numeric:tabular-nums;white-space:nowrap}
+.rating-scale{color:#c3c8c3;font-size:16px}
+.rating-divider{width:1px;height:94px;background:rgba(255,255,255,.19);flex:none}
+.review-count{max-width:165px;color:#dfe2dd;font-size:18px;line-height:1.4;font-weight:620}
+.review-count strong{display:block;margin-bottom:7px;color:var(--accent);font-size:13px;text-transform:uppercase;letter-spacing:.1em}
+.contact{background:var(--white)}
+.contact-layout{display:grid;grid-template-columns:.9fr 1.1fr;gap:clamp(48px,8vw,110px);align-items:start}
+.contact-copy h2{max-width:440px;margin-bottom:18px}
+.contact-copy>p{max-width:400px;color:var(--muted);margin-bottom:32px}
+.contact-details{display:grid;gap:19px}
+.detail-row{display:grid;grid-template-columns:42px 1fr;gap:13px;align-items:start}
+.detail-icon{width:42px;height:42px;display:grid;place-items:center;background:#f6efdd;border-radius:13px;color:#6d4c13}
+.detail-icon svg{width:20px;height:20px}
+.detail-label{display:block;margin:1px 0 3px;color:var(--muted);font-size:11px;font-weight:750;letter-spacing:.12em;text-transform:uppercase}
+.detail-value{font-size:16px;font-weight:650;text-decoration:none;line-height:1.55}
+.detail-value:hover{text-decoration:underline;text-decoration-thickness:1px;text-underline-offset:3px}
+address{font-style:normal}
+.callback-card{padding:30px;background:var(--paper);border:1px solid var(--line);border-radius:var(--radius)}
+.callback-card h3{margin:0 0 5px;font-size:23px;letter-spacing:-.04em}
+.form-intro{margin:0 0 23px;color:var(--muted);font-size:14px}
+.form-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.field{display:grid;gap:7px}
+.field-wide{grid-column:1/-1}
+.field label{font-size:13px;font-weight:680}
+.field input,.field textarea{width:100%;border:1px solid #c9cbc3;border-radius:10px;background:var(--white);color:var(--ink);padding:12px 13px;transition:border-color .16s ease,box-shadow .16s ease}
+.field input{min-height:48px}
+.field textarea{min-height:106px;resize:vertical}
+.field input::placeholder,.field textarea::placeholder{color:#858a83}
+.field input:focus,.field textarea:focus{outline:none;border-color:#a77014;box-shadow:0 0 0 3px rgba(243,183,67,.25)}
+.form-note{margin:14px 0 18px;color:#656a65;font-size:12px;line-height:1.5}
+.submit-button{width:100%;border:0;cursor:pointer}
+.site-footer{background:var(--ink);color:#f5f4ef;padding:27px 0 84px}
+.footer-inner{display:flex;align-items:center;justify-content:space-between;gap:20px}
+.footer-name{font-weight:720;letter-spacing:-.02em}
+.footer-note{color:#c1c5bf;font-size:13px}
+.mobile-call{display:none}
+@media(max-width:900px){.hero-inner{grid-template-columns:1fr  .82fr;gap:32px;min-height:540px}.hero-visual{min-height:310px}.trust-inner{gap:40px}.trust-card{padding:30px}.services-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:720px){html{scroll-padding-top:82px}.wrap{width:min(100% - 36px,var(--max))}.header-inner{min-height:72px}.brand-mark{width:39px;height:39px}.brand-name{font-size:16px}.brand-trade{font-size:10px}.header-call{min-height:43px;padding-inline:13px;font-size:0;gap:0}.header-call svg{width:18px;height:18px}.header-call .call-label{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap}.hero-inner{min-height:0;padding-block:66px 55px;grid-template-columns:1fr;gap:32px}.hero h1{font-size:clamp(42px,10vw,60px);margin-top:18px}.hero-copy{font-size:16px}.hero-visual{min-height:270px}.visual-frame{max-width:490px;aspect-ratio:1.35/1}.section{padding-block:72px}.section-head{display:block;margin-bottom:26px}.section-intro{margin-top:14px}.services-grid{gap:12px}.service-card{padding:20px;min-height:205px}.service-top{margin-bottom:23px}.service-card h3{font-size:17px}.trust-inner{grid-template-columns:1fr;gap:28px}.trust-card{min-height:195px}.contact-layout{grid-template-columns:1fr;gap:38px}.contact-copy>p{margin-bottom:24px}.callback-card{padding:24px}.footer-inner{align-items:flex-start;flex-direction:column;gap:6px}.site-footer{padding-bottom:calc(94px + env(safe-area-inset-bottom))}.mobile-call{position:fixed;z-index:40;left:0;right:0;bottom:0;display:flex;align-items:center;justify-content:space-between;gap:14px;padding:12px 18px calc(12px + env(safe-area-inset-bottom));background:rgba(23,26,24,.97);border-top:1px solid rgba(255,255,255,.14);box-shadow:0 -10px 30px rgba(0,0,0,.14)}.mobile-call-copy{display:grid;line-height:1.25;color:var(--white)}.mobile-call-copy strong{font-size:13px}.mobile-call-copy span{margin-top:3px;color:#c3c8c3;font-size:12px}.mobile-call .button{min-height:44px;padding-inline:17px;white-space:nowrap}}
+@media(max-width:430px){.wrap{width:calc(100% - 32px)}.brand{gap:9px}.brand-mark{width:36px;height:36px;border-radius:11px}.header-inner{gap:10px}.header-call{width:43px;padding:0}.hero-actions{display:grid;grid-template-columns:1fr}.hero-actions .button{width:100%}.hero-visual{min-height:235px}.visual-tag-top{top:17px;left:17px}.visual-tag-bottom{left:17px;bottom:17px}.visual-index{right:17px;bottom:15px}.services-grid{grid-template-columns:1fr}.service-card{min-height:0}.service-top{margin-bottom:19px}.service-card p{max-width:none}.trust-card{padding:24px 20px;gap:14px}.rating-number{font-size:57px}.rating-scale{font-size:14px}.rating-divider{height:78px}.review-count{font-size:15px;max-width:120px}.review-count strong{font-size:11px}.form-grid{grid-template-columns:1fr}.field-wide{grid-column:auto}}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*::before,*::after{transition:none!important}}
+</style>
+</head>
+<body>
+<a class='skip-link' href='#main'>Skip to content</a>
+<header class='site-header'>
+  <div class='wrap header-inner'>
+    <a class='brand' href='#top' aria-label='Kens Automotive home'>
+      <span class='brand-mark' aria-hidden='true'><svg viewBox='0 0 32 32' fill='none'><path d='M5 8.5h22M5 16h22M5 23.5h22' stroke='currentColor' stroke-width='2.2' stroke-linecap='round'/><circle cx='11' cy='8.5' r='2.8' fill='#171a18' stroke='currentColor' stroke-width='1.8'/><circle cx='21' cy='23.5' r='2.8' fill='#171a18' stroke='currentColor' stroke-width='1.8'/></svg></span>
+      <span class='brand-copy'><span class='brand-name'>Kens Automotive</span><span class='brand-trade'>Car repair &amp; maintenance</span></span>
+    </a>
+    <a class='button button-dark header-call' href='tel:+12158299898' aria-label='Call Kens Automotive at +1 215-829-9898'>
+      <svg viewBox='0 0 24 24' fill='none' aria-hidden='true'><path d='M7.1 3.8 9.4 7.5 7.9 9.3c1.1 2.3 2.9 4.1 5.2 5.2l1.8-1.5 3.7 2.3-.7 3.4c-.2.8-.9 1.3-1.7 1.3C9 19.4 4.6 15 4 7.8c0-.8.5-1.5 1.3-1.7l1.8-.4Z' stroke='currentColor' stroke-width='1.7' stroke-linecap='round' stroke-linejoin='round'/></svg>
+      <span class='call-label'>Call</span><span>+1 215-829-9898</span>
+    </a>
+  </div>
+</header>
+<main id='main'>
+  <section class='hero' id='top' aria-labelledby='hero-title'>
+    <div class='wrap hero-inner'>
+      <div class='hero-content'>
+        <div class='eyebrow'>Kens Automotive · Philadelphia</div>
+        <h1 id='hero-title'>Straight answers and steady hands for Philadelphia drivers — right on North 10th Street.</h1>
+        <p class='hero-copy'>Kens Automotive is a car repair and maintenance service in Philadelphia, Pennsylvania. Call the shop or request a callback below.</p>
+        <div class='hero-actions'>
+          <a class='button button-accent' href='tel:+12158299898'><svg viewBox='0 0 24 24' fill='none' aria-hidden='true'><path d='M7.1 3.8 9.4 7.5 7.9 9.3c1.1 2.3 2.9 4.1 5.2 5.2l1.8-1.5 3.7 2.3-.7 3.4c-.2.8-.9 1.3-1.7 1.3C9 19.4 4.6 15 4 7.8c0-.8.5-1.5 1.3-1.7l1.8-.4Z' stroke='currentColor' stroke-width='1.7' stroke-linecap='round' stroke-linejoin='round'/></svg>Call +1 215-829-9898</a>
+          <a class='button button-outline' href='#contact'>Request a callback<svg viewBox='0 0 24 24' fill='none' aria-hidden='true'><path d='M5 12h14m-6-6 6 6-6 6' stroke='currentColor' stroke-width='1.8' stroke-linecap='round' stroke-linejoin='round'/></svg></a>
+        </div>
+      </div>
+      <div class='hero-visual' aria-hidden='true'>
+        <div class='visual-frame'>
+          <div class='visual-grid'></div>
+          <span class='visual-tag visual-tag-top'>Philadelphia, PA</span>
+          <svg class='car-art' viewBox='0 0 520 300' fill='none' xmlns='http://www.w3.org/2000/svg'>
+            <path d='M72 184.5c8-25.5 18-43 34-51.5l45-20 49-51c8-8.4 17.5-12.5 29-12.5h83c14 0 25 5.5 34 16l40 47 40 18c20 9 31 24 36 47l5 30c1.2 7.6-4.5 14.5-12.2 14.5H84c-8.3 0-14.1-7.6-12.4-15.7l.4-22.8Z' stroke='#F3B743' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'/>
+            <path d='m169 108 42-44c5-5.2 10.6-7.8 18-7.8h81c9.2 0 16.1 3.4 22 10.5l34.7 41.3H169Z' stroke='#D9DED7' stroke-width='2.4' stroke-linecap='round' stroke-linejoin='round'/>
+            <path d='M229 59v49m69-49 3 49M111 135l44 1m248 5 42 13M104 176h27m258 0h28' stroke='#D9DED7' stroke-width='2.3' stroke-linecap='round'/>
+            <path d='M143 207a31 31 0 1 0 62 0m139 0a31 31 0 1 0 62 0' stroke='#171A18' stroke-width='10'/>
+            <circle cx='174' cy='207' r='26' stroke='#F3B743' stroke-width='3'/><circle cx='375' cy='207' r='26' stroke='#F3B743' stroke-width='3'/>
+            <circle cx='174' cy='207' r='8' fill='#F3B743'/><circle cx='375' cy='207' r='8' fill='#F3B743'/>
+            <path d='M73 190h53m316 0h-35' stroke='#F3B743' stroke-width='3' stroke-linecap='round'/>
+            <path d='M194 147h40m34 0h40m34 0h40' stroke='#D9DED7' stroke-opacity='.48' stroke-width='2' stroke-linecap='round'/>
+          </svg>
+          <span class='visual-tag visual-tag-bottom'>341 N 10th St</span>
+          <span class='visual-index'>PHL / 10</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class='section services' id='services' aria-labelledby='services-title'>
+    <div class='wrap'>
+      <div class='section-head'>
+        <div><p class='section-kicker'>Service menu</p><h2 id='services-title'>Automotive service</h2></div>
+        <p class='section-intro'>Car repair and maintenance services from Kens Automotive in Philadelphia.</p>
+      </div>
+      <ul class='services-grid'>
+        <li class='service-card'>
+          <div class='service-top'><span class='service-icon' aria-hidden='true'><svg viewBox='0 0 24 24' fill='none'><circle cx='12' cy='12' r='8.2' stroke='currentColor' stroke-width='1.7'/><circle cx='12' cy='12' r='3.1' stroke='currentColor' stroke-width='1.7'/><path d='M12 3.8v2m8.2 6.2h-2M12 20.2v-2m-8.2-6.2h2' stroke='currentColor' stroke-width='1.7' stroke-linecap='round'/></svg></span><span class='service-number'>01</span></div>
+          <h3>Brakes and suspension</h3><p>Brake and suspension repair and maintenance.</p>
+        </li>
+        <li class='service-card'>
+          <div class='service-top'><span class='service-icon' aria-hidden='true'><svg viewBox='0 0 24 24' fill='none'><path d='M5 8h14l-1.2 11H6.2L5 8Z' stroke='currentColor' stroke-width='1.7' stroke-linejoin='round'/><path d='M8 8V5.5h8V8m-4 3v4m-2-2h4' stroke='currentColor' stroke-width='1.7' stroke-linecap='round' stroke-linejoin='round'/></svg></span><span class='service-number'>02</span></div>
+          <h3>Oil changes and routine maintenance</h3><p>Oil service and routine vehicle maintenance.</p>
+        </li>
+        <li class='service-card'>
+          <div class='service-top'><span class='service-icon' aria-hidden='true'><svg viewBox='0 0 24 24' fill='none'><path d='M4 5.5h16v11H4zM8 20h8m-4-3.5V20' stroke='currentColor' stroke-width='1.7' stroke-linecap='round' stroke-linejoin='round'/><path d='m10 8-2 3h3l-1 3 4-4h-3l1-2h-2Z' stroke='currentColor' stroke-width='1.5' stroke-linejoin='round'/></svg></span><span class='service-number'>03</span></div>
+          <h3>Engine diagnostics</h3><p>Diagnostic service for engine concerns.</p>
+        </li>
+        <li class='service-card'>
+          <div class='service-top'><span class='service-icon' aria-hidden='true'><svg viewBox='0 0 24 24' fill='none'><circle cx='7' cy='12' r='4.2' stroke='currentColor' stroke-width='1.7'/><circle cx='17' cy='12' r='4.2' stroke='currentColor' stroke-width='1.7'/><path d='M7 5v2m0 10v2m10-14v2m0 10v2M12 6v12' stroke='currentColor' stroke-width='1.7' stroke-linecap='round'/></svg></span><span class='service-number'>04</span></div>
+          <h3>Tires and wheel alignment</h3><p>Tire service and wheel alignment work.</p>
+        </li>
+        <li class='service-card'>
+          <div class='service-top'><span class='service-icon' aria-hidden='true'><svg viewBox='0 0 24 24' fill='none'><path d='M12 3.5 19 6v5.6c0 4.1-2.7 7.1-7 8.9-4.3-1.8-7-4.8-7-8.9V6l7-2.5Z' stroke='currentColor' stroke-width='1.7' stroke-linejoin='round'/><path d='m8.7 12 2.2 2.2 4.5-4.7' stroke='currentColor' stroke-width='1.7' stroke-linecap='round' stroke-linejoin='round'/></svg></span><span class='service-number'>05</span></div>
+          <h3>Pennsylvania safety inspections</h3><p>Pennsylvania vehicle safety inspection service.</p>
+        </li>
+        <li class='service-card'>
+          <div class='service-top'><span class='service-icon' aria-hidden='true'><svg viewBox='0 0 24 24' fill='none'><path d='M4 13.5 6 8h12l2 5.5v5H4v-5Z' stroke='currentColor' stroke-width='1.7' stroke-linejoin='round'/><path d='M6 8 8 5h8l2 3M4 13.5h16M7.5 18.5v1m9-1v1' stroke='currentColor' stroke-width='1.7' stroke-linecap='round' stroke-linejoin='round'/><circle cx='7.5' cy='14.8' r='.8' fill='currentColor'/><circle cx='16.5' cy='14.8' r='.8' fill='currentColor'/></svg></span><span class='service-number'>06</span></div>
+          <h3>General automotive repair</h3><p>Repair work for general automotive needs.</p>
+        </li>
+      </ul>
+    </div>
+  </section>
+
+  <section class='section trust' aria-labelledby='trust-title'>
+    <div class='wrap trust-inner'>
+      <div class='trust-copy'><p class='section-kicker'>Google rating</p><h2 id='trust-title'>A rating at a glance.</h2></div>
+      <div class='trust-card' aria-label='4.8 out of 5 from 807 Google reviews'>
+        <div class='rating-block'><span class='rating-label'>Google rating</span><span class='rating-number'>4.8</span><span class='rating-scale'>out of 5</span></div>
+        <span class='rating-divider' aria-hidden='true'></span>
+        <div class='review-count'><strong>Google reviews</strong>807 Google reviews</div>
+      </div>
+    </div>
+  </section>
+
+  <section class='section contact' id='contact' aria-labelledby='contact-title'>
+    <div class='wrap contact-layout'>
+      <div class='contact-copy'>
+        <p class='section-kicker'>Contact</p>
+        <h2 id='contact-title'>Get in touch with Kens Automotive.</h2>
+        <p>Call Kens Automotive or use the callback preview form.</p>
+        <div class='contact-details'>
+          <div class='detail-row'>
+            <span class='detail-icon' aria-hidden='true'><svg viewBox='0 0 24 24' fill='none'><path d='M7.1 3.8 9.4 7.5 7.9 9.3c1.1 2.3 2.9 4.1 5.2 5.2l1.8-1.5 3.7 2.3-.7 3.4c-.2.8-.9 1.3-1.7 1.3C9 19.4 4.6 15 4 7.8c0-.8.5-1.5 1.3-1.7l1.8-.4Z' stroke='currentColor' stroke-width='1.7' stroke-linecap='round' stroke-linejoin='round'/></svg></span>
+            <div><span class='detail-label'>Phone</span><a class='detail-value' href='tel:+12158299898'>+1 215-829-9898</a></div>
+          </div>
+          <div class='detail-row'>
+            <span class='detail-icon' aria-hidden='true'><svg viewBox='0 0 24 24' fill='none'><path d='M19 10.2c0 5.1-7 10.3-7 10.3S5 15.3 5 10.2a7 7 0 1 1 14 0Z' stroke='currentColor' stroke-width='1.7' stroke-linejoin='round'/><circle cx='12' cy='10' r='2.3' stroke='currentColor' stroke-width='1.7'/></svg></span>
+            <div><span class='detail-label'>Address</span><address class='detail-value'>341 N 10th St<br>Philadelphia, PA 19107, USA</address></div>
+          </div>
+        </div>
+      </div>
+      <div class='callback-card'>
+        <h3>Request a callback</h3>
+        <p class='form-intro'>Enter your details in the preview form.</p>
+        <form onsubmit='return false'>
+          <div class='form-grid'>
+            <div class='field'><label for='name'>Name</label><input id='name' name='name' type='text' autocomplete='name' placeholder='Your name'></div>
+            <div class='field'><label for='phone'>Phone</label><input id='phone' name='phone' type='tel' autocomplete='tel' placeholder='Your phone number'></div>
+            <div class='field field-wide'><label for='message'>Short message</label><textarea id='message' name='message' placeholder='How can Kens Automotive help?'></textarea></div>
+          </div>
+          <p class='form-note'>Preview form only. Information entered here is not sent.</p>
+          <button class='button button-accent submit-button' type='submit'>Submit preview</button>
+        </form>
+      </div>
+    </div>
+  </section>
+</main>
+<footer class='site-footer'>
+  <div class='wrap footer-inner'><span class='footer-name'>Kens Automotive</span><span class='footer-note'>Concept preview — not the live site.</span></div>
+</footer>
+<div class='mobile-call' aria-label='Call Kens Automotive'>
+  <span class='mobile-call-copy'><strong>Kens Automotive</strong><span>Car repair &amp; maintenance</span></span>
+  <a class='button button-accent' href='tel:+12158299898'><svg viewBox='0 0 24 24' fill='none' aria-hidden='true'><path d='M7.1 3.8 9.4 7.5 7.9 9.3c1.1 2.3 2.9 4.1 5.2 5.2l1.8-1.5 3.7 2.3-.7 3.4c-.2.8-.9 1.3-1.7 1.3C9 19.4 4.6 15 4 7.8c0-.8.5-1.5 1.3-1.7l1.8-.4Z' stroke='currentColor' stroke-width='1.7' stroke-linecap='round' stroke-linejoin='round'/></svg>Call</a>
+</div>
+</body>
+</html>
