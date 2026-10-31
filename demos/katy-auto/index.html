@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+  <meta charset='utf-8'>
+  <meta name='viewport' content='width=device-width, initial-scale=1'>
+  <meta name='theme-color' content='#111a19'>
+  <title>Katy Auto | Auto Repair</title>
+  <style>
+    :root {
+      color-scheme: light;
+      --ink: #17201e;
+      --deep: #111a19;
+      --muted: #68716d;
+      --paper: #f4f3ee;
+      --white: #fff;
+      --line: #e2e4dd;
+      --lime: #c9ee78;
+      --lime-dark: #a9d64e;
+      --radius: 22px;
+      --shadow: 0 18px 55px rgba(24, 34, 30, .08);
+    }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; scroll-padding-top: 100px; }
+    body {
+      margin: 0;
+      background: var(--paper);
+      color: var(--ink);
+      font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+      -webkit-font-smoothing: antialiased;
+    }
+    a { color: inherit; text-decoration: none; }
+    button, input, textarea { font: inherit; }
+    .shell { width: min(1160px, calc(100% - 48px)); margin-inline: auto; }
+    .skip-link {
+      position: absolute; top: -60px; left: 16px; z-index: 20;
+      padding: 12px 16px; background: var(--lime); color: var(--deep); border-radius: 8px;
+    }
+    .skip-link:focus { top: 12px; }
+    .site-header {
+      position: sticky; top: 0; z-index: 10;
+      background: rgba(255, 255, 255, .94);
+      border-bottom: 1px solid rgba(23, 32, 30, .08);
+      backdrop-filter: blur(16px);
+    }
+    .header-inner { min-height: 78px; display: flex; align-items: center; justify-content: space-between; gap: 28px; }
+    .brand { display: inline-flex; align-items: center; gap: 12px; }
+    .brand-mark {
+      width: 38px; height: 38px; display: grid; place-items: center;
+      border-radius: 12px; background: var(--deep); transform: rotate(-7deg);
+    }
+    .brand-mark span { width: 13px; height: 13px; border: 3px solid var(--lime); border-radius: 50%; }
+    .brand-copy { display: grid; gap: 2px; }
+    .brand-copy strong { font-size: 16px; letter-spacing: -.035em; }
+    .brand-copy small { color: var(--muted); font-size: 10px; font-weight: 750; letter-spacing: .14em; text-transform: uppercase; }
+    .desktop-nav { display: flex; align-items: center; gap: 34px; margin-left: auto; }
+    .desktop-nav a { color: #59625e; font-size: 13px; font-weight: 650; transition: color .2s ease; }
+    .desktop-nav a:hover { color: var(--ink); }
+    .header-call {
+      min-height: 44px; display: inline-flex; align-items: center; justify-content: center; gap: 9px;
+      padding: 0 17px; border: 1px solid #dce1d5; border-radius: 999px;
+      background: #fff; font-size: 12px; font-weight: 750; transition: background .2s, transform .2s;
+    }
+    .header-call:hover { background: #f1f5e9; transform: translateY(-1px); }
+    .call-dot { width: 7px; height: 7px; background: #83b832; border-radius: 50%; }
+    .arrow { color: #718047; font-size: 15px; }
+    .hero {
+      position: relative; overflow: hidden; color: #f8f8f3;
+      background: radial-gradient(ellipse at 76% 46%, rgba(83, 105, 72, .29), transparent 36%), var(--deep);
+    }
+    .hero::before {
+      position: absolute; inset: 0; content: '';
+      background-image: linear-gradient(rgba(255,255,255,.035) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,.035) 1px, transparent 1px);
+      background-size: 62px 62px; opacity: .45;
+      mask-image: linear-gradient(90deg, transparent, #000 65%);
+    }
+    .hero-grid { position: relative; display: grid; grid-template-columns: 1.05fr .95fr; align-items: center; gap: 44px; min-height: 610px; padding-block: 64px; }
+    .hero-copy { position: relative; z-index: 1; padding-block: 20px; }
+    .eyebrow { display: flex; align-items: center; gap: 10px; margin: 0 0 26px; color: #bac1b8; font-size: 11px; font-weight: 750; letter-spacing: .16em; text-transform: uppercase; }
+    .eyebrow-line { width: 24px; height: 1px; background: var(--lime); }
+    .eyebrow-sep { color: #68746a; }
+    h1 { max-width: 650px; margin: 0; font-size: clamp(3.35rem, 6.6vw, 6rem); line-height: .99; letter-spacing: -.075em; font-weight: 680; }
+    h1 em { color: var(--lime); font-style: normal; }
+    .hero-proof { margin: 27px 0 0; color: #c0c7bf; font-size: 15px; line-height: 1.6; }
+    .hero-actions { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 33px; }
+    .button {
+      min-height: 52px; display: inline-flex; align-items: center; justify-content: center; gap: 10px;
+      padding: 0 21px; border: 1px solid transparent; border-radius: 999px;
+      font-size: 13px; font-weight: 750; transition: transform .2s ease, background .2s ease, border-color .2s ease;
+    }
+    .button:hover { transform: translateY(-2px); }
+    .button-primary { color: var(--deep); background: var(--lime); }
+    .button-primary:hover { background: #d7f69b; }
+    .button-secondary { color: #f7f8f3; border-color: rgba(255,255,255,.26); background: rgba(255,255,255,.035); }
+    .button-secondary:hover { border-color: rgba(255,255,255,.55); background: rgba(255,255,255,.08); }
+    .hero-art { position: relative; min-height: 440px; display: grid; place-items: center; isolation: isolate; }
+    .art-glow { position: absolute; width: min(74%, 350px); aspect-ratio: 1; border-radius: 50%; background: rgba(201,238,120,.09); filter: blur(38px); }
+    .orbit { position: absolute; width: min(95%, 455px); aspect-ratio: 1; border: 1px solid rgba(201,238,120,.14); border-radius: 50%; transform: rotate(-27deg) scaleY(.7); }
+    .orbit::after { position: absolute; content: ''; width: 8px; height: 8px; top: 16%; left: 16%; border-radius: 50%; background: var(--lime); box-shadow: 0 0 19px 5px rgba(201,238,120,.35); }
+    .wheel {
+      position: relative; width: min(74%, 340px); aspect-ratio: 1; display: grid; place-items: center;
+      border: 1px solid rgba(236,241,226,.48); border-radius: 50%;
+      background: repeating-conic-gradient(from 4deg, rgba(236,241,226,.14) 0deg 1deg, transparent 1deg 30deg), radial-gradient(circle, #26312b 0 33%, #111a19 34% 48%, #334038 49% 51%, #19221e 52% 69%, #68715f 70% 70.5%, #19221e 71%);
+      box-shadow: 0 30px 100px rgba(0,0,0,.42), inset 0 0 0 12px rgba(0,0,0,.18);
+      transform: rotate(-18deg);
+    }
+    .wheel::before { position: absolute; inset: 9%; content: ''; border: 1px solid rgba(234,240,224,.2); border-radius: 50%; }
+    .wheel::after { position: absolute; width: 19%; aspect-ratio: 1; content: ''; border: 2px solid rgba(201,238,120,.72); border-radius: 50%; background: var(--deep); box-shadow: 0 0 0 9px rgba(201,238,120,.08); }
+    .art-caption { position: absolute; right: 1%; bottom: 11%; z-index: 1; display: grid; gap: 4px; padding: 15px 18px; border: 1px solid rgba(255,255,255,.16); border-radius: 14px; background: rgba(18,27,24,.72); backdrop-filter: blur(8px); }
+    .art-caption span { color: #9ba59a; font-size: 9px; font-weight: 750; letter-spacing: .16em; text-transform: uppercase; }
+    .art-caption strong { font-size: 13px; letter-spacing: -.02em; }
+    .section { padding-block: 104px; }
+    .section-heading { display: flex; align-items: end; justify-content: space-between; gap: 35px; margin-bottom: 38px; }
+    .section-kicker { margin: 0 0 12px; color: #75814f; font-size: 10px; font-weight: 800; letter-spacing: .17em; text-transform: uppercase; }
+    h2 { margin: 0; font-size: clamp(2.15rem, 4vw, 3.45rem); line-height: 1.04; letter-spacing: -.065em; font-weight: 680; }
+    .section-intro { max-width: 330px; margin: 0 0 3px; color: var(--muted); font-size: 14px; line-height: 1.7; }
+    .services { background: var(--paper); }
+    .service-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 15px; }
+    .service-card {
+      min-height: 218px; padding: 25px 25px 24px; border: 1px solid #e6e7e1; border-radius: var(--radius);
+      background: rgba(255,255,255,.78); box-shadow: 0 4px 14px rgba(20,30,24,.025);
+      transition: transform .25s ease, box-shadow .25s ease, border-color .25s ease;
+    }
+    .service-card:hover { transform: translateY(-4px); border-color: #d1ddbc; box-shadow: var(--shadow); }
+    .service-top { display: flex; align-items: center; justify-content: space-between; margin-bottom: 27px; }
+    .service-number { color: #858e84; font-size: 10px; font-weight: 750; letter-spacing: .12em; }
+    .service-symbol { width: 29px; height: 29px; display: grid; place-items: center; border: 1px solid #dce4cf; border-radius: 50%; color: #74884a; font-size: 14px; }
+    .service-card h3 { margin: 0 0 10px; font-size: 17px; line-height: 1.25; letter-spacing: -.035em; }
+    .service-card p { max-width: 300px; margin: 0; color: var(--muted); font-size: 12px; line-height: 1.7; }
+    .trust { padding-block: 0 104px; background: var(--paper); }
+    .trust-panel {
+      position: relative; overflow: hidden; display: grid; grid-template-columns: 1fr auto; align-items: center; gap: 35px;
+      padding: 48px 55px; border-radius: 28px; color: #f6f7f1; background: #1b2823;
+    }
+    .trust-panel::after { position: absolute; width: 310px; height: 310px; right: 15%; top: -220px; content: ''; border: 1px solid rgba(201,238,120,.17); border-radius: 50%; box-shadow: 0 0 0 30px rgba(201,238,120,.025), 0 0 0 60px rgba(201,238,120,.02); }
+    .trust-copy, .rating-block { position: relative; z-index: 1; }
+    .trust-copy .section-kicker { color: var(--lime); }
+    .trust-copy h2 { max-width: 500px; font-size: clamp(1.9rem, 3.5vw, 2.8rem); }
+    .rating-block { display: flex; align-items: center; gap: 17px; min-width: 270px; padding-left: 34px; border-left: 1px solid rgba(255,255,255,.17); }
+    .rating-score { color: var(--lime); font-size: 66px; line-height: 1; font-weight: 650; letter-spacing: -.08em; }
+    .rating-details { display: grid; gap: 6px; color: #e9eee4; font-size: 12px; line-height: 1.4; }
+    .rating-details strong { font-size: 14px; }
+    .contact { background: #fff; }
+    .contact-grid { display: grid; grid-template-columns: .85fr 1.15fr; gap: 80px; align-items: start; }
+    .contact-copy h2 { max-width: 430px; }
+    .contact-copy > p:not(.section-kicker) { max-width: 350px; margin: 17px 0 30px; color: var(--muted); font-size: 14px; line-height: 1.7; }
+    .contact-details { display: grid; gap: 22px; }
+    .detail-label { display: block; margin-bottom: 7px; color: #818a81; font-size: 10px; font-weight: 800; letter-spacing: .13em; text-transform: uppercase; }
+    .detail-value { display: inline-block; color: var(--ink); font-size: 15px; font-weight: 650; line-height: 1.6; }
+    .detail-value:hover { color: #637d30; }
+    .preview-form { padding: 30px; border: 1px solid #e6e8e2; border-radius: 22px; background: #fafaf7; box-shadow: 0 12px 38px rgba(23,32,30,.045); }
+    .form-heading { margin: 0 0 6px; font-size: 19px; letter-spacing: -.04em; }
+    .form-note { margin: 0 0 24px; color: var(--muted); font-size: 12px; line-height: 1.6; }
+    .field { display: grid; gap: 8px; margin-bottom: 17px; }
+    .field label { color: #46504a; font-size: 11px; font-weight: 700; }
+    .field input, .field textarea {
+      width: 100%; border: 1px solid #dfe2da; border-radius: 10px; outline: none;
+      background: #fff; color: var(--ink); padding: 13px 14px; transition: border-color .2s, box-shadow .2s;
+    }
+    .field input { min-height: 46px; }
+    .field textarea { min-height: 104px; resize: vertical; }
+    .field input:focus, .field textarea:focus { border-color: #91ae5b; box-shadow: 0 0 0 3px rgba(169,214,78,.16); }
+    .preview-button { width: 100%; min-height: 48px; border: 0; border-radius: 999px; background: #e6e9e0; color: #6d756b; font-size: 12px; font-weight: 750; cursor: not-allowed; }
+    .form-disclaimer { margin: 12px 0 0; color: #777f76; text-align: center; font-size: 10px; line-height: 1.5; }
+    .site-footer { padding-block: 26px; color: #d9ded7; background: var(--deep); }
+    .footer-inner { display: flex; align-items: center; justify-content: space-between; gap: 18px; }
+    .footer-brand { font-size: 14px; font-weight: 750; letter-spacing: -.02em; }
+    .footer-phone { color: #c4cbbf; font-size: 12px; transition: color .2s; }
+    .footer-phone:hover { color: var(--lime); }
+    .footer-preview { color: #909990; font-size: 11px; }
+    .mobile-call-bar { display: none; }
+    a:focus-visible, button:focus-visible { outline: 3px solid #98bd51; outline-offset: 3px; }
+    @media (max-width: 800px) {
+      html { scroll-padding-top: 86px; }
+      .shell { width: min(100% - 38px, 620px); }
+      .header-inner { min-height: 70px; }
+      .desktop-nav { display: none; }
+      .header-call { margin-left: auto; }
+      .hero-grid { grid-template-columns: 1fr; gap: 4px; min-height: auto; padding-block: 68px 48px; }
+      .hero-copy { padding: 0; }
+      h1 { max-width: 630px; font-size: clamp(3.35rem, 11vw, 5.5rem); }
+      .hero-art { min-height: 340px; margin-top: 7px; }
+      .wheel { width: min(64%, 300px); }
+      .orbit { width: min(83%, 380px); }
+      .art-caption { right: 4%; bottom: 7%; }
+      .section { padding-block: 78px; }
+      .section-heading { align-items: start; flex-direction: column; gap: 15px; margin-bottom: 28px; }
+      .service-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+      .service-card { min-height: 205px; padding: 22px; }
+      .trust { padding-block: 0 78px; }
+      .trust-panel { grid-template-columns: 1fr; gap: 28px; padding: 36px; }
+      .rating-block { min-width: 0; padding: 22px 0 0; border-left: 0; border-top: 1px solid rgba(255,255,255,.17); }
+      .rating-score { font-size: 58px; }
+      .contact-grid { grid-template-columns: 1fr; gap: 38px; }
+      .contact-copy > p:not(.section-kicker) { margin-bottom: 22px; }
+      .site-footer { padding-bottom: 92px; }
+      .footer-inner { flex-wrap: wrap; }
+      .mobile-call-bar {
+        position: fixed; right: 0; bottom: 0; left: 0; z-index: 12; display: block;
+        padding: 11px 16px calc(11px + env(safe-area-inset-bottom));
+        border-top: 1px solid rgba(23,32,30,.1); background: rgba(255,255,255,.96); backdrop-filter: blur(15px);
+      }
+      .mobile-call-bar a { width: 100%; min-height: 48px; display: flex; align-items: center; justify-content: center; gap: 10px; border-radius: 999px; color: var(--deep); background: var(--lime); font-size: 13px; font-weight: 800; transition: background .2s; }
+      .mobile-call-bar a:hover { background: #d7f69b; }
+    }
+    @media (max-width: 520px) {
+      .shell { width: calc(100% - 34px); }
+      .brand-mark { width: 35px; height: 35px; }
+      .header-call { min-height: 40px; padding-inline: 12px; font-size: 11px; }
+      .header-call .arrow { display: none; }
+      .hero-grid { padding-top: 58px; }
+      h1 { font-size: clamp(3.1rem, 14vw, 4.4rem); }
+      .hero-proof { max-width: 290px; font-size: 14px; }
+      .hero-actions { align-items: stretch; flex-direction: column; max-width: 310px; }
+      .button { width: 100%; }
+      .hero-art { min-height: 280px; }
+      .wheel { width: 67%; }
+      .orbit { width: 90%; }
+      .art-caption { right: 0; bottom: 4%; padding: 12px 14px; }
+      .service-grid { grid-template-columns: 1fr; gap: 11px; }
+      .service-card { min-height: auto; padding: 21px; }
+      .service-top { margin-bottom: 20px; }
+      .service-card p { max-width: 340px; }
+      .trust-panel { padding: 29px 24px; border-radius: 22px; }
+      .rating-block { gap: 15px; }
+      .rating-score { font-size: 54px; }
+      .preview-form { padding: 23px 19px; }
+      .footer-inner { align-items: flex-start; flex-direction: column; gap: 12px; }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
+      *, *::before, *::after { transition-duration: .01ms !important; }
+    }
+  </style>
+</head>
+<body>
+  <a class='skip-link' href='#main'>Skip to content</a>
+  <header class='site-header'>
+    <div class='header-inner shell'>
+      <a class='brand' href='#top' aria-label='Katy Auto home'>
+        <span class='brand-mark' aria-hidden='true'><span></span></span>
+        <span class='brand-copy'><strong>Katy Auto</strong><small>Auto repair</small></span>
+      </a>
+      <nav class='desktop-nav' aria-label='Main navigation'>
+        <a href='#services'>Services</a>
+        <a href='#rating'>Rating</a>
+        <a href='#contact'>Contact</a>
+      </nav>
+      <a class='header-call' href='tel:+12816932886'><span class='call-dot' aria-hidden='true'></span>Call Katy Auto <span class='arrow' aria-hidden='true'>↗</span></a>
+    </div>
+  </header>
+
+  <main id='main'>
+    <section class='hero' id='top' aria-labelledby='hero-title'>
+      <div class='hero-grid shell'>
+        <div class='hero-copy'>
+          <p class='eyebrow'><span class='eyebrow-line' aria-hidden='true'></span>Auto repair <span class='eyebrow-sep'>/</span> Katy, Texas</p>
+          <h1 id='hero-title'>Auto repair for the <em>road ahead.</em></h1>
+          <p class='hero-proof'>Rated 4.8 out of 5 from 274 Google reviews.</p>
+          <div class='hero-actions'>
+            <a class='button button-primary' href='tel:+12816932886'>Call +1 281-693-2886 <span aria-hidden='true'>↗</span></a>
+            <a class='button button-secondary' href='#contact'>Request an estimate</a>
+          </div>
+        </div>
+        <div class='hero-art' aria-hidden='true'>
+          <div class='art-glow'></div>
+          <div class='orbit'></div>
+          <div class='wheel'></div>
+          <div class='art-caption'><span>Katy Auto</span><strong>Auto repair</strong></div>
+        </div>
+      </div>
+    </section>
+
+    <section class='section services' id='services' aria-labelledby='services-title'>
+      <div class='shell'>
+        <div class='section-heading'>
+          <div><p class='section-kicker'>Services</p><h2 id='services-title'>Care for the details<br>that keep you moving.</h2></div>
+          <p class='section-intro'>Explore auto repair and maintenance services for your vehicle.</p>
+        </div>
+        <div class='service-grid'>
+          <article class='service-card'>
+            <div class='service-top'><span class='service-number'>01</span><span class='service-symbol' aria-hidden='true'>↻</span></div>
+            <h3>Oil Changes &amp; Routine Maintenance</h3>
+            <p>Oil changes and routine maintenance for ongoing vehicle upkeep.</p>
+          </article>
+          <article class='service-card'>
+            <div class='service-top'><span class='service-number'>02</span><span class='service-symbol' aria-hidden='true'>＋</span></div>
+            <h3>Brakes &amp; Suspension</h3>
+            <p>Service for braking and suspension components and related concerns.</p>
+          </article>
+          <article class='service-card'>
+            <div class='service-top'><span class='service-number'>03</span><span class='service-symbol' aria-hidden='true'>⌁</span></div>
+            <h3>Engine Diagnostics &amp; Repair</h3>
+            <p>Diagnostic and repair work for engine-related concerns.</p>
+          </article>
+          <article class='service-card'>
+            <div class='service-top'><span class='service-number'>04</span><span class='service-symbol' aria-hidden='true'>⟳</span></div>
+            <h3>Transmission Service</h3>
+            <p>Service for transmission maintenance and repair needs.</p>
+          </article>
+          <article class='service-card'>
+            <div class='service-top'><span class='service-number'>05</span><span class='service-symbol' aria-hidden='true'>◌</span></div>
+            <h3>A/C &amp; Heating Service</h3>
+            <p>Work focused on heating and air-conditioning concerns.</p>
+          </article>
+          <article class='service-card'>
+            <div class='service-top'><span class='service-number'>06</span><span class='service-symbol' aria-hidden='true'>◉</span></div>
+            <h3>Tires &amp; Alignment</h3>
+            <p>Tire and alignment service for wheel and handling needs.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class='trust' id='rating' aria-labelledby='rating-title'>
+      <div class='shell'>
+        <div class='trust-panel'>
+          <div class='trust-copy'>
+            <p class='section-kicker'>Google rating</p>
+            <h2 id='rating-title'>Rated 4.8 out of 5 on Google.</h2>
+          </div>
+          <div class='rating-block' aria-label='4.8 out of 5, based on 274 Google reviews'>
+            <strong class='rating-score'>4.8</strong>
+            <div class='rating-details'><strong>out of 5</strong><span>274 Google reviews</span></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class='section contact' id='contact' aria-labelledby='contact-title'>
+      <div class='shell contact-grid'>
+        <div class='contact-copy'>
+          <p class='section-kicker'>Contact</p>
+          <h2 id='contact-title'>Get in touch with Katy Auto.</h2>
+          <p>Call or visit Katy Auto at the address below.</p>
+          <div class='contact-details'>
+            <div><span class='detail-label'>Phone</span><a class='detail-value' href='tel:+12816932886'>+1 281-693-2886</a></div>
+            <div><span class='detail-label'>Address</span><span class='detail-value'>22459 Katy Fwy, Katy, TX 77450, USA</span></div>
+          </div>
+        </div>
+        <form class='preview-form' aria-label='Visual-only contact form'>
+          <h3 class='form-heading'>Request an estimate</h3>
+          <p class='form-note'>A simple visual preview of the contact form.</p>
+          <div class='field'><label for='name'>Name</label><input id='name' name='name' type='text' autocomplete='name'></div>
+          <div class='field'><label for='phone'>Phone</label><input id='phone' name='phone' type='tel' autocomplete='tel'></div>
+          <div class='field'><label for='message'>Message</label><textarea id='message' name='message'></textarea></div>
+          <button class='preview-button' type='button' disabled>Visual preview only</button>
+          <p class='form-disclaimer'>This form is visual only and does not submit.</p>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <footer class='site-footer'>
+    <div class='footer-inner shell'>
+      <span class='footer-brand'>Katy Auto</span>
+      <a class='footer-phone' href='tel:+12816932886'>+1 281-693-2886</a>
+      <span class='footer-preview'>Concept preview — not the live site</span>
+    </div>
+  </footer>
+
+  <div class='mobile-call-bar'><a href='tel:+12816932886'>Call +1 281-693-2886 <span aria-hidden='true'>↗</span></a></div>
+</body>
+</html>
