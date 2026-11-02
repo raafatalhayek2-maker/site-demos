@@ -1,0 +1,204 @@
+<!doctype html>
+<html lang='en'>
+<head>
+<meta charset='utf-8'>
+<meta name='viewport' content='width=device-width, initial-scale=1'>
+<meta name='theme-color' content='#0c1929'>
+<title>North Mecklenburg Plumbing Co Inc | Huntersville, NC</title>
+<style>
+:root{color-scheme:light;--navy:#0c1929;--navy-2:#13263a;--ink:#132235;--muted:#647184;--paper:#f5f6f2;--white:#fff;--lime:#c9ef72;--line:#e2e7e0;--shadow:0 18px 44px rgba(18,34,53,.09)}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:90px}
+body{margin:0;color:var(--ink);background:var(--paper);font-family:system-ui,-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;-webkit-font-smoothing:antialiased}
+a{color:inherit}
+.site-header{position:sticky;top:0;z-index:20;background:rgba(255,255,255,.94);border-bottom:1px solid rgba(19,34,53,.08);backdrop-filter:blur(14px)}
+.header-inner{width:min(1200px,calc(100% - 48px));height:78px;margin:auto;display:flex;align-items:center;justify-content:space-between;gap:24px}
+.brand{display:flex;align-items:center;gap:12px;text-decoration:none;min-width:0}
+.brand-mark{width:38px;height:38px;border-radius:12px;background:var(--navy);display:grid;place-items:center;color:var(--lime);font-size:16px;font-weight:800;letter-spacing:-.06em;flex:none;box-shadow:0 5px 13px rgba(12,25,41,.18)}
+.brand-name{font-size:14px;font-weight:750;letter-spacing:-.025em;line-height:1.2;max-width:240px}
+.main-nav{display:flex;align-items:center;gap:30px;margin-left:auto}
+.main-nav a{text-decoration:none;color:#47566a;font-size:13px;font-weight:650;transition:color .2s ease}
+.main-nav a:hover{color:var(--ink)}
+.call-button{display:inline-flex;align-items:center;justify-content:center;gap:9px;min-height:46px;padding:0 18px;border-radius:999px;background:var(--lime);color:var(--navy);font-size:13px;font-weight:800;text-decoration:none;white-space:nowrap;box-shadow:0 7px 18px rgba(27,43,19,.1);transition:transform .2s ease,box-shadow .2s ease}
+.call-button:hover,.button:hover{transform:translateY(-2px);box-shadow:0 12px 24px rgba(10,20,34,.18)}
+.call-dot{width:7px;height:7px;border-radius:50%;background:var(--navy)}
+.hero{position:relative;overflow:hidden;background:var(--navy);color:var(--white);padding:76px 0 84px}
+.hero:before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at 8% 15%,rgba(78,116,148,.18),transparent 42%),radial-gradient(ellipse at 95% 85%,rgba(115,151,69,.12),transparent 34%);pointer-events:none}
+.hero-inner{position:relative;width:min(1200px,calc(100% - 48px));margin:auto;display:grid;grid-template-columns:minmax(0,1.07fr) minmax(340px,.93fr);align-items:center;gap:58px}
+.eyebrow{display:flex;align-items:center;gap:10px;color:var(--lime);font-size:11px;font-weight:800;letter-spacing:.16em;text-transform:uppercase}
+.eyebrow:before{content:'';width:25px;height:1px;background:var(--lime)}
+h1{max-width:720px;margin:22px 0 20px;font-size:clamp(46px,6.3vw,78px);line-height:.99;letter-spacing:-.065em;font-weight:760}
+h1 span{color:var(--lime)}
+.hero-copy>p{max-width:560px;margin:0;color:#bdc8d2;font-size:17px;line-height:1.75}
+.hero-actions{display:flex;flex-wrap:wrap;align-items:center;gap:12px;margin-top:32px}
+.button{min-height:54px;padding:0 22px;border-radius:999px;display:inline-flex;justify-content:center;align-items:center;gap:10px;font-size:14px;font-weight:760;text-decoration:none;transition:transform .2s ease,box-shadow .2s ease}
+.button-primary{background:var(--lime);color:var(--navy);box-shadow:0 9px 22px rgba(0,0,0,.18)}
+.button-secondary{color:var(--white);border:1px solid rgba(255,255,255,.29);background:rgba(255,255,255,.045)}
+.button-secondary:hover{background:rgba(255,255,255,.1)}
+.button-arrow{font-size:16px;line-height:1}
+.hero-art{position:relative;min-height:420px;overflow:hidden;border:1px solid rgba(255,255,255,.1);border-radius:34px;background:radial-gradient(circle at 50% 46%,rgba(201,239,114,.17),transparent 27%),linear-gradient(145deg,#172b40,#101f31);box-shadow:0 28px 65px rgba(0,0,0,.24)}
+.hero-art:before{content:'';position:absolute;inset:0;background-image:radial-gradient(rgba(255,255,255,.22) .8px,transparent .8px);background-size:21px 21px;opacity:.24;mask-image:linear-gradient(135deg,#000,transparent 76%)}
+.art-glow{position:absolute;width:310px;height:310px;left:50%;top:48%;transform:translate(-50%,-50%);border-radius:50%;background:radial-gradient(circle,rgba(201,239,114,.19),rgba(201,239,114,0) 68%)}
+.pipe-ring{position:absolute;width:270px;height:270px;left:50%;top:47%;transform:translate(-50%,-50%);border:27px solid var(--lime);border-radius:50%;box-shadow:inset 0 0 0 1px rgba(12,25,41,.35),0 22px 45px rgba(0,0,0,.2)}
+.pipe-ring:before{content:'';position:absolute;width:132px;height:82px;right:-61px;top:6px;border-radius:20px;background:linear-gradient(135deg,#d8fa93,var(--lime));transform:rotate(38deg);box-shadow:0 12px 22px rgba(0,0,0,.18)}
+.pipe-ring:after{content:'';position:absolute;width:72px;height:72px;left:50%;top:50%;transform:translate(-50%,-50%);border-radius:50%;background:var(--navy-2);box-shadow:inset 0 0 0 1px rgba(255,255,255,.16)}
+.art-orbit{position:absolute;width:330px;height:330px;left:50%;top:47%;transform:translate(-50%,-50%) rotate(-24deg);border:1px solid rgba(255,255,255,.19);border-radius:50%}
+.art-orbit:after{content:'';position:absolute;top:28px;right:31px;width:11px;height:11px;border-radius:50%;background:var(--lime);box-shadow:0 0 22px rgba(201,239,114,.8)}
+.art-chip{position:absolute;left:24px;bottom:24px;padding:13px 16px;border:1px solid rgba(255,255,255,.13);border-radius:14px;background:rgba(8,19,31,.72);color:#e9f0f5;font-size:11px;font-weight:750;letter-spacing:.1em;text-transform:uppercase;backdrop-filter:blur(10px)}
+.art-chip span{color:var(--lime);padding:0 5px}
+.services-section{padding:100px 0 108px;background:var(--paper)}
+.section-inner{width:min(1200px,calc(100% - 48px));margin:auto}
+.section-head{display:flex;align-items:flex-end;justify-content:space-between;gap:32px;margin-bottom:36px}
+.section-kicker{margin:0 0 13px;color:#65745b;font-size:11px;font-weight:800;letter-spacing:.16em;text-transform:uppercase}
+h2{margin:0;color:var(--ink);font-size:clamp(32px,4vw,48px);line-height:1.08;letter-spacing:-.05em;font-weight:740}
+.section-intro{max-width:310px;margin:0 0 3px;color:var(--muted);font-size:14px;line-height:1.7}
+.service-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}
+.service-card{position:relative;min-height:206px;padding:24px;border:1px solid var(--line);border-radius:20px;background:var(--white);box-shadow:0 6px 18px rgba(18,34,53,.035);transition:transform .22s ease,box-shadow .22s ease,border-color .22s ease}
+.service-card:hover{transform:translateY(-4px);border-color:#d5dfc7;box-shadow:var(--shadow)}
+.service-top{display:flex;align-items:center;justify-content:space-between;margin-bottom:28px}
+.service-index{color:#839176;font-size:11px;font-weight:800;letter-spacing:.12em}
+.service-shape{position:relative;width:28px;height:28px;border:1px solid #dce5d1;border-radius:9px;background:#f2f7e9}
+.service-shape:before{content:'';position:absolute;width:9px;height:9px;left:8px;top:8px;border:2px solid #79934d;border-radius:50%}
+.service-card h3{margin:0 0 9px;color:var(--ink);font-size:19px;line-height:1.25;letter-spacing:-.035em}
+.service-card p{margin:0;color:var(--muted);font-size:13px;line-height:1.6}
+.trust-section{position:relative;overflow:hidden;background:var(--navy);color:var(--white);padding:62px 0}
+.trust-section:after{content:'';position:absolute;right:-105px;top:-195px;width:440px;height:440px;border:1px solid rgba(201,239,114,.13);border-radius:50%;box-shadow:0 0 0 42px rgba(201,239,114,.025),0 0 0 84px rgba(201,239,114,.02)}
+.trust-inner{position:relative;z-index:1;width:min(1200px,calc(100% - 48px));margin:auto;display:flex;align-items:center;justify-content:space-between;gap:40px}
+.trust-title{margin:0;color:#f4f7f4;font-size:clamp(27px,3.4vw,38px);letter-spacing:-.045em;line-height:1.15}
+.rating-block{display:flex;align-items:center;gap:23px;flex:none}
+.rating-number{color:var(--lime);font-size:clamp(56px,7vw,82px);font-weight:750;letter-spacing:-.07em;line-height:1}
+.rating-details{padding-left:22px;border-left:1px solid rgba(255,255,255,.2)}
+.rating-scale{margin:0 0 5px;color:var(--white);font-size:15px;font-weight:750}
+.rating-source{margin:0;color:#aab8c5;font-size:13px;line-height:1.5}
+.contact-section{padding:102px 0;background:#edf1e9}
+.contact-grid{display:grid;grid-template-columns:.9fr 1.1fr;gap:78px;align-items:start}
+.contact-copy h2{max-width:440px;margin-bottom:20px}
+.contact-lead{max-width:410px;margin:0 0 34px;color:var(--muted);font-size:15px;line-height:1.75}
+.contact-list{display:grid;gap:21px}
+.contact-item{display:grid;grid-template-columns:42px 1fr;gap:14px;align-items:start}
+.contact-symbol{width:42px;height:42px;display:grid;place-items:center;border-radius:13px;background:var(--white);color:#607747;font-size:18px;font-weight:700;box-shadow:0 5px 15px rgba(18,34,53,.05)}
+.contact-item h3{margin:2px 0 5px;color:#718067;font-size:10px;font-weight:800;letter-spacing:.14em;text-transform:uppercase}
+.contact-item p,.contact-item a{margin:0;color:var(--ink);font-size:14px;font-weight:650;line-height:1.6;text-decoration:none}
+.contact-item a:hover{text-decoration:underline;text-underline-offset:3px}
+address{font-style:normal}
+.enquiry-card{padding:30px;border:1px solid rgba(19,34,53,.07);border-radius:24px;background:var(--white);box-shadow:0 18px 45px rgba(18,34,53,.08)}
+.enquiry-card h3{margin:0 0 8px;font-size:23px;letter-spacing:-.04em}
+.enquiry-intro{margin:0 0 24px;color:var(--muted);font-size:13px;line-height:1.6}
+.form-grid{display:grid;grid-template-columns:1fr 1fr;gap:15px}
+.field{display:flex;flex-direction:column;gap:7px}
+.field-wide{grid-column:1/-1}
+.field label{color:#334257;font-size:12px;font-weight:700}
+.field input,.field textarea{width:100%;border:1px solid #dce2dd;border-radius:11px;background:#fbfcfa;color:var(--ink);font:inherit;font-size:14px;outline:none;transition:border-color .2s ease,box-shadow .2s ease}
+.field input{height:46px;padding:0 13px}
+.field textarea{min-height:105px;padding:12px 13px;resize:vertical}
+.field input:focus,.field textarea:focus{border-color:#91a86c;box-shadow:0 0 0 3px rgba(145,168,108,.15)}
+.form-note{margin:14px 0 17px;color:#667386;font-size:12px;line-height:1.55}
+.form-button{min-height:46px;padding:0 18px;border:0;border-radius:999px;background:#dfe5dc;color:#687364;font:inherit;font-size:13px;font-weight:750;cursor:not-allowed}
+.site-footer{padding:28px 24px 30px;background:#081421;color:#fff;text-align:center}
+.footer-name{margin:0 0 5px;font-size:14px;font-weight:750;letter-spacing:-.01em}
+.footer-concept{margin:0;color:#c4ced5;font-size:12px}
+.footer-note{margin:9px 0 0;color:#8795a1;font-size:11px}
+.mobile-call-bar{display:none}
+@media(max-width:900px){.hero-inner{grid-template-columns:minmax(0,1fr) minmax(280px,.8fr);gap:32px}.hero-art{min-height:360px}.pipe-ring{width:225px;height:225px;border-width:23px}.pipe-ring:before{width:115px;height:70px;right:-53px}.art-orbit{width:280px;height:280px}.contact-grid{gap:42px}}
+@media(max-width:720px){html{scroll-padding-top:76px}.header-inner{width:calc(100% - 32px);height:68px;gap:12px}.brand{gap:9px}.brand-mark{width:34px;height:34px;border-radius:10px}.brand-name{max-width:190px;font-size:12px}.main-nav{display:none}.header-inner>.call-button{min-height:40px;padding:0 13px;font-size:12px}.hero{padding:58px 0 60px}.hero-inner{width:calc(100% - 36px);grid-template-columns:1fr;gap:36px}.hero-copy>p{font-size:15px}.hero-art{min-height:300px;border-radius:27px}.pipe-ring{width:205px;height:205px}.art-orbit{width:258px;height:258px}.art-chip{left:16px;bottom:16px}.services-section{padding:72px 0 76px}.section-inner,.trust-inner{width:calc(100% - 36px)}.section-head{display:block;margin-bottom:27px}.section-intro{margin-top:14px;max-width:460px}.service-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}.service-card{min-height:190px;padding:18px;border-radius:17px}.service-top{margin-bottom:22px}.service-card h3{font-size:17px}.service-card p{font-size:12px}.trust-section{padding:43px 0}.trust-inner{align-items:flex-start;flex-direction:column;gap:26px}.rating-number{font-size:66px}.contact-section{padding:72px 0}.contact-grid{grid-template-columns:1fr;gap:36px}.enquiry-card{padding:24px;border-radius:20px}.site-footer{padding-bottom:calc(104px + env(safe-area-inset-bottom))}.mobile-call-bar{position:fixed;z-index:30;left:0;right:0;bottom:0;display:flex;justify-content:center;padding:10px 18px calc(10px + env(safe-area-inset-bottom));background:rgba(8,20,33,.96);border-top:1px solid rgba(255,255,255,.12);backdrop-filter:blur(12px)}.mobile-call-bar a{width:min(100%,520px);min-height:48px;display:flex;justify-content:center;align-items:center;gap:10px;border-radius:999px;background:var(--lime);color:var(--navy);font-size:14px;font-weight:800;text-decoration:none;box-shadow:0 7px 18px rgba(0,0,0,.19)}}
+@media(max-width:430px){.brand-name{max-width:155px;font-size:11px}.header-inner>.call-button{padding:0 11px}.hero-actions{align-items:stretch;flex-direction:column}.hero-actions .button{width:100%}.service-grid{grid-template-columns:1fr}.service-card{min-height:0}.service-top{margin-bottom:18px}.form-grid{grid-template-columns:1fr}.field-wide{grid-column:auto}.rating-block{gap:16px}.rating-details{padding-left:16px}}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*:before,*:after{transition:none!important}}
+</style>
+</head>
+<body>
+<header class='site-header'>
+  <div class='header-inner'>
+    <a class='brand' href='#top' aria-label='North Mecklenburg Plumbing Co Inc home'>
+      <span class='brand-mark' aria-hidden='true'>N</span>
+      <span class='brand-name'>North Mecklenburg Plumbing Co Inc</span>
+    </a>
+    <nav class='main-nav' aria-label='Main navigation'>
+      <a href='#services'>Services</a>
+      <a href='#contact'>Contact</a>
+    </nav>
+    <a class='call-button' href='tel:+17048751656'><span class='call-dot' aria-hidden='true'></span>Call now</a>
+  </div>
+</header>
+<main id='top'>
+  <section class='hero' aria-labelledby='hero-title'>
+    <div class='hero-inner'>
+      <div class='hero-copy'>
+        <div class='eyebrow'>Plumbing · Huntersville, NC</div>
+        <h1 id='hero-title'>Clear next steps for <span>plumbing problems.</span></h1>
+        <p>Call to discuss emergency repairs, drain cleaning, water heaters, leaks, fixtures, repiping and water line work.</p>
+        <div class='hero-actions'>
+          <a class='button button-primary' href='tel:+17048751656'>Call (704) 875-1656 <span class='button-arrow' aria-hidden='true'>↗</span></a>
+          <a class='button button-secondary' href='#contact'>Request a quote <span class='button-arrow' aria-hidden='true'>↓</span></a>
+        </div>
+      </div>
+      <div class='hero-art' aria-hidden='true'>
+        <div class='art-glow'></div>
+        <div class='art-orbit'></div>
+        <div class='pipe-ring'></div>
+        <div class='art-chip'>Plumbing <span>·</span> Huntersville, NC</div>
+      </div>
+    </div>
+  </section>
+  <section class='services-section' id='services' aria-labelledby='services-title'>
+    <div class='section-inner'>
+      <div class='section-head'>
+        <div>
+          <p class='section-kicker'>Plumbing services</p>
+          <h2 id='services-title'>A practical range of plumbing work.</h2>
+        </div>
+        <p class='section-intro'>Explore the plumbing work listed below and call to discuss what you need.</p>
+      </div>
+      <div class='service-grid'>
+        <article class='service-card'><div class='service-top'><span class='service-index'>01</span><span class='service-shape' aria-hidden='true'></span></div><h3>Emergency plumbing repairs</h3><p>Help with urgent plumbing issues and repairs.</p></article>
+        <article class='service-card'><div class='service-top'><span class='service-index'>02</span><span class='service-shape' aria-hidden='true'></span></div><h3>Drain cleaning and unclogging</h3><p>Clear blocked drains and address flow problems.</p></article>
+        <article class='service-card'><div class='service-top'><span class='service-index'>03</span><span class='service-shape' aria-hidden='true'></span></div><h3>Water heater service</h3><p>Service for water heater concerns and needs.</p></article>
+        <article class='service-card'><div class='service-top'><span class='service-index'>04</span><span class='service-shape' aria-hidden='true'></span></div><h3>Leak detection and repair</h3><p>Locate leaks and address repair needs.</p></article>
+        <article class='service-card'><div class='service-top'><span class='service-index'>05</span><span class='service-shape' aria-hidden='true'></span></div><h3>Fixture replacement</h3><p>Replacement for plumbing fixtures.</p></article>
+        <article class='service-card'><div class='service-top'><span class='service-index'>06</span><span class='service-shape' aria-hidden='true'></span></div><h3>Repiping and water line work</h3><p>Repiping and water line work for plumbing systems.</p></article>
+      </div>
+    </div>
+  </section>
+  <section class='trust-section' aria-labelledby='rating-title'>
+    <div class='trust-inner'>
+      <h2 class='trust-title' id='rating-title'>A rating at a glance.</h2>
+      <div class='rating-block'>
+        <div class='rating-number'>4.9</div>
+        <div class='rating-details'><p class='rating-scale'>out of 5</p><p class='rating-source'>from 439 Google reviews</p></div>
+      </div>
+    </div>
+  </section>
+  <section class='contact-section' id='contact' aria-labelledby='contact-title'>
+    <div class='section-inner contact-grid'>
+      <div class='contact-copy'>
+        <p class='section-kicker'>Contact</p>
+        <h2 id='contact-title'>Talk through your plumbing needs.</h2>
+        <p class='contact-lead'>Call North Mecklenburg Plumbing Co Inc or use the details below to get in touch.</p>
+        <div class='contact-list'>
+          <div class='contact-item'><span class='contact-symbol' aria-hidden='true'>↗</span><div><h3>Phone</h3><a href='tel:+17048751656'>(704) 875-1656</a></div></div>
+          <div class='contact-item'><span class='contact-symbol' aria-hidden='true'>⌖</span><div><h3>Address</h3><address>9705 Rosewood Meadow Ln, Huntersville, NC 28078, USA</address></div></div>
+        </div>
+      </div>
+      <div class='enquiry-card'>
+        <h3>Send an enquiry</h3>
+        <p class='enquiry-intro'>Share a few details to outline what you need.</p>
+        <form onsubmit='return false;' aria-describedby='form-note'>
+          <div class='form-grid'>
+            <div class='field'><label for='name'>Name</label><input id='name' name='name' type='text' autocomplete='name'></div>
+            <div class='field'><label for='phone'>Phone</label><input id='phone' name='phone' type='tel' autocomplete='tel'></div>
+            <div class='field field-wide'><label for='message'>How can we help?</label><textarea id='message' name='message' rows='4'></textarea></div>
+          </div>
+          <p class='form-note' id='form-note'>This form does not send messages. Please call to enquire.</p>
+          <button class='form-button' type='button' disabled>Form not connected</button>
+        </form>
+      </div>
+    </div>
+  </section>
+</main>
+<footer class='site-footer'>
+  <p class='footer-name'>North Mecklenburg Plumbing Co Inc</p>
+  <p class='footer-concept'>Concept preview — not the live site</p>
+  <p class='footer-note'>Service list reflects typical plumbing work.</p>
+</footer>
+<div class='mobile-call-bar'><a href='tel:+17048751656'><span class='call-dot' aria-hidden='true'></span>Call (704) 875-1656</a></div>
+</body>
+</html>
