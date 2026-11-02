@@ -1,0 +1,348 @@
+<!doctype html>
+<html lang='en'>
+<head>
+  <meta charset='utf-8'>
+  <meta name='viewport' content='width=device-width, initial-scale=1'>
+  <meta name='theme-color' content='#08111f'>
+  <meta name='description' content='Cain&#39;s Able Plumbing in China Grove, NC. Explore plumbing services and contact the business by phone.'>
+  <title>Cain&#39;s Able Plumbing | China Grove, NC</title>
+  <style>
+    :root {
+      color-scheme: dark;
+      --bg: #08111f;
+      --surface: #101c2d;
+      --surface-raised: #14233a;
+      --text: #f4f7f8;
+      --muted: #a8b5c5;
+      --line: rgba(225, 236, 246, .12);
+      --accent: #c8f36a;
+      --accent-ink: #10170b;
+      --max: 1180px;
+      --radius: 22px;
+    }
+    *, *::before, *::after { box-sizing: border-box; }
+    html { scroll-behavior: smooth; scroll-padding-top: 100px; }
+    body {
+      margin: 0;
+      min-width: 320px;
+      background: var(--bg);
+      color: var(--text);
+      font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+      line-height: 1.55;
+      -webkit-font-smoothing: antialiased;
+    }
+    a { color: inherit; }
+    .container { width: min(var(--max), calc(100% - 48px)); margin-inline: auto; }
+    .site-header {
+      position: sticky;
+      top: 0;
+      z-index: 20;
+      border-bottom: 1px solid var(--line);
+      background: rgba(8, 17, 31, .88);
+      backdrop-filter: blur(16px);
+    }
+    .header-inner { min-height: 78px; display: flex; align-items: center; justify-content: space-between; gap: 24px; }
+    .brand { display: inline-flex; align-items: center; gap: 12px; text-decoration: none; font-size: 1rem; font-weight: 750; letter-spacing: -.025em; }
+    .brand-mark { position: relative; display: grid; width: 36px; height: 36px; place-items: center; overflow: hidden; border: 1px solid rgba(200, 243, 106, .46); border-radius: 12px; background: linear-gradient(145deg, rgba(200, 243, 106, .18), rgba(200, 243, 106, .04)); }
+    .brand-mark::before { content: ''; width: 15px; height: 15px; border: 3px solid var(--accent); border-left-color: transparent; border-radius: 50%; transform: rotate(-42deg); }
+    .brand-mark::after { content: ''; position: absolute; right: 7px; bottom: 7px; width: 5px; height: 5px; border-radius: 50%; background: var(--accent); }
+    .header-nav { display: flex; align-items: center; gap: 30px; margin-left: auto; }
+    .header-nav a { color: var(--muted); text-decoration: none; font-size: .9rem; transition: color .2s ease; }
+    .header-nav a:hover { color: var(--text); }
+    .button { display: inline-flex; min-height: 48px; align-items: center; justify-content: center; gap: 10px; padding: 0 20px; border: 1px solid transparent; border-radius: 999px; font: inherit; font-size: .92rem; font-weight: 750; text-decoration: none; transition: transform .2s ease, background .2s ease, border-color .2s ease; }
+    .button:hover { transform: translateY(-2px); }
+    .button-primary { background: var(--accent); color: var(--accent-ink); box-shadow: 0 10px 30px rgba(200, 243, 106, .14); }
+    .button-primary:hover { background: #d5fa88; }
+    .button-outline { border-color: rgba(237, 244, 250, .24); background: rgba(255, 255, 255, .025); color: var(--text); }
+    .button-outline:hover { border-color: rgba(237, 244, 250, .5); background: rgba(255, 255, 255, .06); }
+    .phone-icon { width: 16px; height: 16px; display: inline-block; border: 2px solid currentColor; border-top-color: transparent; border-right-color: transparent; border-radius: 0 0 0 11px; transform: rotate(-45deg) scale(.75); }
+
+    .hero { position: relative; overflow: hidden; padding: 100px 0 108px; background: radial-gradient(ellipse at 72% 38%, rgba(200, 243, 106, .08), transparent 36%), linear-gradient(180deg, rgba(255,255,255,.015), transparent 76%); }
+    .hero::before { content: ''; position: absolute; top: -280px; right: -140px; width: 680px; height: 680px; border: 1px solid rgba(200, 243, 106, .08); border-radius: 50%; pointer-events: none; }
+    .hero::after { content: ''; position: absolute; top: -225px; right: -85px; width: 570px; height: 570px; border: 1px solid rgba(200, 243, 106, .06); border-radius: 50%; pointer-events: none; }
+    .hero-layout { position: relative; z-index: 1; display: grid; grid-template-columns: 1.08fr .92fr; align-items: center; gap: 72px; }
+    .eyebrow { display: inline-flex; align-items: center; gap: 10px; margin: 0 0 22px; color: var(--accent); font-size: .74rem; font-weight: 800; letter-spacing: .16em; text-transform: uppercase; }
+    .eyebrow::before { content: ''; width: 7px; height: 7px; border-radius: 50%; background: var(--accent); box-shadow: 0 0 18px rgba(200, 243, 106, .6); }
+    h1, h2, h3, p { margin-top: 0; }
+    h1 { max-width: 680px; margin-bottom: 22px; font-size: clamp(2.8rem, 5.7vw, 5.1rem); line-height: 1.03; letter-spacing: -.065em; }
+    .hero-copy { max-width: 580px; margin-bottom: 32px; color: var(--muted); font-size: 1.08rem; line-height: 1.75; }
+    .hero-actions { display: flex; flex-wrap: wrap; gap: 12px; }
+    .hero-art { position: relative; min-height: 390px; overflow: hidden; border: 1px solid rgba(225, 236, 246, .12); border-radius: 30px; background: radial-gradient(circle at 54% 43%, rgba(200, 243, 106, .16), transparent 28%), linear-gradient(145deg, #15253a, #0c1728 72%); box-shadow: 0 28px 80px rgba(0, 0, 0, .25); }
+    .hero-art::before { content: ''; position: absolute; inset: 22px; border: 1px solid rgba(225, 236, 246, .08); border-radius: 22px; }
+    .art-orbit { position: absolute; width: 250px; height: 250px; top: 50%; left: 50%; border: 1px solid rgba(200, 243, 106, .28); border-radius: 50%; transform: translate(-50%, -50%); box-shadow: 0 0 0 32px rgba(200, 243, 106, .025), 0 0 0 68px rgba(200, 243, 106, .018); }
+    .art-orbit::before { content: ''; position: absolute; inset: 24px; border: 1px dashed rgba(200, 243, 106, .25); border-radius: 50%; }
+    .pipe-vertical { position: absolute; top: 19%; left: 43%; width: 58px; height: 60%; border: 1px solid rgba(224, 244, 199, .42); border-radius: 30px; background: linear-gradient(90deg, rgba(200, 243, 106, .06), rgba(200, 243, 106, .22) 48%, rgba(200, 243, 106, .07)); box-shadow: inset 6px 0 18px rgba(200, 243, 106, .07), 0 0 35px rgba(200, 243, 106, .09); }
+    .pipe-horizontal { position: absolute; top: 47%; left: 43%; width: 37%; height: 58px; border: 1px solid rgba(224, 244, 199, .42); border-left: 0; border-radius: 0 30px 30px 0; background: linear-gradient(180deg, rgba(200, 243, 106, .06), rgba(200, 243, 106, .22) 48%, rgba(200, 243, 106, .07)); }
+    .pipe-joint { position: absolute; top: calc(47% - 8px); left: calc(43% - 8px); width: 74px; height: 74px; border: 1px solid rgba(224, 244, 199, .55); border-radius: 22px; background: linear-gradient(135deg, #1a2d42, #293d4a); box-shadow: 0 10px 30px rgba(0,0,0,.3); }
+    .pipe-joint::after { content: ''; position: absolute; inset: 14px; border: 1px solid rgba(200, 243, 106, .56); border-radius: 13px; }
+    .art-label { position: absolute; right: 34px; bottom: 32px; color: rgba(244, 247, 248, .72); font-size: .69rem; font-weight: 800; letter-spacing: .15em; text-transform: uppercase; }
+    .art-dot { position: absolute; top: 23%; right: 23%; width: 11px; height: 11px; border-radius: 50%; background: var(--accent); box-shadow: 0 0 22px rgba(200, 243, 106, .7); }
+
+    .section { padding: 100px 0; }
+    .section-heading { max-width: 680px; margin-bottom: 40px; }
+    .section-kicker { margin-bottom: 12px; color: var(--accent); font-size: .72rem; font-weight: 800; letter-spacing: .16em; text-transform: uppercase; }
+    h2 { margin-bottom: 14px; font-size: clamp(2rem, 4vw, 3.2rem); line-height: 1.1; letter-spacing: -.05em; }
+    .section-intro { margin-bottom: 0; color: var(--muted); font-size: 1rem; }
+    .services { background: #0b1524; border-top: 1px solid rgba(225, 236, 246, .055); border-bottom: 1px solid rgba(225, 236, 246, .055); }
+    .service-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
+    .service-card { position: relative; min-height: 205px; padding: 27px 26px 25px; overflow: hidden; border: 1px solid var(--line); border-radius: var(--radius); background: linear-gradient(145deg, rgba(255,255,255,.045), rgba(255,255,255,.012)); box-shadow: 0 14px 38px rgba(0,0,0,.12); transition: transform .2s ease, border-color .2s ease, background .2s ease; }
+    .service-card:hover { transform: translateY(-4px); border-color: rgba(200, 243, 106, .35); background: linear-gradient(145deg, rgba(200,243,106,.07), rgba(255,255,255,.015)); }
+    .service-number { display: inline-block; margin-bottom: 24px; color: var(--accent); font-size: .7rem; font-weight: 800; letter-spacing: .15em; }
+    .service-card h3 { margin-bottom: 9px; font-size: 1.12rem; line-height: 1.3; letter-spacing: -.025em; }
+    .service-card p { margin-bottom: 0; color: var(--muted); font-size: .9rem; line-height: 1.6; }
+
+    .trust { padding: 82px 0; }
+    .trust-panel { position: relative; display: flex; align-items: center; justify-content: space-between; gap: 36px; padding: 45px 54px; overflow: hidden; border: 1px solid rgba(200, 243, 106, .22); border-radius: 28px; background: radial-gradient(ellipse at 100% 0%, rgba(200,243,106,.10), transparent 42%), linear-gradient(120deg, #111f32, #0e1a2b); box-shadow: 0 24px 64px rgba(0,0,0,.18); }
+    .trust-panel::after { content: ''; position: absolute; right: 8%; top: -120px; width: 280px; height: 280px; border: 1px solid rgba(200,243,106,.1); border-radius: 50%; pointer-events: none; }
+    .trust-heading { position: relative; z-index: 1; max-width: 380px; margin-bottom: 0; }
+    .trust-heading .section-kicker { margin-bottom: 13px; }
+    .trust-heading h2 { margin-bottom: 0; font-size: clamp(1.8rem, 3.2vw, 2.5rem); }
+    .rating { position: relative; z-index: 1; display: flex; align-items: baseline; gap: 13px; white-space: nowrap; }
+    .rating strong { color: var(--accent); font-size: clamp(4rem, 8vw, 6.4rem); line-height: .95; letter-spacing: -.08em; }
+    .rating-detail { display: grid; gap: 3px; color: var(--muted); font-size: .92rem; }
+    .rating-detail strong { color: var(--text); font-size: 1rem; letter-spacing: 0; }
+
+    .contact { padding-top: 42px; }
+    .contact-layout { display: grid; grid-template-columns: .95fr 1.05fr; gap: 72px; align-items: start; }
+    .contact-copy { padding-top: 12px; }
+    .contact-copy .section-heading { margin-bottom: 34px; }
+    .contact-details { display: grid; gap: 22px; }
+    .contact-item { display: grid; grid-template-columns: 42px 1fr; align-items: start; gap: 14px; }
+    .contact-icon { display: grid; width: 42px; height: 42px; place-items: center; border: 1px solid rgba(200,243,106,.24); border-radius: 14px; background: rgba(200,243,106,.07); color: var(--accent); font-size: 1rem; font-weight: 800; }
+    .contact-label { display: block; margin: 1px 0 4px; color: var(--muted); font-size: .77rem; font-weight: 750; letter-spacing: .09em; text-transform: uppercase; }
+    .contact-value { color: var(--text); font-size: 1rem; font-weight: 650; line-height: 1.65; text-decoration: none; }
+    .contact-value:hover { color: var(--accent); }
+    .enquiry-card { padding: 34px; border: 1px solid var(--line); border-radius: 26px; background: linear-gradient(145deg, #122139, #0e1929); box-shadow: 0 22px 60px rgba(0,0,0,.18); }
+    .enquiry-card h3 { margin-bottom: 8px; font-size: 1.45rem; letter-spacing: -.035em; }
+    .form-note { margin-bottom: 24px; color: var(--muted); font-size: .88rem; }
+    .field { display: grid; gap: 8px; margin-bottom: 16px; }
+    .field label { color: #dce4eb; font-size: .83rem; font-weight: 650; }
+    .field input, .field textarea { width: 100%; padding: 13px 14px; border: 1px solid rgba(225,236,246,.15); border-radius: 12px; outline: none; background: rgba(5,12,22,.55); color: var(--text); font: inherit; font-size: .92rem; transition: border-color .2s ease, box-shadow .2s ease; }
+    .field input::placeholder, .field textarea::placeholder { color: #718095; }
+    .field input:focus, .field textarea:focus { border-color: rgba(200,243,106,.7); box-shadow: 0 0 0 3px rgba(200,243,106,.1); }
+    .field textarea { min-height: 105px; resize: vertical; }
+    .form-preview { width: 100%; min-height: 48px; border: 0; border-radius: 999px; background: rgba(200,243,106,.28); color: rgba(16,23,11,.72); font: inherit; font-size: .9rem; font-weight: 800; cursor: not-allowed; }
+    .form-footnote { margin: 13px 0 0; color: var(--muted); font-size: .78rem; text-align: center; }
+
+    .site-footer { padding: 32px 0 36px; border-top: 1px solid var(--line); background: rgba(4, 10, 18, .5); }
+    .footer-inner { display: flex; align-items: center; justify-content: space-between; gap: 20px 32px; flex-wrap: wrap; }
+    .footer-name { margin: 0; font-size: .92rem; font-weight: 750; }
+    .footer-preview { margin: 0; color: var(--muted); font-size: .82rem; }
+    .footer-note { width: 100%; margin: -4px 0 0; color: #8290a1; font-size: .74rem; }
+    .mobile-call-bar { display: none; }
+
+    @media (max-width: 900px) {
+      .hero-layout { gap: 40px; }
+      .hero-art { min-height: 340px; }
+      .contact-layout { gap: 38px; }
+      .trust-panel { padding: 40px; }
+    }
+    @media (max-width: 720px) {
+      html { scroll-padding-top: 82px; }
+      body { padding-bottom: 82px; }
+      .container { width: min(100% - 36px, var(--max)); }
+      .header-inner { min-height: 68px; }
+      .brand { font-size: .92rem; }
+      .brand-mark { width: 33px; height: 33px; }
+      .header-nav { display: none; }
+      .header-call { min-height: 42px; padding-inline: 14px; font-size: .82rem; }
+      .hero { padding: 70px 0 72px; }
+      .hero-layout { grid-template-columns: 1fr; gap: 42px; }
+      h1 { max-width: 600px; font-size: clamp(2.65rem, 11vw, 4.2rem); }
+      .hero-copy { font-size: 1rem; }
+      .hero-art { min-height: 300px; }
+      .pipe-vertical { left: 39%; }
+      .pipe-horizontal { left: 39%; }
+      .pipe-joint { left: calc(39% - 8px); }
+      .section { padding: 72px 0; }
+      .section-heading { margin-bottom: 30px; }
+      .service-grid { grid-template-columns: repeat(2, 1fr); gap: 12px; }
+      .service-card { min-height: 195px; padding: 21px 18px; }
+      .service-card h3 { font-size: 1rem; }
+      .service-card p { font-size: .84rem; }
+      .service-number { margin-bottom: 19px; }
+      .trust { padding: 62px 0; }
+      .trust-panel { align-items: flex-start; flex-direction: column; gap: 30px; padding: 32px 26px; }
+      .rating strong { font-size: 4.8rem; }
+      .contact { padding-top: 10px; }
+      .contact-layout { grid-template-columns: 1fr; gap: 36px; }
+      .enquiry-card { padding: 26px 22px; }
+      .mobile-call-bar { position: fixed; z-index: 30; right: 0; bottom: 0; left: 0; display: block; padding: 11px 18px calc(11px + env(safe-area-inset-bottom)); border-top: 1px solid rgba(225,236,246,.14); background: rgba(8,17,31,.94); backdrop-filter: blur(18px); }
+      .mobile-call-bar a { display: flex; min-height: 50px; align-items: center; justify-content: center; gap: 10px; border-radius: 999px; background: var(--accent); color: var(--accent-ink); font-size: .95rem; font-weight: 800; text-decoration: none; }
+      .footer-inner { align-items: flex-start; flex-direction: column; gap: 8px; }
+      .footer-note { margin-top: 5px; }
+    }
+    @media (max-width: 430px) {
+      .header-call { width: 43px; min-width: 43px; padding: 0; overflow: hidden; font-size: 0; gap: 0; }
+      .header-call .phone-icon { flex: 0 0 16px; }
+      .hero-actions { align-items: stretch; flex-direction: column; }
+      .hero-actions .button { width: 100%; }
+      .service-grid { grid-template-columns: 1fr; }
+      .service-card { min-height: 0; }
+      .service-number { margin-bottom: 14px; }
+      .rating { gap: 10px; }
+      .rating strong { font-size: 4.2rem; }
+      .rating-detail { font-size: .82rem; }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after { scroll-behavior: auto !important; transition-duration: .01ms !important; }
+    }
+  </style>
+</head>
+<body>
+  <header class='site-header'>
+    <div class='container header-inner'>
+      <a class='brand' href='#top' aria-label='Cain&#39;s Able Plumbing home'>
+        <span class='brand-mark' aria-hidden='true'></span>
+        <span>Cain&#39;s Able Plumbing</span>
+      </a>
+      <nav class='header-nav' aria-label='Main navigation'>
+        <a href='#services'>Services</a>
+        <a href='#contact'>Contact</a>
+      </nav>
+      <a class='button button-primary header-call' href='tel:+17048571600'><span class='phone-icon' aria-hidden='true'></span>Call now</a>
+    </div>
+  </header>
+
+  <main id='top'>
+    <section class='hero' aria-labelledby='hero-title'>
+      <div class='container hero-layout'>
+        <div class='hero-content'>
+          <p class='eyebrow'>Plumbing · China Grove, NC</p>
+          <h1 id='hero-title'>Plumbing help, from urgent repairs to water lines.</h1>
+          <p class='hero-copy'>Explore emergency repairs, drain cleaning, water heater service, leak repair, fixture replacement and water line work.</p>
+          <div class='hero-actions'>
+            <a class='button button-primary' href='tel:+17048571600'><span class='phone-icon' aria-hidden='true'></span>Call Cain&#39;s Able Plumbing</a>
+            <a class='button button-outline' href='#contact'>Request a quote <span aria-hidden='true'>↘</span></a>
+          </div>
+        </div>
+        <div class='hero-art' aria-hidden='true'>
+          <div class='art-orbit'></div>
+          <div class='pipe-vertical'></div>
+          <div class='pipe-horizontal'></div>
+          <div class='pipe-joint'></div>
+          <div class='art-dot'></div>
+          <div class='art-label'>China Grove, NC</div>
+        </div>
+      </div>
+    </section>
+
+    <section class='section services' id='services' aria-labelledby='services-title'>
+      <div class='container'>
+        <div class='section-heading'>
+          <p class='section-kicker'>Services</p>
+          <h2 id='services-title'>Plumbing services</h2>
+          <p class='section-intro'>Explore the plumbing work listed for Cain&#39;s Able Plumbing.</p>
+        </div>
+        <div class='service-grid'>
+          <article class='service-card'>
+            <span class='service-number'>01</span>
+            <h3>Emergency plumbing repairs</h3>
+            <p>Support for urgent plumbing repair needs.</p>
+          </article>
+          <article class='service-card'>
+            <span class='service-number'>02</span>
+            <h3>Drain cleaning and unclogging</h3>
+            <p>Work to clear blocked or slow drains.</p>
+          </article>
+          <article class='service-card'>
+            <span class='service-number'>03</span>
+            <h3>Water heater service</h3>
+            <p>Service for water heater concerns.</p>
+          </article>
+          <article class='service-card'>
+            <span class='service-number'>04</span>
+            <h3>Leak detection and repair</h3>
+            <p>Work to locate and repair plumbing leaks.</p>
+          </article>
+          <article class='service-card'>
+            <span class='service-number'>05</span>
+            <h3>Fixture replacement</h3>
+            <p>Replacement work for plumbing fixtures.</p>
+          </article>
+          <article class='service-card'>
+            <span class='service-number'>06</span>
+            <h3>Repiping and water line work</h3>
+            <p>Work involving pipes and water lines.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class='trust' aria-labelledby='trust-title'>
+      <div class='container'>
+        <div class='trust-panel'>
+          <div class='trust-heading'>
+            <p class='section-kicker'>Google reviews</p>
+            <h2 id='trust-title'>Google review rating</h2>
+          </div>
+          <div class='rating' aria-label='4.9 out of 5 from 683 Google reviews'>
+            <strong>4.9</strong>
+            <div class='rating-detail'><span>out of 5</span><strong>683 Google reviews</strong></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class='section contact' id='contact' aria-labelledby='contact-title'>
+      <div class='container contact-layout'>
+        <div class='contact-copy'>
+          <div class='section-heading'>
+            <p class='section-kicker'>Contact</p>
+            <h2 id='contact-title'>Talk through your plumbing needs.</h2>
+            <p class='section-intro'>Call Cain&#39;s Able Plumbing or find the address below.</p>
+          </div>
+          <div class='contact-details'>
+            <div class='contact-item'>
+              <span class='contact-icon' aria-hidden='true'>↗</span>
+              <div>
+                <span class='contact-label'>Phone</span>
+                <a class='contact-value' href='tel:+17048571600'>+1 704-857-1600</a>
+              </div>
+            </div>
+            <div class='contact-item'>
+              <span class='contact-icon' aria-hidden='true'>⌖</span>
+              <div>
+                <span class='contact-label'>Address</span>
+                <p class='contact-value'>635 Menius Rd<br>China Grove, NC 28023, USA</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class='enquiry-card'>
+          <h3>Enquiry form</h3>
+          <p class='form-note' id='form-note'>This form does not send. Please call to make an enquiry.</p>
+          <form onsubmit='return false;' aria-describedby='form-note' novalidate>
+            <div class='field'>
+              <label for='name'>Name</label>
+              <input id='name' name='name' type='text' autocomplete='name' placeholder='Your name'>
+            </div>
+            <div class='field'>
+              <label for='phone'>Phone number</label>
+              <input id='phone' name='phone' type='tel' autocomplete='tel' placeholder='Your phone number'>
+            </div>
+            <div class='field'>
+              <label for='message'>How can we help?</label>
+              <textarea id='message' name='message' placeholder='Tell us about your plumbing enquiry'></textarea>
+            </div>
+            <button class='form-preview' type='button' disabled>Form preview only</button>
+            <p class='form-footnote'>For an enquiry, call +1 704-857-1600.</p>
+          </form>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class='site-footer'>
+    <div class='container footer-inner'>
+      <p class='footer-name'>Cain&#39;s Able Plumbing</p>
+      <p class='footer-preview'>Concept preview — not the live site</p>
+      <p class='footer-note'>The service list reflects typical plumbing work.</p>
+    </div>
+  </footer>
+
+  <div class='mobile-call-bar'>
+    <a href='tel:+17048571600'><span class='phone-icon' aria-hidden='true'></span>Call Cain&#39;s Able Plumbing</a>
+  </div>
+</body>
+</html>
