@@ -1,0 +1,631 @@
+<!doctype html>
+<html lang='en'>
+<head>
+  <meta charset='utf-8'>
+  <meta name='viewport' content='width=device-width, initial-scale=1'>
+  <meta name='theme-color' content='#10272b'>
+  <title>L&amp;B Plumbing and HVAC | Lebanon, Tennessee</title>
+  <style>
+    :root {
+      color-scheme: light;
+      --ink: #10272b;
+      --ink-soft: #294448;
+      --paper: #f5f4ed;
+      --white: #fffefa;
+      --line: #d9ded5;
+      --lime: #d6f276;
+      --lime-dark: #b8d952;
+      --muted: #647674;
+      --gold: #f1c75b;
+      --content: 1160px;
+      --radius: 18px;
+    }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; scroll-padding-top: 105px; }
+    body {
+      margin: 0;
+      background: var(--paper);
+      color: var(--ink);
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+      font-size: 16px;
+      line-height: 1.55;
+      -webkit-font-smoothing: antialiased;
+    }
+    a { color: inherit; }
+    a:focus-visible, input:focus-visible, textarea:focus-visible {
+      outline: 3px solid #769919;
+      outline-offset: 4px;
+    }
+    .skip-link {
+      position: absolute;
+      z-index: 100;
+      top: 8px;
+      left: 8px;
+      transform: translateY(-150%);
+      padding: 10px 14px;
+      border-radius: 8px;
+      background: var(--lime);
+      color: var(--ink);
+      font-weight: 700;
+    }
+    .skip-link:focus { transform: translateY(0); }
+    .wrap { width: min(var(--content), calc(100% - 48px)); margin-inline: auto; }
+    .site-header {
+      position: sticky;
+      z-index: 20;
+      top: 0;
+      background: rgba(16, 39, 43, .97);
+      color: var(--white);
+      border-bottom: 1px solid rgba(255,255,255,.1);
+      backdrop-filter: blur(14px);
+    }
+    .header-inner {
+      min-height: 76px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 28px;
+    }
+    .brand {
+      display: inline-flex;
+      align-items: center;
+      gap: 11px;
+      flex: 0 0 auto;
+      color: var(--white);
+      text-decoration: none;
+      font-size: 17px;
+      font-weight: 750;
+      letter-spacing: -.035em;
+      line-height: 1.1;
+    }
+    .brand-mark {
+      display: grid;
+      width: 36px;
+      height: 36px;
+      place-items: center;
+      border-radius: 11px;
+      background: var(--lime);
+      color: var(--ink);
+      font-size: 14px;
+      font-weight: 850;
+      letter-spacing: -.08em;
+    }
+    .nav { display: flex; align-items: center; gap: clamp(18px, 3vw, 36px); }
+    .nav a {
+      color: #d4dfda;
+      text-decoration: none;
+      font-size: 13px;
+      font-weight: 650;
+      transition: color .2s ease;
+    }
+    .nav a:hover { color: var(--lime); }
+    .header-call {
+      display: inline-flex;
+      min-height: 44px;
+      align-items: center;
+      justify-content: center;
+      gap: 9px;
+      padding: 0 15px;
+      border: 1px solid rgba(214,242,118,.7);
+      border-radius: 999px;
+      color: var(--lime);
+      text-decoration: none;
+      font-size: 13px;
+      font-weight: 750;
+      white-space: nowrap;
+    }
+    .header-call:hover { background: rgba(214,242,118,.1); }
+    .phone-icon { width: 16px; height: 16px; flex: 0 0 auto; }
+    .hero {
+      position: relative;
+      overflow: hidden;
+      background: var(--ink);
+      color: var(--white);
+    }
+    .hero::before {
+      position: absolute;
+      width: 620px;
+      height: 620px;
+      top: -365px;
+      right: -100px;
+      border: 1px solid rgba(214,242,118,.12);
+      border-radius: 50%;
+      content: '';
+      box-shadow: 0 0 0 54px rgba(214,242,118,.025), 0 0 0 108px rgba(214,242,118,.02);
+      pointer-events: none;
+    }
+    .hero-inner {
+      position: relative;
+      z-index: 1;
+      display: grid;
+      min-height: 586px;
+      grid-template-columns: 1.02fr .98fr;
+      align-items: center;
+      gap: 30px;
+      padding-block: 64px 72px;
+    }
+    .hero-copy { max-width: 630px; padding-block: 18px; }
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      margin: 0 0 24px;
+      color: var(--lime);
+      font-size: 11px;
+      font-weight: 800;
+      letter-spacing: .16em;
+      text-transform: uppercase;
+    }
+    .eyebrow::before { width: 22px; height: 1px; background: currentColor; content: ''; }
+    h1, h2, h3, p { margin-top: 0; }
+    h1 {
+      max-width: 700px;
+      margin-bottom: 22px;
+      font-size: clamp(42px, 5.7vw, 74px);
+      font-weight: 720;
+      letter-spacing: -.065em;
+      line-height: .99;
+    }
+    h1 span { color: var(--lime); }
+    .hero-lede {
+      max-width: 480px;
+      margin-bottom: 30px;
+      color: #c3d0cc;
+      font-size: 17px;
+      line-height: 1.7;
+    }
+    .hero-actions { display: flex; flex-wrap: wrap; gap: 12px; }
+    .button {
+      display: inline-flex;
+      min-height: 52px;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      padding: 0 20px;
+      border: 1px solid transparent;
+      border-radius: 999px;
+      text-decoration: none;
+      font-size: 14px;
+      font-weight: 750;
+      transition: transform .2s ease, background .2s ease, border-color .2s ease;
+    }
+    .button:hover { transform: translateY(-2px); }
+    .button-lime { background: var(--lime); color: var(--ink); }
+    .button-lime:hover { background: #e1fa92; }
+    .button-outline { border-color: rgba(255,255,255,.32); color: var(--white); }
+    .button-outline:hover { border-color: var(--lime); background: rgba(255,255,255,.05); }
+    .button-arrow { width: 16px; height: 16px; }
+    .hero-art {
+      position: relative;
+      display: grid;
+      min-height: 400px;
+      place-items: center;
+    }
+    .art-frame {
+      position: relative;
+      width: min(100%, 470px);
+      aspect-ratio: 1 / .9;
+      overflow: hidden;
+      border: 1px solid rgba(255,255,255,.12);
+      border-radius: 30px;
+      background: radial-gradient(ellipse at 60% 35%, rgba(83,119,99,.52), transparent 58%), linear-gradient(145deg, #18383a, #132d31 62%, #10272b);
+      box-shadow: 0 32px 80px rgba(0,0,0,.2);
+    }
+    .art-frame::before, .art-frame::after {
+      position: absolute;
+      border: 1px solid rgba(214,242,118,.12);
+      border-radius: 50%;
+      content: '';
+    }
+    .art-frame::before { width: 290px; height: 290px; right: -64px; top: -82px; }
+    .art-frame::after { width: 210px; height: 210px; right: -22px; top: -42px; }
+    .art-svg { position: absolute; inset: 0; width: 100%; height: 100%; }
+    .art-caption {
+      position: absolute;
+      right: 20px;
+      bottom: 20px;
+      left: 20px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 14px;
+      padding: 15px 17px;
+      border: 1px solid rgba(255,255,255,.15);
+      border-radius: 14px;
+      background: rgba(16,39,43,.78);
+      color: var(--white);
+      backdrop-filter: blur(12px);
+    }
+    .art-caption small { display: block; margin-bottom: 2px; color: #b8c7c1; font-size: 10px; letter-spacing: .13em; text-transform: uppercase; }
+    .art-caption strong { font-size: 14px; font-weight: 700; }
+    .caption-mark { display: grid; width: 34px; height: 34px; flex: 0 0 auto; place-items: center; border-radius: 50%; background: var(--lime); color: var(--ink); }
+    .caption-mark svg { width: 17px; height: 17px; }
+    .section { padding-block: 96px; }
+    .section-heading { max-width: 660px; margin-bottom: 38px; }
+    .section-kicker {
+      display: block;
+      margin-bottom: 12px;
+      color: #5c741e;
+      font-size: 11px;
+      font-weight: 800;
+      letter-spacing: .16em;
+      text-transform: uppercase;
+    }
+    h2 {
+      margin-bottom: 0;
+      font-size: clamp(34px, 4.3vw, 53px);
+      font-weight: 710;
+      letter-spacing: -.055em;
+      line-height: 1.05;
+    }
+    .services-section { background: var(--paper); }
+    .services-intro {
+      display: flex;
+      align-items: end;
+      justify-content: space-between;
+      gap: 24px;
+      margin-bottom: 36px;
+    }
+    .services-intro .section-heading { margin-bottom: 0; }
+    .services-intro p { max-width: 300px; margin-bottom: 5px; color: var(--muted); font-size: 14px; }
+    .service-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 14px; }
+    .service-card {
+      min-height: 208px;
+      padding: 24px 24px 22px;
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      background: var(--white);
+      transition: border-color .2s ease, transform .2s ease, box-shadow .2s ease;
+    }
+    .service-card:hover { transform: translateY(-3px); border-color: #bccb92; box-shadow: 0 14px 30px rgba(16,39,43,.06); }
+    .service-icon {
+      display: grid;
+      width: 43px;
+      height: 43px;
+      margin-bottom: 21px;
+      place-items: center;
+      border-radius: 13px;
+      background: #edf3dc;
+      color: #405a27;
+    }
+    .service-icon svg { width: 23px; height: 23px; }
+    .service-card h3 { margin-bottom: 8px; font-size: 18px; font-weight: 720; letter-spacing: -.035em; }
+    .service-card p { max-width: 300px; margin-bottom: 0; color: var(--muted); font-size: 13px; line-height: 1.65; }
+    .rating-section { overflow: hidden; background: #183438; color: var(--white); }
+    .rating-inner {
+      position: relative;
+      display: grid;
+      grid-template-columns: 1fr auto;
+      align-items: center;
+      gap: 40px;
+      min-height: 278px;
+      padding-block: 56px;
+    }
+    .rating-inner::after {
+      position: absolute;
+      right: 160px;
+      width: 240px;
+      height: 240px;
+      border: 1px solid rgba(214,242,118,.13);
+      border-radius: 50%;
+      content: '';
+      pointer-events: none;
+    }
+    .rating-copy { position: relative; z-index: 1; }
+    .rating-copy .section-kicker { color: var(--lime); }
+    .rating-copy h2 { max-width: 450px; font-size: clamp(30px, 3.8vw, 46px); }
+    .rating-display { position: relative; z-index: 1; min-width: 260px; text-align: right; }
+    .stars { display: flex; justify-content: flex-end; gap: 5px; margin-bottom: 11px; }
+    .stars svg { width: 29px; height: 29px; }
+    .rating-display p { margin: 0; color: #e5ece8; font-size: 15px; font-weight: 600; }
+    .contact-section { background: #e9eddf; }
+    .contact-layout { display: grid; grid-template-columns: .88fr 1.12fr; gap: clamp(36px, 7vw, 100px); align-items: start; }
+    .contact-copy .section-heading { margin-bottom: 28px; }
+    .contact-copy > p { max-width: 370px; margin-bottom: 32px; color: #526663; font-size: 15px; }
+    .contact-detail { padding: 20px 0; border-top: 1px solid #cdd5c6; }
+    .contact-detail:last-child { border-bottom: 1px solid #cdd5c6; }
+    .detail-label { display: block; margin-bottom: 5px; color: #65766c; font-size: 10px; font-weight: 800; letter-spacing: .14em; text-transform: uppercase; }
+    .detail-value { color: var(--ink); font-size: 16px; font-weight: 650; line-height: 1.55; }
+    .contact-detail a { text-decoration-thickness: 1px; text-underline-offset: 4px; }
+    .quote-card {
+      padding: clamp(24px, 4vw, 38px);
+      border: 1px solid rgba(16,39,43,.1);
+      border-radius: 22px;
+      background: var(--white);
+      box-shadow: 0 16px 45px rgba(16,39,43,.06);
+    }
+    .quote-card h3 { margin-bottom: 7px; font-size: 25px; font-weight: 720; letter-spacing: -.045em; }
+    .quote-card > p { margin-bottom: 25px; color: var(--muted); font-size: 13px; }
+    .field { margin-bottom: 17px; }
+    .field label { display: block; margin-bottom: 7px; color: var(--ink); font-size: 12px; font-weight: 700; }
+    .field input, .field textarea {
+      display: block;
+      width: 100%;
+      min-height: 48px;
+      padding: 12px 14px;
+      border: 1px solid #d4ddd3;
+      border-radius: 10px;
+      background: #fcfcf8;
+      color: var(--ink);
+      font: inherit;
+      font-size: 14px;
+    }
+    .field textarea { min-height: 105px; resize: vertical; }
+    .field input::placeholder, .field textarea::placeholder { color: #87948d; }
+    .form-note { margin: 0 0 14px; color: #5d706b; font-size: 12px; line-height: 1.6; }
+    .form-call { width: 100%; }
+    .button-dark { background: var(--ink); color: var(--white); }
+    .button-dark:hover { background: #214347; }
+    .site-footer { padding-block: 25px 86px; background: var(--ink); color: #d4dfda; }
+    .footer-inner { display: flex; align-items: center; justify-content: space-between; gap: 20px; }
+    .footer-name { margin: 0; color: var(--white); font-size: 14px; font-weight: 750; }
+    .footer-label { margin: 0; color: #b9c9c3; font-size: 12px; }
+    .mobile-call-bar { display: none; }
+    @media (min-width: 761px) {
+      .site-footer { padding-bottom: 25px; }
+    }
+    @media (max-width: 900px) {
+      .hero-inner { min-height: 520px; grid-template-columns: 1fr .88fr; gap: 14px; }
+      .hero-art { min-height: 340px; }
+      .service-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+      .contact-layout { gap: 38px; }
+    }
+    @media (max-width: 760px) {
+      html { scroll-padding-top: 130px; }
+      .wrap { width: min(100% - 36px, var(--content)); }
+      .header-inner { display: grid; min-height: 0; grid-template-columns: 1fr auto; gap: 10px 14px; padding-block: 11px 0; }
+      .brand { font-size: 15px; }
+      .brand-mark { width: 33px; height: 33px; }
+      .header-call { min-height: 40px; gap: 7px; padding-inline: 11px; font-size: 11px; }
+      .phone-icon { width: 14px; height: 14px; }
+      .nav { grid-column: 1 / -1; justify-content: space-between; gap: 12px; padding: 10px 2px 12px; border-top: 1px solid rgba(255,255,255,.12); }
+      .nav a { font-size: 12px; }
+      .hero-inner { min-height: auto; grid-template-columns: 1fr; gap: 18px; padding-block: 59px 42px; }
+      .hero-copy { padding-block: 0; }
+      .eyebrow { margin-bottom: 19px; }
+      h1 { max-width: 600px; font-size: clamp(43px, 11vw, 66px); }
+      .hero-lede { max-width: 460px; font-size: 16px; }
+      .hero-art { min-height: 0; padding-block: 5px 0; }
+      .art-frame { width: min(100%, 470px); }
+      .section { padding-block: 72px; }
+      .services-intro { display: block; }
+      .services-intro p { margin-top: 17px; }
+      .rating-inner { grid-template-columns: 1fr; gap: 27px; min-height: 0; padding-block: 52px; }
+      .rating-inner::after { right: -100px; bottom: -130px; }
+      .rating-display { min-width: 0; text-align: left; }
+      .stars { justify-content: flex-start; }
+      .contact-layout { grid-template-columns: 1fr; gap: 34px; }
+      .contact-copy > p { margin-bottom: 22px; }
+      .site-footer { padding-bottom: 105px; }
+      .footer-inner { align-items: flex-start; flex-direction: column; gap: 8px; }
+      .mobile-call-bar {
+        position: fixed;
+        z-index: 30;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        display: block;
+        padding: 10px 18px calc(10px + env(safe-area-inset-bottom));
+        border-top: 1px solid rgba(255,255,255,.12);
+        background: rgba(16,39,43,.97);
+        backdrop-filter: blur(14px);
+      }
+      .mobile-call-bar a {
+        display: flex;
+        min-height: 48px;
+        align-items: center;
+        justify-content: center;
+        gap: 10px;
+        border-radius: 999px;
+        background: var(--lime);
+        color: var(--ink);
+        text-decoration: none;
+        font-size: 15px;
+        font-weight: 800;
+      }
+      .mobile-call-bar svg { width: 17px; height: 17px; }
+    }
+    @media (max-width: 430px) {
+      .wrap { width: calc(100% - 32px); }
+      .header-call { padding-inline: 9px; font-size: 10px; }
+      .brand { gap: 8px; font-size: 14px; }
+      .nav { gap: 8px; }
+      .nav a { font-size: 11px; }
+      .hero-actions { align-items: stretch; flex-direction: column; }
+      .hero-actions .button { width: 100%; }
+      .service-grid { grid-template-columns: 1fr; }
+      .service-card { min-height: 0; }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after { scroll-behavior: auto !important; transition-duration: .01ms !important; }
+    }
+  </style>
+</head>
+<body>
+  <a class='skip-link' href='#main'>Skip to content</a>
+  <header class='site-header'>
+    <div class='wrap header-inner'>
+      <a class='brand' href='#top' aria-label='L&B Plumbing and HVAC home'>
+        <span class='brand-mark' aria-hidden='true'>L&amp;B</span>
+        <span>L&amp;B Plumbing and HVAC</span>
+      </a>
+      <nav class='nav' aria-label='Main navigation'>
+        <a href='#services'>Services</a>
+        <a href='#why-us'>Why us</a>
+        <a href='#contact'>Contact</a>
+      </nav>
+      <a class='header-call' href='tel:+16154003953'>
+        <svg class='phone-icon' viewBox='0 0 24 24' fill='none' aria-hidden='true'><path d='M6.6 3.8h2.7l1.4 4-1.8 1.5a15 15 0 0 0 5.8 5.8l1.5-1.8 4 1.4v2.7c0 1.1-.9 2-2 2A15.8 15.8 0 0 1 4.6 5.8c0-1.1.9-2 2-2Z' stroke='currentColor' stroke-width='1.8' stroke-linejoin='round'/></svg>
+        <span>+1 615-400-3953</span>
+      </a>
+    </div>
+  </header>
+
+  <main id='main'>
+    <section class='hero' id='top' aria-labelledby='hero-title'>
+      <div class='wrap hero-inner'>
+        <div class='hero-copy'>
+          <p class='eyebrow'>Plumbing · HVAC · Lebanon, TN</p>
+          <h1 id='hero-title'>Plumbing and comfort problems, <span>handled by one local team.</span></h1>
+          <p class='hero-lede'>A clear way to get help with plumbing and HVAC needs in Lebanon, Tennessee.</p>
+          <div class='hero-actions'>
+            <a class='button button-lime' href='tel:+16154003953'>
+              <svg class='phone-icon' viewBox='0 0 24 24' fill='none' aria-hidden='true'><path d='M6.6 3.8h2.7l1.4 4-1.8 1.5a15 15 0 0 0 5.8 5.8l1.5-1.8 4 1.4v2.7c0 1.1-.9 2-2 2A15.8 15.8 0 0 1 4.6 5.8c0-1.1.9-2 2-2Z' stroke='currentColor' stroke-width='1.8' stroke-linejoin='round'/></svg>
+              Call +1 615-400-3953
+            </a>
+            <a class='button button-outline' href='#contact'>Request a quote <svg class='button-arrow' viewBox='0 0 24 24' fill='none' aria-hidden='true'><path d='M5 12h14m-6-6 6 6-6 6' stroke='currentColor' stroke-width='1.8' stroke-linecap='round' stroke-linejoin='round'/></svg></a>
+          </div>
+        </div>
+        <div class='hero-art' aria-hidden='true'>
+          <div class='art-frame'>
+            <svg class='art-svg' viewBox='0 0 470 423' fill='none' xmlns='http://www.w3.org/2000/svg'>
+              <defs>
+                <linearGradient id='pipe' x1='84' y1='83' x2='342' y2='337' gradientUnits='userSpaceOnUse'><stop stop-color='#D6F276'/><stop offset='1' stop-color='#8EBD5B'/></linearGradient>
+                <linearGradient id='unit' x1='180' y1='120' x2='333' y2='321' gradientUnits='userSpaceOnUse'><stop stop-color='#F5F4ED'/><stop offset='1' stop-color='#C7D5C8'/></linearGradient>
+              </defs>
+              <circle cx='235' cy='207' r='150' stroke='#D6F276' stroke-opacity='.13'/>
+              <circle cx='235' cy='207' r='112' stroke='#D6F276' stroke-opacity='.12'/>
+              <path d='M92 89v108c0 18 15 33 33 33h46' stroke='url(#pipe)' stroke-width='15' stroke-linecap='round' stroke-linejoin='round'/>
+              <path d='M92 89h51' stroke='url(#pipe)' stroke-width='15' stroke-linecap='round'/>
+              <path d='M310 321v-69c0-17 14-31 31-31h41' stroke='url(#pipe)' stroke-width='15' stroke-linecap='round' stroke-linejoin='round'/>
+              <path d='M382 221v-38' stroke='url(#pipe)' stroke-width='15' stroke-linecap='round'/>
+              <rect x='171' y='105' width='147' height='205' rx='21' fill='url(#unit)'/>
+              <rect x='187' y='121' width='115' height='173' rx='13' stroke='#17383A' stroke-opacity='.35' stroke-width='2'/>
+              <path d='M204 151h81M204 164h81M204 177h81M204 190h81' stroke='#47645C' stroke-width='4' stroke-linecap='round' opacity='.75'/>
+              <circle cx='245' cy='235' r='26' fill='#17383A'/>
+              <path d='M245 217v18l12 7' stroke='#D6F276' stroke-width='4' stroke-linecap='round' stroke-linejoin='round'/>
+              <circle cx='245' cy='235' r='17' stroke='#D6F276' stroke-opacity='.6' stroke-width='2'/>
+              <path d='M199 278h92' stroke='#82968B' stroke-width='3' stroke-linecap='round'/>
+              <circle cx='356' cy='129' r='23' fill='#D6F276'/>
+              <path d='M356 116v13l9 5' stroke='#17383A' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'/>
+              <path d='M357 92v7m0 60v7m37-37h-7m-60 0h-7m63-26-5 5m-42 42-5 5m52 0-5-5m-42-42-5-5' stroke='#D6F276' stroke-width='2' stroke-linecap='round' opacity='.8'/>
+              <circle cx='103' cy='307' r='5' fill='#D6F276' opacity='.8'/>
+              <circle cx='133' cy='333' r='3' fill='#D6F276' opacity='.55'/>
+              <circle cx='372' cy='297' r='4' fill='#D6F276' opacity='.7'/>
+            </svg>
+            <div class='art-caption'>
+              <div><small>One place to start</small><strong>Plumbing + HVAC</strong></div>
+              <span class='caption-mark'><svg viewBox='0 0 24 24' fill='none' aria-hidden='true'><path d='M5 12h14m-6-6 6 6-6 6' stroke='currentColor' stroke-width='1.9' stroke-linecap='round' stroke-linejoin='round'/></svg></span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class='section services-section' id='services' aria-labelledby='services-title'>
+      <div class='wrap'>
+        <div class='services-intro'>
+          <div class='section-heading'>
+            <span class='section-kicker'>Services</span>
+            <h2 id='services-title'>Plumbing and HVAC, in one place.</h2>
+          </div>
+          <p>Explore the service areas and get in touch about what you need.</p>
+        </div>
+        <div class='service-grid'>
+          <article class='service-card'>
+            <span class='service-icon' aria-hidden='true'><svg viewBox='0 0 24 24' fill='none'><path d='M8 3v5m8-5v5M6 8h12v4a6 6 0 0 1-12 0V8Zm6 10v3m-3 0h6' stroke='currentColor' stroke-width='1.7' stroke-linecap='round' stroke-linejoin='round'/></svg></span>
+            <h3>Plumbing repair</h3><p>Get help identifying and addressing plumbing issues.</p>
+          </article>
+          <article class='service-card'>
+            <span class='service-icon' aria-hidden='true'><svg viewBox='0 0 24 24' fill='none'><path d='M4 5h16v4H4zM6 9v10m12-10v10M6 14h12M9 19h6' stroke='currentColor' stroke-width='1.7' stroke-linecap='round' stroke-linejoin='round'/><path d='M8 7h.01M12 7h.01M16 7h.01' stroke='currentColor' stroke-width='2.4' stroke-linecap='round'/></svg></span>
+            <h3>Drain cleaning</h3><p>Service focused on drain concerns and restoring proper flow.</p>
+          </article>
+          <article class='service-card'>
+            <span class='service-icon' aria-hidden='true'><svg viewBox='0 0 24 24' fill='none'><path d='M7 4h10v16H7zM9 7h6m-6 3h6m-3 3v4' stroke='currentColor' stroke-width='1.7' stroke-linecap='round' stroke-linejoin='round'/><path d='M12 15c1 1.2 1.6 2 1.6 2.7a1.6 1.6 0 1 1-3.2 0c0-.7.6-1.5 1.6-2.7Z' fill='currentColor'/></svg></span>
+            <h3>Water heater service</h3><p>Support for water heater problems and service needs.</p>
+          </article>
+          <article class='service-card'>
+            <span class='service-icon' aria-hidden='true'><svg viewBox='0 0 24 24' fill='none'><path d='M12 3v18M4.2 7.5l15.6 9M4.2 16.5l15.6-9M9 4l3 3 3-3m-6 16 3-3 3 3M4 11l4 1-1 4m13-4-4 1 1 4' stroke='currentColor' stroke-width='1.6' stroke-linecap='round' stroke-linejoin='round'/></svg></span>
+            <h3>HVAC repair</h3><p>Address heating and cooling system issues.</p>
+          </article>
+          <article class='service-card'>
+            <span class='service-icon' aria-hidden='true'><svg viewBox='0 0 24 24' fill='none'><rect x='4' y='5' width='16' height='14' rx='2' stroke='currentColor' stroke-width='1.7'/><path d='M8 9h8M8 12h8M8 15h5' stroke='currentColor' stroke-width='1.7' stroke-linecap='round'/></svg></span>
+            <h3>HVAC installation</h3><p>Installation planning shaped around the space and system needs.</p>
+          </article>
+          <article class='service-card'>
+            <span class='service-icon' aria-hidden='true'><svg viewBox='0 0 24 24' fill='none'><circle cx='12' cy='12' r='8.5' stroke='currentColor' stroke-width='1.7'/><path d='M12 7v5l3.5 2M5 4 3.5 5.5M19 4l1.5 1.5' stroke='currentColor' stroke-width='1.7' stroke-linecap='round' stroke-linejoin='round'/></svg></span>
+            <h3>Seasonal maintenance</h3><p>Seasonal attention for plumbing and HVAC equipment.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class='rating-section' id='why-us' aria-labelledby='rating-title'>
+      <div class='wrap rating-inner'>
+        <div class='rating-copy'>
+          <span class='section-kicker'>Google reviews</span>
+          <h2 id='rating-title'>A rating worth noting.</h2>
+        </div>
+        <div class='rating-display'>
+          <div class='stars' role='img' aria-label='5-star visual representing a 4.9 out of 5 rating'>
+            <svg viewBox='0 0 24 24' aria-hidden='true'><path fill='#f1c75b' d='m12 2.2 3 6.1 6.7 1-4.9 4.8 1.2 6.7-6-3.2-6 3.2 1.2-6.7-4.9-4.8 6.7-1 3-6.1Z'/></svg>
+            <svg viewBox='0 0 24 24' aria-hidden='true'><path fill='#f1c75b' d='m12 2.2 3 6.1 6.7 1-4.9 4.8 1.2 6.7-6-3.2-6 3.2 1.2-6.7-4.9-4.8 6.7-1 3-6.1Z'/></svg>
+            <svg viewBox='0 0 24 24' aria-hidden='true'><path fill='#f1c75b' d='m12 2.2 3 6.1 6.7 1-4.9 4.8 1.2 6.7-6-3.2-6 3.2 1.2-6.7-4.9-4.8 6.7-1 3-6.1Z'/></svg>
+            <svg viewBox='0 0 24 24' aria-hidden='true'><path fill='#f1c75b' d='m12 2.2 3 6.1 6.7 1-4.9 4.8 1.2 6.7-6-3.2-6 3.2 1.2-6.7-4.9-4.8 6.7-1 3-6.1Z'/></svg>
+            <svg viewBox='0 0 24 24' aria-hidden='true'><defs><linearGradient id='star-partial'><stop offset='90%' stop-color='#f1c75b'/><stop offset='90%' stop-color='#506568'/></linearGradient></defs><path fill='url(#star-partial)' d='m12 2.2 3 6.1 6.7 1-4.9 4.8 1.2 6.7-6-3.2-6 3.2 1.2-6.7-4.9-4.8 6.7-1 3-6.1Z'/></svg>
+          </div>
+          <p>4.9 out of 5 from 293 Google reviews</p>
+        </div>
+      </div>
+    </section>
+
+    <section class='section contact-section' id='contact' aria-labelledby='contact-title'>
+      <div class='wrap contact-layout'>
+        <div class='contact-copy'>
+          <div class='section-heading'>
+            <span class='section-kicker'>Contact</span>
+            <h2 id='contact-title'>Let’s talk about what you need.</h2>
+          </div>
+          <p>Call or use the details below to get in touch with L&amp;B Plumbing and HVAC.</p>
+          <div class='contact-detail'>
+            <span class='detail-label'>Phone</span>
+            <a class='detail-value' href='tel:+16154003953'>+1 615-400-3953</a>
+          </div>
+          <div class='contact-detail'>
+            <span class='detail-label'>Address</span>
+            <div class='detail-value'>1595 Spring Creek Rd<br>Lebanon, TN 37087</div>
+          </div>
+          <div class='contact-detail'>
+            <span class='detail-label'>Service area</span>
+            <div class='detail-value'>Lebanon and surrounding Middle Tennessee communities</div>
+          </div>
+        </div>
+        <div class='quote-card'>
+          <h3>Request a quote</h3>
+          <p>Share a few details about what you need.</p>
+          <form aria-describedby='form-note'>
+            <div class='field'>
+              <label for='quote-name'>Name</label>
+              <input id='quote-name' name='name' type='text' autocomplete='name' placeholder='Your name'>
+            </div>
+            <div class='field'>
+              <label for='quote-phone'>Phone</label>
+              <input id='quote-phone' name='phone' type='tel' autocomplete='tel' inputmode='tel' placeholder='Your phone number'>
+            </div>
+            <div class='field'>
+              <label for='quote-need'>What do you need?</label>
+              <textarea id='quote-need' name='need' placeholder='Tell us a little about the work'></textarea>
+            </div>
+            <p class='form-note' id='form-note'>This preview form does not submit. Call to request a quote.</p>
+            <a class='button button-dark form-call' href='tel:+16154003953'>Call to request a quote</a>
+          </form>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class='site-footer'>
+    <div class='wrap footer-inner'>
+      <p class='footer-name'>L&amp;B Plumbing and HVAC</p>
+      <p class='footer-label'>Concept preview — not the live site</p>
+    </div>
+  </footer>
+
+  <div class='mobile-call-bar'>
+    <a href='tel:+16154003953' aria-label='Call L&B Plumbing and HVAC at +1 615-400-3953'>
+      <svg viewBox='0 0 24 24' fill='none' aria-hidden='true'><path d='M6.6 3.8h2.7l1.4 4-1.8 1.5a15 15 0 0 0 5.8 5.8l1.5-1.8 4 1.4v2.7c0 1.1-.9 2-2 2A15.8 15.8 0 0 1 4.6 5.8c0-1.1.9-2 2-2Z' stroke='currentColor' stroke-width='1.8' stroke-linejoin='round'/></svg>
+      +1 615-400-3953
+    </a>
+  </div>
+</body>
+</html>
