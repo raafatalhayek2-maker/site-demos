@@ -1,0 +1,643 @@
+<!doctype html>
+<html lang='en'>
+<head>
+  <meta charset='utf-8'>
+  <meta name='viewport' content='width=device-width, initial-scale=1'>
+  <meta name='description' content='Paul’s Auto Repair, Inc. auto repair concept preview in Conshohocken, PA.'>
+  <title>Paul's Auto Repair, Inc. | Auto Repair</title>
+  <style>
+    :root {
+      color-scheme: light;
+      --ink: #19221f;
+      --ink-soft: #222d29;
+      --paper: #f2f1eb;
+      --paper-bright: #fbfaf6;
+      --muted: #65706a;
+      --line: #d9dcd5;
+      --accent: #ed9a67;
+      --accent-deep: #d67d4b;
+      --white: #fffefa;
+      --content: 1240px;
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; scroll-padding-top: 90px; }
+    body {
+      margin: 0;
+      background: var(--paper);
+      color: var(--ink);
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+      -webkit-font-smoothing: antialiased;
+      text-rendering: optimizeLegibility;
+    }
+    a { color: inherit; }
+    a:focus-visible { outline: 3px solid var(--accent-deep); outline-offset: 4px; }
+    .wrap { width: min(var(--content), calc(100% - 72px)); margin-inline: auto; }
+
+    .site-header {
+      position: sticky;
+      z-index: 20;
+      top: 0;
+      background: rgba(251, 250, 246, .95);
+      border-bottom: 1px solid var(--line);
+      backdrop-filter: blur(14px);
+    }
+    .header-inner {
+      min-height: 78px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+    }
+    .brand {
+      display: inline-flex;
+      align-items: center;
+      gap: 13px;
+      text-decoration: none;
+      font-size: 16px;
+      font-weight: 720;
+      letter-spacing: -.035em;
+    }
+    .brand-mark {
+      width: 31px;
+      height: 31px;
+      display: grid;
+      place-items: center;
+      flex: 0 0 auto;
+      border: 1px solid var(--ink);
+      position: relative;
+    }
+    .brand-mark::before, .brand-mark::after {
+      content: '';
+      position: absolute;
+      background: var(--accent-deep);
+    }
+    .brand-mark::before { width: 14px; height: 2px; }
+    .brand-mark::after { width: 2px; height: 14px; }
+    .header-call {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      text-decoration: none;
+      font-size: 15px;
+      font-weight: 680;
+      letter-spacing: -.015em;
+      white-space: nowrap;
+    }
+    .call-label {
+      color: var(--muted);
+      font-size: 10px;
+      font-weight: 750;
+      letter-spacing: .15em;
+    }
+    .header-call:hover, .contact-phone:hover { color: var(--accent-deep); }
+
+    .hero {
+      overflow: hidden;
+      position: relative;
+      background:
+        radial-gradient(ellipse at 13% 8%, rgba(237, 154, 103, .11), transparent 35%),
+        var(--ink);
+      color: var(--paper-bright);
+    }
+    .hero-inner {
+      min-height: 650px;
+      padding-block: 76px 82px;
+      display: grid;
+      grid-template-columns: 1.12fr .88fr;
+      align-items: center;
+      gap: clamp(38px, 6vw, 84px);
+    }
+    .hero-copy { position: relative; z-index: 2; }
+    .eyebrow {
+      margin: 0 0 22px;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      color: var(--accent);
+      font-size: 11px;
+      line-height: 1.3;
+      font-weight: 760;
+      letter-spacing: .17em;
+      text-transform: uppercase;
+    }
+    .eyebrow::before { content: ''; width: 28px; height: 1px; background: currentColor; }
+    h1 {
+      max-width: 760px;
+      margin: 0;
+      font-size: clamp(3.35rem, 6.4vw, 5.6rem);
+      font-weight: 640;
+      line-height: .99;
+      letter-spacing: -.075em;
+    }
+    h1 span { color: var(--accent); }
+    .hero-support {
+      margin: 25px 0 0;
+      color: #d4d8d2;
+      font-size: 16px;
+      letter-spacing: -.01em;
+    }
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-top: 32px;
+    }
+    .button {
+      min-height: 54px;
+      padding: 0 21px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      border: 1px solid transparent;
+      text-decoration: none;
+      font-size: 14px;
+      font-weight: 730;
+      letter-spacing: -.01em;
+      transition: background-color .18s ease, border-color .18s ease, transform .18s ease;
+    }
+    .button:hover { transform: translateY(-2px); }
+    .button-primary { background: var(--accent); color: var(--ink); }
+    .button-primary:hover { background: #f5ae83; }
+    .button-secondary { border-color: rgba(255, 255, 255, .34); color: var(--paper-bright); }
+    .button-secondary:hover { border-color: var(--accent); background: rgba(255, 255, 255, .05); }
+
+    .hero-art {
+      position: relative;
+      isolation: isolate;
+      min-height: 440px;
+      overflow: hidden;
+      border: 1px solid rgba(255, 255, 255, .16);
+      background: linear-gradient(145deg, #26312d, #1b2421 66%, #202a26);
+    }
+    .hero-art::before {
+      content: '';
+      position: absolute;
+      z-index: -1;
+      inset: 0;
+      opacity: .48;
+      background-image:
+        linear-gradient(rgba(255,255,255,.055) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255,255,255,.055) 1px, transparent 1px);
+      background-size: 46px 46px;
+      mask-image: linear-gradient(135deg, transparent 4%, #000 45%, transparent 100%);
+    }
+    .hero-art::after {
+      content: '';
+      position: absolute;
+      z-index: -1;
+      width: 320px;
+      height: 320px;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      background: radial-gradient(circle, rgba(237,154,103,.12), transparent 69%);
+    }
+    .art-rule {
+      position: absolute;
+      top: 25px;
+      left: 25px;
+      right: 25px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .art-rule span { display: block; height: 2px; background: rgba(255,255,255,.26); }
+    .art-rule span:first-child { width: 42px; background: var(--accent); }
+    .art-rule span:nth-child(2) { width: 18px; }
+    .art-rule span:last-child { width: 58px; }
+    .wheel {
+      position: absolute;
+      width: clamp(245px, 26vw, 340px);
+      aspect-ratio: 1;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -48%) rotate(-12deg);
+      border: 24px solid rgba(232, 237, 230, .12);
+      border-radius: 50%;
+      background: conic-gradient(from 0deg, rgba(237,154,103,.8) 0 2deg, transparent 2deg 30deg, rgba(255,255,255,.19) 30deg 32deg, transparent 32deg 60deg, rgba(237,154,103,.62) 60deg 62deg, transparent 62deg 90deg, rgba(255,255,255,.19) 90deg 92deg, transparent 92deg 120deg, rgba(237,154,103,.62) 120deg 122deg, transparent 122deg 150deg, rgba(255,255,255,.19) 150deg 152deg, transparent 152deg 180deg, rgba(237,154,103,.62) 180deg 182deg, transparent 182deg 210deg, rgba(255,255,255,.19) 210deg 212deg, transparent 212deg 240deg, rgba(237,154,103,.62) 240deg 242deg, transparent 242deg 270deg, rgba(255,255,255,.19) 270deg 272deg, transparent 272deg 300deg, rgba(237,154,103,.62) 300deg 302deg, transparent 302deg 330deg, rgba(255,255,255,.19) 330deg 332deg, transparent 332deg 360deg);
+      box-shadow: 0 0 0 1px rgba(255,255,255,.22), 0 30px 80px rgba(0,0,0,.28), inset 0 0 0 7px rgba(15,20,18,.45);
+    }
+    .wheel::before {
+      content: '';
+      position: absolute;
+      inset: 19%;
+      border: 1px solid rgba(255,255,255,.35);
+      border-radius: 50%;
+      box-shadow: 0 0 0 12px rgba(18,25,22,.28);
+    }
+    .wheel::after {
+      content: '';
+      position: absolute;
+      inset: 39%;
+      border-radius: 50%;
+      border: 9px solid rgba(255,255,255,.2);
+      background: var(--accent);
+      box-shadow: 0 0 0 1px rgba(0,0,0,.25), inset 0 0 0 9px #27312d;
+    }
+    .art-bottom-line {
+      position: absolute;
+      right: 25px;
+      bottom: 25px;
+      left: 25px;
+      height: 1px;
+      background: rgba(255,255,255,.2);
+    }
+    .art-bottom-line::after {
+      content: '';
+      position: absolute;
+      right: 0;
+      top: -2px;
+      width: 32px;
+      height: 4px;
+      background: var(--accent);
+    }
+
+    .section { padding-block: 105px; }
+    .section-heading {
+      margin-bottom: 38px;
+      display: flex;
+      align-items: end;
+      justify-content: space-between;
+      gap: 24px;
+    }
+    .section-heading .eyebrow { color: var(--accent-deep); margin-bottom: 14px; }
+    h2 {
+      margin: 0;
+      font-size: clamp(2.4rem, 4.5vw, 4rem);
+      line-height: 1.02;
+      font-weight: 620;
+      letter-spacing: -.065em;
+    }
+    .section-note {
+      max-width: 310px;
+      margin: 0 0 4px;
+      color: var(--muted);
+      font-size: 14px;
+      line-height: 1.6;
+    }
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 14px;
+    }
+    .service-card {
+      min-height: 190px;
+      padding: 25px 24px 23px;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      border: 1px solid var(--line);
+      background: var(--paper-bright);
+      transition: border-color .18s ease, transform .18s ease;
+    }
+    .service-card:hover { transform: translateY(-3px); border-color: #b9c0b7; }
+    .service-mark {
+      width: 31px;
+      height: 31px;
+      margin-bottom: 23px;
+      display: grid;
+      place-items: center;
+      border: 1px solid #d4d8d1;
+    }
+    .service-mark i {
+      width: 9px;
+      height: 9px;
+      display: block;
+      border: 2px solid var(--accent-deep);
+      border-radius: 50%;
+    }
+    .service-card h3 {
+      margin: 0;
+      font-size: 18px;
+      line-height: 1.25;
+      font-weight: 680;
+      letter-spacing: -.035em;
+    }
+    .service-card p {
+      margin: 8px 0 0;
+      color: var(--muted);
+      font-size: 13.5px;
+      line-height: 1.45;
+    }
+
+    .reviews-section { padding: 0 0 105px; }
+    .reviews-panel {
+      padding: 38px 44px;
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      align-items: center;
+      gap: 28px;
+      border: 1px solid var(--line);
+      background: #e9ebe4;
+    }
+    .reviews-title .eyebrow { color: var(--accent-deep); margin-bottom: 13px; }
+    .reviews-title h2 { font-size: clamp(1.8rem, 3vw, 2.5rem); }
+    .review-stat {
+      min-height: 90px;
+      padding-left: 28px;
+      border-left: 1px solid #cbd1c8;
+    }
+    .review-number {
+      display: block;
+      font-size: clamp(3.4rem, 5.5vw, 5.25rem);
+      line-height: .98;
+      font-weight: 610;
+      letter-spacing: -.08em;
+      font-variant-numeric: tabular-nums;
+    }
+    .review-label {
+      display: block;
+      margin-top: 10px;
+      color: var(--muted);
+      font-size: 13px;
+      font-weight: 650;
+    }
+
+    .contact-section {
+      background: var(--ink-soft);
+      color: var(--paper-bright);
+    }
+    .contact-inner {
+      padding-block: 92px;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 60px;
+      align-items: start;
+    }
+    .contact-section .eyebrow { color: var(--accent); }
+    .contact-section h2 { max-width: 460px; }
+    .contact-details {
+      padding-top: 8px;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 28px;
+    }
+    .detail-label {
+      margin: 0 0 12px;
+      color: #aeb8b1;
+      font-size: 10px;
+      font-weight: 760;
+      letter-spacing: .16em;
+      text-transform: uppercase;
+    }
+    .contact-phone {
+      display: inline-block;
+      color: var(--paper-bright);
+      font-size: clamp(17px, 2vw, 22px);
+      font-weight: 660;
+      letter-spacing: -.025em;
+      text-decoration: none;
+      white-space: nowrap;
+    }
+    address {
+      color: var(--paper-bright);
+      font-size: 16px;
+      font-style: normal;
+      line-height: 1.55;
+    }
+    .location-note {
+      grid-column: 1 / -1;
+      margin: -5px 0 0;
+      color: #b6c0b9;
+      font-size: 12px;
+      line-height: 1.5;
+    }
+    .site-footer { background: #141b19; color: #dfe3dc; }
+    .footer-inner {
+      min-height: 82px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+      font-size: 12px;
+    }
+    .footer-name { font-weight: 680; letter-spacing: -.01em; }
+    .footer-note { color: #aeb8b1; }
+
+    .mobile-call-bar { display: none; }
+
+    @media (max-width: 900px) {
+      .hero-inner { min-height: 590px; grid-template-columns: 1.05fr .95fr; gap: 34px; }
+      h1 { font-size: clamp(3.2rem, 7.2vw, 4.8rem); }
+      .hero-art { min-height: 370px; }
+      .wheel { width: clamp(235px, 31vw, 300px); }
+      .service-card { padding-inline: 19px; }
+      .contact-inner { gap: 35px; }
+    }
+    @media (max-width: 700px) {
+      html { scroll-padding-top: 76px; }
+      .wrap { width: min(var(--content), calc(100% - 40px)); }
+      .header-inner { min-height: 68px; gap: 10px; }
+      .brand { gap: 9px; font-size: 14px; }
+      .brand-mark { width: 27px; height: 27px; }
+      .brand-mark::before { width: 12px; }
+      .brand-mark::after { height: 12px; }
+      .header-call { font-size: 13px; }
+      .call-label { display: none; }
+      .hero-inner {
+        min-height: 0;
+        padding-block: 68px 58px;
+        grid-template-columns: 1fr;
+        gap: 43px;
+      }
+      h1 { max-width: 640px; font-size: clamp(3.2rem, 11vw, 5rem); }
+      .hero-support { margin-top: 21px; }
+      .hero-art { min-height: 300px; }
+      .wheel { width: 240px; }
+      .section { padding-block: 76px; }
+      .section-heading { align-items: flex-start; flex-direction: column; margin-bottom: 27px; gap: 16px; }
+      .section-note { max-width: 430px; }
+      .services-grid { grid-template-columns: repeat(2, 1fr); gap: 10px; }
+      .service-card { min-height: 184px; padding: 19px 17px; }
+      .service-mark { margin-bottom: 18px; }
+      .service-card h3 { font-size: 16px; }
+      .service-card p { font-size: 12.5px; }
+      .reviews-section { padding-bottom: 76px; }
+      .reviews-panel { padding: 29px 24px; grid-template-columns: 1fr 1fr; gap: 25px 18px; }
+      .reviews-title { grid-column: 1 / -1; }
+      .review-stat { padding-left: 18px; }
+      .contact-inner { padding-block: 70px; grid-template-columns: 1fr; gap: 36px; }
+      .contact-details { padding-top: 0; gap: 24px 14px; }
+      .contact-phone { font-size: 16px; }
+      .footer-inner { min-height: 76px; }
+      .mobile-call-bar {
+        position: fixed;
+        z-index: 30;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        display: block;
+        padding: 10px 16px calc(10px + env(safe-area-inset-bottom));
+        border-top: 1px solid var(--line);
+        background: rgba(251,250,246,.97);
+        backdrop-filter: blur(12px);
+      }
+      .mobile-call-button {
+        width: 100%;
+        min-height: 52px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background: var(--accent);
+        color: var(--ink);
+        text-decoration: none;
+        font-size: 15px;
+        font-weight: 750;
+      }
+      body { padding-bottom: 76px; }
+    }
+    @media (max-width: 480px) {
+      .wrap { width: calc(100% - 36px); }
+      .brand { font-size: 13px; letter-spacing: -.04em; }
+      .brand-mark { width: 25px; height: 25px; }
+      .header-call { font-size: 12px; letter-spacing: -.025em; }
+      .hero-inner { padding-top: 58px; }
+      h1 { font-size: clamp(3rem, 11.4vw, 3.7rem); }
+      .hero-actions { flex-direction: column; align-items: stretch; }
+      .button { width: 100%; }
+      .services-grid { grid-template-columns: 1fr; }
+      .service-card { min-height: 0; padding: 20px; }
+      .service-mark { margin-bottom: 15px; }
+      .service-card p { font-size: 13px; }
+      .reviews-panel { padding: 27px 20px; }
+      .review-stat { padding-left: 14px; }
+      .review-number { font-size: 3.5rem; }
+      .review-label { font-size: 12px; }
+      .contact-details { grid-template-columns: 1fr; }
+      .location-note { grid-column: auto; }
+      .footer-inner { align-items: flex-start; flex-direction: column; justify-content: center; gap: 5px; padding-block: 16px; }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after { scroll-behavior: auto !important; transition-duration: .01ms !important; }
+    }
+  </style>
+</head>
+<body>
+  <header class='site-header'>
+    <div class='wrap header-inner'>
+      <a class='brand' href='#top'>
+        <span class='brand-mark' aria-hidden='true'></span>
+        <span>Paul's Auto Repair, Inc.</span>
+      </a>
+      <a class='header-call' href='tel:+16108286608'>
+        <span class='call-label'>CALL</span>
+        <span>+1 610-828-6608</span>
+      </a>
+    </div>
+  </header>
+
+  <main id='top'>
+    <section class='hero' aria-labelledby='hero-title'>
+      <div class='wrap hero-inner'>
+        <div class='hero-copy'>
+          <p class='eyebrow'>Auto repair&nbsp; / &nbsp;Conshohocken, PA</p>
+          <h1 id='hero-title'>Auto repair,<br><span>with a clear next step.</span></h1>
+          <p class='hero-support'>Rated 4.9 from 175 Google reviews.</p>
+          <div class='hero-actions'>
+            <a class='button button-primary' href='tel:+16108286608'>Call +1 610-828-6608</a>
+            <a class='button button-secondary' href='#contact'>Request a quote</a>
+          </div>
+        </div>
+        <div class='hero-art' aria-hidden='true'>
+          <div class='art-rule'><span></span><span></span><span></span></div>
+          <div class='wheel'></div>
+          <div class='art-bottom-line'></div>
+        </div>
+      </div>
+    </section>
+
+    <section class='section' aria-labelledby='services-title'>
+      <div class='wrap'>
+        <div class='section-heading'>
+          <div>
+            <p class='eyebrow'>Services</p>
+            <h2 id='services-title'>Care for the<br>road ahead.</h2>
+          </div>
+          <p class='section-note'>A practical look at common vehicle service needs.</p>
+        </div>
+        <div class='services-grid'>
+          <article class='service-card'>
+            <span class='service-mark' aria-hidden='true'><i></i></span>
+            <h3>Brake service and repair</h3>
+            <p>Brake wear and stopping performance.</p>
+          </article>
+          <article class='service-card'>
+            <span class='service-mark' aria-hidden='true'><i></i></span>
+            <h3>Engine diagnostics</h3>
+            <p>Fault-code checks for engine concerns.</p>
+          </article>
+          <article class='service-card'>
+            <span class='service-mark' aria-hidden='true'><i></i></span>
+            <h3>Oil changes and routine maintenance</h3>
+            <p>Oil service and routine maintenance needs.</p>
+          </article>
+          <article class='service-card'>
+            <span class='service-mark' aria-hidden='true'><i></i></span>
+            <h3>Suspension and steering</h3>
+            <p>Handling, ride, and steering concerns.</p>
+          </article>
+          <article class='service-card'>
+            <span class='service-mark' aria-hidden='true'><i></i></span>
+            <h3>Battery and electrical service</h3>
+            <p>Battery and charging-system concerns.</p>
+          </article>
+          <article class='service-card'>
+            <span class='service-mark' aria-hidden='true'><i></i></span>
+            <h3>State inspection prep</h3>
+            <p>A review of common inspection items.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class='reviews-section' aria-labelledby='reviews-title'>
+      <div class='wrap reviews-panel'>
+        <div class='reviews-title'>
+          <p class='eyebrow'>Google reviews</p>
+          <h2 id='reviews-title'>Customer rating</h2>
+        </div>
+        <div class='review-stat'>
+          <span class='review-number'>4.9</span>
+          <span class='review-label'>Google rating</span>
+        </div>
+        <div class='review-stat'>
+          <span class='review-number'>175</span>
+          <span class='review-label'>Google reviews</span>
+        </div>
+      </div>
+    </section>
+
+    <section class='contact-section' id='contact' aria-labelledby='contact-title'>
+      <div class='wrap contact-inner'>
+        <div>
+          <p class='eyebrow'>Contact</p>
+          <h2 id='contact-title'>Get in touch.</h2>
+        </div>
+        <div class='contact-details'>
+          <div>
+            <p class='detail-label'>Phone</p>
+            <a class='contact-phone' href='tel:+16108286608'>+1 610-828-6608</a>
+          </div>
+          <div>
+            <p class='detail-label'>Address</p>
+            <address>11 Colwell Ln,<br>Conshohocken, PA 19428</address>
+          </div>
+          <p class='location-note'>This describes the business's listed location.</p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class='site-footer'>
+    <div class='wrap footer-inner'>
+      <span class='footer-name'>Paul's Auto Repair, Inc.</span>
+      <span class='footer-note'>Concept preview — not the live site</span>
+    </div>
+  </footer>
+
+  <div class='mobile-call-bar'>
+    <a class='mobile-call-button' href='tel:+16108286608'>Call +1 610-828-6608</a>
+  </div>
+</body>
+</html>
