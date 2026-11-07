@@ -1,0 +1,501 @@
+<!doctype html>
+<html lang='en'>
+<head>
+  <meta charset='utf-8'>
+  <meta name='viewport' content='width=device-width, initial-scale=1'>
+  <meta name='theme-color' content='#14181d'>
+  <meta name='description' content='Repairs, upgrades, lighting and inspections for homes and businesses across Chandler and the East Valley. Free, no-obligation estimates.'>
+  <title>Cactus Valley Electrical | Chandler, Arizona</title>
+  <style>
+    :root {
+      color-scheme: light;
+      --charcoal: #14181d;
+      --amber: #f5a524;
+      --paper: #f7f5f2;
+      --muted-light: rgba(247, 245, 242, .72);
+      --line-light: rgba(247, 245, 242, .16);
+      --line-dark: rgba(20, 24, 29, .14);
+      --container: 1180px;
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; scroll-padding-top: 96px; }
+    body {
+      margin: 0;
+      background: var(--paper);
+      color: var(--charcoal);
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+      -webkit-font-smoothing: antialiased;
+      text-rendering: optimizeLegibility;
+    }
+    a { color: inherit; }
+    a:focus-visible { outline: 3px solid var(--amber); outline-offset: 4px; }
+    .container { width: min(calc(100% - 48px), var(--container)); margin-inline: auto; }
+    .sr-only {
+      position: absolute;
+      width: 1px;
+      height: 1px;
+      padding: 0;
+      margin: -1px;
+      overflow: hidden;
+      clip: rect(0, 0, 0, 0);
+      white-space: nowrap;
+      border: 0;
+    }
+
+    .site-header {
+      position: sticky;
+      z-index: 10;
+      top: 0;
+      background: rgba(20, 24, 29, .97);
+      border-bottom: 1px solid var(--line-light);
+      color: var(--paper);
+      backdrop-filter: blur(14px);
+    }
+    .header-inner {
+      min-height: 82px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 28px;
+    }
+    .brand { display: grid; gap: 3px; text-decoration: none; flex: 0 0 auto; }
+    .brand-name { font-size: 17px; line-height: 1.2; font-weight: 720; letter-spacing: -.025em; }
+    .brand-meta { color: var(--muted-light); font-size: 11px; letter-spacing: .08em; text-transform: uppercase; }
+    .header-nav { display: flex; gap: 30px; margin-left: auto; }
+    .header-nav a {
+      color: var(--muted-light);
+      font-size: 13px;
+      text-decoration: none;
+      transition: color .2s ease;
+    }
+    .header-nav a:hover { color: var(--paper); }
+    .header-actions { display: flex; align-items: center; gap: 14px; }
+    .preview-pill {
+      border: 1px solid rgba(245, 165, 36, .48);
+      border-radius: 999px;
+      padding: 7px 10px;
+      color: var(--amber);
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: .1em;
+      line-height: 1;
+      text-transform: uppercase;
+      white-space: nowrap;
+    }
+    .header-call {
+      min-height: 42px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      padding: 0 15px;
+      border-radius: 4px;
+      background: var(--amber);
+      color: var(--charcoal);
+      font-size: 13px;
+      font-weight: 750;
+      text-decoration: none;
+      white-space: nowrap;
+      transition: background .2s ease, transform .2s ease;
+    }
+    .header-call:hover, .button-primary:hover { background: #ffc04c; transform: translateY(-1px); }
+    .call-mark { width: 8px; height: 8px; border-radius: 50%; background: currentColor; }
+
+    .hero {
+      position: relative;
+      overflow: hidden;
+      background: var(--charcoal);
+      color: var(--paper);
+      padding: clamp(64px, 8vw, 112px) 0 clamp(74px, 9vw, 126px);
+    }
+    .hero::before {
+      position: absolute;
+      inset: 0 0 0 42%;
+      background: radial-gradient(ellipse at 66% 48%, rgba(245, 165, 36, .12), transparent 57%);
+      content: '';
+      pointer-events: none;
+    }
+    .hero-grid {
+      position: relative;
+      display: grid;
+      grid-template-columns: minmax(0, 1.08fr) minmax(320px, .92fr);
+      align-items: center;
+      gap: clamp(32px, 6vw, 88px);
+    }
+    .eyebrow {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin: 0 0 24px;
+      color: var(--amber);
+      font-size: 11px;
+      font-weight: 740;
+      letter-spacing: .14em;
+      line-height: 1.5;
+      text-transform: uppercase;
+    }
+    .eyebrow-dot { width: 5px; height: 5px; border-radius: 50%; background: var(--amber); }
+    h1 {
+      max-width: 760px;
+      margin: 0;
+      font-size: clamp(42px, 5.5vw, 72px);
+      font-weight: 620;
+      letter-spacing: -.065em;
+      line-height: 1.04;
+    }
+    .hero-copy {
+      max-width: 620px;
+      margin: 25px 0 0;
+      color: var(--muted-light);
+      font-size: clamp(16px, 1.55vw, 19px);
+      line-height: 1.7;
+    }
+    .hero-actions { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 34px; }
+    .button {
+      min-height: 52px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 0 20px;
+      border: 1px solid transparent;
+      border-radius: 4px;
+      font-size: 14px;
+      font-weight: 720;
+      text-decoration: none;
+      transition: background .2s ease, border-color .2s ease, transform .2s ease;
+    }
+    .button-primary { background: var(--amber); color: var(--charcoal); }
+    .button-secondary { border-color: rgba(247, 245, 242, .36); color: var(--paper); }
+    .button-secondary:hover { border-color: var(--paper); background: rgba(247, 245, 242, .06); }
+    .hero-visual {
+      position: relative;
+      min-height: 420px;
+      overflow: hidden;
+      border: 1px solid rgba(247, 245, 242, .15);
+      border-radius: 6px;
+      background: linear-gradient(145deg, rgba(247, 245, 242, .055), rgba(247, 245, 242, .012));
+      box-shadow: 0 32px 90px rgba(0, 0, 0, .22);
+    }
+    .hero-visual::before, .hero-visual::after {
+      position: absolute;
+      z-index: 1;
+      border: 1px solid rgba(247, 245, 242, .13);
+      content: '';
+      pointer-events: none;
+    }
+    .hero-visual::before { inset: 24px; }
+    .hero-visual::after {
+      width: 92px;
+      height: 92px;
+      right: -1px;
+      bottom: -1px;
+      border-right: 0;
+      border-bottom: 0;
+      background: var(--amber);
+    }
+    .hero-visual svg { position: absolute; inset: 0; width: 100%; height: 100%; }
+
+    .trust-section { background: var(--amber); color: var(--charcoal); }
+    .trust-grid { display: grid; grid-template-columns: repeat(3, 1fr); }
+    .trust-item {
+      min-height: 138px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding: 24px clamp(18px, 4vw, 56px);
+      border-left: 1px solid rgba(20, 24, 29, .18);
+    }
+    .trust-item:first-child { border-left: 0; padding-left: 0; }
+    .trust-value { font-size: clamp(31px, 4vw, 46px); font-weight: 720; letter-spacing: -.06em; line-height: 1; }
+    .trust-label { margin-top: 10px; font-size: 12px; font-weight: 650; letter-spacing: .055em; text-transform: uppercase; }
+
+    .services-section { padding: clamp(72px, 9vw, 112px) 0; }
+    .section-heading { margin: 0 0 34px; }
+    .section-kicker {
+      margin: 0 0 12px;
+      color: #6d5a3f;
+      font-size: 11px;
+      font-weight: 750;
+      letter-spacing: .14em;
+      text-transform: uppercase;
+    }
+    h2 {
+      margin: 0;
+      font-size: clamp(34px, 4.3vw, 50px);
+      font-weight: 620;
+      letter-spacing: -.055em;
+      line-height: 1.1;
+    }
+    .service-grid { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 12px; }
+    .service-card {
+      min-height: 198px;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      padding: 22px 20px 20px;
+      border: 1px solid var(--line-dark);
+      border-radius: 4px;
+      background: rgba(255, 255, 255, .18);
+      transition: border-color .2s ease, transform .2s ease;
+    }
+    .service-card:hover { border-color: rgba(20, 24, 29, .38); transform: translateY(-3px); }
+    .service-index {
+      display: inline-flex;
+      width: 30px;
+      height: 30px;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 25px;
+      border-radius: 50%;
+      background: rgba(245, 165, 36, .2);
+      color: var(--charcoal);
+      font-size: 10px;
+      font-weight: 750;
+      letter-spacing: .02em;
+    }
+    .service-card h3 { margin: 0; font-size: 16px; font-weight: 700; letter-spacing: -.025em; line-height: 1.35; }
+    .service-card p { margin: 9px 0 0; color: rgba(20, 24, 29, .68); font-size: 13px; line-height: 1.55; }
+
+    .contact-section { padding: clamp(64px, 8vw, 96px) 0; background: var(--charcoal); color: var(--paper); }
+    .contact-grid { display: grid; grid-template-columns: minmax(0, 1.1fr) minmax(280px, .9fr); gap: 64px; align-items: start; }
+    .contact-section .section-kicker { color: var(--amber); }
+    .contact-section h2 { max-width: 540px; }
+    .contact-intro { max-width: 500px; margin: 20px 0 0; color: var(--muted-light); font-size: 16px; line-height: 1.7; }
+    .contact-details { padding-top: 8px; }
+    .contact-detail + .contact-detail { margin-top: 26px; }
+    .detail-label {
+      display: block;
+      margin-bottom: 8px;
+      color: var(--amber);
+      font-size: 10px;
+      font-weight: 740;
+      letter-spacing: .13em;
+      text-transform: uppercase;
+    }
+    .contact-phone { color: var(--paper); font-size: clamp(20px, 2.5vw, 28px); font-weight: 650; letter-spacing: -.035em; text-decoration-color: rgba(247, 245, 242, .4); text-underline-offset: 5px; }
+    address { color: var(--paper); font-size: 15px; font-style: normal; line-height: 1.7; }
+    .site-footer { padding: 25px 0; background: var(--charcoal); color: var(--muted-light); border-top: 1px solid var(--line-light); }
+    .footer-inner { display: flex; align-items: center; justify-content: space-between; gap: 18px 28px; font-size: 12px; line-height: 1.6; }
+    .footer-name { color: var(--paper); font-weight: 700; }
+    .footer-preview { color: var(--amber); }
+    .footer-address { text-align: right; }
+    .mobile-call-bar { display: none; }
+
+    @media (max-width: 860px) {
+      html { scroll-padding-top: 78px; }
+      .container { width: min(calc(100% - 32px), var(--container)); }
+      body { padding-bottom: 76px; }
+      .header-inner { min-height: 72px; gap: 12px; }
+      .brand-name { font-size: 15px; }
+      .brand-meta { font-size: 9px; letter-spacing: .06em; }
+      .header-nav { display: none; }
+      .header-actions { gap: 8px; }
+      .preview-pill { padding: 7px 8px; font-size: 9px; letter-spacing: .07em; }
+      .header-call { min-height: 40px; padding: 0 12px; font-size: 12px; }
+      .header-call .call-long { display: none; }
+      .hero { padding: 64px 0 72px; }
+      .hero-grid { grid-template-columns: 1fr; gap: 42px; }
+      .hero-copy { max-width: 650px; }
+      .hero-visual { min-height: 330px; }
+      .trust-item { min-height: 116px; padding: 18px 14px; }
+      .trust-item:first-child { padding-left: 0; }
+      .trust-label { font-size: 10px; letter-spacing: .035em; }
+      .service-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+      .contact-grid { grid-template-columns: 1fr; gap: 36px; }
+      .contact-details { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 20px; }
+      .contact-detail + .contact-detail { margin-top: 0; }
+      .footer-inner { align-items: flex-start; flex-wrap: wrap; }
+      .footer-address { text-align: left; }
+      .mobile-call-bar {
+        position: fixed;
+        z-index: 20;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        min-height: 76px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 16px;
+        padding: 12px 16px;
+        border-top: 1px solid var(--line-light);
+        background: var(--charcoal);
+        color: var(--paper);
+        box-shadow: 0 -8px 28px rgba(0, 0, 0, .18);
+      }
+      .mobile-call-label { color: var(--muted-light); font-size: 12px; }
+      .mobile-call-bar a {
+        display: inline-flex;
+        min-height: 44px;
+        align-items: center;
+        justify-content: center;
+        padding: 0 14px;
+        border-radius: 4px;
+        background: var(--amber);
+        color: var(--charcoal);
+        font-size: 14px;
+        font-weight: 750;
+        text-decoration: none;
+        white-space: nowrap;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header class='site-header'>
+    <div class='container header-inner'>
+      <a class='brand' href='#top' aria-label='Cactus Valley Electrical home'>
+        <span class='brand-name'>Cactus Valley Electrical</span>
+        <span class='brand-meta'>Electrical contractor · Chandler, Arizona</span>
+      </a>
+      <nav class='header-nav' aria-label='Primary navigation'>
+        <a href='#services'>Services</a>
+        <a href='#contact'>Contact</a>
+      </nav>
+      <div class='header-actions'>
+        <span class='preview-pill'>Concept preview</span>
+        <a class='header-call' href='tel:+16028787962'><span class='call-mark' aria-hidden='true'></span><span>Call</span><span class='call-long'>+1 602-878-7962</span></a>
+      </div>
+    </div>
+  </header>
+
+  <main id='top'>
+    <section class='hero' aria-labelledby='hero-title'>
+      <div class='container hero-grid'>
+        <div class='hero-content'>
+          <p class='eyebrow'>Electrical contractor <span class='eyebrow-dot' aria-hidden='true'></span> Chandler, Arizona</p>
+          <h1 id='hero-title'>Residential and commercial electrical work in Chandler, done by a local crew.</h1>
+          <p class='hero-copy'>Repairs, upgrades, lighting and inspections for homes and businesses across Chandler and the East Valley. Free, no-obligation estimates.</p>
+          <div class='hero-actions'>
+            <a class='button button-primary' href='tel:+16028787962'>Call +1 602-878-7962</a>
+            <a class='button button-secondary' href='#contact'>Request an estimate</a>
+          </div>
+        </div>
+        <div class='hero-visual' aria-hidden='true'>
+          <svg viewBox='0 0 500 500' preserveAspectRatio='xMidYMid slice' focusable='false'>
+            <defs>
+              <linearGradient id='spark' x1='0' y1='0' x2='1' y2='1'>
+                <stop offset='0%' stop-color='#f5a524'></stop>
+                <stop offset='100%' stop-color='#f7f5f2'></stop>
+              </linearGradient>
+            </defs>
+            <circle cx='250' cy='250' r='184' fill='none' stroke='rgba(247,245,242,.11)' stroke-width='1'></circle>
+            <circle cx='250' cy='250' r='137' fill='none' stroke='rgba(247,245,242,.10)' stroke-width='1'></circle>
+            <circle cx='250' cy='250' r='88' fill='rgba(245,165,36,.06)' stroke='rgba(245,165,36,.35)' stroke-width='1'></circle>
+            <path d='M282 69 157 253h91l-23 174 124-221h-91z' fill='url(#spark)'></path>
+            <path d='M0 250h104M396 250h104M250 0v86M250 414v86' fill='none' stroke='rgba(247,245,242,.16)' stroke-width='1'></path>
+            <circle cx='104' cy='250' r='4' fill='#f5a524'></circle>
+            <circle cx='396' cy='250' r='4' fill='#f5a524'></circle>
+            <circle cx='250' cy='86' r='4' fill='#f5a524'></circle>
+            <circle cx='250' cy='414' r='4' fill='#f5a524'></circle>
+          </svg>
+        </div>
+      </div>
+    </section>
+
+    <section class='trust-section' aria-label='Business details'>
+      <div class='container trust-grid'>
+        <div class='trust-item'>
+          <span class='trust-value'>4.9</span>
+          <span class='trust-label'>Google rating</span>
+        </div>
+        <div class='trust-item'>
+          <span class='trust-value'>694</span>
+          <span class='trust-label'>Google reviews</span>
+        </div>
+        <div class='trust-item'>
+          <span class='trust-value'>Free</span>
+          <span class='trust-label'>On-site estimates</span>
+        </div>
+      </div>
+    </section>
+
+    <section class='services-section' id='services' aria-labelledby='services-title'>
+      <div class='container'>
+        <div class='section-heading'>
+          <p class='section-kicker'>Services</p>
+          <h2 id='services-title'>Electrical services</h2>
+        </div>
+        <div class='service-grid'>
+          <article class='service-card'>
+            <span class='service-index' aria-hidden='true'>01</span>
+            <h3>Residential electrical repair</h3>
+            <p>Repairs and retrofits for residential electrical systems.</p>
+          </article>
+          <article class='service-card'>
+            <span class='service-index' aria-hidden='true'>02</span>
+            <h3>Wiring and rewiring</h3>
+            <p>Wiring and rewiring work for residential and commercial properties.</p>
+          </article>
+          <article class='service-card'>
+            <span class='service-index' aria-hidden='true'>03</span>
+            <h3>Electrical panel upgrades</h3>
+            <p>Electrical upgrades and panel work.</p>
+          </article>
+          <article class='service-card'>
+            <span class='service-index' aria-hidden='true'>04</span>
+            <h3>Lighting installation</h3>
+            <p>Lighting installations, indoors and out.</p>
+          </article>
+          <article class='service-card'>
+            <span class='service-index' aria-hidden='true'>05</span>
+            <h3>Outdoor lighting</h3>
+            <p>Outdoor lighting for homes and businesses.</p>
+          </article>
+          <article class='service-card'>
+            <span class='service-index' aria-hidden='true'>06</span>
+            <h3>Electrical inspections</h3>
+            <p>Inspections of existing electrical systems.</p>
+          </article>
+          <article class='service-card'>
+            <span class='service-index' aria-hidden='true'>07</span>
+            <h3>Commercial installation and maintenance</h3>
+            <p>Installation, maintenance and upgrades for commercial properties.</p>
+          </article>
+          <article class='service-card'>
+            <span class='service-index' aria-hidden='true'>08</span>
+            <h3>Free, no-obligation estimates</h3>
+            <p>Free, no-obligation quotes for potential customers.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class='contact-section' id='contact' aria-labelledby='contact-title'>
+      <div class='container contact-grid'>
+        <div>
+          <p class='section-kicker'>Contact</p>
+          <h2 id='contact-title'>Contact Cactus Valley Electrical</h2>
+          <p class='contact-intro'>Call to discuss electrical work or request a free, no-obligation estimate.</p>
+        </div>
+        <div class='contact-details'>
+          <div class='contact-detail'>
+            <span class='detail-label'>Phone</span>
+            <a class='contact-phone' href='tel:+16028787962'>+1 602-878-7962</a>
+          </div>
+          <div class='contact-detail'>
+            <span class='detail-label'>Address</span>
+            <address>1710 E Germann Rd #14A, Chandler, AZ 85286</address>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class='site-footer'>
+    <div class='container footer-inner'>
+      <div>
+        <span class='footer-name'>Cactus Valley Electrical</span><br>
+        <span class='footer-preview'>Concept preview — not the live site</span>
+      </div>
+      <address class='footer-address'>1710 E Germann Rd #14A, Chandler, AZ 85286</address>
+    </div>
+  </footer>
+
+  <div class='mobile-call-bar' aria-label='Call Cactus Valley Electrical'>
+    <span class='mobile-call-label'>Call Cactus Valley Electrical</span>
+    <a href='tel:+16028787962'>+1 602-878-7962</a>
+  </div>
+</body>
+</html>
