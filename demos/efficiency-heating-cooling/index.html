@@ -1,0 +1,585 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="AC repair, replacement and maintenance for Gilbert homes and businesses. Repairs, tune-ups, installs and maintenance across Gilbert and the East Valley. Emergency service seven days a week.">
+  <title>Efficiency Heating &amp; Cooling LLC | Gilbert, Arizona</title>
+  <style>
+    :root {
+      color-scheme: light;
+      --navy: #0f2233;
+      --blue: #38bdf8;
+      --paper: #f6f9fc;
+      --white: #ffffff;
+      --ink: #142b3d;
+      --muted: #5c7080;
+      --line: #dce6ed;
+      --container: 1180px;
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      color: var(--ink);
+      background: var(--paper);
+      -webkit-font-smoothing: antialiased;
+      text-rendering: optimizeLegibility;
+    }
+    a { color: inherit; }
+    .container { width: min(var(--container), calc(100% - 48px)); margin-inline: auto; }
+
+    .site-header {
+      position: sticky;
+      top: 0;
+      z-index: 20;
+      background: rgba(255, 255, 255, .96);
+      border-bottom: 1px solid rgba(15, 34, 51, .09);
+      backdrop-filter: blur(14px);
+    }
+    .header-inner {
+      min-height: 82px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 22px;
+    }
+    .brand {
+      min-width: 0;
+      display: flex;
+      align-items: center;
+      gap: 13px;
+      text-decoration: none;
+    }
+    .brand-mark {
+      width: 42px;
+      height: 42px;
+      flex: 0 0 auto;
+      display: grid;
+      place-items: center;
+      border-radius: 13px;
+      color: var(--navy);
+      background: #eaf7fd;
+    }
+    .brand-mark svg { width: 25px; height: 25px; }
+    .brand-copy { min-width: 0; }
+    .brand-name {
+      display: block;
+      color: var(--navy);
+      font-size: 15px;
+      font-weight: 750;
+      letter-spacing: -.035em;
+      line-height: 1.2;
+    }
+    .brand-trade {
+      display: block;
+      margin-top: 4px;
+      color: var(--muted);
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+    }
+    .header-tools { display: flex; align-items: center; gap: 12px; }
+    .preview-pill {
+      padding: 7px 11px;
+      border: 1px solid #cceaf8;
+      border-radius: 999px;
+      color: #135c7d;
+      background: #effaff;
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: .03em;
+      white-space: nowrap;
+    }
+    .header-call {
+      min-height: 44px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 9px;
+      padding: 0 15px;
+      border-radius: 10px;
+      color: var(--white);
+      background: var(--navy);
+      font-size: 13px;
+      font-weight: 700;
+      text-decoration: none;
+      white-space: nowrap;
+      transition: background .2s ease, transform .2s ease;
+    }
+    .header-call:hover { background: #19364d; transform: translateY(-1px); }
+    .header-call svg { width: 16px; height: 16px; flex: 0 0 auto; }
+
+    .hero-section { padding: 34px 0 0; }
+    .hero-panel {
+      position: relative;
+      isolation: isolate;
+      overflow: hidden;
+      min-height: 490px;
+      display: grid;
+      grid-template-columns: 1.08fr .92fr;
+      align-items: center;
+      gap: 25px;
+      padding: 66px 72px;
+      border-radius: 24px;
+      color: var(--white);
+      background: var(--navy);
+      box-shadow: 0 25px 55px rgba(15, 34, 51, .12);
+    }
+    .hero-panel::before {
+      position: absolute;
+      z-index: -1;
+      top: -280px;
+      right: -135px;
+      width: 720px;
+      height: 720px;
+      border: 1px solid rgba(56, 189, 248, .16);
+      border-radius: 50%;
+      content: "";
+    }
+    .hero-panel::after {
+      position: absolute;
+      z-index: -1;
+      right: 5%;
+      bottom: -310px;
+      width: 570px;
+      height: 570px;
+      border: 1px solid rgba(255, 255, 255, .08);
+      border-radius: 50%;
+      content: "";
+    }
+    .hero-copy { position: relative; z-index: 2; max-width: 620px; }
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      margin: 0 0 22px;
+      color: #a9e5ff;
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: .13em;
+      text-transform: uppercase;
+    }
+    .eyebrow::before {
+      width: 25px;
+      height: 2px;
+      background: var(--blue);
+      content: "";
+    }
+    h1 {
+      max-width: 650px;
+      margin: 0;
+      color: var(--white);
+      font-size: clamp(38px, 5.1vw, 64px);
+      font-weight: 720;
+      letter-spacing: -.065em;
+      line-height: 1.04;
+    }
+    .hero-subtitle {
+      max-width: 565px;
+      margin: 22px 0 0;
+      color: #c6d4df;
+      font-size: 16px;
+      line-height: 1.75;
+    }
+    .hero-actions { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 31px; }
+    .button {
+      min-height: 51px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      padding: 0 19px;
+      border: 1px solid transparent;
+      border-radius: 10px;
+      font-size: 14px;
+      font-weight: 750;
+      text-decoration: none;
+      transition: background .2s ease, border-color .2s ease, transform .2s ease;
+    }
+    .button:hover { transform: translateY(-2px); }
+    .button-primary { color: #08283a; background: var(--blue); }
+    .button-primary:hover { background: #66cdfa; }
+    .button-secondary { color: var(--white); border-color: rgba(255, 255, 255, .32); background: rgba(255, 255, 255, .04); }
+    .button-secondary:hover { border-color: rgba(255, 255, 255, .7); background: rgba(255, 255, 255, .09); }
+    .button svg { width: 16px; height: 16px; }
+    .hero-art {
+      position: relative;
+      z-index: 1;
+      width: 100%;
+      max-width: 430px;
+      justify-self: end;
+    }
+    .hero-art svg { display: block; width: 100%; height: auto; overflow: visible; }
+
+    .trust-section { padding: 28px 0 76px; }
+    .trust-panel {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      overflow: hidden;
+      border: 1px solid var(--line);
+      border-radius: 16px;
+      background: var(--white);
+      box-shadow: 0 10px 30px rgba(15, 34, 51, .035);
+    }
+    .trust-item {
+      min-height: 115px;
+      display: flex;
+      align-items: center;
+      gap: 18px;
+      padding: 24px 32px;
+    }
+    .trust-item + .trust-item { border-left: 1px solid var(--line); }
+    .trust-value {
+      color: var(--navy);
+      font-size: 34px;
+      font-weight: 760;
+      letter-spacing: -.06em;
+      line-height: 1;
+      white-space: nowrap;
+    }
+    .trust-copy { color: var(--muted); font-size: 13px; line-height: 1.45; }
+    .trust-copy strong { display: block; margin-bottom: 3px; color: var(--navy); font-size: 14px; font-weight: 700; }
+
+    .services-section { padding: 0 0 100px; }
+    .section-heading {
+      max-width: 680px;
+      margin-bottom: 32px;
+    }
+    .section-kicker {
+      margin: 0 0 12px;
+      color: #1476a0;
+      font-size: 11px;
+      font-weight: 750;
+      letter-spacing: .14em;
+      text-transform: uppercase;
+    }
+    h2 {
+      margin: 0;
+      color: var(--navy);
+      font-size: clamp(30px, 4vw, 43px);
+      font-weight: 730;
+      letter-spacing: -.055em;
+      line-height: 1.12;
+    }
+    .section-intro { margin: 13px 0 0; color: var(--muted); font-size: 15px; line-height: 1.7; }
+    .service-grid { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 14px; }
+    .service-card {
+      min-height: 196px;
+      padding: 23px 22px;
+      border: 1px solid var(--line);
+      border-radius: 14px;
+      background: var(--white);
+      transition: border-color .2s ease, box-shadow .2s ease, transform .2s ease;
+    }
+    .service-card:hover { border-color: #b9e5f7; box-shadow: 0 12px 28px rgba(15, 34, 51, .06); transform: translateY(-3px); }
+    .service-icon {
+      width: 38px;
+      height: 38px;
+      display: grid;
+      place-items: center;
+      margin-bottom: 20px;
+      border-radius: 11px;
+      color: #12658a;
+      background: #eaf8fe;
+    }
+    .service-icon svg { width: 20px; height: 20px; }
+    .service-card h3 {
+      margin: 0;
+      color: var(--navy);
+      font-size: 16px;
+      font-weight: 720;
+      letter-spacing: -.025em;
+      line-height: 1.35;
+    }
+    .service-card p { margin: 8px 0 0; color: var(--muted); font-size: 13px; line-height: 1.55; }
+
+    .contact-section { padding: 0 0 88px; scroll-margin-top: 105px; }
+    .contact-panel {
+      position: relative;
+      overflow: hidden;
+      display: grid;
+      grid-template-columns: 1.1fr .9fr;
+      gap: 44px;
+      padding: 54px 58px;
+      border: 1px solid #d5eaf4;
+      border-radius: 20px;
+      background: #eaf7fd;
+    }
+    .contact-panel::after {
+      position: absolute;
+      right: -135px;
+      bottom: -270px;
+      width: 480px;
+      height: 480px;
+      border: 1px solid rgba(20, 118, 160, .13);
+      border-radius: 50%;
+      content: "";
+      pointer-events: none;
+    }
+    .contact-copy, .contact-details { position: relative; z-index: 1; }
+    .contact-copy h2 { max-width: 470px; }
+    .contact-copy p:last-child { max-width: 450px; margin: 15px 0 0; color: #425c6e; font-size: 15px; line-height: 1.7; }
+    .contact-details { align-self: center; padding-left: 34px; border-left: 1px solid #c8e2ef; }
+    .detail-label {
+      display: block;
+      margin: 0 0 7px;
+      color: #587385;
+      font-size: 11px;
+      font-weight: 750;
+      letter-spacing: .1em;
+      text-transform: uppercase;
+    }
+    .contact-phone {
+      display: inline-block;
+      margin-bottom: 24px;
+      color: var(--navy);
+      font-size: 22px;
+      font-weight: 760;
+      letter-spacing: -.035em;
+      text-decoration: none;
+    }
+    .contact-phone:hover { text-decoration: underline; text-decoration-color: var(--blue); text-underline-offset: 4px; }
+    address { color: var(--navy); font-size: 15px; font-style: normal; line-height: 1.7; }
+
+    .site-footer { padding: 25px 0 29px; border-top: 1px solid var(--line); background: var(--white); }
+    .footer-inner { display: flex; align-items: center; justify-content: space-between; gap: 20px; }
+    .footer-name { color: var(--navy); font-size: 13px; font-weight: 750; }
+    .footer-note { margin-top: 5px; color: var(--muted); font-size: 12px; }
+    .footer-address { color: var(--muted); font-size: 12px; line-height: 1.5; text-align: right; }
+
+    .mobile-call-bar { display: none; }
+    a:focus-visible { outline: 3px solid #159bd1; outline-offset: 3px; }
+
+    @media (max-width: 860px) {
+      body { padding-bottom: 76px; }
+      .container { width: min(var(--container), calc(100% - 36px)); }
+      .header-inner { min-height: 74px; flex-wrap: wrap; gap: 10px; padding-block: 10px; }
+      .brand { flex: 1 1 135px; gap: 9px; }
+      .brand-mark { width: 36px; height: 36px; border-radius: 11px; }
+      .brand-mark svg { width: 22px; height: 22px; }
+      .brand-name { font-size: 13px; }
+      .brand-trade { margin-top: 3px; font-size: 9px; }
+      .header-tools { flex: 0 0 auto; gap: 7px; }
+      .preview-pill { padding: 6px 8px; font-size: 10px; }
+      .header-call { min-height: 42px; gap: 6px; padding: 0 10px; font-size: 11px; }
+      .header-call svg { width: 14px; height: 14px; }
+
+      .hero-section { padding-top: 18px; }
+      .hero-panel { min-height: 0; grid-template-columns: 1fr; gap: 6px; padding: 43px 36px 27px; border-radius: 19px; }
+      .hero-copy { max-width: 680px; }
+      .eyebrow { margin-bottom: 17px; font-size: 10px; }
+      h1 { max-width: 610px; font-size: clamp(37px, 8vw, 56px); }
+      .hero-subtitle { margin-top: 17px; font-size: 15px; }
+      .hero-actions { margin-top: 24px; }
+      .hero-art { width: min(78%, 340px); justify-self: center; margin-top: 12px; }
+
+      .trust-section { padding: 18px 0 62px; }
+      .trust-item { min-height: 105px; gap: 12px; padding: 20px 17px; }
+      .trust-value { font-size: 29px; }
+      .trust-copy { font-size: 12px; }
+      .trust-copy strong { font-size: 13px; }
+      .services-section { padding-bottom: 72px; }
+      .service-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+      .service-card { min-height: 184px; }
+      .contact-section { padding-bottom: 62px; scroll-margin-top: 95px; }
+      .contact-panel { grid-template-columns: 1fr; gap: 27px; padding: 38px 34px; }
+      .contact-details { padding: 25px 0 0; border-top: 1px solid #c8e2ef; border-left: 0; }
+      .footer-inner { align-items: flex-start; }
+      .mobile-call-bar {
+        position: fixed;
+        z-index: 30;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        min-height: 66px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 10px;
+        padding: 10px 18px calc(10px + env(safe-area-inset-bottom));
+        color: #08283a;
+        background: var(--blue);
+        box-shadow: 0 -8px 24px rgba(15, 34, 51, .12);
+        font-size: 14px;
+        font-weight: 760;
+        text-decoration: none;
+      }
+      .mobile-call-bar svg { width: 18px; height: 18px; flex: 0 0 auto; }
+    }
+  </style>
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="brand" href="#top" aria-label="Efficiency Heating &amp; Cooling LLC home">
+        <span class="brand-mark" aria-hidden="true">
+          <svg viewBox="0 0 32 32" fill="none">
+            <path d="M16 3.5v25M5.2 9.75l21.6 12.5M5.2 22.25l21.6-12.5" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"/>
+            <path d="M16 3.5l-3 4m3-4 3 4M16 28.5l-3-4m3 4 3-4M5.2 9.75l5 .4m-5-.4 1.5 4.7m19.1 8.1-5-.4m5 .4-1.5-4.7M5.2 22.25l5-.4m-5 .4 1.5-4.7m19.1-8.1-5 .4m5-.4-1.5 4.7" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </span>
+        <span class="brand-copy">
+          <span class="brand-name">Efficiency Heating &amp; Cooling LLC</span>
+          <span class="brand-trade">HVAC contractor</span>
+        </span>
+      </a>
+      <div class="header-tools">
+        <span class="preview-pill">Concept preview</span>
+        <a class="header-call" href="tel:+14803318904" aria-label="Call +1 480-331-8904">
+          <svg viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="M6.2 2.8H4.5c-.9 0-1.7.8-1.6 1.7.7 6.7 5.7 11.7 12.4 12.4.9.1 1.7-.7 1.7-1.6v-1.7c0-.7-.5-1.4-1.2-1.6l-2.4-.6c-.6-.2-1.3 0-1.7.5l-.7.9a12.5 12.5 0 0 1-3.7-3.7l.9-.7c.5-.4.7-1.1.5-1.7l-.6-2.4c-.2-.7-.9-1.2-1.6-1.2Z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          <span>+1 480-331-8904</span>
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <main id="top">
+    <section class="hero-section" aria-labelledby="hero-title">
+      <div class="container">
+        <div class="hero-panel">
+          <div class="hero-copy">
+            <p class="eyebrow">HVAC contractor · Gilbert, Arizona</p>
+            <h1 id="hero-title">AC repair, replacement and maintenance for Gilbert homes and businesses.</h1>
+            <p class="hero-subtitle">Repairs, tune-ups, installs and maintenance across Gilbert and the East Valley. Emergency service seven days a week.</p>
+            <div class="hero-actions">
+              <a class="button button-primary" href="tel:+14803318904">
+                <svg viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="M6.2 2.8H4.5c-.9 0-1.7.8-1.6 1.7.7 6.7 5.7 11.7 12.4 12.4.9.1 1.7-.7 1.7-1.6v-1.7c0-.7-.5-1.4-1.2-1.6l-2.4-.6c-.6-.2-1.3 0-1.7.5l-.7.9a12.5 12.5 0 0 1-3.7-3.7l.9-.7c.5-.4.7-1.1.5-1.7l-.6-2.4c-.2-.7-.9-1.2-1.6-1.2Z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                Call +1 480-331-8904
+              </a>
+              <a class="button button-secondary" href="#contact">Request an estimate</a>
+            </div>
+          </div>
+          <div class="hero-art" aria-hidden="true">
+            <svg viewBox="0 0 460 380" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <circle cx="244" cy="188" r="160" fill="#14364D"/>
+              <circle cx="244" cy="188" r="137" stroke="#38BDF8" stroke-opacity=".26"/>
+              <circle cx="244" cy="188" r="111" stroke="#BDEEFF" stroke-opacity=".16"/>
+              <path d="M244 92v192M148 188h192M176 120l136 136M176 256l136-136" stroke="#BDEEFF" stroke-opacity=".24" stroke-width="1.5"/>
+              <rect x="148" y="89" width="192" height="198" rx="31" fill="#F6F9FC"/>
+              <rect x="164" y="105" width="160" height="166" rx="22" fill="#E7F5FB"/>
+              <circle cx="244" cy="188" r="61" fill="#0F2233"/>
+              <circle cx="244" cy="188" r="45" fill="#173B54" stroke="#38BDF8" stroke-width="2"/>
+              <circle cx="244" cy="188" r="12" fill="#38BDF8"/>
+              <path d="M244 145c11 14 12 25 0 33-12-8-11-19 0-33ZM287 188c-14 11-25 12-33 0 8-12 19-11 33 0ZM244 231c-11-14-12-25 0-33 12 8 11 19 0 33ZM201 188c14-11 25-12 33 0-8 12-19 11-33 0Z" fill="#78D5FA"/>
+              <path d="M244 176v24M232 188h24" stroke="#E9F9FF" stroke-width="2" stroke-linecap="round"/>
+              <circle cx="244" cy="188" r="6" fill="#F6F9FC"/>
+              <path d="M182 309h124" stroke="#38BDF8" stroke-width="4" stroke-linecap="round"/>
+              <circle cx="116" cy="106" r="5" fill="#38BDF8"/>
+              <circle cx="366" cy="258" r="7" fill="#38BDF8" fill-opacity=".7"/>
+              <circle cx="352" cy="94" r="3" fill="#BDEEFF"/>
+            </svg>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="trust-section" aria-label="Rating and service details">
+      <div class="container">
+        <div class="trust-panel">
+          <div class="trust-item">
+            <div class="trust-value">4.9</div>
+            <div class="trust-copy"><strong>Google rating</strong>out of 5</div>
+          </div>
+          <div class="trust-item">
+            <div class="trust-value">557</div>
+            <div class="trust-copy"><strong>Google reviews</strong>from customers</div>
+          </div>
+          <div class="trust-item">
+            <div class="trust-value">7 days</div>
+            <div class="trust-copy"><strong>Emergency service</strong>seven days a week</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="services-section" aria-labelledby="services-title">
+      <div class="container">
+        <div class="section-heading">
+          <p class="section-kicker">Heating &amp; cooling</p>
+          <h2 id="services-title">Services for homes and businesses</h2>
+          <p class="section-intro">Service options across Gilbert and the East Valley.</p>
+        </div>
+        <div class="service-grid">
+          <article class="service-card">
+            <span class="service-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none"><path d="M12 3v18M4.2 7.5l15.6 9M4.2 16.5l15.6-9M12 3l-2 3m2-3 2 3M12 21l-2-3m2 3 2-3" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg></span>
+            <h3>AC repair and tune-ups</h3>
+            <p>Repair and tune-up service for air conditioning.</p>
+          </article>
+          <article class="service-card">
+            <span class="service-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none"><path d="M12 3v18M4.2 7.5l15.6 9M4.2 16.5l15.6-9M12 3l-2 3m2-3 2 3M12 21l-2-3m2 3 2-3" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg></span>
+            <h3>Heating repair</h3>
+            <p>Repair service for heating systems.</p>
+          </article>
+          <article class="service-card">
+            <span class="service-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none"><path d="M12 3v18M4.2 7.5l15.6 9M4.2 16.5l15.6-9M12 3l-2 3m2-3 2 3M12 21l-2-3m2 3 2-3" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg></span>
+            <h3>System installation and replacement</h3>
+            <p>Installation and replacement of systems.</p>
+          </article>
+          <article class="service-card">
+            <span class="service-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none"><path d="M12 3v18M4.2 7.5l15.6 9M4.2 16.5l15.6-9M12 3l-2 3m2-3 2 3M12 21l-2-3m2 3 2-3" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg></span>
+            <h3>Preventive maintenance</h3>
+            <p>Preventive maintenance for heating and cooling systems.</p>
+          </article>
+          <article class="service-card">
+            <span class="service-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none"><path d="M12 3v18M4.2 7.5l15.6 9M4.2 16.5l15.6-9M12 3l-2 3m2-3 2 3M12 21l-2-3m2 3 2-3" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg></span>
+            <h3>Residential service</h3>
+            <p>Service for residential properties.</p>
+          </article>
+          <article class="service-card">
+            <span class="service-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none"><path d="M12 3v18M4.2 7.5l15.6 9M4.2 16.5l15.6-9M12 3l-2 3m2-3 2 3M12 21l-2-3m2 3 2-3" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg></span>
+            <h3>Commercial service</h3>
+            <p>Service for commercial properties.</p>
+          </article>
+          <article class="service-card">
+            <span class="service-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none"><path d="M12 3v18M4.2 7.5l15.6 9M4.2 16.5l15.6-9M12 3l-2 3m2-3 2 3M12 21l-2-3m2 3 2-3" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg></span>
+            <h3>Indoor air quality</h3>
+            <p>Indoor air quality service.</p>
+          </article>
+          <article class="service-card">
+            <span class="service-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none"><path d="M12 3v18M4.2 7.5l15.6 9M4.2 16.5l15.6-9M12 3l-2 3m2-3 2 3M12 21l-2-3m2 3 2-3" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg></span>
+            <h3>Free in-home estimates on new equipment</h3>
+            <p>Free in-home estimates for new equipment.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="contact-section" id="contact" aria-labelledby="contact-title">
+      <div class="container">
+        <div class="contact-panel">
+          <div class="contact-copy">
+            <p class="section-kicker">Contact</p>
+            <h2 id="contact-title">Talk through your heating and cooling needs.</h2>
+            <p>Call to discuss service or request an estimate.</p>
+          </div>
+          <div class="contact-details">
+            <span class="detail-label">Phone</span>
+            <a class="contact-phone" href="tel:+14803318904">+1 480-331-8904</a>
+            <span class="detail-label">Address</span>
+            <address>12247 S Gilbert Rd #105,<br>Gilbert, AZ 85296</address>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div>
+        <div class="footer-name">Efficiency Heating &amp; Cooling LLC</div>
+        <div class="footer-note">Concept preview — not the live site</div>
+      </div>
+      <div class="footer-address">12247 S Gilbert Rd #105, Gilbert, AZ 85296</div>
+    </div>
+  </footer>
+
+  <a class="mobile-call-bar" href="tel:+14803318904" aria-label="Call +1 480-331-8904">
+    <svg viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="M6.2 2.8H4.5c-.9 0-1.7.8-1.6 1.7.7 6.7 5.7 11.7 12.4 12.4.9.1 1.7-.7 1.7-1.6v-1.7c0-.7-.5-1.4-1.2-1.6l-2.4-.6c-.6-.2-1.3 0-1.7.5l-.7.9a12.5 12.5 0 0 1-3.7-3.7l.9-.7c.5-.4.7-1.1.5-1.7l-.6-2.4c-.2-.7-.9-1.2-1.6-1.2Z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    <span>Call +1 480-331-8904</span>
+  </a>
+</body>
+</html>
