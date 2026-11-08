@@ -1,0 +1,947 @@
+<!DOCTYPE html><html lang='en'><head><meta charset='utf-8'><meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content='Tampa Bay Auto Care is an auto repair shop in Tampa, FL, with expert care for Asian and domestic vehicles. Call 813-922-8080.'><meta name='theme-color' content='#07172b'><title>Tampa Bay Auto Care | Auto Repair in Tampa, FL</title><style>
+:root {
+color-scheme: light;
+--navy: #07172b;
+--navy-soft: #102641;
+--blue: #217cff;
+--blue-bright: #55a2ff;
+--ink: #0c2037;
+--muted: #617187;
+--line: #dce5ef;
+--paper: #f4f7fb;
+--white: #ffffff;
+--max: 1180px;
+--radius: 22px;
+--shadow: 0 18px 50px rgba(9, 28, 51, .10);
+}
+*,
+*::before,
+*::after {
+box-sizing: border-box;
+}
+html {
+scroll-behavior: smooth;
+scroll-padding-top: 100px;
+}
+body {
+margin: 0;
+background: var(--white);
+color: var(--ink);
+font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+font-size: 16px;
+line-height: 1.6;
+-webkit-font-smoothing: antialiased;
+}
+a {
+color: inherit;
+text-decoration: none;
+}
+button,
+input,
+textarea {
+font: inherit;
+}
+button,
+a {
+-webkit-tap-highlight-color: transparent;
+}
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+textarea:focus-visible {
+outline: 3px solid var(--blue-bright);
+outline-offset: 3px;
+}
+.wrap {
+width: min(var(--max), calc(100% - 56px));
+margin-inline: auto;
+}
+.site-header {
+position: sticky;
+z-index: 20;
+top: 0;
+border-bottom: 1px solid rgba(220, 229, 239, .85);
+background: rgba(255, 255, 255, .94);
+backdrop-filter: blur(16px);
+}
+.header-inner {
+display: flex;
+min-height: 82px;
+align-items: center;
+justify-content: space-between;
+gap: 28px;
+}
+.brand {
+display: inline-flex;
+min-height: 48px;
+align-items: center;
+gap: 12px;
+flex: 0 0 auto;
+}
+.brand-mark {
+display: grid;
+width: 40px;
+height: 40px;
+place-items: center;
+border-radius: 12px;
+background: var(--navy);
+color: var(--blue-bright);
+}
+.brand-copy {
+display: grid;
+line-height: 1.12;
+}
+.brand-copy strong {
+color: var(--navy);
+font-size: 15px;
+font-weight: 800;
+letter-spacing: -.035em;
+}
+.brand-copy span {
+margin-top: 4px;
+color: var(--muted);
+font-size: 10px;
+font-weight: 750;
+letter-spacing: .16em;
+text-transform: uppercase;
+}
+.main-nav {
+display: flex;
+align-items: center;
+justify-content: center;
+gap: clamp(22px, 3vw, 42px);
+margin-left: auto;
+}
+.main-nav a {
+display: inline-flex;
+min-height: 44px;
+align-items: center;
+color: #43566c;
+font-size: 13px;
+font-weight: 700;
+transition: color .2s ease;
+}
+.main-nav a:hover {
+color: var(--blue);
+}
+.button {
+display: inline-flex;
+min-height: 52px;
+align-items: center;
+justify-content: center;
+gap: 10px;
+padding: 0 21px;
+border: 1px solid transparent;
+border-radius: 13px;
+font-size: 14px;
+font-weight: 750;
+line-height: 1.1;
+transition: transform .2s ease, background .2s ease, border-color .2s ease, box-shadow .2s ease;
+}
+.button:hover {
+transform: translateY(-2px);
+}
+.button-primary {
+background: var(--blue);
+box-shadow: 0 10px 24px rgba(33, 124, 255, .24);
+color: var(--white);
+}
+.button-primary:hover {
+background: #0968ee;
+box-shadow: 0 13px 28px rgba(33, 124, 255, .32);
+}
+.button-light {
+border-color: rgba(255, 255, 255, .27);
+background: rgba(255, 255, 255, .06);
+color: var(--white);
+}
+.button-light:hover {
+border-color: rgba(255, 255, 255, .55);
+background: rgba(255, 255, 255, .12);
+}
+.header-call {
+min-height: 48px;
+padding-inline: 16px;
+border-radius: 12px;
+font-size: 13px;
+white-space: nowrap;
+}
+.hero {
+position: relative;
+overflow: hidden;
+background:
+radial-gradient(ellipse at 77% 45%, rgba(31, 107, 204, .24), transparent 37%),
+linear-gradient(120deg, #07172b 0%, #0a1d35 56%, #102744 100%);
+color: var(--white);
+isolation: isolate;
+}
+.hero::before {
+position: absolute;
+z-index: -1;
+inset: 0;
+background-image: linear-gradient(rgba(255, 255, 255, .025) 1px, transparent 1px), linear-gradient(90deg, rgba(255, 255, 255, .025) 1px, transparent 1px);
+background-size: 56px 56px;
+content: '';
+mask-image: linear-gradient(90deg, transparent, #000 50%, #000);
+}
+.hero-inner {
+display: grid;
+min-height: 610px;
+grid-template-columns: 1.02fr .98fr;
+align-items: center;
+gap: 42px;
+padding-block: 72px 76px;
+}
+.hero-copy {
+position: relative;
+z-index: 2;
+max-width: 610px;
+}
+.eyebrow {
+display: inline-flex;
+align-items: center;
+gap: 10px;
+color: #a8caff;
+font-size: 11px;
+font-weight: 800;
+letter-spacing: .17em;
+text-transform: uppercase;
+}
+.eyebrow::before {
+width: 26px;
+height: 2px;
+background: var(--blue-bright);
+content: '';
+}
+.hero h1 {
+max-width: 690px;
+margin: 22px 0 20px;
+font-size: clamp(46px, 6vw, 76px);
+font-weight: 780;
+letter-spacing: -.065em;
+line-height: .99;
+}
+.hero h1 span {
+color: #6daeff;
+}
+.hero-intro {
+max-width: 500px;
+margin: 0;
+color: #c0ccda;
+font-size: 17px;
+line-height: 1.75;
+}
+.hero-actions {
+display: flex;
+flex-wrap: wrap;
+gap: 12px;
+margin-top: 31px;
+}
+.hero-rating {
+display: inline-flex;
+align-items: center;
+gap: 13px;
+margin-top: 38px;
+padding: 11px 15px 11px 12px;
+border: 1px solid rgba(255, 255, 255, .14);
+border-radius: 14px;
+background: rgba(255, 255, 255, .055);
+}
+.rating-mark {
+display: grid;
+width: 38px;
+height: 38px;
+place-items: center;
+border-radius: 11px;
+background: var(--white);
+color: #1c6cdd;
+font-size: 20px;
+font-weight: 850;
+letter-spacing: -.05em;
+}
+.hero-rating-copy {
+display: grid;
+gap: 1px;
+line-height: 1.25;
+}
+.hero-rating-copy strong {
+color: var(--white);
+font-size: 13px;
+}
+.hero-rating-copy span {
+color: #aebed0;
+font-size: 11px;
+}
+.stars {
+color: #ffc853;
+font-size: 14px;
+letter-spacing: .12em;
+white-space: nowrap;
+}
+.hero-art {
+position: relative;
+display: grid;
+min-height: 420px;
+place-items: center;
+}
+.art-orbit {
+position: absolute;
+width: min(94%, 500px);
+aspect-ratio: 1;
+border: 1px solid rgba(124, 177, 242, .22);
+border-radius: 50%;
+}
+.art-orbit::before,
+.art-orbit::after {
+position: absolute;
+border: 1px solid rgba(124, 177, 242, .13);
+border-radius: 50%;
+content: '';
+}
+.art-orbit::before {
+inset: 9%;
+}
+.art-orbit::after {
+inset: 20%;
+}
+.art-glow {
+position: absolute;
+width: 54%;
+height: 28%;
+border-radius: 50%;
+background: rgba(33, 124, 255, .25);
+filter: blur(40px);
+}
+.hero-car {
+position: relative;
+z-index: 1;
+width: 100%;
+max-width: 570px;
+overflow: visible;
+filter: drop-shadow(0 26px 30px rgba(0, 0, 0, .26));
+}
+.art-label {
+position: absolute;
+right: 2%;
+bottom: 15%;
+display: inline-flex;
+align-items: center;
+gap: 9px;
+padding: 11px 14px;
+border: 1px solid rgba(255, 255, 255, .15);
+border-radius: 12px;
+background: rgba(8, 28, 50, .7);
+color: #d9e7f6;
+font-size: 10px;
+font-weight: 750;
+letter-spacing: .12em;
+text-transform: uppercase;
+backdrop-filter: blur(10px);
+}
+.art-label i {
+width: 7px;
+height: 7px;
+border-radius: 50%;
+background: #4f9dff;
+box-shadow: 0 0 12px rgba(79, 157, 255, .9);
+}
+.section {
+padding-block: 100px;
+}
+.section-head {
+display: flex;
+align-items: end;
+justify-content: space-between;
+gap: 30px;
+margin-bottom: 38px;
+}
+.section-kicker {
+margin: 0 0 12px;
+color: var(--blue);
+font-size: 11px;
+font-weight: 800;
+letter-spacing: .17em;
+text-transform: uppercase;
+}
+.section h2 {
+margin: 0;
+color: var(--navy);
+font-size: clamp(34px, 4.2vw, 52px);
+font-weight: 780;
+letter-spacing: -.055em;
+line-height: 1.08;
+}
+.section-lead {
+max-width: 410px;
+margin: 0 0 4px;
+color: var(--muted);
+font-size: 15px;
+line-height: 1.75;
+}
+.services-section {
+background: var(--paper);
+}
+.service-grid {
+display: grid;
+grid-template-columns: repeat(3, minmax(0, 1fr));
+gap: 16px;
+}
+.service-card {
+min-height: 220px;
+padding: 26px 26px 25px;
+border: 1px solid #e3eaf2;
+border-radius: 18px;
+background: var(--white);
+box-shadow: 0 5px 17px rgba(9, 28, 51, .025);
+transition: transform .2s ease, border-color .2s ease, box-shadow .2s ease;
+}
+.service-card:hover {
+transform: translateY(-4px);
+border-color: #bdd8fa;
+box-shadow: var(--shadow);
+}
+.service-icon {
+display: grid;
+width: 46px;
+height: 46px;
+place-items: center;
+margin-bottom: 20px;
+border-radius: 14px;
+background: #edf5ff;
+color: #1c6ee4;
+}
+.service-card h3 {
+margin: 0 0 8px;
+color: var(--navy);
+font-size: 17px;
+font-weight: 760;
+letter-spacing: -.025em;
+}
+.service-card p {
+margin: 0;
+color: var(--muted);
+font-size: 13px;
+line-height: 1.7;
+}
+.service-footnote {
+margin: 21px 0 0;
+color: #6e7d90;
+font-size: 12px;
+}
+.trust-section {
+position: relative;
+overflow: hidden;
+background: var(--white);
+}
+.trust-layout {
+display: grid;
+grid-template-columns: .85fr 1.15fr;
+align-items: center;
+gap: 80px;
+}
+.rating-panel {
+position: relative;
+overflow: hidden;
+padding: 40px;
+border-radius: 24px;
+background: var(--navy);
+color: var(--white);
+isolation: isolate;
+}
+.rating-panel::after {
+position: absolute;
+z-index: -1;
+right: -70px;
+bottom: -120px;
+width: 280px;
+height: 280px;
+border: 1px solid rgba(103, 169, 255, .3);
+border-radius: 50%;
+box-shadow: 0 0 0 30px rgba(103, 169, 255, .045), 0 0 0 60px rgba(103, 169, 255, .035);
+content: '';
+}
+.rating-panel .section-kicker {
+color: #8fbaff;
+}
+.rating-number {
+display: block;
+margin-top: 21px;
+font-size: clamp(72px, 8vw, 100px);
+font-weight: 800;
+letter-spacing: -.08em;
+line-height: .95;
+}
+.rating-stars {
+margin-top: 18px;
+color: #ffc853;
+font-size: 21px;
+letter-spacing: .17em;
+}
+.rating-source {
+margin: 8px 0 0;
+color: #c0cbd8;
+font-size: 14px;
+}
+.trust-copy h2 {
+max-width: 490px;
+margin-bottom: 18px;
+}
+.trust-copy > p {
+max-width: 470px;
+margin: 0;
+color: var(--muted);
+font-size: 15px;
+line-height: 1.75;
+}
+.trust-points {
+display: grid;
+gap: 14px;
+margin: 28px 0 0;
+padding: 0;
+list-style: none;
+}
+.trust-points li {
+display: flex;
+align-items: center;
+gap: 13px;
+color: #243950;
+font-size: 14px;
+font-weight: 700;
+}
+.check-mark {
+display: grid;
+width: 29px;
+height: 29px;
+flex: 0 0 29px;
+place-items: center;
+border-radius: 9px;
+background: #edf5ff;
+color: var(--blue);
+}
+.contact-section {
+padding-block: 96px;
+background: #f3f7fc;
+}
+.contact-heading {
+max-width: 650px;
+margin-bottom: 42px;
+}
+.contact-heading p:last-child {
+max-width: 520px;
+margin: 16px 0 0;
+color: var(--muted);
+font-size: 15px;
+}
+.contact-layout {
+display: grid;
+grid-template-columns: .95fr 1.05fr;
+gap: 22px;
+align-items: stretch;
+}
+.contact-card,
+.form-card {
+border: 1px solid #e0e8f1;
+border-radius: 22px;
+background: var(--white);
+box-shadow: 0 14px 40px rgba(9, 28, 51, .05);
+}
+.contact-card {
+display: flex;
+min-height: 430px;
+flex-direction: column;
+align-items: flex-start;
+padding: 35px;
+}
+.contact-label {
+margin: 0 0 14px;
+color: var(--blue);
+font-size: 11px;
+font-weight: 800;
+letter-spacing: .16em;
+text-transform: uppercase;
+}
+.contact-phone {
+display: inline-block;
+margin: 0 0 29px;
+color: var(--navy);
+font-size: clamp(32px, 4vw, 45px);
+font-weight: 800;
+letter-spacing: -.055em;
+line-height: 1.15;
+transition: color .2s ease;
+}
+.contact-phone:hover {
+color: var(--blue);
+}
+.contact-address-label {
+margin: 0 0 6px;
+color: #77879a;
+font-size: 11px;
+font-weight: 800;
+letter-spacing: .12em;
+text-transform: uppercase;
+}
+.contact-address {
+margin: 0;
+color: #263b52;
+font-size: 16px;
+font-weight: 650;
+line-height: 1.65;
+}
+.directions-link {
+display: inline-flex;
+min-height: 48px;
+align-items: center;
+gap: 9px;
+margin-top: 22px;
+color: var(--blue);
+font-size: 14px;
+font-weight: 750;
+}
+.directions-link:hover {
+color: #075fdb;
+}
+.form-card {
+padding: 33px 35px 30px;
+}
+.form-card h3 {
+margin: 0;
+color: var(--navy);
+font-size: 23px;
+font-weight: 780;
+letter-spacing: -.035em;
+}
+.form-intro {
+margin: 7px 0 22px;
+color: var(--muted);
+font-size: 13px;
+}
+.form-grid {
+display: grid;
+grid-template-columns: 1fr 1fr;
+gap: 15px;
+}
+.field {
+display: grid;
+gap: 7px;
+}
+.field-wide {
+grid-column: 1 / -1;
+}
+.field label {
+color: #30465d;
+font-size: 12px;
+font-weight: 750;
+}
+.field input,
+.field textarea {
+width: 100%;
+min-height: 48px;
+padding: 11px 13px;
+border: 1px solid #d9e3ed;
+border-radius: 10px;
+background: #fbfcfe;
+color: var(--ink);
+transition: border-color .2s ease, box-shadow .2s ease;
+}
+.field input:focus,
+.field textarea:focus {
+border-color: var(--blue);
+box-shadow: 0 0 0 3px rgba(33, 124, 255, .11);
+outline: 0;
+}
+.field textarea {
+min-height: 100px;
+resize: vertical;
+}
+.form-submit {
+min-height: 48px;
+margin-top: 17px;
+padding-inline: 18px;
+border: 0;
+border-radius: 11px;
+background: var(--navy);
+color: var(--white);
+cursor: default;
+font-size: 13px;
+font-weight: 750;
+}
+.form-note {
+margin: 12px 0 0;
+color: #758498;
+font-size: 11px;
+line-height: 1.55;
+}
+.site-footer {
+background: #061426;
+color: #d8e3ef;
+}
+.footer-inner {
+display: flex;
+min-height: 88px;
+align-items: center;
+justify-content: space-between;
+gap: 20px;
+font-size: 12px;
+font-weight: 650;
+}
+.footer-phone {
+color: #b9d6ff;
+transition: color .2s ease;
+}
+.footer-phone:hover {
+color: var(--white);
+}
+.mobile-call-bar {
+display: none;
+}
+@media (max-width: 900px) {
+.wrap {
+width: min(100% - 44px, var(--max));
+}
+.hero-inner {
+min-height: 560px;
+grid-template-columns: 1fr .85fr;
+gap: 14px;
+}
+.hero h1 {
+font-size: clamp(47px, 7vw, 66px);
+}
+.hero-art {
+min-height: 360px;
+}
+.section {
+padding-block: 82px;
+}
+.trust-layout {
+gap: 42px;
+}
+.rating-panel {
+padding: 32px;
+}
+.contact-card {
+padding: 29px;
+}
+.form-card {
+padding: 29px;
+}
+}
+@media (max-width: 600px) {
+html {
+scroll-padding-top: 78px;
+}
+body {
+padding-bottom: 74px;
+}
+.wrap {
+width: calc(100% - 40px);
+}
+.header-inner {
+min-height: 70px;
+gap: 10px;
+}
+.brand {
+gap: 9px;
+}
+.brand-mark {
+width: 36px;
+height: 36px;
+border-radius: 11px;
+}
+.brand-copy strong {
+font-size: 13px;
+}
+.brand-copy span {
+font-size: 9px;
+}
+.main-nav {
+display: none;
+}
+.header-call {
+min-width: 48px;
+min-height: 46px;
+gap: 7px;
+padding-inline: 12px;
+}
+.header-call .call-label {
+display: none;
+}
+.hero-inner {
+min-height: 0;
+grid-template-columns: 1fr;
+gap: 0;
+padding-block: 58px 42px;
+}
+.hero h1 {
+max-width: 480px;
+margin-top: 18px;
+font-size: clamp(45px, 13vw, 62px);
+}
+.hero-intro {
+font-size: 15px;
+}
+.hero-actions {
+display: grid;
+grid-template-columns: 1fr;
+gap: 10px;
+margin-top: 24px;
+}
+.hero-actions .button {
+width: 100%;
+}
+.hero-rating {
+margin-top: 25px;
+}
+.hero-art {
+min-height: 260px;
+margin-top: 12px;
+}
+.art-orbit {
+width: 76%;
+}
+.hero-car {
+max-width: 440px;
+}
+.art-label {
+right: 1%;
+bottom: 7%;
+padding: 9px 11px;
+font-size: 9px;
+}
+.section {
+padding-block: 70px;
+}
+.section-head {
+display: block;
+margin-bottom: 27px;
+}
+.section h2 {
+font-size: 37px;
+}
+.section-lead {
+margin-top: 14px;
+font-size: 14px;
+}
+.service-grid {
+grid-template-columns: 1fr;
+gap: 12px;
+}
+.service-card {
+min-height: 0;
+padding: 22px;
+}
+.service-icon {
+margin-bottom: 15px;
+}
+.service-footnote {
+line-height: 1.6;
+}
+.trust-layout {
+grid-template-columns: 1fr;
+gap: 34px;
+}
+.rating-panel {
+padding: 31px;
+}
+.rating-number {
+font-size: 82px;
+}
+.trust-copy h2 {
+font-size: 36px;
+}
+.trust-points {
+gap: 12px;
+}
+.contact-section {
+padding-block: 70px;
+}
+.contact-heading {
+margin-bottom: 29px;
+}
+.contact-heading p:last-child {
+font-size: 14px;
+}
+.contact-layout {
+grid-template-columns: 1fr;
+gap: 14px;
+}
+.contact-card {
+min-height: 0;
+padding: 27px 23px;
+}
+.contact-phone {
+margin-bottom: 25px;
+font-size: clamp(33px, 10vw, 42px);
+}
+.form-card {
+padding: 26px 22px;
+}
+.form-grid {
+grid-template-columns: 1fr;
+gap: 13px;
+}
+.field-wide {
+grid-column: auto;
+}
+.footer-inner {
+min-height: 110px;
+flex-wrap: wrap;
+justify-content: flex-start;
+gap: 5px 20px;
+padding-block: 20px;
+}
+.footer-inner > * {
+width: 100%;
+}
+.mobile-call-bar {
+position: fixed;
+z-index: 30;
+right: 12px;
+bottom: 12px;
+left: 12px;
+display: flex;
+min-height: 54px;
+align-items: center;
+justify-content: center;
+gap: 10px;
+border: 1px solid rgba(255, 255, 255, .12);
+border-radius: 15px;
+background: var(--blue);
+box-shadow: 0 10px 30px rgba(5, 25, 49, .28);
+color: var(--white);
+font-size: 15px;
+font-weight: 800;
+transition: background .2s ease, transform .2s ease;
+}
+.mobile-call-bar:hover {
+transform: translateY(-2px);
+background: #0968ee;
+}
+}
+@media (prefers-reduced-motion: reduce) {
+html {
+scroll-behavior: auto;
+}
+*,
+*::before,
+*::after {
+transition-duration: .01ms !important;
+animation-duration: .01ms !important;
+animation-iteration-count: 1 !important;
+}
+}
+</style></head><body><header class='site-header'><div class='wrap header-inner'><a class='brand' href='#top' aria-label='Tampa Bay Auto Care home'><span class='brand-mark' aria-hidden='true'><svg width='23' height='23' viewBox='0 0 24 24' fill='none'><path d='M4 14.5h16l-1.5-5a2 2 0 0 0-1.9-1.4H7.4A2 2 0 0 0 5.5 9L4 14.5Z' stroke='currentColor' stroke-width='1.8' stroke-linejoin='round'/><path d='M4 14.5v3h2m14-3v3h-2M7 17.5h10M7 11h10' stroke='currentColor' stroke-width='1.8' stroke-linecap='round'/><circle cx='7' cy='14.5' r='1' fill='currentColor'/><circle cx='17' cy='14.5' r='1' fill='currentColor'/></svg></span><span class='brand-copy'><strong>Tampa Bay Auto Care</strong><span>Auto repair shop</span></span></a><nav class='main-nav' aria-label='Main navigation'><a href='#services'>Services</a><a href='#why-us'>Why us</a><a href='#contact'>Contact</a></nav><a class='button button-primary header-call' href='tel:+18139228080' aria-label='Call Tampa Bay Auto Care at 813-922-8080'><svg width='17' height='17' viewBox='0 0 24 24' fill='none' aria-hidden='true'><path d='M7.2 3.8 9.4 7l-1.5 2a15 15 0 0 0 7.1 7.1l2-1.5 3.2 2.2-.7 3a2 2 0 0 1-2.2 1.5A18.7 18.7 0 0 1 2.7 6.7a2 2 0 0 1 1.5-2.2l3-.7Z' stroke='currentColor' stroke-width='1.8' stroke-linejoin='round'/></svg><span class='call-label'>Call 813-922-8080</span><span class='call-label-mobile' hidden>Call</span></a></div></header><main id='top'><section class='hero' aria-labelledby='hero-title'><div class='wrap hero-inner'><div class='hero-copy'><p class='eyebrow'>Auto care in Tampa, Florida</p><h1 id='hero-title'>Expert care for the car <span>you count on.</span></h1><p class='hero-intro'>Tampa Bay Auto Care is an auto repair shop in Tampa, Florida, highlighting expert care for Asian and domestic vehicles.</p><div class='hero-actions'><a class='button button-primary' href='tel:+18139228080' aria-label='Call Tampa Bay Auto Care at 813-922-8080'><svg width='18' height='18' viewBox='0 0 24 24' fill='none' aria-hidden='true'><path d='M7.2 3.8 9.4 7l-1.5 2a15 15 0 0 0 7.1 7.1l2-1.5 3.2 2.2-.7 3a2 2 0 0 1-2.2 1.5A18.7 18.7 0 0 1 2.7 6.7a2 2 0 0 1 1.5-2.2l3-.7Z' stroke='currentColor' stroke-width='1.8' stroke-linejoin='round'/></svg>
+Call 813-922-8080
+</a><a class='button button-light' href='https://www.google.com/maps/search/?api=1&amp;query=14311%20N%20Nebraska%20Ave%20%232%2C%20Tampa%2C%20FL%2033613' target='_blank' rel='noopener noreferrer' aria-label='Get directions to Tampa Bay Auto Care'>
+Get directions
+<svg width='16' height='16' viewBox='0 0 24 24' fill='none' aria-hidden='true'><path d='M5 12h14m-6-6 6 6-6 6' stroke='currentColor' stroke-width='1.8' stroke-linecap='round' stroke-linejoin='round'/></svg></a></div><div class='hero-rating' aria-label='5.0 stars from 108 Google reviews'><span class='rating-mark' aria-hidden='true'>G</span><span class='hero-rating-copy'><strong>5.0 <span class='stars' aria-hidden='true'>★★★★★</span></strong><span>from 108 Google reviews</span></span></div></div><div class='hero-art' aria-hidden='true'><div class='art-orbit'></div><div class='art-glow'></div><svg class='hero-car' viewBox='0 0 620 390' fill='none'><defs><linearGradient id='carBody' x1='122' y1='166' x2='500' y2='280' gradientUnits='userSpaceOnUse'><stop stop-color='#8FC4FF'/><stop offset='.5' stop-color='#3989F5'/><stop offset='1' stop-color='#1760C6'/></linearGradient><linearGradient id='glass' x1='249' y1='123' x2='381' y2='185' gradientUnits='userSpaceOnUse'><stop stop-color='#C9E4FF' stop-opacity='.88'/><stop offset='1' stop-color='#67A8F1' stop-opacity='.55'/></linearGradient></defs><ellipse cx='308' cy='302' rx='211' ry='23' fill='#030E1D' fill-opacity='.45'/><path d='M113 253c5-26 17-48 42-58l60-20 41-53c10-13 24-20 41-20h92c19 0 34 8 47 23l44 53 39 13c20 7 33 21 38 42l9 40c2 9-5 17-14 17H118c-8 0-14-7-13-15l8-22Z' fill='url(#carBody)' stroke='#B5D9FF' stroke-opacity='.72' stroke-width='3'/><path d='m234 174 37-46c7-9 16-13 28-13h39v59H234Z' fill='url(#glass)' stroke='#D7EAFF' stroke-opacity='.72' stroke-width='2'/><path d='M352 115h35c13 0 23 5 32 15l38 44H352v-59Z' fill='url(#glass)' stroke='#D7EAFF' stroke-opacity='.72' stroke-width='2'/><path d='M341 115v60m-112 0h240' stroke='#D4E9FF' stroke-opacity='.66' stroke-width='2'/><path d='M147 208h54m262 0h52' stroke='#D8EBFF' stroke-opacity='.66' stroke-width='3' stroke-linecap='round'/><path d='M124 247h30m371 0h25' stroke='#F5C85C' stroke-width='7' stroke-linecap='round'/><path d='M110 270h403' stroke='#153E72' stroke-opacity='.65' stroke-width='3'/><circle cx='206' cy='279' r='37' fill='#07172B' stroke='#8FC4FF' stroke-width='5'/><circle cx='206' cy='279' r='20' fill='#162F4B' stroke='#B7D9FF' stroke-width='3'/><circle cx='206' cy='279' r='6' fill='#71B2FF'/><circle cx='439' cy='279' r='37' fill='#07172B' stroke='#8FC4FF' stroke-width='5'/><circle cx='439' cy='279' r='20' fill='#162F4B' stroke='#B7D9FF' stroke-width='3'/><circle cx='439' cy='279' r='6' fill='#71B2FF'/><path d='M168 279h76m157 0h76' stroke='#78B8FF' stroke-opacity='.68' stroke-width='2'/><path d='M129 235c28-17 61-25 96-26m189 0c30 1 55 8 77 21' stroke='#EAF5FF' stroke-opacity='.42' stroke-width='2' stroke-linecap='round'/><path d='M100 318h416' stroke='#58A0F7' stroke-opacity='.27' stroke-width='2' stroke-dasharray='4 12'/></svg><span class='art-label'><i></i> Asian + domestic vehicles</span></div></div></section><section class='section services-section' id='services' aria-labelledby='services-title'><div class='wrap'><div class='section-head'><div><p class='section-kicker'>Auto repair, made understandable</p><h2 id='services-title'>Common car concerns.<br>Clear starting points.</h2></div><p class='section-lead'>Explore common areas of auto repair. Each vehicle is different; call the shop to discuss what your car needs.</p></div><div class='service-grid'><article class='service-card'><span class='service-icon' aria-hidden='true'><svg width='23' height='23' viewBox='0 0 24 24' fill='none'><path d='M12 3 20 7.5v9L12 21l-8-4.5v-9L12 3Z' stroke='currentColor' stroke-width='1.7' stroke-linejoin='round'/><path d='M12 8v5m0 3h.01' stroke='currentColor' stroke-width='2' stroke-linecap='round'/></svg></span><h3>Warning light diagnostics</h3><p>A diagnostic check helps narrow down what a warning light or symptom may mean.</p></article><article class='service-card'><span class='service-icon' aria-hidden='true'><svg width='23' height='23' viewBox='0 0 24 24' fill='none'><circle cx='12' cy='12' r='8.5' stroke='currentColor' stroke-width='1.7'/><circle cx='12' cy='12' r='3' stroke='currentColor' stroke-width='1.7'/><path d='M12 3.5v5m8.5 3.5h-5m-7 0h-5m8.5 8.5v-5' stroke='currentColor' stroke-width='1.7' stroke-linecap='round'/></svg></span><h3>Brake repair</h3><p>Brake work focuses on the parts that help your vehicle slow down and stop.</p></article><article class='service-card'><span class='service-icon' aria-hidden='true'><svg width='23' height='23' viewBox='0 0 24 24' fill='none'><path d='M5 7h14l-1.3 13H6.3L5 7Zm3 0V5a4 4 0 0 1 8 0v2' stroke='currentColor' stroke-width='1.7' stroke-linejoin='round'/><path d='M9 12h6m-3-3v6' stroke='currentColor' stroke-width='1.7' stroke-linecap='round'/></svg></span><h3>Oil &amp; filter service</h3><p>Oil and filter changes are a basic part of routine engine maintenance.</p></article><article class='service-card'><span class='service-icon' aria-hidden='true'><svg width='23' height='23' viewBox='0 0 24 24' fill='none'><rect x='3.5' y='6' width='17' height='12' rx='2' stroke='currentColor' stroke-width='1.7'/><path d='M8 4v4m8-4v4m-8 8v4m8-4v4M7 12h4m2 0h4' stroke='currentColor' stroke-width='1.7' stroke-linecap='round'/></svg></span><h3>Battery &amp; starting</h3><p>Battery and starting checks can help identify why a vehicle may not start as expected.</p></article><article class='service-card'><span class='service-icon' aria-hidden='true'><svg width='23' height='23' viewBox='0 0 24 24' fill='none'><circle cx='12' cy='12' r='8.5' stroke='currentColor' stroke-width='1.7'/><circle cx='12' cy='12' r='3' stroke='currentColor' stroke-width='1.7'/><path d='M12 3.5v2m0 13v2m8.5-8.5h-2m-13 0h-2M6 6l1.5 1.5m9 9L18 18m0-12-1.5 1.5m-9 9L6 18' stroke='currentColor' stroke-width='1.5' stroke-linecap='round'/></svg></span><h3>Tires &amp; alignment</h3><p>Tire and alignment checks can help identify uneven wear or a pull to one side.</p></article><article class='service-card'><span class='service-icon' aria-hidden='true'><svg width='23' height='23' viewBox='0 0 24 24' fill='none'><path d='M12 3.5c2.9 4.1 5.5 6.9 5.5 10.2a5.5 5.5 0 1 1-11 0C6.5 10.4 9.1 7.6 12 3.5Z' stroke='currentColor' stroke-width='1.7' stroke-linejoin='round'/><path d='M9.5 14.5a2.5 2.5 0 0 0 2.5 2.5' stroke='currentColor' stroke-width='1.7' stroke-linecap='round'/></svg></span><h3>Cooling system</h3><p>Cooling-system checks focus on managing engine temperature.</p></article></div><p class='service-footnote'>Service topics are a general overview of auto repair needs.</p></div></section><section class='section trust-section' id='why-us' aria-labelledby='trust-title'><div class='wrap trust-layout'><div class='rating-panel' aria-label='Google rating: 5.0 stars from 108 reviews'><p class='section-kicker'>Google rating</p><span class='rating-number'>5.0</span><div class='rating-stars' aria-label='5 out of 5 stars'>★★★★★</div><p class='rating-source'>from 108 Google reviews</p></div><div class='trust-copy'><p class='section-kicker'>A few things to know</p><h2 id='trust-title'>The essentials, up front.</h2><p>Find the shop, see the focus, and get in touch directly.</p><ul class='trust-points'><li><span class='check-mark' aria-hidden='true'><svg width='16' height='16' viewBox='0 0 24 24' fill='none'><path d='m5 12 4 4L19 6' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/></svg></span>
+Expert care for Asian and domestic vehicles
+</li><li><span class='check-mark' aria-hidden='true'><svg width='16' height='16' viewBox='0 0 24 24' fill='none'><path d='m5 12 4 4L19 6' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/></svg></span>
+Auto repair shop in Tampa, Florida
+</li><li><span class='check-mark' aria-hidden='true'><svg width='16' height='16' viewBox='0 0 24 24' fill='none'><path d='m5 12 4 4L19 6' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/></svg></span>
+Call the shop at 813-922-8080
+</li></ul></div></div></section><section class='contact-section' id='contact' aria-labelledby='contact-title'><div class='wrap'><div class='contact-heading'><p class='section-kicker'>Contact</p><h2 id='contact-title'>Start with a conversation.</h2><p>Call Tampa Bay Auto Care or use the address below to find the shop in Tampa.</p></div><div class='contact-layout'><div class='contact-card'><p class='contact-label'>Call the shop</p><a class='contact-phone' href='tel:+18139228080' aria-label='Call 813-922-8080'>813-922-8080</a><p class='contact-address-label'>Address</p><address class='contact-address' style='font-style: normal;'>14311 N Nebraska Ave #2<br>Tampa, FL 33613</address><a class='directions-link' href='https://www.google.com/maps/search/?api=1&amp;query=14311%20N%20Nebraska%20Ave%20%232%2C%20Tampa%2C%20FL%2033613' target='_blank' rel='noopener noreferrer' aria-label='Get directions to 14311 N Nebraska Ave number 2, Tampa, Florida'>
+Get directions
+<svg width='17' height='17' viewBox='0 0 24 24' fill='none' aria-hidden='true'><path d='M5 12h14m-6-6 6 6-6 6' stroke='currentColor' stroke-width='1.8' stroke-linecap='round' stroke-linejoin='round'/></svg></a></div><div class='form-card'><h3>What do you need?</h3><p class='form-intro'>Share a few details in this preview form.</p><form aria-label='Contact form preview'><div class='form-grid'><div class='field'><label for='name'>Name</label><input id='name' name='name' type='text' autocomplete='name'></div><div class='field'><label for='phone'>Phone</label><input id='phone' name='phone' type='tel' autocomplete='tel'></div><div class='field field-wide'><label for='need'>What you need</label><textarea id='need' name='need' rows='4'></textarea></div></div><button class='form-submit' type='button'>Preview form only</button><p class='form-note'>This form is part of the concept preview and does not send a message.</p></form></div></div></div></section></main><footer class='site-footer'><div class='wrap footer-inner'><span>Tampa Bay Auto Care</span><span>Concept preview — not the live site</span><a class='footer-phone' href='tel:+18139228080'>813-922-8080</a></div></footer><a class='mobile-call-bar' href='tel:+18139228080' aria-label='Call Tampa Bay Auto Care at 813-922-8080'><svg width='19' height='19' viewBox='0 0 24 24' fill='none' aria-hidden='true'><path d='M7.2 3.8 9.4 7l-1.5 2a15 15 0 0 0 7.1 7.1l2-1.5 3.2 2.2-.7 3a2 2 0 0 1-2.2 1.5A18.7 18.7 0 0 1 2.7 6.7a2 2 0 0 1 1.5-2.2l3-.7Z' stroke='currentColor' stroke-width='1.8' stroke-linejoin='round'/></svg>
+Call 813-922-8080
+</a></body></html>
