@@ -1,0 +1,1185 @@
+<!doctype html><html lang='en'><head><meta charset='utf-8'><meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content='South Florida Auto Repair in Tampa, FL — foreign auto repair, ASE-certified technicians, phone, address, and directions.'><meta name='theme-color' content='#171d20'><title>South Florida Auto Repair | Tampa, FL</title><style>
+:root {
+color-scheme: light;
+--ink: #171d20;
+--ink-soft: #273236;
+--muted: #657176;
+--paper: #f7f5f0;
+--white: #fffefa;
+--line: #e5e2da;
+--amber: #e6a744;
+--amber-deep: #bd7e21;
+--green: #58766d;
+--serif: Georgia, 'Times New Roman', serif;
+--sans: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+--container: 1180px;
+--shadow: 0 22px 56px rgba(22, 29, 32, 0.09);
+--radius: 22px;
+}
+*,
+*::before,
+*::after {
+box-sizing: border-box;
+}
+html {
+scroll-behavior: smooth;
+scroll-padding-top: 96px;
+}
+body {
+margin: 0;
+background: var(--paper);
+color: var(--ink);
+font-family: var(--sans);
+font-size: 16px;
+line-height: 1.6;
+-webkit-font-smoothing: antialiased;
+}
+a {
+color: inherit;
+text-decoration: none;
+}
+button,
+input,
+textarea {
+font: inherit;
+}
+button,
+a {
+-webkit-tap-highlight-color: transparent;
+}
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+textarea:focus-visible {
+outline: 3px solid var(--amber);
+outline-offset: 4px;
+}
+.skip-link {
+position: fixed;
+z-index: 100;
+top: 12px;
+left: 12px;
+padding: 12px 16px;
+transform: translateY(-160%);
+border-radius: 8px;
+background: var(--white);
+color: var(--ink);
+box-shadow: var(--shadow);
+}
+.skip-link:focus {
+transform: translateY(0);
+}
+.container {
+width: min(var(--container), calc(100% - 64px));
+margin-inline: auto;
+}
+.site-header {
+position: sticky;
+z-index: 20;
+top: 0;
+border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+background: rgba(23, 29, 32, 0.97);
+color: var(--white);
+backdrop-filter: blur(14px);
+}
+.header-inner {
+display: flex;
+min-height: 82px;
+align-items: center;
+justify-content: space-between;
+gap: 26px;
+}
+.brand {
+display: inline-flex;
+min-width: 220px;
+align-items: center;
+gap: 12px;
+}
+.brand-mark {
+display: grid;
+width: 42px;
+height: 42px;
+flex: 0 0 auto;
+place-items: center;
+border: 1px solid rgba(230, 167, 68, 0.62);
+border-radius: 12px;
+color: var(--amber);
+font-size: 13px;
+font-weight: 800;
+letter-spacing: 0.04em;
+}
+.brand-name {
+max-width: 180px;
+font-size: 14px;
+font-weight: 720;
+line-height: 1.2;
+letter-spacing: -0.015em;
+}
+.primary-nav {
+display: flex;
+align-items: center;
+gap: clamp(20px, 3vw, 38px);
+}
+.primary-nav a {
+color: rgba(255, 254, 250, 0.76);
+font-size: 13px;
+font-weight: 600;
+transition: color 160ms ease;
+}
+.primary-nav a:hover {
+color: var(--amber);
+}
+.header-call {
+display: inline-flex;
+min-height: 48px;
+align-items: center;
+justify-content: center;
+gap: 10px;
+padding: 0 18px;
+border: 1px solid rgba(230, 167, 68, 0.75);
+border-radius: 999px;
+color: var(--white);
+font-size: 13px;
+font-weight: 750;
+white-space: nowrap;
+transition: background 160ms ease, color 160ms ease, transform 160ms ease;
+}
+.header-call:hover {
+transform: translateY(-1px);
+background: var(--amber);
+color: var(--ink);
+}
+.header-call svg,
+.button svg,
+.mobile-call-bar svg {
+width: 17px;
+height: 17px;
+flex: 0 0 auto;
+}
+main {
+overflow: hidden;
+}
+.hero {
+position: relative;
+overflow: hidden;
+background: var(--ink);
+color: var(--white);
+isolation: isolate;
+}
+.hero::before {
+position: absolute;
+z-index: -1;
+top: -290px;
+right: -125px;
+width: 760px;
+height: 760px;
+border: 1px solid rgba(230, 167, 68, 0.13);
+border-radius: 50%;
+content: '';
+}
+.hero::after {
+position: absolute;
+z-index: -1;
+right: 5%;
+bottom: -420px;
+width: 710px;
+height: 710px;
+border: 1px solid rgba(255, 255, 255, 0.07);
+border-radius: 50%;
+content: '';
+}
+.hero-inner {
+display: grid;
+min-height: 620px;
+grid-template-columns: 1.03fr 0.97fr;
+align-items: center;
+gap: 44px;
+padding-block: 76px 82px;
+}
+.hero-copy {
+position: relative;
+z-index: 2;
+max-width: 620px;
+}
+.eyebrow {
+display: inline-flex;
+align-items: center;
+gap: 10px;
+margin: 0 0 22px;
+color: var(--amber-deep);
+font-size: 11px;
+font-weight: 800;
+letter-spacing: 0.16em;
+line-height: 1.4;
+text-transform: uppercase;
+}
+.hero .eyebrow {
+color: var(--amber);
+}
+.eyebrow::before {
+width: 25px;
+height: 1px;
+background: currentColor;
+content: '';
+}
+h1,
+h2,
+h3,
+p {
+margin-top: 0;
+}
+h1 {
+max-width: 660px;
+margin-bottom: 22px;
+font-family: var(--serif);
+font-size: clamp(48px, 6.3vw, 78px);
+font-weight: 400;
+letter-spacing: -0.055em;
+line-height: 0.99;
+}
+h1 em {
+color: var(--amber);
+font-weight: 400;
+}
+.hero-description {
+max-width: 500px;
+margin-bottom: 30px;
+color: rgba(255, 254, 250, 0.72);
+font-size: 17px;
+line-height: 1.75;
+}
+.hero-actions {
+display: flex;
+flex-wrap: wrap;
+align-items: center;
+gap: 12px;
+}
+.button {
+display: inline-flex;
+min-height: 52px;
+align-items: center;
+justify-content: center;
+gap: 10px;
+padding: 0 21px;
+border: 1px solid transparent;
+border-radius: 999px;
+cursor: pointer;
+font-size: 14px;
+font-weight: 750;
+line-height: 1.2;
+transition: transform 160ms ease, background 160ms ease, border-color 160ms ease;
+}
+.button:hover {
+transform: translateY(-2px);
+}
+.button--amber {
+background: var(--amber);
+color: var(--ink);
+}
+.button--amber:hover {
+background: #f0b75c;
+}
+.button--outline-light {
+border-color: rgba(255, 255, 255, 0.28);
+color: var(--white);
+}
+.button--outline-light:hover {
+border-color: var(--amber);
+background: rgba(230, 167, 68, 0.08);
+}
+.hero-rating {
+display: inline-flex;
+align-items: center;
+gap: 13px;
+margin-top: 39px;
+padding: 12px 15px 12px 12px;
+border: 1px solid rgba(255, 255, 255, 0.12);
+border-radius: 14px;
+background: rgba(255, 255, 255, 0.045);
+}
+.rating-mark {
+display: grid;
+width: 38px;
+height: 38px;
+flex: 0 0 auto;
+place-items: center;
+border-radius: 11px;
+background: var(--amber);
+color: var(--ink);
+font-size: 13px;
+font-weight: 850;
+}
+.hero-rating-copy {
+display: grid;
+gap: 1px;
+}
+.hero-rating-copy strong {
+font-size: 13px;
+line-height: 1.35;
+}
+.hero-rating-copy span {
+color: rgba(255, 254, 250, 0.64);
+font-size: 11px;
+}
+.hero-art {
+position: relative;
+min-height: 440px;
+display: grid;
+place-items: center;
+}
+.art-orbit {
+position: absolute;
+width: min(100%, 490px);
+aspect-ratio: 1;
+border: 1px solid rgba(255, 255, 255, 0.11);
+border-radius: 50%;
+}
+.art-orbit::before,
+.art-orbit::after {
+position: absolute;
+inset: 9%;
+border: 1px solid rgba(230, 167, 68, 0.18);
+border-radius: 50%;
+content: '';
+}
+.art-orbit::after {
+inset: 21%;
+border-color: rgba(255, 255, 255, 0.1);
+}
+.art-panel {
+position: relative;
+width: min(100%, 480px);
+padding: 20px 18px 18px;
+border: 1px solid rgba(255, 255, 255, 0.16);
+border-radius: 26px;
+background: linear-gradient(145deg, rgba(48, 59, 61, 0.96), rgba(27, 35, 37, 0.94));
+box-shadow: 0 30px 90px rgba(0, 0, 0, 0.26);
+transform: rotate(2deg);
+}
+.art-panel-top {
+display: flex;
+align-items: center;
+justify-content: space-between;
+gap: 12px;
+padding: 3px 5px 12px;
+color: rgba(255, 254, 250, 0.6);
+font-size: 10px;
+font-weight: 750;
+letter-spacing: 0.15em;
+text-transform: uppercase;
+}
+.art-panel-top span:last-child {
+color: var(--amber);
+}
+.car-illustration {
+display: block;
+width: 100%;
+height: auto;
+overflow: visible;
+}
+.art-caption {
+display: flex;
+align-items: center;
+gap: 12px;
+padding: 12px 7px 0;
+color: rgba(255, 254, 250, 0.72);
+font-size: 12px;
+}
+.caption-dot {
+width: 7px;
+height: 7px;
+flex: 0 0 auto;
+border-radius: 50%;
+background: var(--amber);
+box-shadow: 0 0 0 5px rgba(230, 167, 68, 0.12);
+}
+.section {
+padding-block: 104px;
+}
+.section-heading {
+display: flex;
+align-items: end;
+justify-content: space-between;
+gap: 35px;
+margin-bottom: 42px;
+}
+.section-heading-copy {
+max-width: 600px;
+}
+.section-heading .eyebrow {
+margin-bottom: 15px;
+}
+h2 {
+margin-bottom: 0;
+font-family: var(--serif);
+font-size: clamp(36px, 4.5vw, 55px);
+font-weight: 400;
+letter-spacing: -0.045em;
+line-height: 1.08;
+}
+.section-intro {
+max-width: 360px;
+margin-bottom: 3px;
+color: var(--muted);
+font-size: 14px;
+line-height: 1.8;
+}
+.services-section {
+background: var(--paper);
+}
+.service-grid {
+display: grid;
+grid-template-columns: repeat(3, 1fr);
+gap: 14px;
+}
+.service-card {
+min-height: 220px;
+padding: 25px 25px 24px;
+border: 1px solid var(--line);
+border-radius: 17px;
+background: var(--white);
+transition: border-color 180ms ease, box-shadow 180ms ease, transform 180ms ease;
+}
+.service-card:hover {
+transform: translateY(-3px);
+border-color: rgba(189, 126, 33, 0.4);
+box-shadow: 0 16px 32px rgba(22, 29, 32, 0.07);
+}
+.service-icon {
+display: grid;
+width: 45px;
+height: 45px;
+margin-bottom: 20px;
+place-items: center;
+border-radius: 13px;
+background: #f5eddd;
+color: #91621d;
+}
+.service-icon svg {
+width: 23px;
+height: 23px;
+}
+.service-card h3 {
+margin-bottom: 8px;
+font-size: 17px;
+font-weight: 750;
+letter-spacing: -0.025em;
+line-height: 1.3;
+}
+.service-card p {
+max-width: 310px;
+margin-bottom: 0;
+color: var(--muted);
+font-size: 13px;
+line-height: 1.7;
+}
+.why-section {
+position: relative;
+background: #ece9e1;
+}
+.why-grid {
+display: grid;
+grid-template-columns: 0.9fr 1.1fr;
+align-items: center;
+gap: 90px;
+}
+.why-copy {
+max-width: 470px;
+}
+.why-copy .eyebrow {
+margin-bottom: 17px;
+}
+.why-copy h2 {
+margin-bottom: 21px;
+}
+.why-copy p:last-child {
+margin-bottom: 0;
+color: #596468;
+font-size: 15px;
+line-height: 1.85;
+}
+.proof-list {
+display: grid;
+gap: 12px;
+}
+.proof-card {
+display: grid;
+grid-template-columns: 56px 1fr;
+align-items: center;
+gap: 17px;
+padding: 23px 24px;
+border: 1px solid rgba(23, 29, 32, 0.09);
+border-radius: 16px;
+background: rgba(255, 254, 250, 0.79);
+}
+.proof-number {
+display: grid;
+width: 56px;
+height: 56px;
+place-items: center;
+border-radius: 15px;
+background: var(--ink);
+color: var(--amber);
+font-family: var(--serif);
+font-size: 20px;
+}
+.proof-card h3 {
+margin-bottom: 4px;
+font-size: 16px;
+font-weight: 750;
+letter-spacing: -0.02em;
+line-height: 1.35;
+}
+.proof-card p {
+margin-bottom: 0;
+color: var(--muted);
+font-size: 12px;
+line-height: 1.55;
+}
+.reviews-section {
+background: var(--white);
+}
+.reviews-layout {
+display: grid;
+grid-template-columns: 0.85fr 1.15fr;
+align-items: center;
+gap: 78px;
+}
+.rating-card {
+position: relative;
+overflow: hidden;
+padding: 40px;
+border-radius: 22px;
+background: var(--ink);
+color: var(--white);
+}
+.rating-card::after {
+position: absolute;
+right: -80px;
+bottom: -140px;
+width: 290px;
+height: 290px;
+border: 1px solid rgba(230, 167, 68, 0.24);
+border-radius: 50%;
+box-shadow: 0 0 0 28px rgba(230, 167, 68, 0.035), 0 0 0 58px rgba(230, 167, 68, 0.025);
+content: '';
+}
+.rating-card-label {
+position: relative;
+z-index: 1;
+margin-bottom: 23px;
+color: rgba(255, 254, 250, 0.6);
+font-size: 11px;
+font-weight: 800;
+letter-spacing: 0.16em;
+text-transform: uppercase;
+}
+.rating-number {
+position: relative;
+z-index: 1;
+display: flex;
+align-items: baseline;
+gap: 8px;
+margin-bottom: 12px;
+font-family: var(--serif);
+font-size: clamp(74px, 9vw, 108px);
+letter-spacing: -0.08em;
+line-height: 0.95;
+}
+.rating-number span {
+color: var(--amber);
+font-family: var(--sans);
+font-size: 14px;
+font-weight: 600;
+letter-spacing: 0;
+}
+.rating-stars {
+position: relative;
+z-index: 1;
+display: block;
+width: 140px;
+height: 28px;
+margin-bottom: 11px;
+}
+.rating-subline {
+position: relative;
+z-index: 1;
+margin-bottom: 0;
+color: rgba(255, 254, 250, 0.72);
+font-size: 14px;
+}
+.rating-subline strong {
+color: var(--white);
+font-weight: 750;
+}
+.review-notes {
+padding-block: 12px;
+}
+.review-notes .eyebrow {
+margin-bottom: 16px;
+}
+.review-notes h2 {
+max-width: 480px;
+margin-bottom: 27px;
+}
+.start-list {
+display: grid;
+gap: 0;
+margin: 0;
+padding: 0;
+list-style: none;
+}
+.start-list li {
+display: flex;
+min-height: 58px;
+align-items: center;
+gap: 14px;
+border-top: 1px solid var(--line);
+color: #465256;
+font-size: 14px;
+font-weight: 600;
+}
+.list-mark {
+display: grid;
+width: 28px;
+height: 28px;
+flex: 0 0 auto;
+place-items: center;
+border-radius: 50%;
+background: #f5eddd;
+color: #91621d;
+}
+.list-mark svg {
+width: 14px;
+height: 14px;
+}
+.contact-section {
+position: relative;
+background: #e9e6dd;
+}
+.contact-heading {
+max-width: 720px;
+margin-bottom: 42px;
+}
+.contact-heading .eyebrow {
+margin-bottom: 16px;
+}
+.contact-heading h2 {
+margin-bottom: 15px;
+}
+.contact-heading p:last-child {
+max-width: 540px;
+margin-bottom: 0;
+color: var(--muted);
+font-size: 14px;
+line-height: 1.8;
+}
+.contact-grid {
+display: grid;
+grid-template-columns: 1fr 0.86fr;
+gap: 28px;
+align-items: stretch;
+}
+.contact-card,
+.form-card {
+border: 1px solid rgba(23, 29, 32, 0.09);
+border-radius: 20px;
+background: var(--white);
+box-shadow: 0 14px 40px rgba(22, 29, 32, 0.045);
+}
+.contact-card {
+display: flex;
+min-height: 370px;
+flex-direction: column;
+justify-content: space-between;
+padding: clamp(26px, 4vw, 42px);
+}
+.contact-label {
+margin-bottom: 12px;
+color: var(--muted);
+font-size: 11px;
+font-weight: 800;
+letter-spacing: 0.15em;
+text-transform: uppercase;
+}
+.contact-phone {
+display: inline-block;
+margin-bottom: 35px;
+color: var(--ink);
+font-family: var(--serif);
+font-size: clamp(36px, 5.4vw, 61px);
+letter-spacing: -0.055em;
+line-height: 1.08;
+transition: color 160ms ease;
+}
+.contact-phone:hover {
+color: var(--amber-deep);
+}
+.address-row {
+display: grid;
+grid-template-columns: 35px 1fr;
+gap: 13px;
+align-items: start;
+padding-top: 22px;
+border-top: 1px solid var(--line);
+}
+.address-icon {
+display: grid;
+width: 35px;
+height: 35px;
+place-items: center;
+border-radius: 10px;
+background: #f5eddd;
+color: #91621d;
+}
+.address-icon svg {
+width: 18px;
+height: 18px;
+}
+.address-row address {
+margin: 0 0 8px;
+color: #465256;
+font-size: 14px;
+font-style: normal;
+line-height: 1.65;
+}
+.directions-link {
+display: inline-flex;
+min-height: 44px;
+align-items: center;
+gap: 7px;
+color: var(--amber-deep);
+font-size: 13px;
+font-weight: 750;
+}
+.directions-link:hover {
+color: var(--ink);
+}
+.directions-link svg {
+width: 15px;
+height: 15px;
+}
+.form-card {
+padding: clamp(25px, 3vw, 36px);
+}
+.form-card h3 {
+margin-bottom: 7px;
+font-family: var(--serif);
+font-size: 30px;
+font-weight: 400;
+letter-spacing: -0.035em;
+line-height: 1.2;
+}
+.form-intro {
+margin-bottom: 22px;
+color: var(--muted);
+font-size: 13px;
+line-height: 1.65;
+}
+.preview-form {
+display: grid;
+gap: 14px;
+}
+.field {
+display: grid;
+gap: 6px;
+}
+.field label {
+color: #435054;
+font-size: 12px;
+font-weight: 700;
+}
+.field input,
+.field textarea {
+width: 100%;
+min-height: 46px;
+padding: 11px 13px;
+border: 1px solid #dcd9d1;
+border-radius: 10px;
+background: #fffefa;
+color: var(--ink);
+font-size: 14px;
+}
+.field textarea {
+min-height: 82px;
+resize: vertical;
+}
+.field input::placeholder,
+.field textarea::placeholder {
+color: #939b9c;
+}
+.preview-note {
+margin: 1px 0 0;
+color: #707b7e;
+font-size: 11px;
+line-height: 1.55;
+}
+.preview-button {
+min-height: 48px;
+border: 0;
+border-radius: 999px;
+background: #d8d5cd;
+color: #626b6d;
+cursor: not-allowed;
+font-size: 13px;
+font-weight: 750;
+}
+.site-footer {
+background: var(--ink);
+color: var(--white);
+}
+.footer-inner {
+display: flex;
+min-height: 116px;
+align-items: center;
+justify-content: space-between;
+gap: 20px;
+padding-block: 22px;
+}
+.footer-business {
+margin: 0 0 3px;
+font-size: 14px;
+font-weight: 750;
+letter-spacing: -0.01em;
+}
+.footer-preview {
+margin: 0;
+color: rgba(255, 254, 250, 0.55);
+font-size: 11px;
+}
+.footer-phone {
+display: inline-flex;
+min-height: 44px;
+align-items: center;
+color: var(--amber);
+font-size: 14px;
+font-weight: 750;
+white-space: nowrap;
+}
+.mobile-call-bar {
+display: none;
+}
+@media (max-width: 900px) {
+.container {
+width: min(var(--container), calc(100% - 48px));
+}
+.header-inner {
+gap: 18px;
+}
+.brand {
+min-width: 190px;
+}
+.primary-nav {
+gap: 18px;
+}
+.header-call {
+padding-inline: 14px;
+}
+.hero-inner {
+min-height: 570px;
+grid-template-columns: 1fr 0.88fr;
+gap: 22px;
+}
+.hero-art {
+min-height: 370px;
+}
+.art-panel {
+padding: 15px 13px 14px;
+}
+.section {
+padding-block: 82px;
+}
+.why-grid {
+gap: 45px;
+}
+.reviews-layout {
+gap: 45px;
+}
+.rating-card {
+padding: 32px;
+}
+.contact-grid {
+gap: 18px;
+}
+}
+@media (max-width: 600px) {
+html {
+scroll-padding-top: 120px;
+}
+body {
+padding-bottom: calc(68px + env(safe-area-inset-bottom));
+}
+.container {
+width: calc(100% - 40px);
+}
+.header-inner {
+display: grid;
+min-height: 0;
+grid-template-columns: 1fr auto;
+gap: 0 12px;
+padding-block: 11px 9px;
+}
+.brand {
+min-width: 0;
+gap: 9px;
+}
+.brand-mark {
+width: 37px;
+height: 37px;
+border-radius: 11px;
+font-size: 11px;
+}
+.brand-name {
+max-width: 160px;
+font-size: 12px;
+}
+.primary-nav {
+grid-column: 1 / -1;
+grid-row: 2;
+justify-content: space-between;
+gap: 12px;
+padding-top: 8px;
+}
+.primary-nav a {
+min-height: 32px;
+display: inline-flex;
+align-items: center;
+font-size: 11px;
+}
+.header-call {
+min-height: 42px;
+gap: 7px;
+padding-inline: 11px;
+font-size: 11px;
+}
+.header-call svg {
+width: 15px;
+height: 15px;
+}
+.hero-inner {
+min-height: auto;
+grid-template-columns: 1fr;
+gap: 17px;
+padding-block: 62px 55px;
+}
+.hero-copy {
+max-width: none;
+}
+.hero .eyebrow {
+margin-bottom: 17px;
+}
+h1 {
+max-width: 520px;
+margin-bottom: 18px;
+font-size: clamp(46px, 13vw, 66px);
+}
+.hero-description {
+margin-bottom: 24px;
+font-size: 15px;
+line-height: 1.7;
+}
+.hero-actions {
+align-items: stretch;
+gap: 10px;
+}
+.hero-actions .button {
+min-height: 49px;
+padding-inline: 16px;
+font-size: 13px;
+}
+.hero-rating {
+margin-top: 27px;
+}
+.hero-art {
+min-height: 280px;
+margin-top: 3px;
+}
+.art-orbit {
+width: min(86%, 310px);
+}
+.art-panel {
+width: min(94%, 360px);
+border-radius: 20px;
+transform: rotate(1deg);
+}
+.art-panel-top {
+padding-bottom: 7px;
+font-size: 8px;
+}
+.art-caption {
+padding-top: 6px;
+font-size: 10px;
+}
+.section {
+padding-block: 68px;
+}
+.section-heading {
+display: block;
+margin-bottom: 28px;
+}
+.section-heading .eyebrow {
+margin-bottom: 14px;
+}
+h2 {
+font-size: clamp(36px, 10vw, 47px);
+}
+.section-intro {
+margin-top: 14px;
+font-size: 13px;
+}
+.service-grid {
+grid-template-columns: 1fr;
+gap: 10px;
+}
+.service-card {
+min-height: 0;
+display: grid;
+grid-template-columns: 46px 1fr;
+gap: 0 14px;
+padding: 18px;
+}
+.service-icon {
+grid-row: 1 / span 2;
+width: 43px;
+height: 43px;
+margin: 0;
+}
+.service-card h3 {
+align-self: end;
+margin-bottom: 4px;
+font-size: 15px;
+}
+.service-card p {
+font-size: 12px;
+line-height: 1.55;
+}
+.why-grid,
+.reviews-layout,
+.contact-grid {
+grid-template-columns: 1fr;
+gap: 28px;
+}
+.why-grid {
+gap: 30px;
+}
+.why-copy h2 {
+margin-bottom: 15px;
+}
+.why-copy p:last-child {
+font-size: 14px;
+}
+.proof-list {
+gap: 9px;
+}
+.proof-card {
+grid-template-columns: 48px 1fr;
+gap: 13px;
+padding: 17px;
+}
+.proof-number {
+width: 48px;
+height: 48px;
+border-radius: 13px;
+font-size: 18px;
+}
+.proof-card h3 {
+font-size: 14px;
+}
+.proof-card p {
+font-size: 11px;
+}
+.reviews-layout {
+gap: 29px;
+}
+.rating-card {
+padding: 29px;
+}
+.rating-number {
+font-size: 84px;
+}
+.review-notes h2 {
+margin-bottom: 18px;
+}
+.start-list li {
+min-height: 54px;
+font-size: 13px;
+}
+.contact-heading {
+margin-bottom: 27px;
+}
+.contact-heading h2 {
+margin-bottom: 12px;
+}
+.contact-heading p:last-child {
+font-size: 13px;
+}
+.contact-grid {
+gap: 13px;
+}
+.contact-card {
+min-height: 310px;
+padding: 24px;
+}
+.contact-phone {
+margin-bottom: 29px;
+font-size: clamp(36px, 10vw, 50px);
+}
+.form-card {
+padding: 24px;
+}
+.form-card h3 {
+font-size: 27px;
+}
+.footer-inner {
+min-height: 100px;
+align-items: flex-start;
+padding-block: 23px;
+}
+.footer-phone {
+min-height: 44px;
+font-size: 13px;
+}
+.mobile-call-bar {
+position: fixed;
+z-index: 30;
+right: 0;
+bottom: 0;
+left: 0;
+display: flex;
+min-height: calc(68px + env(safe-area-inset-bottom));
+align-items: center;
+justify-content: center;
+gap: 10px;
+padding: 10px 18px calc(10px + env(safe-area-inset-bottom));
+background: var(--amber);
+color: var(--ink);
+box-shadow: 0 -8px 24px rgba(23, 29, 32, 0.12);
+font-size: 15px;
+font-weight: 800;
+}
+.mobile-call-bar svg {
+width: 19px;
+height: 19px;
+}
+}
+@media (prefers-reduced-motion: reduce) {
+*,
+*::before,
+*::after {
+scroll-behavior: auto !important;
+transition-duration: 0.01ms !important;
+animation-duration: 0.01ms !important;
+animation-iteration-count: 1 !important;
+}
+}
+</style></head><body><a class='skip-link' href='#main-content'>Skip to content</a><header class='site-header'><div class='container header-inner'><a class='brand' href='#top' aria-label='South Florida Auto Repair, home'><span class='brand-mark' aria-hidden='true'>SF</span><span class='brand-name'>South Florida Auto Repair</span></a><nav class='primary-nav' aria-label='Main navigation'><a href='#services'>Services</a><a href='#why-us'>Why us</a><a href='#contact'>Contact</a></nav><a class='header-call' href='tel:+18139711725' aria-label='Call South Florida Auto Repair at 813-971-1725'><svg viewBox='0 0 24 24' fill='none' aria-hidden='true' focusable='false'><path d='M7.1 3.8 9.4 3c.8-.3 1.6.1 1.9.9l1.1 2.8c.2.6.1 1.2-.4 1.6l-1.6 1.3a14.1 14.1 0 0 0 5.9 5.9l1.3-1.6c.4-.5 1-.6 1.6-.4l2.8 1.1c.8.3 1.2 1.1.9 1.9l-.8 2.3c-.3.8-1.1 1.3-2 1.2C10.2 19.1 4.9 13.8 4.7 5.8c0-.9.5-1.7 1.3-2Z' stroke='currentColor' stroke-width='1.7' stroke-linecap='round' stroke-linejoin='round'/></svg><span>813-971-1725</span></a></div></header><main id='main-content'><section class='hero' id='top' aria-labelledby='hero-title'><div class='container hero-inner'><div class='hero-copy'><p class='eyebrow'>Auto repair · Tampa, Florida</p><h1 id='hero-title'>A clear next step for the <em>road ahead.</em></h1><p class='hero-description'>South Florida Auto Repair specializes in foreign auto repair, and its technicians are ASE certified.</p><div class='hero-actions'><a class='button button--amber' href='tel:+18139711725' aria-label='Call South Florida Auto Repair at 813-971-1725'><svg viewBox='0 0 24 24' fill='none' aria-hidden='true' focusable='false'><path d='M7.1 3.8 9.4 3c.8-.3 1.6.1 1.9.9l1.1 2.8c.2.6.1 1.2-.4 1.6l-1.6 1.3a14.1 14.1 0 0 0 5.9 5.9l1.3-1.6c.4-.5 1-.6 1.6-.4l2.8 1.1c.8.3 1.2 1.1.9 1.9l-.8 2.3c-.3.8-1.1 1.3-2 1.2C10.2 19.1 4.9 13.8 4.7 5.8c0-.9.5-1.7 1.3-2Z' stroke='currentColor' stroke-width='1.7' stroke-linecap='round' stroke-linejoin='round'/></svg>
+Call the shop
+</a><a class='button button--outline-light' href='#services'>See services</a></div><div class='hero-rating' aria-label='Google rating: 4.6 stars from 295 reviews'><span class='rating-mark' aria-hidden='true'>4.6</span><span class='hero-rating-copy'><strong>4.6 stars on Google</strong><span>From 295 Google reviews</span></span></div></div><div class='hero-art' aria-hidden='true'><div class='art-orbit'></div><div class='art-panel'><div class='art-panel-top'><span>South Florida Auto Repair</span><span>Tampa, FL</span></div><svg class='car-illustration' viewBox='0 0 600 340' fill='none' xmlns='http://www.w3.org/2000/svg' focusable='false'><defs><linearGradient id='carGlow' x1='78' y1='81' x2='518' y2='274' gradientUnits='userSpaceOnUse'><stop stop-color='#E6A744' stop-opacity='.26'/><stop offset='1' stop-color='#E6A744' stop-opacity='0'/></linearGradient></defs><ellipse cx='304' cy='265' rx='222' ry='29' fill='#101719' fill-opacity='.62'/><path d='M101 218.5c0-16.9 12.6-31.1 29.4-33.1l40.4-4.8 39.7-58.4c9.7-14.3 25.9-22.8 43.2-22.8h94.7c18.8 0 36.4 10 45.8 26.3l31.4 54.2 38.5 9.2c15.2 3.6 26 17.3 26 32.9v23H101v-26.5Z' fill='url(#carGlow)' stroke='#E6A744' stroke-width='2.4' stroke-linejoin='round'/><path d='m196 176 29.5-43.4a35 35 0 0 1 29.1-15.5h92.8c12.7 0 24.4 6.7 30.8 17.6l24.2 41.3H196Z' stroke='#F7F5F0' stroke-opacity='.78' stroke-width='2' stroke-linejoin='round'/><path d='M286 118v58M169 181l-35 4M434 181l31 7M101 221h499' stroke='#F7F5F0' stroke-opacity='.46' stroke-width='2' stroke-linecap='round'/><path d='M146 216h45M431 216h46' stroke='#E6A744' stroke-width='4' stroke-linecap='round'/><circle cx='190' cy='237' r='31' fill='#171D20' stroke='#F7F5F0' stroke-opacity='.8' stroke-width='2'/><circle cx='190' cy='237' r='12' stroke='#E6A744' stroke-width='2'/><circle cx='435' cy='237' r='31' fill='#171D20' stroke='#F7F5F0' stroke-opacity='.8' stroke-width='2'/><circle cx='435' cy='237' r='12' stroke='#E6A744' stroke-width='2'/><path d='M102 278h397' stroke='#F7F5F0' stroke-opacity='.16' stroke-width='1.5' stroke-dasharray='4 9'/><circle cx='88' cy='92' r='4' fill='#E6A744'/><circle cx='505' cy='82' r='3' fill='#F7F5F0' fill-opacity='.6'/><path d='M76 111h47M487 109h38' stroke='#F7F5F0' stroke-opacity='.22' stroke-width='1.5' stroke-linecap='round'/></svg><div class='art-caption'><span class='caption-dot'></span><span>Foreign auto repair is the shop's stated specialty</span></div></div></div></div></section><section class='section services-section' id='services' aria-labelledby='services-title'><div class='container'><div class='section-heading'><div class='section-heading-copy'><p class='eyebrow'>Repair topics</p><h2 id='services-title'>Start with what your car is telling you.</h2></div><p class='section-intro'>A few common auto repair topics to help put a vehicle concern into words.</p></div><div class='service-grid'><article class='service-card'><span class='service-icon' aria-hidden='true'><svg viewBox='0 0 24 24' fill='none' focusable='false'><path d='M5 17.5h14l-1-7.8a2 2 0 0 0-2-1.7H8a2 2 0 0 0-2 1.7L5 17.5Z' stroke='currentColor' stroke-width='1.7' stroke-linejoin='round'/><path d='M8 8 9.5 5h5L16 8M4 17.5v2M20 17.5v2M8 14h.01M16 14h.01' stroke='currentColor' stroke-width='1.7' stroke-linecap='round' stroke-linejoin='round'/></svg></span><h3>Foreign auto repair</h3><p>The shop states that foreign auto repair is its specialty.</p></article><article class='service-card'><span class='service-icon' aria-hidden='true'><svg viewBox='0 0 24 24' fill='none' focusable='false'><path d='M12 3.5v3M12 17.5v3M3.5 12h3M17.5 12h3M6 6l2.1 2.1M15.9 15.9 18 18M18 6l-2.1 2.1M8.1 15.9 6 18' stroke='currentColor' stroke-width='1.7' stroke-linecap='round'/><circle cx='12' cy='12' r='4.2' stroke='currentColor' stroke-width='1.7'/><path d='m10.5 12 1 1 2.2-2.4' stroke='currentColor' stroke-width='1.7' stroke-linecap='round' stroke-linejoin='round'/></svg></span><h3>Engine concerns</h3><p>Dashboard warnings and changes in engine behavior can help describe a concern.</p></article><article class='service-card'><span class='service-icon' aria-hidden='true'><svg viewBox='0 0 24 24' fill='none' focusable='false'><circle cx='12' cy='12' r='8.5' stroke='currentColor' stroke-width='1.7'/><circle cx='12' cy='12' r='4.5' stroke='currentColor' stroke-width='1.7'/><path d='M12 3.5v4M20.5 12h-4M12 20.5v-4M3.5 12h4' stroke='currentColor' stroke-width='1.7' stroke-linecap='round'/></svg></span><h3>Brake concerns</h3><p>Changes in stopping feel or sound are useful details to mention.</p></article><article class='service-card'><span class='service-icon' aria-hidden='true'><svg viewBox='0 0 24 24' fill='none' focusable='false'><path d='M4 18.5h16M6 18.5l1.2-8.2h9.6l1.2 8.2M8 10.3l1.2-4.8h5.6l1.2 4.8M12 5.5v12.9' stroke='currentColor' stroke-width='1.7' stroke-linecap='round' stroke-linejoin='round'/><circle cx='7.5' cy='18.5' r='1.5' fill='currentColor'/><circle cx='16.5' cy='18.5' r='1.5' fill='currentColor'/></svg></span><h3>Steering &amp; ride</h3><p>A pull or a changed ride can be a clue to discuss.</p></article><article class='service-card'><span class='service-icon' aria-hidden='true'><svg viewBox='0 0 24 24' fill='none' focusable='false'><path d='M13.5 2.8 6.8 13h4.8l-1.1 8.2L17.2 11h-4.8l1.1-8.2Z' stroke='currentColor' stroke-width='1.7' stroke-linecap='round' stroke-linejoin='round'/></svg></span><h3>Electrical systems</h3><p>Starting or lighting issues may involve a vehicle's electrical system.</p></article><article class='service-card'><span class='service-icon' aria-hidden='true'><svg viewBox='0 0 24 24' fill='none' focusable='false'><path d='M12 3.5v3M12 17.5v3M3.5 12h3M17.5 12h3M6 6l2.1 2.1M15.9 15.9 18 18M18 6l-2.1 2.1M8.1 15.9 6 18' stroke='currentColor' stroke-width='1.7' stroke-linecap='round'/><circle cx='12' cy='12' r='4.2' stroke='currentColor' stroke-width='1.7'/><path d='M12 9.5v2.8l1.8 1.2' stroke='currentColor' stroke-width='1.7' stroke-linecap='round' stroke-linejoin='round'/></svg></span><h3>General repair</h3><p>For any concern, begin by describing what changed and when.</p></article></div></div></section><section class='section why-section' id='why-us' aria-labelledby='why-title'><div class='container why-grid'><div class='why-copy'><p class='eyebrow'>Why South Florida Auto Repair</p><h2 id='why-title'>Foreign auto repair is the stated specialty.</h2><p>The shop's own site also states that its technicians are ASE certified. Those are the details to know before you call.</p></div><div class='proof-list' aria-label='Shop information'><article class='proof-card'><span class='proof-number' aria-hidden='true'>01</span><div><h3>Foreign auto repair</h3><p>The shop states it specializes in foreign auto repair.</p></div></article><article class='proof-card'><span class='proof-number' aria-hidden='true'>02</span><div><h3>ASE-certified technicians</h3><p>The shop states its technicians are ASE certified.</p></div></article></div></div></section><section class='section reviews-section' id='reviews' aria-labelledby='reviews-title'><div class='container reviews-layout'><div class='rating-card'><p class='rating-card-label'>Google rating</p><div class='rating-number' aria-label='4.6 stars'>4.6<span>/ 5</span></div><svg class='rating-stars' viewBox='0 0 150 30' role='img' aria-label='4.6 out of 5 stars' xmlns='http://www.w3.org/2000/svg'><defs><linearGradient id='lastStar' x1='0' x2='1' y1='0' y2='0'><stop offset='60%' stop-color='#E6A744'/><stop offset='60%' stop-color='#6B6C64'/></linearGradient></defs><path d='m15 2.5 3.8 7.7 8.5 1.2-6.2 6 .9 8.5-7-4-7 4 .9-8.5-6.2-6 8.5-1.2L15 2.5Z' fill='#E6A744'/><path d='m45 2.5 3.8 7.7 8.5 1.2-6.2 6 .9 8.5-7-4-7 4 .9-8.5-6.2-6 8.5-1.2L45 2.5Z' fill='#E6A744'/><path d='m75 2.5 3.8 7.7 8.5 1.2-6.2 6 .9 8.5-7-4-7 4 .9-8.5-6.2-6 8.5-1.2L75 2.5Z' fill='#E6A744'/><path d='m105 2.5 3.8 7.7 8.5 1.2-6.2 6 .9 8.5-7-4-7 4 .9-8.5-6.2-6 8.5-1.2 3.8-7.7Z' fill='#E6A744'/><path d='m135 2.5 3.8 7.7 8.5 1.2-6.2 6 .9 8.5-7-4-7 4 .9-8.5-6.2-6 8.5-1.2 3.8-7.7Z' fill='url(#lastStar)'/></svg><p class='rating-subline'><strong>From 295 Google reviews</strong></p></div><div class='review-notes'><p class='eyebrow'>A helpful place to begin</p><h2 id='reviews-title'>The details, without the guesswork.</h2><ul class='start-list'><li><span class='list-mark' aria-hidden='true'><svg viewBox='0 0 24 24' fill='none' focusable='false'><path d='M7.1 3.8 9.4 3c.8-.3 1.6.1 1.9.9l1.1 2.8c.2.6.1 1.2-.4 1.6l-1.6 1.3a14.1 14.1 0 0 0 5.9 5.9l1.3-1.6c.4-.5 1-.6 1.6-.4l2.8 1.1c.8.3 1.2 1.1.9 1.9l-.8 2.3c-.3.8-1.1 1.3-2 1.2C10.2 19.1 4.9 13.8 4.7 5.8c0-.9.5-1.7 1.3-2Z' stroke='currentColor' stroke-width='1.7' stroke-linecap='round' stroke-linejoin='round'/></svg></span>
+Start with a call to the shop
+</li><li><span class='list-mark' aria-hidden='true'><svg viewBox='0 0 24 24' fill='none' focusable='false'><path d='M19 10c0 5-7 11-7 11S5 15 5 10a7 7 0 1 1 14 0Z' stroke='currentColor' stroke-width='1.7' stroke-linejoin='round'/><circle cx='12' cy='10' r='2.2' stroke='currentColor' stroke-width='1.7'/></svg></span>
+Check the Tampa location
+</li><li><span class='list-mark' aria-hidden='true'><svg viewBox='0 0 24 24' fill='none' focusable='false'><path d='M4 6.5h16M4 12h16M4 17.5h10' stroke='currentColor' stroke-width='1.7' stroke-linecap='round'/><circle cx='18' cy='17.5' r='2' stroke='currentColor' stroke-width='1.7'/></svg></span>
+Browse common repair topics
+</li></ul></div></div></section><section class='section contact-section' id='contact' aria-labelledby='contact-title'><div class='container'><div class='contact-heading'><p class='eyebrow'>Contact</p><h2 id='contact-title'>Get in touch with the shop.</h2><p>Call South Florida Auto Repair or use the address below to get directions in Tampa.</p></div><div class='contact-grid'><div class='contact-card'><div><p class='contact-label'>Call South Florida Auto Repair</p><a class='contact-phone' href='tel:+18139711725' aria-label='Call South Florida Auto Repair at 813-971-1725'>813-971-1725</a></div><div class='address-row'><span class='address-icon' aria-hidden='true'><svg viewBox='0 0 24 24' fill='none' focusable='false'><path d='M19 10c0 5-7 11-7 11S5 15 5 10a7 7 0 1 1 14 0Z' stroke='currentColor' stroke-width='1.7' stroke-linejoin='round'/><circle cx='12' cy='10' r='2.2' stroke='currentColor' stroke-width='1.7'/></svg></span><div><address>13301 N 22nd St<br>Tampa, FL 33612</address><a class='directions-link' href='https://www.google.com/maps/search/?api=1&amp;query=13301%20N%2022nd%20St%2C%20Tampa%2C%20FL%2033612' target='_blank' rel='noopener noreferrer' aria-label='Get directions to 13301 N 22nd St, Tampa, FL 33612'>
+Get directions
+<svg viewBox='0 0 24 24' fill='none' aria-hidden='true' focusable='false'><path d='M13 5h6v6M19 5 10 14M18 13v5a1 1 0 0 1-1 1H6a1 1 0 0 1-1-1V7a1 1 0 0 1 1-1h5' stroke='currentColor' stroke-width='1.7' stroke-linecap='round' stroke-linejoin='round'/></svg></a></div></div></div><div class='form-card'><h3>Tell us what you need.</h3><p class='form-intro'>A simple contact-form layout shown as part of this concept preview.</p><form class='preview-form' aria-label='Contact form preview'><div class='field'><label for='name'>Name</label><input id='name' name='name' type='text' autocomplete='name' placeholder='Your name'></div><div class='field'><label for='phone'>Phone</label><input id='phone' name='phone' type='tel' autocomplete='tel' placeholder='Your phone number'></div><div class='field'><label for='need'>What do you need?</label><textarea id='need' name='need' placeholder='Describe the vehicle concern'></textarea></div><p class='preview-note'>Preview only. This form is not connected and will not send your information.</p><button class='preview-button' type='button' disabled>Form preview only</button></form></div></div></div></section></main><footer class='site-footer'><div class='container footer-inner'><div><p class='footer-business'>South Florida Auto Repair</p><p class='footer-preview'>Concept preview — not the live site</p></div><a class='footer-phone' href='tel:+18139711725' aria-label='Call South Florida Auto Repair at 813-971-1725'>813-971-1725</a></div></footer><a class='mobile-call-bar' href='tel:+18139711725' aria-label='Call South Florida Auto Repair at 813-971-1725'><svg viewBox='0 0 24 24' fill='none' aria-hidden='true' focusable='false'><path d='M7.1 3.8 9.4 3c.8-.3 1.6.1 1.9.9l1.1 2.8c.2.6.1 1.2-.4 1.6l-1.6 1.3a14.1 14.1 0 0 0 5.9 5.9l1.3-1.6c.4-.5 1-.6 1.6-.4l2.8 1.1c.8.3 1.2 1.1.9 1.9l-.8 2.3c-.3.8-1.1 1.3-2 1.2C10.2 19.1 4.9 13.8 4.7 5.8c0-.9.5-1.7 1.3-2Z' stroke='currentColor' stroke-width='1.7' stroke-linecap='round' stroke-linejoin='round'/></svg><span>Call 813-971-1725</span></a></body></html>
