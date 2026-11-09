@@ -1,0 +1,600 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#f6f5f1">
+  <title>Premium Comfort LLC | Heating and air conditioning</title>
+  <style>
+    :root {
+      color-scheme: light;
+      --paper: #f6f5f1;
+      --surface: #fffefa;
+      --ink: #202827;
+      --muted: #64706d;
+      --accent: #16766f;
+      --accent-dark: #105d57;
+      --line: #dedfd9;
+      --soft-accent: #e7f0ed;
+      --radius: 8px;
+      --content: 1080px;
+    }
+
+    * { box-sizing: border-box; }
+
+    html {
+      scroll-behavior: smooth;
+      scroll-padding-top: 100px;
+    }
+
+    body {
+      margin: 0;
+      padding: 0 0 0;
+      background: var(--paper);
+      color: var(--ink);
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      font-size: 19px;
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    a { color: inherit; }
+
+    a:focus-visible,
+    button:focus-visible,
+    input:focus-visible,
+    textarea:focus-visible {
+      outline: 3px solid #cf7b42;
+      outline-offset: 4px;
+    }
+
+    .wrap {
+      width: min(var(--content), calc(100% - 64px));
+      margin-inline: auto;
+    }
+
+    .site-header {
+      position: sticky;
+      z-index: 10;
+      top: 0;
+      border-bottom: 1px solid rgba(32, 40, 39, 0.09);
+      background: rgba(246, 245, 241, 0.96);
+      backdrop-filter: blur(12px);
+    }
+
+    .header-inner {
+      min-height: 78px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+    }
+
+    .brand {
+      font-size: 18px;
+      font-weight: 750;
+      letter-spacing: -0.035em;
+      text-decoration: none;
+    }
+
+    .header-call,
+    .button {
+      display: inline-flex;
+      min-height: 48px;
+      align-items: center;
+      justify-content: center;
+      border: 1px solid var(--accent);
+      border-radius: var(--radius);
+      padding: 10px 19px;
+      background: var(--accent);
+      color: #fff;
+      font-size: 16px;
+      font-weight: 700;
+      line-height: 1.2;
+      text-align: center;
+      text-decoration: none;
+      transition: background-color 160ms ease, border-color 160ms ease, transform 160ms ease;
+    }
+
+    .header-call:hover,
+    .button-primary:hover {
+      border-color: var(--accent-dark);
+      background: var(--accent-dark);
+      transform: translateY(-1px);
+    }
+
+    .hero {
+      padding: clamp(72px, 11vw, 132px) 0 112px;
+    }
+
+    .eyebrow {
+      margin: 0 0 22px;
+      color: var(--accent-dark);
+      font-size: 13px;
+      font-weight: 750;
+      letter-spacing: 0.12em;
+      line-height: 1.4;
+      text-transform: uppercase;
+    }
+
+    h1 {
+      max-width: 900px;
+      margin: 0;
+      font-size: clamp(43px, 7vw, 76px);
+      font-weight: 680;
+      letter-spacing: -0.065em;
+      line-height: 1.04;
+      text-wrap: balance;
+    }
+
+    .hero-subline {
+      max-width: 720px;
+      margin: 27px 0 0;
+      color: #4c5855;
+      font-size: clamp(18px, 2.1vw, 21px);
+      line-height: 1.65;
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-top: 34px;
+    }
+
+    .button-secondary {
+      border-color: #c8cec9;
+      background: transparent;
+      color: var(--ink);
+    }
+
+    .button-secondary:hover {
+      border-color: var(--accent);
+      background: var(--soft-accent);
+      transform: translateY(-1px);
+    }
+
+    .section {
+      padding: 86px 0;
+      border-top: 1px solid var(--line);
+    }
+
+    .section-heading {
+      max-width: 640px;
+      margin-bottom: 34px;
+    }
+
+    .section-kicker {
+      margin: 0 0 9px;
+      color: var(--accent-dark);
+      font-size: 13px;
+      font-weight: 750;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+    }
+
+    h2 {
+      margin: 0;
+      font-size: clamp(32px, 4.3vw, 48px);
+      font-weight: 650;
+      letter-spacing: -0.055em;
+      line-height: 1.12;
+    }
+
+    .section-intro {
+      margin: 14px 0 0;
+      color: var(--muted);
+    }
+
+    .service-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(min(100%, 280px), 1fr));
+      gap: 14px;
+    }
+
+    .service-card {
+      min-height: 148px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      padding: 22px 23px;
+      background: var(--surface);
+      box-shadow: 0 5px 18px rgba(31, 44, 40, 0.035);
+    }
+
+    .service-card h3 {
+      margin: 0;
+      font-size: 20px;
+      font-weight: 680;
+      letter-spacing: -0.035em;
+      line-height: 1.3;
+    }
+
+    .service-card p {
+      margin: 13px 0 0;
+      color: var(--muted);
+      font-size: 16px;
+      line-height: 1.5;
+    }
+
+    .trust-section {
+      background: #eef1ed;
+    }
+
+    .trust-content {
+      display: grid;
+      grid-template-columns: minmax(220px, 0.9fr) 1.1fr;
+      align-items: center;
+      gap: 54px;
+    }
+
+    .trust-content .section-heading { margin: 0; }
+
+    .figures {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+    }
+
+    .figure-card {
+      min-height: 166px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      border: 1px solid #d8ded8;
+      border-radius: var(--radius);
+      padding: 24px;
+      background: var(--surface);
+    }
+
+    .figure-value {
+      color: var(--accent-dark);
+      font-size: clamp(39px, 5vw, 58px);
+      font-weight: 720;
+      letter-spacing: -0.065em;
+      line-height: 1;
+    }
+
+    .figure-label {
+      margin-top: 13px;
+      color: #4c5855;
+      font-size: 15px;
+      line-height: 1.4;
+    }
+
+    .trust-note {
+      grid-column: 1 / -1;
+      margin: 0;
+      color: var(--muted);
+      font-size: 15px;
+    }
+
+    .contact-layout {
+      display: grid;
+      grid-template-columns: 0.9fr 1.1fr;
+      gap: 64px;
+      align-items: start;
+    }
+
+    .contact-details {
+      margin-top: 30px;
+      display: grid;
+      gap: 22px;
+    }
+
+    .detail-label {
+      display: block;
+      margin-bottom: 5px;
+      color: var(--muted);
+      font-size: 13px;
+      font-weight: 750;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+    }
+
+    .contact-details a,
+    .contact-details address {
+      font-size: 20px;
+      font-style: normal;
+      font-weight: 620;
+      text-decoration-thickness: 1px;
+      text-underline-offset: 4px;
+    }
+
+    .contact-details a:hover { color: var(--accent-dark); }
+
+    .placeholder-panel {
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      padding: clamp(22px, 4vw, 34px);
+      background: var(--surface);
+      box-shadow: 0 8px 25px rgba(31, 44, 40, 0.045);
+    }
+
+    .placeholder-panel h3 {
+      margin: 0;
+      font-size: 23px;
+      font-weight: 680;
+      letter-spacing: -0.04em;
+      line-height: 1.3;
+    }
+
+    .placeholder-copy {
+      margin: 9px 0 22px;
+      color: var(--muted);
+      font-size: 15px;
+      line-height: 1.55;
+    }
+
+    .field-list {
+      display: grid;
+      gap: 15px;
+    }
+
+    .field label {
+      display: block;
+      margin-bottom: 6px;
+      font-size: 14px;
+      font-weight: 650;
+    }
+
+    .field input,
+    .field textarea {
+      width: 100%;
+      min-height: 46px;
+      border: 1px solid #d8dcd6;
+      border-radius: 6px;
+      padding: 10px 12px;
+      background: #f8f8f5;
+      color: var(--ink);
+      font: inherit;
+      font-size: 16px;
+    }
+
+    .field textarea {
+      min-height: 86px;
+      resize: vertical;
+    }
+
+    .field input:disabled,
+    .field textarea:disabled {
+      cursor: not-allowed;
+      opacity: 0.75;
+    }
+
+    .submit-placeholder {
+      width: 100%;
+      min-height: 48px;
+      margin-top: 19px;
+      border: 1px solid #c7d0ca;
+      border-radius: var(--radius);
+      background: #e5eae6;
+      color: #63706a;
+      font: inherit;
+      font-size: 16px;
+      font-weight: 700;
+      cursor: not-allowed;
+    }
+
+    .site-footer {
+      border-top: 1px solid var(--line);
+      padding: 25px 0 31px;
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    .footer-inner {
+      display: flex;
+      justify-content: space-between;
+      gap: 16px;
+    }
+
+    .footer-name {
+      color: var(--ink);
+      font-weight: 700;
+    }
+
+    .mobile-call-bar { display: none; }
+
+    @media (max-width: 780px) {
+      body { padding-bottom: 76px; }
+
+      .wrap { width: min(var(--content), calc(100% - 40px)); }
+
+      .header-inner { min-height: 68px; gap: 10px; }
+      .brand { font-size: 16px; }
+      .header-call { min-height: 42px; padding: 8px 12px; font-size: 14px; white-space: nowrap; }
+
+      .hero { padding: 76px 0 82px; }
+      .hero-actions { gap: 10px; }
+      .button { min-height: 48px; padding-inline: 15px; font-size: 15px; }
+
+      .section { padding: 68px 0; }
+      .service-grid { grid-template-columns: 1fr; gap: 11px; }
+      .service-card { min-height: 126px; }
+
+      .trust-content,
+      .contact-layout {
+        grid-template-columns: 1fr;
+        gap: 30px;
+      }
+
+      .figures { gap: 11px; }
+      .figure-card { min-height: 145px; padding: 19px; }
+      .contact-details { margin-top: 24px; }
+      .footer-inner { flex-direction: column; gap: 3px; }
+
+      .mobile-call-bar {
+        position: fixed;
+        z-index: 20;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        min-height: 66px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 10px 20px calc(10px + env(safe-area-inset-bottom));
+        border-top: 1px solid rgba(255, 255, 255, 0.2);
+        background: var(--accent-dark);
+        color: #fff;
+        font-size: 17px;
+        font-weight: 750;
+        text-decoration: none;
+        box-shadow: 0 -6px 24px rgba(25, 48, 42, 0.12);
+      }
+
+      .mobile-call-bar:hover { background: #0c514c; }
+    }
+
+    @media (max-width: 420px) {
+      .wrap { width: calc(100% - 36px); }
+      .brand { max-width: 145px; line-height: 1.2; }
+      .header-call { padding-inline: 9px; font-size: 13px; }
+      .hero { padding-top: 64px; }
+      h1 { font-size: clamp(40px, 11vw, 48px); }
+      .hero-actions { align-items: stretch; flex-direction: column; }
+      .hero-actions .button { width: 100%; }
+      .figure-card { padding: 16px 13px; }
+      .figure-value { font-size: 39px; }
+      .figure-label { font-size: 13px; }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after {
+        scroll-behavior: auto !important;
+        transition-duration: 0.01ms !important;
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header class="site-header">
+    <div class="wrap header-inner">
+      <a class="brand" href="#top">Premium Comfort LLC</a>
+      <a class="header-call" href="tel:+18324045589">+1 832-404-5589</a>
+    </div>
+  </header>
+
+  <main id="top">
+    <section class="hero wrap" aria-labelledby="hero-title">
+      <p class="eyebrow">Heating and air conditioning</p>
+      <h1 id="hero-title">Cooling, heating and emergency service for Spring and the Houston area.</h1>
+      <p class="hero-subline">When the AC quits in July or the heat fails in January, one call reaches a local HVAC team.</p>
+      <div class="hero-actions">
+        <a class="button button-primary" href="tel:+18324045589">Call +1 832-404-5589</a>
+        <a class="button button-secondary" href="#contact">Request a callback</a>
+      </div>
+    </section>
+
+    <section class="section" aria-labelledby="services-title">
+      <div class="wrap">
+        <div class="section-heading">
+          <p class="section-kicker">Services</p>
+          <h2 id="services-title">Heating and cooling services</h2>
+        </div>
+        <div class="service-grid">
+          <article class="service-card">
+            <h3>Air conditioning service</h3>
+            <p>Service for air conditioning systems.</p>
+          </article>
+          <article class="service-card">
+            <h3>Heating service</h3>
+            <p>Service for heating systems.</p>
+          </article>
+          <article class="service-card">
+            <h3>Emergency HVAC calls</h3>
+            <p>HVAC calls marked as emergency.</p>
+          </article>
+          <article class="service-card">
+            <h3>New system installation</h3>
+            <p>Installation of new systems.</p>
+          </article>
+          <article class="service-card">
+            <h3>Cooling repair</h3>
+            <p>Repair for cooling systems.</p>
+          </article>
+          <article class="service-card">
+            <h3>Heating repair</h3>
+            <p>Repair for heating systems.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section trust-section" aria-labelledby="trust-title">
+      <div class="wrap trust-content">
+        <div class="section-heading">
+          <p class="section-kicker">Google listing</p>
+          <h2 id="trust-title">A clear view of the numbers.</h2>
+        </div>
+        <div class="figures">
+          <div class="figure-card">
+            <span class="figure-value">4.9</span>
+            <span class="figure-label">out of 5</span>
+          </div>
+          <div class="figure-card">
+            <span class="figure-value">179</span>
+            <span class="figure-label">Google reviews</span>
+          </div>
+          <p class="trust-note">These figures come from the business's Google listing.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="contact" aria-labelledby="contact-title">
+      <div class="wrap contact-layout">
+        <div>
+          <div class="section-heading">
+            <p class="section-kicker">Contact</p>
+            <h2 id="contact-title">Get in touch.</h2>
+          </div>
+          <div class="contact-details">
+            <div>
+              <span class="detail-label">Phone</span>
+              <a href="tel:+18324045589">+1 832-404-5589</a>
+            </div>
+            <div>
+              <span class="detail-label">Address</span>
+              <address>5I, 22820 I-45, Spring, TX 77373</address>
+            </div>
+          </div>
+        </div>
+
+        <div class="placeholder-panel" aria-label="Placeholder callback form">
+          <h3>Request a callback</h3>
+          <p class="placeholder-copy">This is a placeholder form and does not submit.</p>
+          <div class="field-list">
+            <div class="field">
+              <label for="contact-name">Name</label>
+              <input id="contact-name" type="text" disabled>
+            </div>
+            <div class="field">
+              <label for="contact-phone">Phone</label>
+              <input id="contact-phone" type="tel" disabled>
+            </div>
+            <div class="field">
+              <label for="contact-need">What you need</label>
+              <textarea id="contact-need" disabled></textarea>
+            </div>
+          </div>
+          <button class="submit-placeholder" type="button" disabled>Request a callback</button>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap footer-inner">
+      <span class="footer-name">Premium Comfort LLC</span>
+      <span>Concept preview — not the live site</span>
+    </div>
+  </footer>
+
+  <a class="mobile-call-bar" href="tel:+18324045589">+1 832-404-5589</a>
+</body>
+</html>
