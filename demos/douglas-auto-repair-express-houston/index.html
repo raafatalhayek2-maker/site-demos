@@ -1,0 +1,558 @@
+<!doctype html>
+<html lang='en'>
+<head>
+  <meta charset='utf-8'>
+  <meta name='viewport' content='width=device-width, initial-scale=1'>
+  <meta name='theme-color' content='#f7f5f0'>
+  <title>Douglas Auto Repair Express, LLC | Auto repair</title>
+  <style>
+    :root {
+      color-scheme: light;
+      --paper: #f7f5f0;
+      --surface: #fffefa;
+      --ink: #202421;
+      --muted: #686c66;
+      --line: #deded6;
+      --accent: #98442f;
+      --accent-dark: #743320;
+      --dark-panel: #222823;
+      --content-width: 1080px;
+      --gutter: 28px;
+      --radius: 8px;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      background: var(--paper);
+      color: var(--ink);
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+      font-size: 18px;
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+    }
+    a { color: inherit; }
+    a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visible {
+      outline: 3px solid #b76c42;
+      outline-offset: 4px;
+    }
+    .skip-link {
+      position: absolute;
+      top: 8px;
+      left: 8px;
+      z-index: 20;
+      padding: 10px 14px;
+      transform: translateY(-150%);
+      border-radius: 6px;
+      background: var(--ink);
+      color: #fff;
+    }
+    .skip-link:focus { transform: translateY(0); }
+    .wrap {
+      width: min(var(--content-width), calc(100% - (var(--gutter) * 2)));
+      margin-inline: auto;
+    }
+
+    .site-header {
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      border-bottom: 1px solid rgba(32, 36, 33, .12);
+      background: rgba(247, 245, 240, .96);
+    }
+    .header-inner {
+      min-height: 76px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 18px;
+    }
+    .brand {
+      min-width: 0;
+      max-width: 300px;
+      color: var(--ink);
+      font-size: 17px;
+      font-weight: 700;
+      letter-spacing: -.035em;
+      line-height: 1.2;
+      text-decoration: none;
+    }
+    .header-call {
+      flex: 0 0 auto;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 42px;
+      padding: 8px 14px;
+      border: 1px solid var(--accent);
+      border-radius: 6px;
+      color: var(--accent-dark);
+      font-size: 15px;
+      font-weight: 700;
+      line-height: 1.2;
+      text-decoration: none;
+      white-space: nowrap;
+      transition: background-color .18s ease, color .18s ease;
+    }
+    .header-call:hover { background: var(--accent); color: #fff; }
+
+    .hero { padding: clamp(70px, 10vw, 126px) 0 94px; }
+    .eyebrow {
+      display: flex;
+      align-items: center;
+      gap: 11px;
+      margin: 0 0 23px;
+      color: var(--accent-dark);
+      font-size: 12px;
+      font-weight: 750;
+      letter-spacing: .13em;
+      line-height: 1.4;
+      text-transform: uppercase;
+    }
+    .eyebrow-mark {
+      width: 28px;
+      height: 2px;
+      background: var(--accent);
+    }
+    h1 {
+      max-width: 1000px;
+      margin: 0;
+      font-size: clamp(2.65rem, 7.2vw, 5.45rem);
+      font-weight: 650;
+      letter-spacing: -.065em;
+      line-height: .99;
+      overflow-wrap: break-word;
+    }
+    .hero-copy {
+      max-width: 730px;
+      margin: 27px 0 0;
+      color: #505650;
+      font-size: clamp(18px, 2vw, 20px);
+      line-height: 1.65;
+    }
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-top: 31px;
+    }
+    .button {
+      min-height: 52px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 12px 20px;
+      border: 1px solid transparent;
+      border-radius: 6px;
+      font-size: 16px;
+      font-weight: 700;
+      line-height: 1.3;
+      text-align: center;
+      text-decoration: none;
+      transition: background-color .18s ease, border-color .18s ease, color .18s ease;
+    }
+    .button-primary { background: var(--accent); color: #fff; }
+    .button-primary:hover { background: var(--accent-dark); }
+    .button-secondary { border-color: #b9bcb4; background: transparent; color: var(--ink); }
+    .button-secondary:hover { border-color: var(--ink); background: var(--surface); }
+
+    .section { padding: 0 0 112px; }
+    .section-heading { margin-bottom: 29px; }
+    .section-kicker {
+      margin: 0 0 8px;
+      color: var(--accent-dark);
+      font-size: 12px;
+      font-weight: 750;
+      letter-spacing: .13em;
+      line-height: 1.4;
+      text-transform: uppercase;
+    }
+    h2 {
+      margin: 0;
+      font-size: clamp(30px, 4vw, 42px);
+      font-weight: 620;
+      letter-spacing: -.045em;
+      line-height: 1.12;
+    }
+    .service-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(min(100%, 250px), 1fr));
+      gap: 14px;
+    }
+    .service-card {
+      min-height: 156px;
+      padding: 23px 23px 20px;
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      background: var(--surface);
+      box-shadow: 0 4px 18px rgba(32, 36, 33, .025);
+    }
+    .service-index {
+      display: block;
+      margin-bottom: 17px;
+      color: var(--accent);
+      font-size: 11px;
+      font-weight: 750;
+      letter-spacing: .1em;
+    }
+    .service-card h3 {
+      margin: 0;
+      font-size: 20px;
+      font-weight: 650;
+      letter-spacing: -.025em;
+      line-height: 1.25;
+    }
+    .service-card p {
+      margin: 8px 0 0;
+      color: var(--muted);
+      font-size: 15px;
+      line-height: 1.45;
+    }
+    .service-note {
+      margin: 17px 0 0;
+      color: var(--muted);
+      font-size: 14px;
+      line-height: 1.5;
+    }
+
+    .trust-section { padding-bottom: 112px; }
+    .trust-panel {
+      padding: clamp(30px, 6vw, 58px);
+      border-radius: var(--radius);
+      background: var(--dark-panel);
+      color: #f8f7f2;
+    }
+    .trust-panel .section-kicker { color: #d7a18b; }
+    .trust-panel h2 { margin-bottom: 32px; }
+    .trust-metrics {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      border-top: 1px solid rgba(255, 255, 255, .2);
+      border-bottom: 1px solid rgba(255, 255, 255, .2);
+    }
+    .trust-metric { padding: 25px 20px 25px 0; }
+    .trust-metric + .trust-metric {
+      padding-left: 28px;
+      border-left: 1px solid rgba(255, 255, 255, .2);
+    }
+    .metric-value {
+      display: block;
+      font-size: clamp(46px, 7vw, 68px);
+      font-weight: 620;
+      letter-spacing: -.065em;
+      line-height: 1;
+    }
+    .metric-value small {
+      color: #c6cbc5;
+      font-size: .38em;
+      font-weight: 500;
+      letter-spacing: -.01em;
+    }
+    .metric-label {
+      display: block;
+      margin-top: 10px;
+      color: #d7dcd5;
+      font-size: 15px;
+      line-height: 1.4;
+    }
+    .trust-note {
+      margin: 19px 0 0;
+      color: #d7dcd5;
+      font-size: 14px;
+      line-height: 1.5;
+    }
+
+    .contact-section { padding-bottom: 96px; }
+    .contact-layout {
+      display: grid;
+      grid-template-columns: minmax(0, .9fr) minmax(0, 1.1fr);
+      gap: clamp(35px, 7vw, 80px);
+      align-items: start;
+    }
+    .contact-details { margin-top: 29px; }
+    .contact-item + .contact-item { margin-top: 24px; }
+    .contact-label {
+      display: block;
+      margin-bottom: 5px;
+      color: var(--muted);
+      font-size: 13px;
+      font-weight: 650;
+      letter-spacing: .035em;
+    }
+    .contact-value {
+      margin: 0;
+      font-size: 19px;
+      font-weight: 550;
+      line-height: 1.5;
+      overflow-wrap: anywhere;
+    }
+    .contact-value a {
+      color: var(--accent-dark);
+      text-decoration-thickness: 1px;
+      text-underline-offset: 4px;
+    }
+    .contact-value address { font-style: normal; }
+
+    .placeholder-panel {
+      padding: clamp(22px, 4vw, 32px);
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      background: var(--surface);
+      box-shadow: 0 8px 28px rgba(32, 36, 33, .035);
+    }
+    .placeholder-panel h3 {
+      margin: 0;
+      font-size: 23px;
+      font-weight: 650;
+      letter-spacing: -.035em;
+      line-height: 1.2;
+    }
+    .placeholder-copy {
+      margin: 9px 0 22px;
+      color: var(--muted);
+      font-size: 14px;
+      line-height: 1.5;
+    }
+    .placeholder-form fieldset {
+      display: grid;
+      gap: 15px;
+      margin: 0;
+      padding: 0;
+      border: 0;
+    }
+    .field-label {
+      display: grid;
+      gap: 6px;
+      color: #424741;
+      font-size: 14px;
+      font-weight: 600;
+    }
+    .field-label input, .field-label textarea {
+      width: 100%;
+      min-height: 45px;
+      padding: 10px 12px;
+      border: 1px solid #d8d9d2;
+      border-radius: 5px;
+      background: #f5f4ef;
+      color: var(--ink);
+      font: inherit;
+      font-size: 15px;
+      resize: vertical;
+    }
+    .field-label textarea { min-height: 76px; }
+    .placeholder-form :disabled { cursor: not-allowed; }
+    .submit-placeholder {
+      width: 100%;
+      min-height: 48px;
+      border: 0;
+      border-radius: 6px;
+      background: #deded8;
+      color: #696d67;
+      font: inherit;
+      font-size: 15px;
+      font-weight: 700;
+    }
+
+    .site-footer {
+      padding: 25px 0 28px;
+      border-top: 1px solid var(--line);
+      color: var(--muted);
+      font-size: 13px;
+      line-height: 1.5;
+    }
+    .footer-inner { display: flex; justify-content: space-between; gap: 12px; }
+    .footer-inner p { margin: 0; }
+    .mobile-call-bar { display: none; }
+
+    @media (max-width: 780px) {
+      :root { --gutter: 22px; }
+      body { padding-bottom: 92px; }
+      .header-inner { min-height: 68px; gap: 10px; }
+      .brand { max-width: 175px; font-size: 15px; }
+      .header-call { min-height: 40px; padding: 7px 9px; font-size: 11px; }
+      .hero { padding: 72px 0 80px; }
+      .section { padding-bottom: 82px; }
+      .service-grid { grid-template-columns: 1fr; gap: 11px; }
+      .service-card { min-height: 0; padding: 20px 21px; }
+      .service-index { margin-bottom: 12px; }
+      .trust-section { padding-bottom: 82px; }
+      .trust-metrics { grid-template-columns: 1fr; }
+      .trust-metric { padding: 21px 0; }
+      .trust-metric + .trust-metric {
+        padding-left: 0;
+        border-top: 1px solid rgba(255, 255, 255, .2);
+        border-left: 0;
+      }
+      .contact-layout { grid-template-columns: 1fr; gap: 34px; }
+      .contact-details { margin-top: 23px; }
+      .contact-section { padding-bottom: 72px; }
+      .footer-inner { flex-direction: column; gap: 4px; }
+      .mobile-call-bar {
+        position: fixed;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        z-index: 15;
+        display: block;
+        padding: 10px 16px calc(10px + env(safe-area-inset-bottom));
+        border-top: 1px solid rgba(32, 36, 33, .14);
+        background: rgba(247, 245, 240, .97);
+      }
+      .mobile-call-bar a {
+        min-height: 48px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 10px 16px;
+        border-radius: 6px;
+        background: var(--accent);
+        color: #fff;
+        font-size: 16px;
+        font-weight: 700;
+        line-height: 1.25;
+        text-decoration: none;
+      }
+      .mobile-call-bar a:hover { background: var(--accent-dark); }
+    }
+    @media (max-width: 380px) {
+      :root { --gutter: 16px; }
+      .header-call { padding-inline: 7px; font-size: 10.5px; }
+      .brand { max-width: 150px; font-size: 14px; }
+      .hero-actions { align-items: stretch; flex-direction: column; }
+      .button { width: 100%; }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
+      *, *::before, *::after { transition-duration: .01ms !important; }
+    }
+  </style>
+</head>
+<body>
+  <a class='skip-link' href='#main'>Skip to content</a>
+  <header class='site-header'>
+    <div class='wrap header-inner'>
+      <a class='brand' href='#main'>Douglas Auto Repair Express, LLC</a>
+      <a class='header-call' href='tel:+18326169852' aria-label='Call +1 832-616-9852'>+1 832-616-9852</a>
+    </div>
+  </header>
+
+  <main id='main'>
+    <section class='hero wrap' aria-labelledby='hero-title'>
+      <p class='eyebrow'><span class='eyebrow-mark' aria-hidden='true'></span>Auto repair <span aria-hidden='true'>·</span> Houston</p>
+      <h1 id='hero-title'>Auto repair in Houston, with the phone number where you can actually find it.</h1>
+      <p class='hero-copy'>One call, a straight answer, and a shop on Boone Road. No app, no account, no hunting for the phone number.</p>
+      <div class='hero-actions'>
+        <a class='button button-primary' href='tel:+18326169852'>Call +1 832-616-9852</a>
+        <a class='button button-secondary' href='#contact'>Request a callback</a>
+      </div>
+    </section>
+
+    <section class='section wrap' aria-labelledby='services-title'>
+      <div class='section-heading'>
+        <p class='section-kicker'>Services</p>
+        <h2 id='services-title'>Service categories</h2>
+      </div>
+      <div class='service-grid'>
+        <article class='service-card'>
+          <span class='service-index' aria-hidden='true'>01</span>
+          <h3>Auto repair</h3>
+          <p>Repair work for vehicles.</p>
+        </article>
+        <article class='service-card'>
+          <span class='service-index' aria-hidden='true'>02</span>
+          <h3>Scheduled maintenance</h3>
+          <p>Planned maintenance for a vehicle.</p>
+        </article>
+        <article class='service-card'>
+          <span class='service-index' aria-hidden='true'>03</span>
+          <h3>Diagnostics</h3>
+          <p>Diagnostic work for a vehicle.</p>
+        </article>
+        <article class='service-card'>
+          <span class='service-index' aria-hidden='true'>04</span>
+          <h3>Brake service</h3>
+          <p>Service related to vehicle brakes.</p>
+        </article>
+        <article class='service-card'>
+          <span class='service-index' aria-hidden='true'>05</span>
+          <h3>Tune-ups</h3>
+          <p>Tune-up work for a vehicle.</p>
+        </article>
+        <article class='service-card'>
+          <span class='service-index' aria-hidden='true'>06</span>
+          <h3>Pre-purchase checks</h3>
+          <p>Checks before a vehicle purchase.</p>
+        </article>
+      </div>
+      <p class='service-note'><em>Example service categories for this layout - we will swap in your exact list.</em></p>
+    </section>
+
+    <section class='trust-section wrap' aria-labelledby='trust-title'>
+      <div class='trust-panel'>
+        <p class='section-kicker'>Google listing</p>
+        <h2 id='trust-title'>The numbers, clearly.</h2>
+        <div class='trust-metrics'>
+          <div class='trust-metric'>
+            <span class='metric-value' aria-label='4.8 out of 5'>4.8<small> / 5</small></span>
+            <span class='metric-label'>Google rating</span>
+          </div>
+          <div class='trust-metric'>
+            <span class='metric-value'>318</span>
+            <span class='metric-label'>Google reviews</span>
+          </div>
+        </div>
+        <p class='trust-note'>These figures come from the business's Google listing.</p>
+      </div>
+    </section>
+
+    <section class='contact-section wrap' id='contact' aria-labelledby='contact-title'>
+      <div class='contact-layout'>
+        <div>
+          <p class='section-kicker'>Contact</p>
+          <h2 id='contact-title'>Get in touch</h2>
+          <div class='contact-details'>
+            <div class='contact-item'>
+              <span class='contact-label'>Phone</span>
+              <p class='contact-value'><a href='tel:+18326169852'>+1 832-616-9852</a></p>
+            </div>
+            <div class='contact-item'>
+              <span class='contact-label'>Address</span>
+              <p class='contact-value'><address>9525 Boone Rd, Houston, TX 77099</address></p>
+            </div>
+          </div>
+        </div>
+        <div class='placeholder-panel'>
+          <h3>Request a callback</h3>
+          <p class='placeholder-copy'>This is a placeholder form and does not send information.</p>
+          <form class='placeholder-form' aria-label='Placeholder callback form'>
+            <fieldset disabled>
+              <label class='field-label' for='callback-name'>Name
+                <input id='callback-name' name='name' type='text'>
+              </label>
+              <label class='field-label' for='callback-phone'>Phone
+                <input id='callback-phone' name='phone' type='tel'>
+              </label>
+              <label class='field-label' for='callback-need'>What you need
+                <textarea id='callback-need' name='need' rows='3'></textarea>
+              </label>
+              <button class='submit-placeholder' type='submit' disabled>Submit request</button>
+            </fieldset>
+          </form>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class='site-footer'>
+    <div class='wrap footer-inner'>
+      <p>Douglas Auto Repair Express, LLC</p>
+      <p>Concept preview — not the live site</p>
+    </div>
+  </footer>
+
+  <div class='mobile-call-bar'>
+    <a href='tel:+18326169852'>Call +1 832-616-9852</a>
+  </div>
+</body>
+</html>
