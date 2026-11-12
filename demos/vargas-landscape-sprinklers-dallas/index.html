@@ -1,0 +1,501 @@
+<!doctype html>
+<html lang='en'>
+<head>
+  <meta charset='utf-8'>
+  <meta name='viewport' content='width=device-width, initial-scale=1'>
+  <meta name='theme-color' content='#f7f7f3'>
+  <meta name='description' content='Vargas Landscape & Sprinklers provides landscaping and sprinkler work in Dallas, TX.'>
+  <title>Vargas Landscape &amp; Sprinklers | Landscaping and sprinkler contractor in Dallas, TX</title>
+  <style>
+    :root {
+      color-scheme: light;
+      --paper: #f7f7f3;
+      --surface: #ffffff;
+      --ink: #17251e;
+      --muted: #59665d;
+      --accent: #52735d;
+      --accent-dark: #365340;
+      --line: #dce3dc;
+      --soft: #edf1eb;
+      --deep: #1e3528;
+      --max-width: 1160px;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; }
+    html { scroll-behavior: smooth; scroll-padding-top: 96px; }
+    body {
+      margin: 0;
+      background: var(--paper);
+      color: var(--ink);
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+      -webkit-font-smoothing: antialiased;
+      text-rendering: optimizeLegibility;
+    }
+    a { color: inherit; }
+    a:focus-visible, button:focus-visible {
+      outline: 3px solid var(--accent);
+      outline-offset: 4px;
+    }
+    .skip-link {
+      position: absolute;
+      z-index: 20;
+      top: 8px;
+      left: 8px;
+      transform: translateY(-150%);
+      padding: 12px 16px;
+      background: var(--surface);
+      color: var(--ink);
+      border: 1px solid var(--line);
+      border-radius: 4px;
+    }
+    .skip-link:focus { transform: translateY(0); }
+    .container { width: min(var(--max-width), calc(100% - 48px)); margin-inline: auto; }
+
+    .site-header {
+      position: sticky;
+      z-index: 10;
+      top: 0;
+      background: rgba(247, 247, 243, .94);
+      border-bottom: 1px solid rgba(220, 227, 220, .85);
+      backdrop-filter: blur(14px);
+    }
+    .header-inner {
+      min-height: 82px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+    }
+    .brand {
+      display: inline-flex;
+      align-items: center;
+      min-height: 44px;
+      color: var(--ink);
+      font-family: Georgia, 'Times New Roman', serif;
+      font-size: 20px;
+      font-weight: 600;
+      letter-spacing: -.035em;
+      text-decoration: none;
+    }
+    .brand span { margin-left: 5px; }
+    .button {
+      min-height: 48px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 9px;
+      padding: 12px 20px;
+      border: 1px solid transparent;
+      border-radius: 3px;
+      font-size: 14px;
+      font-weight: 650;
+      letter-spacing: .01em;
+      line-height: 1.25;
+      text-align: center;
+      text-decoration: none;
+      transition: background-color .18s ease, border-color .18s ease, color .18s ease, transform .18s ease;
+    }
+    .button:hover { transform: translateY(-1px); }
+    .button-primary { background: var(--accent-dark); color: #fff; }
+    .button-primary:hover { background: #294431; }
+    .button-outline { border-color: #aab8ac; background: transparent; color: var(--ink); }
+    .button-outline:hover { border-color: var(--accent-dark); background: #edf1eb; }
+    .header-call { min-width: 154px; }
+
+    .hero {
+      overflow: hidden;
+      padding: 82px 0 92px;
+      background: linear-gradient(115deg, #f7f7f3 0%, #f2f4ee 56%, #e9eee7 100%);
+    }
+    .hero-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 1.06fr) minmax(340px, .94fr);
+      align-items: center;
+      gap: clamp(44px, 7vw, 96px);
+    }
+    .eyebrow, .section-kicker {
+      margin: 0 0 20px;
+      color: var(--accent-dark);
+      font-size: 11px;
+      font-weight: 750;
+      letter-spacing: .16em;
+      line-height: 1.5;
+      text-transform: uppercase;
+    }
+    h1, h2, h3, p { margin-top: 0; }
+    h1 {
+      max-width: 690px;
+      margin-bottom: 24px;
+      font-family: Georgia, 'Times New Roman', serif;
+      font-size: clamp(44px, 5.5vw, 74px);
+      font-weight: 500;
+      letter-spacing: -.055em;
+      line-height: .99;
+    }
+    .hero-copy {
+      max-width: 590px;
+      margin-bottom: 30px;
+      color: var(--muted);
+      font-size: 17px;
+      line-height: 1.75;
+    }
+    .hero-actions { display: flex; flex-wrap: wrap; gap: 12px; }
+    .landscape-art {
+      position: relative;
+      min-height: 420px;
+      overflow: hidden;
+      border: 1px solid rgba(54, 83, 64, .13);
+      border-radius: 5px 96px 5px 5px;
+      background:
+        linear-gradient(140deg, rgba(255,255,255,.55), transparent 52%),
+        repeating-linear-gradient(155deg, transparent 0 27px, rgba(54,83,64,.075) 28px, transparent 29px 53px),
+        linear-gradient(145deg, #e9eee5, #cdd9cd);
+      box-shadow: 0 24px 60px rgba(36, 57, 42, .09);
+    }
+    .landscape-art::before, .landscape-art::after {
+      position: absolute;
+      content: '';
+      border: 1px solid rgba(54, 83, 64, .22);
+      border-radius: 50%;
+      transform: rotate(-24deg);
+    }
+    .landscape-art::before { width: 420px; height: 300px; top: 7%; left: 9%; }
+    .landscape-art::after { width: 340px; height: 235px; top: 17%; left: 20%; }
+    .art-disc {
+      position: absolute;
+      top: 21%;
+      left: 28%;
+      width: 46%;
+      aspect-ratio: 1;
+      border: 1px solid rgba(255,255,255,.75);
+      border-radius: 50%;
+      background: radial-gradient(circle at 35% 32%, #f6f7f1 0, #dce6d9 46%, #aebfad 100%);
+      box-shadow: 0 24px 48px rgba(37, 61, 45, .12), inset 0 0 0 18px rgba(255,255,255,.14);
+    }
+    .art-monogram {
+      position: absolute;
+      right: 25px;
+      bottom: 25px;
+      width: 58px;
+      height: 58px;
+      display: grid;
+      place-items: center;
+      border: 1px solid rgba(54, 83, 64, .22);
+      border-radius: 50%;
+      color: var(--accent-dark);
+      font-family: Georgia, 'Times New Roman', serif;
+      font-size: 25px;
+    }
+
+    .services { padding: 100px 0 108px; }
+    .section-heading { max-width: 650px; margin-bottom: 42px; }
+    .section-heading .section-kicker { margin-bottom: 14px; }
+    h2 {
+      margin-bottom: 14px;
+      font-family: Georgia, 'Times New Roman', serif;
+      font-size: clamp(34px, 4vw, 49px);
+      font-weight: 500;
+      letter-spacing: -.045em;
+      line-height: 1.08;
+    }
+    .section-intro { max-width: 560px; margin-bottom: 0; color: var(--muted); font-size: 16px; line-height: 1.7; }
+    .service-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 16px; }
+    .service-card {
+      min-height: 202px;
+      padding: 25px 25px 27px;
+      border: 1px solid var(--line);
+      background: rgba(255,255,255,.64);
+      transition: border-color .18s ease, background-color .18s ease, transform .18s ease;
+    }
+    .service-card:hover { transform: translateY(-3px); border-color: #aab9ac; background: var(--surface); }
+    .service-number {
+      display: inline-block;
+      margin-bottom: 27px;
+      color: var(--accent);
+      font-size: 11px;
+      font-weight: 750;
+      letter-spacing: .14em;
+    }
+    .service-card h3 {
+      margin-bottom: 9px;
+      font-family: Georgia, 'Times New Roman', serif;
+      font-size: 22px;
+      font-weight: 500;
+      letter-spacing: -.025em;
+      line-height: 1.2;
+    }
+    .service-card p { margin-bottom: 0; color: var(--muted); font-size: 14px; line-height: 1.6; }
+
+    .trust {
+      padding: 82px 0;
+      background: var(--deep);
+      color: #f6f7f2;
+    }
+    .trust-inner { display: grid; grid-template-columns: .9fr 1.1fr; align-items: center; gap: 64px; }
+    .trust .section-kicker { margin-bottom: 14px; color: #bdcdbd; }
+    .trust h2 { max-width: 420px; margin-bottom: 0; }
+    .trust-stats { display: grid; grid-template-columns: 1fr 1fr; border-left: 1px solid rgba(255,255,255,.22); }
+    .trust-stat { min-height: 112px; display: flex; flex-direction: column; justify-content: center; padding: 10px 32px; }
+    .trust-stat + .trust-stat { border-left: 1px solid rgba(255,255,255,.22); }
+    .stat-value {
+      display: block;
+      margin-bottom: 8px;
+      font-family: Georgia, 'Times New Roman', serif;
+      font-size: clamp(40px, 5vw, 58px);
+      letter-spacing: -.045em;
+      line-height: 1;
+    }
+    .stat-label { color: #d5ded3; font-size: 14px; line-height: 1.5; }
+
+    .contact { padding: 100px 0; }
+    .contact-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: start; }
+    .contact .section-kicker { margin-bottom: 14px; }
+    .contact-copy { max-width: 470px; color: var(--muted); font-size: 16px; line-height: 1.7; }
+    .contact-details { display: grid; gap: 26px; padding-top: 7px; }
+    .detail-block { padding-bottom: 22px; border-bottom: 1px solid var(--line); }
+    .detail-label {
+      display: block;
+      margin-bottom: 9px;
+      color: var(--accent-dark);
+      font-size: 11px;
+      font-weight: 750;
+      letter-spacing: .14em;
+      text-transform: uppercase;
+    }
+    .detail-value, .contact address {
+      color: var(--ink);
+      font-size: 18px;
+      font-style: normal;
+      line-height: 1.65;
+      text-decoration: none;
+    }
+    .detail-value:hover { color: var(--accent-dark); text-decoration: underline; text-underline-offset: 4px; }
+    .service-area {
+      padding: 25px 0;
+      border-top: 1px solid var(--line);
+      background: #f0f2ed;
+    }
+    .service-area-inner { display: flex; align-items: center; gap: 18px; }
+    .service-area-label { color: var(--muted); font-size: 13px; }
+    .service-area-name { color: var(--ink); font-size: 15px; font-weight: 650; }
+
+    .site-footer { padding: 25px 0; border-top: 1px solid var(--line); background: var(--paper); }
+    .footer-inner { display: flex; align-items: center; justify-content: space-between; gap: 20px; }
+    .footer-name { margin: 0; font-family: Georgia, 'Times New Roman', serif; font-size: 16px; font-weight: 600; }
+    .preview-label { margin: 0; color: var(--muted); font-size: 12px; letter-spacing: .02em; }
+    .mobile-call-bar { display: none; }
+
+    @media (max-width: 900px) {
+      .hero { padding: 68px 0 76px; }
+      .hero-grid { grid-template-columns: minmax(0, 1.1fr) minmax(280px, .9fr); gap: 38px; }
+      .landscape-art { min-height: 360px; }
+      .trust-inner { gap: 38px; }
+      .contact-grid { gap: 48px; }
+    }
+    @media (max-width: 720px) {
+      html { scroll-padding-top: 82px; }
+      .container { width: min(var(--max-width), calc(100% - 36px)); }
+      .header-inner { min-height: 72px; gap: 12px; }
+      .brand { font-size: 17px; }
+      .header-call { min-width: 0; min-height: 46px; padding: 10px 13px; font-size: 13px; }
+      .hero { padding: 58px 0 66px; }
+      .hero-grid { grid-template-columns: 1fr; gap: 38px; }
+      h1 { max-width: 580px; font-size: clamp(43px, 10vw, 64px); }
+      .hero-copy { font-size: 16px; }
+      .landscape-art { min-height: 330px; }
+      .services { padding: 76px 0 82px; }
+      .section-heading { margin-bottom: 30px; }
+      .service-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px; }
+      .service-card { min-height: 190px; padding: 21px 18px; }
+      .service-number { margin-bottom: 21px; }
+      .service-card h3 { font-size: 20px; }
+      .trust { padding: 66px 0; }
+      .trust-inner { grid-template-columns: 1fr; gap: 28px; }
+      .trust-stats { border-left: 0; border-top: 1px solid rgba(255,255,255,.22); }
+      .trust-stat { padding: 23px 20px 8px 0; }
+      .trust-stat + .trust-stat { padding-left: 20px; }
+      .contact { padding: 76px 0; }
+      .contact-grid { grid-template-columns: 1fr; gap: 32px; }
+      .contact-details { gap: 20px; }
+      .footer-inner { align-items: flex-start; flex-direction: column; gap: 8px; }
+      .mobile-call-bar {
+        position: fixed;
+        z-index: 12;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 14px;
+        padding: 10px 18px calc(10px + env(safe-area-inset-bottom));
+        border-top: 1px solid rgba(255,255,255,.18);
+        background: var(--deep);
+        color: #fff;
+      }
+      .mobile-call-label { font-size: 13px; font-weight: 600; line-height: 1.3; }
+      .mobile-call-link {
+        min-width: 112px;
+        min-height: 46px;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        padding: 10px 15px;
+        border-radius: 3px;
+        background: #fff;
+        color: var(--deep);
+        font-size: 14px;
+        font-weight: 700;
+        text-decoration: none;
+      }
+      body { padding-bottom: 74px; }
+    }
+    @media (max-width: 560px) {
+      .container { width: min(var(--max-width), calc(100% - 32px)); }
+      .brand { max-width: 205px; font-size: 16px; line-height: 1.1; }
+      .header-call { padding-inline: 11px; }
+      .hero-actions { align-items: stretch; flex-direction: column; }
+      .hero-actions .button { width: 100%; }
+      .landscape-art { min-height: 285px; border-top-right-radius: 72px; }
+      .service-grid { grid-template-columns: 1fr; }
+      .service-card { min-height: 0; }
+      .service-number { margin-bottom: 17px; }
+      .service-area-inner { align-items: flex-start; flex-direction: column; gap: 5px; }
+      .trust-stat { padding-right: 12px; }
+      .trust-stat + .trust-stat { padding-left: 14px; }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after { scroll-behavior: auto !important; transition-duration: .01ms !important; }
+    }
+  </style>
+</head>
+<body id='top'>
+  <a class='skip-link' href='#main'>Skip to content</a>
+  <header class='site-header'>
+    <div class='container header-inner'>
+      <a class='brand' href='#top' aria-label='Vargas Landscape &amp; Sprinklers home'>Vargas Landscape <span>&amp; Sprinklers</span></a>
+      <a class='button button-primary header-call' href='tel:+12147976032'>Call <span aria-hidden='true'>+1 214-797-6032</span></a>
+    </div>
+  </header>
+
+  <main id='main'>
+    <section class='hero' aria-labelledby='hero-title'>
+      <div class='container hero-grid'>
+        <div>
+          <p class='eyebrow'>Landscaping + sprinklers <span aria-hidden='true'>·</span> Dallas, TX</p>
+          <h1 id='hero-title'>Dallas Landscaping and Sprinklers, Rated 4.9 Stars</h1>
+          <p class='hero-copy'>Landscaping and sprinkler work in Dallas from a contractor rated 4.9 out of 5 across 76 Google reviews.</p>
+          <div class='hero-actions'>
+            <a class='button button-primary' href='tel:+12147976032'>Call now</a>
+            <a class='button button-outline' href='#contact'>Request a callback</a>
+          </div>
+        </div>
+        <div class='landscape-art' aria-hidden='true'>
+          <div class='art-disc'></div>
+          <span class='art-monogram'>V</span>
+        </div>
+      </div>
+    </section>
+
+    <section class='services' aria-labelledby='services-title'>
+      <div class='container'>
+        <div class='section-heading'>
+          <p class='section-kicker'>Services</p>
+          <h2 id='services-title'>Landscaping and sprinkler services</h2>
+          <p class='section-intro'>Explore the landscaping and sprinkler services offered by Vargas Landscape &amp; Sprinklers.</p>
+        </div>
+        <div class='service-grid'>
+          <article class='service-card'>
+            <span class='service-number'>01</span>
+            <h3>Lawn care and mowing</h3>
+            <p>Lawn care and mowing for your yard.</p>
+          </article>
+          <article class='service-card'>
+            <span class='service-number'>02</span>
+            <h3>Sprinkler installation and repair</h3>
+            <p>Installation and repair for sprinkler systems.</p>
+          </article>
+          <article class='service-card'>
+            <span class='service-number'>03</span>
+            <h3>Irrigation controller tune-ups</h3>
+            <p>Tune-ups for irrigation controllers.</p>
+          </article>
+          <article class='service-card'>
+            <span class='service-number'>04</span>
+            <h3>Landscape bed clean-ups</h3>
+            <p>Clean-ups for landscape beds.</p>
+          </article>
+          <article class='service-card'>
+            <span class='service-number'>05</span>
+            <h3>Sod and planting</h3>
+            <p>Sod and planting for outdoor spaces.</p>
+          </article>
+          <article class='service-card'>
+            <span class='service-number'>06</span>
+            <h3>Seasonal yard maintenance</h3>
+            <p>Seasonal maintenance for your yard.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class='trust' aria-labelledby='trust-title'>
+      <div class='container trust-inner'>
+        <div>
+          <p class='section-kicker'>Google reviews</p>
+          <h2 id='trust-title'>Rated 4.9 out of 5</h2>
+        </div>
+        <div class='trust-stats' aria-label='Google rating and review count'>
+          <div class='trust-stat'>
+            <span class='stat-value'>4.9<span aria-hidden='true'>★</span></span>
+            <span class='stat-label'>out of 5</span>
+          </div>
+          <div class='trust-stat'>
+            <span class='stat-value'>76</span>
+            <span class='stat-label'>Google reviews</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class='contact' id='contact' aria-labelledby='contact-title'>
+      <div class='container contact-grid'>
+        <div>
+          <p class='section-kicker'>Contact</p>
+          <h2 id='contact-title'>Let’s talk about your yard</h2>
+          <p class='contact-copy'>For landscaping and sprinkler work, contact Vargas Landscape &amp; Sprinklers by phone.</p>
+        </div>
+        <div class='contact-details'>
+          <div class='detail-block'>
+            <span class='detail-label'>Phone</span>
+            <a class='detail-value' href='tel:+12147976032'>+1 214-797-6032</a>
+          </div>
+          <div class='detail-block'>
+            <span class='detail-label'>Address</span>
+            <address>618 S Clinton Ave<br>Dallas, TX 75208</address>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class='service-area' aria-label='Service area'>
+      <div class='container service-area-inner'>
+        <span class='service-area-label'>Service area</span>
+        <span class='service-area-name'>Dallas</span>
+      </div>
+    </section>
+  </main>
+
+  <footer class='site-footer'>
+    <div class='container footer-inner'>
+      <p class='footer-name'>Vargas Landscape &amp; Sprinklers</p>
+      <p class='preview-label'>Concept preview — not the live site</p>
+    </div>
+  </footer>
+
+  <div class='mobile-call-bar' aria-label='Call Vargas Landscape &amp; Sprinklers'>
+    <span class='mobile-call-label'>Vargas Landscape<br>&amp; Sprinklers</span>
+    <a class='mobile-call-link' href='tel:+12147976032'>Call now</a>
+  </div>
+</body>
+</html>
