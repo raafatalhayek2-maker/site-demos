@@ -1,0 +1,891 @@
+<!doctype html>
+<html lang='en'>
+<head>
+  <meta charset='utf-8'>
+  <meta name='viewport' content='width=device-width, initial-scale=1'>
+  <meta name='description' content='Explore brake service, oil and filter changes, engine diagnostics, steering and suspension, battery and starter work, and air conditioning service at Nashville Auto Care.'>
+  <title>Nashville Auto Care | Auto repair shop</title>
+  <style>
+    :root {
+      color-scheme: light;
+      --ink: #17252b;
+      --ink-soft: #4f5c61;
+      --paper: #f5f3ed;
+      --surface: #fffefa;
+      --deep: #14272e;
+      --deep-soft: #1c353d;
+      --accent: #e45b36;
+      --accent-dark: #b84020;
+      --line: #dcded8;
+      --line-dark: rgba(255, 255, 255, 0.16);
+      --radius: 10px;
+      --content: 1180px;
+      --page-gutter: clamp(20px, 5vw, 72px);
+      font-synthesis: none;
+    }
+
+    *,
+    *::before,
+    *::after {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+      scroll-padding-top: 92px;
+    }
+
+    body {
+      margin: 0;
+      background: var(--paper);
+      color: var(--ink);
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+      font-size: 16px;
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    a {
+      color: inherit;
+    }
+
+    a:focus-visible {
+      outline: 3px solid var(--accent);
+      outline-offset: 4px;
+      border-radius: 4px;
+    }
+
+    .skip-link {
+      position: fixed;
+      z-index: 20;
+      top: 12px;
+      left: 12px;
+      padding: 12px 16px;
+      transform: translateY(-160%);
+      background: var(--surface);
+      color: var(--ink);
+      border: 2px solid var(--accent);
+      border-radius: 6px;
+      font-weight: 700;
+    }
+
+    .skip-link:focus {
+      transform: translateY(0);
+    }
+
+    .site-header {
+      position: sticky;
+      z-index: 10;
+      top: 0;
+      background: rgba(245, 243, 237, 0.96);
+      border-bottom: 1px solid var(--line);
+    }
+
+    .header-inner {
+      width: min(100% - 2 * var(--page-gutter), var(--content));
+      min-height: 82px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+    }
+
+    .brand {
+      display: inline-flex;
+      align-items: center;
+      gap: 13px;
+      color: var(--ink);
+      text-decoration: none;
+    }
+
+    .brand-mark {
+      position: relative;
+      width: 38px;
+      height: 38px;
+      flex: 0 0 38px;
+      border: 2px solid var(--accent);
+      border-radius: 50%;
+    }
+
+    .brand-mark::before,
+    .brand-mark::after {
+      position: absolute;
+      content: '';
+      border: 2px solid var(--accent);
+      border-radius: 50%;
+    }
+
+    .brand-mark::before {
+      inset: 6px;
+    }
+
+    .brand-mark::after {
+      inset: 14px;
+      background: var(--accent);
+    }
+
+    .brand-copy {
+      display: grid;
+      line-height: 1.2;
+    }
+
+    .brand-name {
+      font-size: 18px;
+      font-weight: 760;
+      letter-spacing: -0.035em;
+    }
+
+    .brand-trade {
+      margin-top: 4px;
+      color: var(--ink-soft);
+      font-size: 12px;
+      font-weight: 650;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+    }
+
+    .button {
+      min-height: 52px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      padding: 12px 20px;
+      border: 1px solid transparent;
+      border-radius: 5px;
+      font-size: 15px;
+      font-weight: 720;
+      line-height: 1.2;
+      text-decoration: none;
+      transition: background-color 160ms ease, color 160ms ease, transform 160ms ease;
+    }
+
+    .button:hover {
+      transform: translateY(-1px);
+    }
+
+    .button-primary {
+      background: var(--accent);
+      color: #fff;
+    }
+
+    .button-primary:hover {
+      background: var(--accent-dark);
+    }
+
+    .button-outline-light {
+      border-color: rgba(255, 255, 255, 0.45);
+      color: #fff;
+    }
+
+    .button-outline-light:hover {
+      background: rgba(255, 255, 255, 0.1);
+    }
+
+    .button-dark {
+      background: var(--deep);
+      color: #fff;
+    }
+
+    .button-dark:hover {
+      background: var(--deep-soft);
+    }
+
+    .hero {
+      position: relative;
+      overflow: hidden;
+      background: var(--deep);
+      color: #fff;
+    }
+
+    .hero::before {
+      position: absolute;
+      top: -240px;
+      right: -145px;
+      width: 600px;
+      height: 600px;
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      border-radius: 50%;
+      content: '';
+      pointer-events: none;
+    }
+
+    .hero-inner {
+      position: relative;
+      z-index: 1;
+      width: min(100% - 2 * var(--page-gutter), var(--content));
+      min-height: 540px;
+      margin: 0 auto;
+      padding: clamp(64px, 9vw, 118px) 0;
+      display: grid;
+      grid-template-columns: 1.15fr 0.85fr;
+      align-items: center;
+      gap: clamp(44px, 8vw, 110px);
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      margin: 0 0 22px;
+      color: var(--accent);
+      font-size: 12px;
+      font-weight: 750;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+    }
+
+    .eyebrow::before {
+      width: 22px;
+      height: 2px;
+      background: currentColor;
+      content: '';
+    }
+
+    h1,
+    h2,
+    h3,
+    p {
+      margin-top: 0;
+    }
+
+    h1 {
+      max-width: 740px;
+      margin-bottom: 22px;
+      font-size: clamp(42px, 6vw, 76px);
+      font-weight: 690;
+      letter-spacing: -0.065em;
+      line-height: 0.99;
+    }
+
+    .hero-copy > p:not(.eyebrow) {
+      max-width: 620px;
+      margin-bottom: 30px;
+      color: #d2dcda;
+      font-size: clamp(17px, 1.8vw, 19px);
+      line-height: 1.7;
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+
+    .hero-art {
+      position: relative;
+      min-height: 330px;
+      overflow: hidden;
+      display: flex;
+      align-items: flex-end;
+      padding: 30px;
+      border: 1px solid var(--line-dark);
+      background: linear-gradient(145deg, #203a42 0%, #172c33 72%);
+    }
+
+    .hero-art::before {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      width: min(74%, 285px);
+      aspect-ratio: 1;
+      transform: translate(-50%, -56%);
+      border: 1px solid rgba(255, 255, 255, 0.13);
+      border-radius: 50%;
+      content: '';
+    }
+
+    .hero-art::after {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      width: min(56%, 215px);
+      aspect-ratio: 1;
+      transform: translate(-50%, -56%);
+      border: 1px solid rgba(255, 255, 255, 0.19);
+      border-radius: 50%;
+      content: '';
+    }
+
+    .art-ring {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      width: 24px;
+      height: 24px;
+      transform: translate(-50%, -80%);
+      border-radius: 50%;
+      background: var(--accent);
+      box-shadow: 0 0 0 17px rgba(228, 91, 54, 0.1), 0 0 0 36px rgba(228, 91, 54, 0.06);
+    }
+
+    .art-caption {
+      position: relative;
+      z-index: 1;
+      width: 100%;
+      padding-top: 22px;
+      border-top: 1px solid var(--line-dark);
+      display: flex;
+      align-items: flex-end;
+      justify-content: space-between;
+      gap: 16px;
+    }
+
+    .art-caption p {
+      margin: 0;
+      font-size: 13px;
+      font-weight: 700;
+      letter-spacing: 0.15em;
+      line-height: 1.5;
+      text-transform: uppercase;
+    }
+
+    .art-caption span {
+      color: #aebdbd;
+      font-size: 12px;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+    }
+
+    .section {
+      width: min(100% - 2 * var(--page-gutter), var(--content));
+      margin: 0 auto;
+      padding: clamp(76px, 9vw, 116px) 0;
+    }
+
+    .section-heading {
+      max-width: 680px;
+      margin-bottom: 42px;
+    }
+
+    .section-heading .eyebrow {
+      margin-bottom: 14px;
+    }
+
+    h2 {
+      margin-bottom: 13px;
+      font-size: clamp(32px, 4vw, 48px);
+      font-weight: 680;
+      letter-spacing: -0.055em;
+      line-height: 1.08;
+    }
+
+    .section-intro {
+      max-width: 620px;
+      margin-bottom: 0;
+      color: var(--ink-soft);
+      font-size: 17px;
+    }
+
+    .service-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 14px;
+    }
+
+    .service-card {
+      min-height: 205px;
+      padding: 25px 25px 28px;
+      border: 1px solid var(--line);
+      background: var(--surface);
+    }
+
+    .service-number {
+      display: block;
+      margin-bottom: 30px;
+      color: var(--accent);
+      font-size: 12px;
+      font-weight: 750;
+      letter-spacing: 0.14em;
+    }
+
+    .service-card h3 {
+      margin-bottom: 8px;
+      font-size: 19px;
+      font-weight: 700;
+      letter-spacing: -0.025em;
+      line-height: 1.25;
+    }
+
+    .service-card p {
+      max-width: 320px;
+      margin-bottom: 0;
+      color: var(--ink-soft);
+      font-size: 16px;
+      line-height: 1.55;
+    }
+
+    .rating-section {
+      background: var(--accent);
+      color: #fff;
+    }
+
+    .rating-inner {
+      width: min(100% - 2 * var(--page-gutter), var(--content));
+      min-height: 225px;
+      margin: 0 auto;
+      padding: 48px 0;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 36px;
+    }
+
+    .rating-label {
+      margin: 0;
+      font-size: 13px;
+      font-weight: 750;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+    }
+
+    .rating-score {
+      display: flex;
+      align-items: baseline;
+      gap: 14px;
+      white-space: nowrap;
+    }
+
+    .rating-score strong {
+      font-size: clamp(58px, 8vw, 92px);
+      font-weight: 670;
+      letter-spacing: -0.075em;
+      line-height: 1;
+    }
+
+    .rating-score span {
+      font-size: 20px;
+      font-weight: 600;
+    }
+
+    .rating-count {
+      margin: 0;
+      font-size: 18px;
+      font-weight: 620;
+    }
+
+    .contact-section {
+      padding-bottom: clamp(80px, 10vw, 132px);
+    }
+
+    .contact-layout {
+      display: grid;
+      grid-template-columns: 0.9fr 1.1fr;
+      gap: clamp(36px, 8vw, 100px);
+      align-items: start;
+    }
+
+    .contact-copy .eyebrow {
+      margin-bottom: 15px;
+    }
+
+    .contact-copy h2 {
+      max-width: 410px;
+      margin-bottom: 16px;
+    }
+
+    .contact-copy > p:last-child {
+      max-width: 420px;
+      margin-bottom: 0;
+      color: var(--ink-soft);
+      font-size: 17px;
+    }
+
+    .contact-card {
+      padding: clamp(25px, 4vw, 38px);
+      border: 1px solid var(--line);
+      background: var(--surface);
+    }
+
+    .contact-row + .contact-row {
+      margin-top: 27px;
+      padding-top: 25px;
+      border-top: 1px solid var(--line);
+    }
+
+    .contact-label {
+      display: block;
+      margin-bottom: 7px;
+      color: var(--ink-soft);
+      font-size: 12px;
+      font-weight: 750;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+    }
+
+    .contact-value {
+      display: inline-block;
+      font-size: clamp(19px, 2.1vw, 24px);
+      font-weight: 680;
+      letter-spacing: -0.025em;
+      line-height: 1.4;
+      text-decoration: none;
+    }
+
+    .contact-value:hover {
+      color: var(--accent-dark);
+    }
+
+    address {
+      font-size: 19px;
+      font-style: normal;
+      font-weight: 620;
+      line-height: 1.55;
+    }
+
+    .contact-directions {
+      margin-top: 25px;
+    }
+
+    .site-footer {
+      padding: 27px var(--page-gutter);
+      background: var(--deep);
+      color: #fff;
+    }
+
+    .footer-inner {
+      width: min(100%, var(--content));
+      min-height: 48px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+    }
+
+    .footer-name {
+      margin: 0;
+      font-size: 15px;
+      font-weight: 700;
+    }
+
+    .footer-note {
+      margin: 0;
+      color: #c3cecc;
+      font-size: 14px;
+      text-align: right;
+    }
+
+    .footer-note strong {
+      color: #fff;
+      font-weight: 650;
+    }
+
+    .mobile-callbar {
+      display: none;
+    }
+
+    @media (max-width: 900px) {
+      .hero-inner {
+        grid-template-columns: 1fr 0.72fr;
+        gap: 36px;
+      }
+
+      .hero-art {
+        min-height: 290px;
+      }
+
+      .service-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+    }
+
+    @media (max-width: 680px) {
+      html {
+        scroll-padding-top: 76px;
+      }
+
+      body {
+        padding-bottom: 76px;
+      }
+
+      .header-inner {
+        min-height: 72px;
+        gap: 12px;
+      }
+
+      .brand {
+        gap: 10px;
+      }
+
+      .brand-mark {
+        width: 34px;
+        height: 34px;
+        flex-basis: 34px;
+      }
+
+      .brand-mark::before {
+        inset: 5px;
+      }
+
+      .brand-mark::after {
+        inset: 12px;
+      }
+
+      .brand-name {
+        font-size: 16px;
+      }
+
+      .brand-trade {
+        font-size: 10px;
+      }
+
+      .header-call {
+        min-height: 46px;
+        padding: 10px 13px;
+        font-size: 14px;
+      }
+
+      .hero-inner {
+        min-height: auto;
+        padding: 72px 0 64px;
+        grid-template-columns: 1fr;
+        gap: 42px;
+      }
+
+      h1 {
+        max-width: 560px;
+        font-size: clamp(43px, 12vw, 66px);
+      }
+
+      .hero-art {
+        min-height: 235px;
+      }
+
+      .section-heading {
+        margin-bottom: 30px;
+      }
+
+      .service-grid {
+        gap: 10px;
+      }
+
+      .service-card {
+        min-height: 195px;
+        padding: 20px;
+      }
+
+      .service-number {
+        margin-bottom: 23px;
+      }
+
+      .rating-inner {
+        min-height: 0;
+        padding: 42px 0;
+        align-items: flex-start;
+        flex-direction: column;
+        gap: 20px;
+      }
+
+      .rating-score strong {
+        font-size: 72px;
+      }
+
+      .rating-count {
+        font-size: 16px;
+      }
+
+      .contact-layout {
+        grid-template-columns: 1fr;
+        gap: 30px;
+      }
+
+      .footer-inner {
+        align-items: flex-start;
+        flex-direction: column;
+        gap: 8px;
+      }
+
+      .footer-note {
+        text-align: left;
+      }
+
+      .mobile-callbar {
+        position: fixed;
+        z-index: 15;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        display: block;
+        padding: 10px 16px calc(10px + env(safe-area-inset-bottom));
+        border-top: 1px solid rgba(255, 255, 255, 0.16);
+        background: var(--deep);
+      }
+
+      .mobile-callbar a {
+        min-height: 52px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 10px;
+        border-radius: 5px;
+        background: var(--accent);
+        color: #fff;
+        font-size: 16px;
+        font-weight: 750;
+        text-decoration: none;
+      }
+
+      .mobile-callbar a:hover {
+        background: var(--accent-dark);
+      }
+    }
+
+    @media (max-width: 410px) {
+      .header-call {
+        padding: 9px 10px;
+        font-size: 13px;
+      }
+
+      .service-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .service-card {
+        min-height: 0;
+      }
+
+      .service-number {
+        margin-bottom: 18px;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      html {
+        scroll-behavior: auto;
+      }
+
+      *,
+      *::before,
+      *::after {
+        transition-duration: 0.01ms !important;
+      }
+    }
+  </style>
+</head>
+<body>
+  <a class='skip-link' href='#main'>Skip to content</a>
+
+  <header class='site-header' id='top'>
+    <div class='header-inner'>
+      <a class='brand' href='#top' aria-label='Nashville Auto Care home'>
+        <span class='brand-mark' aria-hidden='true'></span>
+        <span class='brand-copy'>
+          <span class='brand-name'>Nashville Auto Care</span>
+          <span class='brand-trade'>Auto repair shop</span>
+        </span>
+      </a>
+      <a class='button button-primary header-call' href='tel:+16152282410'>Call (615) 228-2410</a>
+    </div>
+  </header>
+
+  <main id='main'>
+    <section class='hero' aria-labelledby='hero-title'>
+      <div class='hero-inner'>
+        <div class='hero-copy'>
+          <p class='eyebrow'>Nashville · Auto repair</p>
+          <h1 id='hero-title'>Straightforward local auto repair in Nashville.</h1>
+          <p>Explore brake service, oil and filter changes, engine diagnostics, steering and suspension, battery and starter work, and air conditioning service.</p>
+          <div class='hero-actions'>
+            <a class='button button-primary' href='tel:+16152282410'>Call (615) 228-2410</a>
+            <a class='button button-outline-light' href='https://maps.google.com/?q=839+Porter+Rd+Nashville+TN+37206'>Get directions</a>
+          </div>
+        </div>
+        <div class='hero-art' aria-hidden='true'>
+          <span class='art-ring'></span>
+          <div class='art-caption'>
+            <p>Nashville<br>Auto Care</p>
+            <span>Auto repair shop</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class='section' aria-labelledby='services-title'>
+      <div class='section-heading'>
+        <p class='eyebrow'>Services</p>
+        <h2 id='services-title'>Auto repair services</h2>
+        <p class='section-intro'>Typical auto repair services for a shop like this.</p>
+      </div>
+      <div class='service-grid'>
+        <article class='service-card'>
+          <span class='service-number'>01</span>
+          <h3>Brake service</h3>
+          <p>Service for brake-related concerns.</p>
+        </article>
+        <article class='service-card'>
+          <span class='service-number'>02</span>
+          <h3>Oil and filter changes</h3>
+          <p>Oil and filter changes for routine vehicle upkeep.</p>
+        </article>
+        <article class='service-card'>
+          <span class='service-number'>03</span>
+          <h3>Engine diagnostics</h3>
+          <p>Diagnostics to assess engine-related concerns.</p>
+        </article>
+        <article class='service-card'>
+          <span class='service-number'>04</span>
+          <h3>Steering and suspension</h3>
+          <p>Service related to steering and suspension systems.</p>
+        </article>
+        <article class='service-card'>
+          <span class='service-number'>05</span>
+          <h3>Battery and starter work</h3>
+          <p>Battery and starter work for starting-system concerns.</p>
+        </article>
+        <article class='service-card'>
+          <span class='service-number'>06</span>
+          <h3>Air conditioning service</h3>
+          <p>Air conditioning service for system concerns.</p>
+        </article>
+      </div>
+    </section>
+
+    <section class='rating-section' aria-labelledby='rating-title'>
+      <div class='rating-inner'>
+        <p class='rating-label' id='rating-title'>Google rating</p>
+        <div class='rating-score' aria-label='4.9 out of 5'>
+          <strong>4.9</strong>
+          <span>out of 5</span>
+        </div>
+        <p class='rating-count'>504 Google reviews</p>
+      </div>
+    </section>
+
+    <section class='section contact-section' aria-labelledby='contact-title'>
+      <div class='contact-layout'>
+        <div class='contact-copy'>
+          <p class='eyebrow'>Contact</p>
+          <h2 id='contact-title'>Call or get directions.</h2>
+          <p>Use the phone or directions link to find the address.</p>
+        </div>
+        <div class='contact-card'>
+          <div class='contact-row'>
+            <span class='contact-label'>Phone</span>
+            <a class='contact-value' href='tel:+16152282410'>(615) 228-2410</a>
+          </div>
+          <div class='contact-row'>
+            <span class='contact-label'>Address</span>
+            <address>839 Porter Rd<br>Nashville, TN 37206</address>
+          </div>
+          <div class='contact-directions'>
+            <a class='button button-dark' href='https://maps.google.com/?q=839+Porter+Rd+Nashville+TN+37206'>Get directions</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <aside class='mobile-callbar' aria-label='Call Nashville Auto Care'>
+    <a href='tel:+16152282410'>Call (615) 228-2410</a>
+  </aside>
+
+  <footer class='site-footer'>
+    <div class='footer-inner'>
+      <p class='footer-name'>Nashville Auto Care</p>
+      <p class='footer-note'><strong>Concept preview — not the live site</strong><br>A design concept for Nashville Auto Care.</p>
+    </div>
+  </footer>
+</body>
+</html>
