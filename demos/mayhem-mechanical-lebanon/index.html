@@ -1,0 +1,938 @@
+<!doctype html>
+<html lang='en'>
+<head>
+  <meta charset='utf-8'>
+  <meta name='viewport' content='width=device-width, initial-scale=1'>
+  <meta name='description' content='Heating, cooling and plumbing contractor in Lebanon, TN.'>
+  <title>Mayhem Mechanical LLC — Heating, cooling &amp; plumbing in Lebanon, TN</title>
+  <style>
+    :root {
+      color-scheme: light;
+      --ink: #182629;
+      --ink-soft: #344649;
+      --muted: #627173;
+      --paper: #f5f3ee;
+      --surface: #fffefa;
+      --line: #dddcd5;
+      --accent: #c85b38;
+      --accent-dark: #a84225;
+      --night: #193235;
+      --night-soft: #294649;
+      --radius: 18px;
+      --radius-large: 28px;
+      --container: 1160px;
+      --shadow: 0 18px 50px rgba(24, 38, 41, .08);
+    }
+
+    *,
+    *::before,
+    *::after {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+      scroll-padding-top: 100px;
+    }
+
+    body {
+      margin: 0;
+      background: var(--paper);
+      color: var(--ink);
+      font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+      font-size: 16px;
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    a {
+      color: inherit;
+    }
+
+    a:focus-visible {
+      outline: 3px solid var(--accent);
+      outline-offset: 4px;
+      border-radius: 6px;
+    }
+
+    .skip-link {
+      position: fixed;
+      z-index: 20;
+      top: 12px;
+      left: 12px;
+      padding: 12px 16px;
+      transform: translateY(-160%);
+      background: var(--surface);
+      color: var(--ink);
+      border: 2px solid var(--accent);
+      border-radius: 8px;
+    }
+
+    .skip-link:focus {
+      transform: translateY(0);
+    }
+
+    .container {
+      width: min(var(--container), calc(100% - 48px));
+      margin-inline: auto;
+    }
+
+    .site-header {
+      position: sticky;
+      z-index: 10;
+      top: 0;
+      border-bottom: 1px solid rgba(24, 38, 41, .1);
+      background: rgba(245, 243, 238, .94);
+      backdrop-filter: blur(14px);
+    }
+
+    .header-inner {
+      display: flex;
+      min-height: 84px;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 13px;
+      text-decoration: none;
+    }
+
+    .brand-mark {
+      display: grid;
+      width: 42px;
+      height: 42px;
+      place-items: center;
+      border-radius: 13px;
+      background: var(--night);
+      color: #fffefa;
+      font-size: 17px;
+      font-weight: 800;
+      letter-spacing: -.08em;
+    }
+
+    .brand-copy {
+      display: grid;
+      gap: 1px;
+      line-height: 1.25;
+    }
+
+    .brand-name {
+      font-size: 17px;
+      font-weight: 760;
+      letter-spacing: -.035em;
+    }
+
+    .brand-trade {
+      color: var(--muted);
+      font-size: 12px;
+      letter-spacing: .045em;
+    }
+
+    .button {
+      display: inline-flex;
+      min-height: 52px;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      padding: 13px 21px;
+      border: 1px solid transparent;
+      border-radius: 999px;
+      font-size: 15px;
+      font-weight: 720;
+      line-height: 1.2;
+      text-align: center;
+      text-decoration: none;
+      transition: background-color .18s ease, color .18s ease, transform .18s ease;
+    }
+
+    .button:hover {
+      transform: translateY(-2px);
+    }
+
+    .button-primary {
+      background: var(--accent);
+      color: #fffefa;
+    }
+
+    .button-primary:hover {
+      background: var(--accent-dark);
+    }
+
+    .button-quiet {
+      border-color: rgba(24, 38, 41, .22);
+      background: transparent;
+      color: var(--ink);
+    }
+
+    .button-quiet:hover {
+      background: rgba(24, 38, 41, .06);
+    }
+
+    .button-light {
+      background: var(--surface);
+      color: var(--night);
+    }
+
+    .button-light:hover {
+      background: #e9e7df;
+    }
+
+    .hero {
+      position: relative;
+      overflow: hidden;
+      padding: 86px 0 96px;
+    }
+
+    .hero::before {
+      position: absolute;
+      top: -240px;
+      right: -180px;
+      width: 610px;
+      height: 610px;
+      border: 1px solid rgba(200, 91, 56, .15);
+      border-radius: 50%;
+      content: '';
+      pointer-events: none;
+    }
+
+    .hero-grid {
+      position: relative;
+      display: grid;
+      grid-template-columns: minmax(0, 1.08fr) minmax(330px, .92fr);
+      align-items: center;
+      gap: clamp(42px, 7vw, 100px);
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      margin: 0 0 20px;
+      color: var(--accent-dark);
+      font-size: 12px;
+      font-weight: 800;
+      letter-spacing: .15em;
+      text-transform: uppercase;
+    }
+
+    .eyebrow::before {
+      width: 24px;
+      height: 2px;
+      background: currentColor;
+      content: '';
+    }
+
+    h1,
+    h2,
+    h3,
+    p {
+      margin-top: 0;
+    }
+
+    h1 {
+      max-width: 710px;
+      margin-bottom: 22px;
+      font-size: clamp(44px, 6.2vw, 76px);
+      font-weight: 760;
+      letter-spacing: -.065em;
+      line-height: .99;
+    }
+
+    .hero-copy > p:not(.eyebrow) {
+      max-width: 560px;
+      margin-bottom: 30px;
+      color: var(--muted);
+      font-size: 19px;
+      line-height: 1.65;
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+
+    .hero-board {
+      position: relative;
+      display: flex;
+      min-height: 380px;
+      flex-direction: column;
+      justify-content: space-between;
+      overflow: hidden;
+      padding: 30px;
+      border-radius: var(--radius-large);
+      background: var(--night);
+      color: #fffefa;
+      box-shadow: var(--shadow);
+    }
+
+    .hero-board::before,
+    .hero-board::after {
+      position: absolute;
+      right: -74px;
+      bottom: -130px;
+      width: 330px;
+      height: 330px;
+      border: 1px solid rgba(255, 254, 250, .18);
+      border-radius: 50%;
+      content: '';
+    }
+
+    .hero-board::after {
+      right: -24px;
+      bottom: -80px;
+      width: 230px;
+      height: 230px;
+      border-color: rgba(255, 254, 250, .12);
+    }
+
+    .board-label {
+      position: relative;
+      z-index: 1;
+      color: #d9c6b9;
+      font-size: 11px;
+      font-weight: 750;
+      letter-spacing: .16em;
+      text-transform: uppercase;
+    }
+
+    .board-list {
+      position: relative;
+      z-index: 1;
+      display: grid;
+      gap: 0;
+      margin: 44px 0 8px;
+    }
+
+    .board-list span {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      padding: 15px 0;
+      border-bottom: 1px solid rgba(255, 254, 250, .19);
+      font-size: clamp(21px, 2.3vw, 27px);
+      font-weight: 640;
+      letter-spacing: -.04em;
+    }
+
+    .board-list span::before {
+      width: 7px;
+      height: 7px;
+      border-radius: 50%;
+      background: #e88b65;
+      content: '';
+    }
+
+    .board-foot {
+      position: relative;
+      z-index: 1;
+      width: fit-content;
+      margin: 23px 0 0;
+      padding: 8px 12px;
+      border: 1px solid rgba(255, 254, 250, .23);
+      border-radius: 999px;
+      color: #e9e0d6;
+      font-size: 12px;
+      letter-spacing: .04em;
+    }
+
+    .services-section {
+      padding: 82px 0 92px;
+      background: var(--surface);
+    }
+
+    .section-heading {
+      display: flex;
+      align-items: end;
+      justify-content: space-between;
+      gap: 28px;
+      margin-bottom: 36px;
+    }
+
+    .section-heading .eyebrow {
+      margin-bottom: 13px;
+    }
+
+    h2 {
+      margin-bottom: 0;
+      font-size: clamp(34px, 4vw, 48px);
+      font-weight: 740;
+      letter-spacing: -.055em;
+      line-height: 1.08;
+    }
+
+    .section-intro {
+      max-width: 310px;
+      margin: 0 0 4px;
+      color: var(--muted);
+    }
+
+    .service-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 14px;
+    }
+
+    .service-card {
+      min-height: 208px;
+      padding: 24px;
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      background: var(--surface);
+      transition: border-color .18s ease, transform .18s ease, box-shadow .18s ease;
+    }
+
+    .service-card:hover {
+      transform: translateY(-3px);
+      border-color: rgba(200, 91, 56, .45);
+      box-shadow: 0 12px 30px rgba(24, 38, 41, .06);
+    }
+
+    .service-index {
+      display: inline-block;
+      margin-bottom: 25px;
+      color: var(--accent-dark);
+      font-size: 12px;
+      font-weight: 800;
+      letter-spacing: .13em;
+    }
+
+    .service-card h3 {
+      margin-bottom: 8px;
+      font-size: 19px;
+      font-weight: 720;
+      letter-spacing: -.03em;
+      line-height: 1.25;
+    }
+
+    .service-card p {
+      margin-bottom: 0;
+      color: var(--muted);
+      font-size: 15px;
+      line-height: 1.55;
+    }
+
+    .trust-section {
+      padding: 72px 0;
+      background: #ede9df;
+    }
+
+    .trust-panel {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 32px;
+    }
+
+    .trust-copy .eyebrow {
+      margin-bottom: 11px;
+    }
+
+    .trust-copy h2 {
+      font-size: clamp(30px, 3.5vw, 42px);
+    }
+
+    .rating {
+      display: flex;
+      align-items: center;
+      gap: clamp(20px, 4vw, 48px);
+      padding: 25px 30px;
+      border: 1px solid rgba(24, 38, 41, .12);
+      border-radius: var(--radius);
+      background: rgba(255, 254, 250, .72);
+    }
+
+    .rating-score {
+      color: var(--night);
+      font-size: clamp(42px, 5vw, 58px);
+      font-weight: 780;
+      letter-spacing: -.07em;
+      line-height: 1;
+      white-space: nowrap;
+    }
+
+    .rating-details {
+      display: grid;
+      gap: 3px;
+      color: var(--ink-soft);
+      font-size: 15px;
+      line-height: 1.4;
+    }
+
+    .rating-details strong {
+      color: var(--ink);
+      font-size: 16px;
+    }
+
+    .contact-section {
+      padding: 92px 0;
+    }
+
+    .contact-grid {
+      display: grid;
+      grid-template-columns: minmax(0, .9fr) minmax(0, 1.1fr);
+      gap: 70px;
+      align-items: start;
+    }
+
+    .contact-copy h2 {
+      max-width: 450px;
+      margin-bottom: 17px;
+    }
+
+    .contact-copy > p:not(.eyebrow) {
+      max-width: 400px;
+      margin-bottom: 0;
+      color: var(--muted);
+    }
+
+    .contact-details {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 14px;
+    }
+
+    .detail-card {
+      min-height: 150px;
+      padding: 22px;
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      background: var(--surface);
+    }
+
+    .detail-card.address-card {
+      grid-column: 1 / -1;
+    }
+
+    .detail-label {
+      display: block;
+      margin-bottom: 13px;
+      color: var(--muted);
+      font-size: 11px;
+      font-weight: 780;
+      letter-spacing: .14em;
+      text-transform: uppercase;
+    }
+
+    .detail-value {
+      margin: 0;
+      font-size: 18px;
+      font-weight: 680;
+      letter-spacing: -.025em;
+      line-height: 1.5;
+    }
+
+    .detail-value a {
+      text-decoration-thickness: 1px;
+      text-underline-offset: 4px;
+    }
+
+    address {
+      font-style: normal;
+    }
+
+    .directions-link {
+      display: inline-flex;
+      min-height: 44px;
+      align-items: center;
+      margin-top: 12px;
+      color: var(--accent-dark);
+      font-size: 15px;
+      font-weight: 720;
+      text-underline-offset: 4px;
+    }
+
+    .site-footer {
+      padding: 27px 0 30px;
+      border-top: 1px solid var(--line);
+      background: var(--paper);
+    }
+
+    .footer-inner {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px 24px;
+    }
+
+    .footer-name {
+      margin: 0;
+      font-size: 15px;
+      font-weight: 740;
+    }
+
+    .footer-note,
+    .footer-tagline {
+      margin: 0;
+      color: var(--muted);
+      font-size: 13px;
+    }
+
+    .mobile-callbar {
+      display: none;
+    }
+
+    @media (max-width: 850px) {
+      .hero {
+        padding: 66px 0 74px;
+      }
+
+      .hero-grid {
+        grid-template-columns: minmax(0, 1fr) minmax(270px, .82fr);
+        gap: 34px;
+      }
+
+      .hero-board {
+        min-height: 340px;
+        padding: 25px;
+      }
+
+      .contact-grid {
+        gap: 38px;
+      }
+
+      .trust-panel {
+        align-items: flex-start;
+        flex-direction: column;
+      }
+    }
+
+    @media (max-width: 680px) {
+      html {
+        scroll-padding-top: 84px;
+      }
+
+      body {
+        padding-bottom: 78px;
+      }
+
+      .container {
+        width: min(100% - 36px, var(--container));
+      }
+
+      .header-inner {
+        min-height: 72px;
+        gap: 12px;
+      }
+
+      .brand-mark {
+        width: 38px;
+        height: 38px;
+      }
+
+      .brand-name {
+        font-size: 15px;
+      }
+
+      .brand-trade {
+        font-size: 11px;
+      }
+
+      .header-call {
+        min-height: 44px;
+        padding: 11px 15px;
+        font-size: 14px;
+      }
+
+      .hero {
+        padding: 58px 0 62px;
+      }
+
+      .hero-grid {
+        grid-template-columns: 1fr;
+        gap: 38px;
+      }
+
+      h1 {
+        max-width: 600px;
+        font-size: clamp(43px, 12vw, 64px);
+      }
+
+      .hero-copy > p:not(.eyebrow) {
+        font-size: 17px;
+      }
+
+      .hero-board {
+        min-height: 310px;
+      }
+
+      .services-section {
+        padding: 62px 0 68px;
+      }
+
+      .section-heading {
+        display: block;
+        margin-bottom: 27px;
+      }
+
+      .section-intro {
+        margin-top: 14px;
+      }
+
+      .service-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 10px;
+      }
+
+      .service-card {
+        min-height: 198px;
+        padding: 18px;
+      }
+
+      .service-index {
+        margin-bottom: 21px;
+      }
+
+      .service-card h3 {
+        font-size: 17px;
+      }
+
+      .service-card p {
+        font-size: 14px;
+      }
+
+      .trust-section {
+        padding: 58px 0;
+      }
+
+      .rating {
+        width: 100%;
+        justify-content: space-between;
+        padding: 22px;
+      }
+
+      .contact-section {
+        padding: 66px 0;
+      }
+
+      .contact-grid {
+        grid-template-columns: 1fr;
+        gap: 29px;
+      }
+
+      .contact-details {
+        grid-template-columns: 1fr;
+      }
+
+      .detail-card.address-card {
+        grid-column: auto;
+      }
+
+      .detail-card {
+        min-height: 0;
+      }
+
+      .footer-inner {
+        align-items: flex-start;
+        flex-direction: column;
+        gap: 7px;
+      }
+
+      .mobile-callbar {
+        position: fixed;
+        z-index: 15;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        display: block;
+        padding: 10px 18px calc(10px + env(safe-area-inset-bottom));
+        border-top: 1px solid rgba(255, 254, 250, .16);
+        background: var(--night);
+        box-shadow: 0 -10px 30px rgba(24, 38, 41, .16);
+      }
+
+      .mobile-callbar a {
+        display: flex;
+        min-height: 50px;
+        align-items: center;
+        justify-content: center;
+        border-radius: 999px;
+        background: var(--accent);
+        color: #fffefa;
+        font-size: 16px;
+        font-weight: 760;
+        text-decoration: none;
+      }
+
+      .mobile-callbar a:hover {
+        background: var(--accent-dark);
+      }
+    }
+
+    @media (max-width: 390px) {
+      .container {
+        width: calc(100% - 28px);
+      }
+
+      .brand-trade {
+        max-width: 160px;
+        font-size: 10px;
+      }
+
+      .header-call {
+        padding-inline: 12px;
+      }
+
+      .service-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .service-card {
+        min-height: 0;
+      }
+
+      .service-index {
+        margin-bottom: 15px;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      *,
+      *::before,
+      *::after {
+        scroll-behavior: auto !important;
+        transition-duration: .01ms !important;
+      }
+    }
+  </style>
+</head>
+<body>
+  <a class='skip-link' href='#main-content'>Skip to content</a>
+
+  <header class='site-header'>
+    <div class='container header-inner'>
+      <a class='brand' href='#main-content' aria-label='Mayhem Mechanical LLC home'>
+        <span class='brand-mark' aria-hidden='true'>MM</span>
+        <span class='brand-copy'>
+          <span class='brand-name'>Mayhem Mechanical LLC</span>
+          <span class='brand-trade'>Heating, cooling and plumbing contractor</span>
+        </span>
+      </a>
+      <a class='button button-primary header-call' href='tel:+16157844176' aria-label='Call Mayhem Mechanical LLC at (615) 784-4176'>Call (615) 784-4176</a>
+    </div>
+  </header>
+
+  <main id='main-content'>
+    <section class='hero' aria-labelledby='hero-title'>
+      <div class='container hero-grid'>
+        <div class='hero-copy'>
+          <p class='eyebrow'>Lebanon, TN</p>
+          <h1 id='hero-title'>Heating, cooling &amp; plumbing, all in one place.</h1>
+          <p>Mayhem Mechanical LLC is a heating, cooling and plumbing contractor serving Lebanon, TN.</p>
+          <div class='hero-actions'>
+            <a class='button button-primary' href='tel:+16157844176' aria-label='Call Mayhem Mechanical LLC at (615) 784-4176'>Call (615) 784-4176</a>
+            <a class='button button-quiet' href='https://maps.google.com/?q=1633+W+Main+St+Ste+500+Lebanon+TN+37087'>Get directions</a>
+          </div>
+        </div>
+        <div class='hero-board' aria-hidden='true'>
+          <span class='board-label'>Mayhem Mechanical LLC</span>
+          <div class='board-list'>
+            <span>Heating</span>
+            <span>Cooling</span>
+            <span>Plumbing</span>
+          </div>
+          <p class='board-foot'>Lebanon, TN</p>
+        </div>
+      </div>
+    </section>
+
+    <section class='services-section' aria-labelledby='services-title'>
+      <div class='container'>
+        <div class='section-heading'>
+          <div>
+            <p class='eyebrow'>Services</p>
+            <h2 id='services-title'>Heating, cooling &amp; plumbing</h2>
+          </div>
+          <p class='section-intro'>Typical categories for a heating, cooling and plumbing contractor.</p>
+        </div>
+        <div class='service-grid'>
+          <article class='service-card'>
+            <span class='service-index'>01</span>
+            <h3>Heating repair and replacement</h3>
+            <p>Repair and replacement work for heating systems.</p>
+          </article>
+          <article class='service-card'>
+            <span class='service-index'>02</span>
+            <h3>Air conditioning service</h3>
+            <p>Service for air conditioning systems.</p>
+          </article>
+          <article class='service-card'>
+            <span class='service-index'>03</span>
+            <h3>Plumbing repair</h3>
+            <p>Repair work for plumbing systems.</p>
+          </article>
+          <article class='service-card'>
+            <span class='service-index'>04</span>
+            <h3>Drain and sewer work</h3>
+            <p>Work related to drains and sewer systems.</p>
+          </article>
+          <article class='service-card'>
+            <span class='service-index'>05</span>
+            <h3>Water heater service</h3>
+            <p>Service for water heaters.</p>
+          </article>
+          <article class='service-card'>
+            <span class='service-index'>06</span>
+            <h3>Preventive maintenance</h3>
+            <p>Preventive maintenance for trade equipment.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class='trust-section' aria-labelledby='rating-title'>
+      <div class='container trust-panel'>
+        <div class='trust-copy'>
+          <p class='eyebrow'>Google rating</p>
+          <h2 id='rating-title'>Customer rating on Google</h2>
+        </div>
+        <div class='rating' aria-label='5.0 out of 5 from 307 Google reviews'>
+          <span class='rating-score'>5.0</span>
+          <span class='rating-details'>
+            <strong>out of 5</strong>
+            <span>307 Google reviews</span>
+          </span>
+        </div>
+      </div>
+    </section>
+
+    <section class='contact-section' aria-labelledby='contact-title'>
+      <div class='container contact-grid'>
+        <div class='contact-copy'>
+          <p class='eyebrow'>Contact</p>
+          <h2 id='contact-title'>Find Mayhem Mechanical LLC</h2>
+          <p>Call or use the directions link for location details.</p>
+        </div>
+        <div class='contact-details'>
+          <div class='detail-card'>
+            <span class='detail-label'>Phone</span>
+            <p class='detail-value'><a href='tel:+16157844176' aria-label='Call Mayhem Mechanical LLC at (615) 784-4176'>(615) 784-4176</a></p>
+          </div>
+          <div class='detail-card address-card'>
+            <span class='detail-label'>Address</span>
+            <address class='detail-value'>1633 W Main St Ste 500<br>Lebanon, TN 37087</address>
+            <a class='directions-link' href='https://maps.google.com/?q=1633+W+Main+St+Ste+500+Lebanon+TN+37087'>Get directions</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <aside class='mobile-callbar' aria-label='Call Mayhem Mechanical LLC'>
+    <a href='tel:+16157844176' aria-label='Call Mayhem Mechanical LLC at (615) 784-4176'>Call (615) 784-4176</a>
+  </aside>
+
+  <footer class='site-footer'>
+    <div class='container footer-inner'>
+      <p class='footer-name'>Mayhem Mechanical LLC</p>
+      <p class='footer-note'>Concept preview — not the live site</p>
+      <p class='footer-tagline'>This page is a design concept.</p>
+    </div>
+  </footer>
+</body>
+</html>
