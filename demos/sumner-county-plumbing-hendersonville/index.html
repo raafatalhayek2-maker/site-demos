@@ -1,0 +1,875 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Sumner County Plumbing | Plumbing Contractor</title>
+  <style>
+    :root {
+      color-scheme: light;
+      --ink: #172a2b;
+      --muted: #5c6c6b;
+      --paper: #f6f7f2;
+      --surface: #ffffff;
+      --line: #dce4df;
+      --accent: #08796d;
+      --accent-deep: #075b53;
+      --accent-soft: #dcefeb;
+      --warm: #e9a457;
+      --content: 1160px;
+      --radius: 18px;
+      --shadow: 0 18px 50px rgba(23, 42, 43, 0.08);
+    }
+
+    *,
+    *::before,
+    *::after {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+      scroll-padding-top: 100px;
+    }
+
+    body {
+      margin: 0;
+      background: var(--paper);
+      color: var(--ink);
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      font-size: 16px;
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    a {
+      color: inherit;
+      text-decoration-thickness: 1px;
+      text-underline-offset: 4px;
+    }
+
+    a:focus-visible {
+      outline: 3px solid var(--warm);
+      outline-offset: 4px;
+      border-radius: 4px;
+    }
+
+    .wrap {
+      width: min(calc(100% - 48px), var(--content));
+      margin-inline: auto;
+    }
+
+    .eyebrow {
+      margin: 0 0 14px;
+      color: var(--accent-deep);
+      font-size: 0.75rem;
+      font-weight: 750;
+      letter-spacing: 0.16em;
+      line-height: 1.4;
+      text-transform: uppercase;
+    }
+
+    .site-header {
+      position: sticky;
+      z-index: 10;
+      top: 0;
+      border-bottom: 1px solid rgba(220, 228, 223, 0.9);
+      background: rgba(246, 247, 242, 0.94);
+      backdrop-filter: blur(14px);
+    }
+
+    .header-inner {
+      display: flex;
+      min-height: 82px;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+    }
+
+    .brand {
+      display: inline-flex;
+      align-items: center;
+      gap: 13px;
+      color: var(--ink);
+      text-decoration: none;
+    }
+
+    .brand-mark {
+      display: grid;
+      width: 42px;
+      height: 42px;
+      flex: 0 0 auto;
+      place-items: center;
+      border-radius: 13px;
+      background: var(--accent);
+      color: #fff;
+      font-size: 0.9rem;
+      font-weight: 800;
+      letter-spacing: -0.06em;
+    }
+
+    .brand-copy {
+      display: grid;
+      line-height: 1.25;
+    }
+
+    .brand-name {
+      font-size: 1rem;
+      font-weight: 760;
+      letter-spacing: -0.025em;
+    }
+
+    .brand-trade {
+      margin-top: 4px;
+      color: var(--muted);
+      font-size: 0.76rem;
+      font-weight: 550;
+    }
+
+    .header-nav {
+      display: flex;
+      align-items: center;
+      gap: 28px;
+      margin-left: auto;
+    }
+
+    .header-nav a {
+      min-height: 44px;
+      display: inline-flex;
+      align-items: center;
+      color: var(--muted);
+      font-size: 0.9rem;
+      font-weight: 650;
+      text-decoration: none;
+    }
+
+    .header-nav a:hover,
+    .text-link:hover {
+      color: var(--accent-deep);
+    }
+
+    .button {
+      display: inline-flex;
+      min-height: 50px;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      padding: 0 22px;
+      border: 1px solid transparent;
+      border-radius: 999px;
+      background: var(--accent);
+      color: #fff;
+      font-size: 0.94rem;
+      font-weight: 720;
+      line-height: 1.2;
+      text-decoration: none;
+      transition: background-color 160ms ease, transform 160ms ease;
+    }
+
+    .button:hover {
+      background: var(--accent-deep);
+      transform: translateY(-1px);
+    }
+
+    .button--small {
+      min-height: 46px;
+      padding-inline: 19px;
+      font-size: 0.88rem;
+    }
+
+    .button--light {
+      border-color: var(--line);
+      background: var(--surface);
+      color: var(--ink);
+    }
+
+    .button--light:hover {
+      border-color: var(--accent);
+      background: var(--accent-soft);
+      color: var(--accent-deep);
+    }
+
+    .hero {
+      position: relative;
+      overflow: hidden;
+      padding: clamp(76px, 10vw, 132px) 0 clamp(78px, 9vw, 118px);
+    }
+
+    .hero::before {
+      position: absolute;
+      z-index: -1;
+      top: 8%;
+      right: -18%;
+      width: min(55vw, 690px);
+      aspect-ratio: 1;
+      border: 1px solid rgba(8, 121, 109, 0.11);
+      border-radius: 50%;
+      content: "";
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 1.12fr) minmax(280px, 0.88fr);
+      align-items: center;
+      gap: clamp(40px, 8vw, 110px);
+    }
+
+    .hero h1 {
+      max-width: 720px;
+      margin: 0;
+      font-size: clamp(2.8rem, 6.2vw, 5.4rem);
+      font-weight: 760;
+      letter-spacing: -0.075em;
+      line-height: 0.99;
+    }
+
+    .hero h1 span {
+      color: var(--accent);
+    }
+
+    .hero-copy {
+      max-width: 610px;
+      margin: 24px 0 0;
+      color: var(--muted);
+      font-size: clamp(1.05rem, 1.6vw, 1.2rem);
+      line-height: 1.7;
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-top: 32px;
+    }
+
+    .hero-art {
+      position: relative;
+      display: grid;
+      min-height: 380px;
+      place-items: center;
+      overflow: hidden;
+      border: 1px solid rgba(8, 121, 109, 0.12);
+      border-radius: 32px;
+      background: linear-gradient(145deg, #e6f1ec 0%, #f1f4ed 58%, #d9ebe5 100%);
+    }
+
+    .hero-art::before,
+    .hero-art::after {
+      position: absolute;
+      border: 1px solid rgba(8, 121, 109, 0.18);
+      border-radius: 50%;
+      content: "";
+    }
+
+    .hero-art::before {
+      width: 260px;
+      height: 260px;
+    }
+
+    .hero-art::after {
+      width: 330px;
+      height: 330px;
+    }
+
+    .drop-shape {
+      position: relative;
+      z-index: 1;
+      width: 145px;
+      height: 178px;
+      border: 1px solid rgba(255, 255, 255, 0.65);
+      border-radius: 72% 28% 58% 42% / 58% 42% 58% 42%;
+      background: linear-gradient(145deg, #139b89, #075b53);
+      box-shadow: 0 24px 58px rgba(7, 91, 83, 0.25);
+      transform: rotate(-10deg);
+    }
+
+    .drop-shape::after {
+      position: absolute;
+      top: 32px;
+      left: 34px;
+      width: 20px;
+      height: 58px;
+      border-radius: 50%;
+      background: rgba(255, 255, 255, 0.22);
+      content: "";
+      transform: rotate(18deg);
+    }
+
+    .art-label {
+      position: absolute;
+      right: 22px;
+      bottom: 22px;
+      left: 22px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      padding: 17px 19px;
+      border: 1px solid rgba(255, 255, 255, 0.75);
+      border-radius: 15px;
+      background: rgba(255, 255, 255, 0.78);
+      color: var(--ink);
+      font-size: 0.82rem;
+      font-weight: 700;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      backdrop-filter: blur(10px);
+    }
+
+    .art-label span:last-child {
+      color: var(--accent);
+    }
+
+    .section {
+      padding: clamp(72px, 9vw, 112px) 0;
+    }
+
+    .section-heading {
+      display: flex;
+      align-items: end;
+      justify-content: space-between;
+      gap: 28px;
+      margin-bottom: 36px;
+    }
+
+    .section-heading h2,
+    .contact-copy h2 {
+      margin: 0;
+      font-size: clamp(2rem, 4vw, 3.35rem);
+      font-weight: 740;
+      letter-spacing: -0.065em;
+      line-height: 1.08;
+    }
+
+    .section-heading .eyebrow {
+      margin-bottom: 10px;
+    }
+
+    .service-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 14px;
+    }
+
+    .service-card {
+      min-height: 194px;
+      padding: 25px 25px 23px;
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      background: var(--surface);
+      transition: border-color 160ms ease, transform 160ms ease, box-shadow 160ms ease;
+    }
+
+    .service-card:hover {
+      border-color: rgba(8, 121, 109, 0.4);
+      box-shadow: var(--shadow);
+      transform: translateY(-3px);
+    }
+
+    .service-index {
+      display: inline-grid;
+      width: 34px;
+      height: 34px;
+      place-items: center;
+      border-radius: 11px;
+      background: var(--accent-soft);
+      color: var(--accent-deep);
+      font-size: 0.76rem;
+      font-weight: 800;
+    }
+
+    .service-card h3 {
+      margin: 22px 0 7px;
+      font-size: 1.12rem;
+      font-weight: 730;
+      letter-spacing: -0.025em;
+      line-height: 1.3;
+    }
+
+    .service-card p {
+      margin: 0;
+      color: var(--muted);
+      font-size: 0.96rem;
+      line-height: 1.55;
+    }
+
+    .trust-section {
+      padding: 72px 0;
+      background: var(--ink);
+      color: #fff;
+    }
+
+    .trust-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 32px;
+    }
+
+    .trust-section .eyebrow {
+      color: #9dd8cd;
+    }
+
+    .trust-section h2 {
+      margin: 0;
+      font-size: clamp(1.75rem, 3.5vw, 2.7rem);
+      font-weight: 720;
+      letter-spacing: -0.055em;
+      line-height: 1.15;
+    }
+
+    .rating {
+      display: flex;
+      align-items: baseline;
+      gap: 17px;
+      white-space: nowrap;
+    }
+
+    .rating-number {
+      font-size: clamp(3.5rem, 7vw, 5.8rem);
+      font-weight: 760;
+      letter-spacing: -0.085em;
+      line-height: 1;
+    }
+
+    .rating-detail {
+      display: grid;
+      gap: 5px;
+      color: #d4e1dd;
+      font-size: 0.95rem;
+      line-height: 1.35;
+    }
+
+    .contact-section {
+      padding: clamp(76px, 9vw, 112px) 0;
+    }
+
+    .contact-panel {
+      display: grid;
+      grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr);
+      gap: clamp(38px, 8vw, 100px);
+      padding: clamp(30px, 6vw, 68px);
+      border: 1px solid var(--line);
+      border-radius: 28px;
+      background: var(--surface);
+      box-shadow: var(--shadow);
+    }
+
+    .contact-copy h2 {
+      max-width: 400px;
+    }
+
+    .contact-copy p:last-child {
+      max-width: 380px;
+      margin: 18px 0 0;
+      color: var(--muted);
+      font-size: 1rem;
+    }
+
+    .contact-details {
+      display: grid;
+      align-content: center;
+      gap: 21px;
+    }
+
+    .contact-item {
+      padding-bottom: 18px;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .contact-item:last-child {
+      padding-bottom: 0;
+      border-bottom: 0;
+    }
+
+    .contact-label {
+      display: block;
+      margin-bottom: 5px;
+      color: var(--muted);
+      font-size: 0.75rem;
+      font-weight: 750;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+    }
+
+    .contact-value {
+      font-size: 1.08rem;
+      font-weight: 650;
+      line-height: 1.5;
+    }
+
+    .text-link {
+      color: var(--accent-deep);
+      font-weight: 720;
+      text-decoration: underline;
+    }
+
+    .site-footer {
+      padding: 27px 0 34px;
+      border-top: 1px solid var(--line);
+    }
+
+    .footer-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+      color: var(--muted);
+      font-size: 0.87rem;
+    }
+
+    .footer-brand {
+      color: var(--ink);
+      font-weight: 730;
+    }
+
+    .footer-note {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: flex-end;
+      gap: 6px 16px;
+      text-align: right;
+    }
+
+    .preview-label {
+      color: var(--accent-deep);
+      font-weight: 720;
+    }
+
+    .mobile-callbar {
+      display: none;
+    }
+
+    @media (max-width: 800px) {
+      .header-nav {
+        display: none;
+      }
+
+      .hero-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .hero-art {
+        min-height: 300px;
+      }
+
+      .service-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+
+      .contact-panel {
+        grid-template-columns: 1fr;
+        gap: 34px;
+      }
+    }
+
+    @media (max-width: 560px) {
+      html {
+        scroll-padding-top: 78px;
+      }
+
+      body {
+        padding-bottom: 74px;
+      }
+
+      .wrap {
+        width: min(calc(100% - 36px), var(--content));
+      }
+
+      .header-inner {
+        min-height: 72px;
+        gap: 12px;
+      }
+
+      .brand {
+        gap: 10px;
+      }
+
+      .brand-mark {
+        width: 38px;
+        height: 38px;
+        border-radius: 12px;
+      }
+
+      .brand-name {
+        font-size: 0.91rem;
+      }
+
+      .brand-trade {
+        font-size: 0.72rem;
+      }
+
+      .button--small {
+        min-height: 44px;
+        padding-inline: 13px;
+        font-size: 0.81rem;
+      }
+
+      .hero {
+        padding-top: 70px;
+        padding-bottom: 72px;
+      }
+
+      .hero h1 {
+        font-size: clamp(2.75rem, 12vw, 4rem);
+      }
+
+      .hero-actions {
+        display: grid;
+        grid-template-columns: 1fr;
+      }
+
+      .hero-actions .button {
+        width: 100%;
+      }
+
+      .hero-art {
+        min-height: 260px;
+        border-radius: 24px;
+      }
+
+      .drop-shape {
+        width: 112px;
+        height: 140px;
+      }
+
+      .art-label {
+        right: 14px;
+        bottom: 14px;
+        left: 14px;
+        padding: 13px 14px;
+        font-size: 0.72rem;
+      }
+
+      .section-heading {
+        margin-bottom: 25px;
+      }
+
+      .service-grid {
+        grid-template-columns: 1fr;
+        gap: 11px;
+      }
+
+      .service-card {
+        min-height: 0;
+        padding: 21px;
+      }
+
+      .service-card h3 {
+        margin-top: 16px;
+      }
+
+      .trust-section {
+        padding: 56px 0;
+      }
+
+      .trust-inner {
+        align-items: flex-start;
+        flex-direction: column;
+        gap: 24px;
+      }
+
+      .rating-number {
+        font-size: 4.25rem;
+      }
+
+      .contact-panel {
+        gap: 29px;
+        padding: 27px 22px;
+        border-radius: 22px;
+      }
+
+      .footer-inner {
+        align-items: flex-start;
+        flex-direction: column;
+        gap: 10px;
+      }
+
+      .footer-note {
+        justify-content: flex-start;
+        text-align: left;
+      }
+
+      .mobile-callbar {
+        position: fixed;
+        z-index: 20;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        display: block;
+        padding: 10px 18px calc(10px + env(safe-area-inset-bottom));
+        border-top: 1px solid rgba(255, 255, 255, 0.18);
+        background: var(--ink);
+      }
+
+      .mobile-callbar a {
+        display: flex;
+        min-height: 52px;
+        align-items: center;
+        justify-content: center;
+        gap: 9px;
+        border-radius: 13px;
+        background: var(--accent);
+        color: #fff;
+        font-size: 1rem;
+        font-weight: 740;
+        text-decoration: none;
+      }
+
+      .mobile-callbar a:hover {
+        background: var(--accent-deep);
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      html {
+        scroll-behavior: auto;
+      }
+
+      *,
+      *::before,
+      *::after {
+        transition-duration: 0.01ms !important;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header class="site-header">
+    <div class="wrap header-inner">
+      <a class="brand" href="#top" aria-label="Sumner County Plumbing home">
+        <span class="brand-mark" aria-hidden="true">SC</span>
+        <span class="brand-copy">
+          <span class="brand-name">Sumner County Plumbing</span>
+          <span class="brand-trade">Plumbing contractor</span>
+        </span>
+      </a>
+      <nav class="header-nav" aria-label="Main navigation">
+        <a href="#services">Services</a>
+        <a href="#contact">Contact</a>
+      </nav>
+      <a class="button button--small" href="tel:+16157153111">Call (615) 715-3111</a>
+    </div>
+  </header>
+
+  <main id="top">
+    <section class="hero" aria-labelledby="hero-title">
+      <div class="wrap hero-grid">
+        <div>
+          <p class="eyebrow">Plumbing contractor · Hendersonville, TN</p>
+          <h1 id="hero-title">Plumbing problems deserve <span>a clear next step.</span></h1>
+          <p class="hero-copy">Typical plumbing services for a local contractor in Hendersonville, TN — call or get directions.</p>
+          <div class="hero-actions">
+            <a class="button" href="tel:+16157153111">Call (615) 715-3111</a>
+            <a class="button button--light" href="https://maps.google.com/?q=315+W+Main+St+Unit+34+Hendersonville+TN+37075">Get directions</a>
+          </div>
+        </div>
+        <div class="hero-art" aria-hidden="true">
+          <div class="drop-shape"></div>
+          <div class="art-label">
+            <span>Sumner County</span>
+            <span>Plumbing</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="services" aria-labelledby="services-title">
+      <div class="wrap">
+        <div class="section-heading">
+          <div>
+            <p class="eyebrow">Services</p>
+            <h2 id="services-title">Plumbing services</h2>
+          </div>
+        </div>
+        <div class="service-grid">
+          <article class="service-card">
+            <span class="service-index" aria-hidden="true">01</span>
+            <h3>Leak repair</h3>
+            <p>Repair work focused on plumbing leaks.</p>
+          </article>
+          <article class="service-card">
+            <span class="service-index" aria-hidden="true">02</span>
+            <h3>Drain cleaning</h3>
+            <p>Cleaning work for clogged or slow drains.</p>
+          </article>
+          <article class="service-card">
+            <span class="service-index" aria-hidden="true">03</span>
+            <h3>Water heater service</h3>
+            <p>Service related to water heaters.</p>
+          </article>
+          <article class="service-card">
+            <span class="service-index" aria-hidden="true">04</span>
+            <h3>Fixture installation</h3>
+            <p>Installation of plumbing fixtures.</p>
+          </article>
+          <article class="service-card">
+            <span class="service-index" aria-hidden="true">05</span>
+            <h3>Repiping</h3>
+            <p>Replacement of plumbing pipes.</p>
+          </article>
+          <article class="service-card">
+            <span class="service-index" aria-hidden="true">06</span>
+            <h3>Sewer line repair</h3>
+            <p>Repair work for sewer line issues.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="trust-section" aria-labelledby="rating-title">
+      <div class="wrap trust-inner">
+        <div>
+          <p class="eyebrow">Google reviews</p>
+          <h2 id="rating-title">Google rating</h2>
+        </div>
+        <div class="rating" aria-label="4.9 out of 5 from 194 Google reviews">
+          <span class="rating-number">4.9</span>
+          <span class="rating-detail">
+            <span>out of 5</span>
+            <span>194 Google reviews</span>
+          </span>
+        </div>
+      </div>
+    </section>
+
+    <section class="contact-section" id="contact" aria-labelledby="contact-title">
+      <div class="wrap contact-panel">
+        <div class="contact-copy">
+          <p class="eyebrow">Contact &amp; directions</p>
+          <h2 id="contact-title">Find Sumner County Plumbing</h2>
+          <p>Phone and address details, with a direct link to directions.</p>
+        </div>
+        <div class="contact-details">
+          <div class="contact-item">
+            <span class="contact-label">Phone</span>
+            <a class="contact-value text-link" href="tel:+16157153111">(615) 715-3111</a>
+          </div>
+          <div class="contact-item">
+            <span class="contact-label">Address</span>
+            <address class="contact-value" style="font-style: normal;">315 W Main St Unit 34, Hendersonville, TN 37075</address>
+          </div>
+          <div class="contact-item">
+            <span class="contact-label">Directions</span>
+            <a class="contact-value text-link" href="https://maps.google.com/?q=315+W+Main+St+Unit+34+Hendersonville+TN+37075">Get directions</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap footer-inner">
+      <span class="footer-brand">Sumner County Plumbing</span>
+      <div class="footer-note">
+        <span class="preview-label">Concept preview — not the live site</span>
+        <span>This page is a design concept.</span>
+      </div>
+    </div>
+  </footer>
+
+  <div class="mobile-callbar" aria-label="Mobile call bar">
+    <a href="tel:+16157153111" aria-label="Call Sumner County Plumbing at (615) 715-3111">Call (615) 715-3111</a>
+  </div>
+</body>
+</html>
