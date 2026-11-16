@@ -1,0 +1,367 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#111512">
+  <title>J.Knipe Electrical llc | Pottstown, PA</title>
+  <style>
+    :root {
+      color-scheme: dark;
+      --ink: #f4f3ee;
+      --muted: #b7bcb5;
+      --base: #111512;
+      --panel: #191e1a;
+      --line: rgba(237, 242, 232, .13);
+      --accent: #ffc247;
+      --accent-deep: #eaa91e;
+      --page: 1160px;
+    }
+    *, *::before, *::after { box-sizing: border-box; }
+    html { scroll-behavior: smooth; scroll-padding-top: 100px; }
+    body {
+      margin: 0;
+      background: var(--base);
+      color: var(--ink);
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+    }
+    a { color: inherit; }
+    .wrap { width: min(var(--page), calc(100% - 48px)); margin-inline: auto; }
+    .site-header {
+      position: sticky;
+      top: 0;
+      z-index: 20;
+      border-bottom: 1px solid var(--line);
+      background: rgba(17, 21, 18, .92);
+      backdrop-filter: blur(16px);
+    }
+    .header-inner {
+      min-height: 82px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+    }
+    .brand { text-decoration: none; display: grid; gap: 1px; }
+    .brand-name { font-size: 1.08rem; font-weight: 750; letter-spacing: -.035em; }
+    .brand-trade { color: var(--muted); font-size: .76rem; letter-spacing: .025em; }
+    .button {
+      min-height: 48px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      padding: 0 20px;
+      border: 1px solid transparent;
+      border-radius: 999px;
+      background: var(--accent);
+      color: #19160e;
+      font-size: .92rem;
+      font-weight: 750;
+      text-decoration: none;
+      transition: background .2s ease, transform .2s ease, border-color .2s ease;
+    }
+    .button:hover { background: #ffd16e; transform: translateY(-1px); }
+    .button:focus-visible, a:focus-visible, input:focus-visible, textarea:focus-visible {
+      outline: 3px solid #fff;
+      outline-offset: 4px;
+    }
+    .button-outline {
+      border-color: rgba(244, 243, 238, .3);
+      background: transparent;
+      color: var(--ink);
+    }
+    .button-outline:hover { border-color: var(--accent); background: rgba(255, 194, 71, .08); }
+    .phone-icon { width: 17px; height: 17px; flex: none; }
+    .hero {
+      position: relative;
+      isolation: isolate;
+      overflow: hidden;
+      padding: clamp(80px, 11vw, 146px) 0 clamp(86px, 10vw, 132px);
+      border-bottom: 1px solid var(--line);
+      background: radial-gradient(ellipse at 83% 42%, rgba(255, 194, 71, .11), transparent 36%), linear-gradient(130deg, #111512 25%, #171d18 100%);
+    }
+    .hero::before, .hero::after { content: ""; position: absolute; z-index: -1; pointer-events: none; }
+    .hero::before {
+      width: 560px; height: 560px; right: max(-215px, calc((100vw - var(--page)) / 2 - 110px)); top: 50%;
+      border: 1px solid rgba(255, 194, 71, .2); border-radius: 50%; transform: translateY(-50%);
+      box-shadow: 0 0 0 44px rgba(255, 194, 71, .025), 0 0 0 90px rgba(255, 194, 71, .02);
+    }
+    .hero::after {
+      width: 260px; height: 1px; right: 3%; top: 50%; background: linear-gradient(90deg, transparent, rgba(255, 194, 71, .48), transparent); transform: rotate(-42deg);
+    }
+    .hero-content { max-width: 790px; }
+    .eyebrow {
+      display: inline-flex; align-items: center; gap: 11px; margin: 0 0 24px;
+      color: var(--accent); font-size: .76rem; font-weight: 750; letter-spacing: .16em; text-transform: uppercase;
+    }
+    .eyebrow::before { content: ""; width: 28px; height: 1px; background: currentColor; }
+    h1 {
+      max-width: 850px; margin: 0;
+      font-size: clamp(2.75rem, 7.2vw, 6rem);
+      line-height: .99; letter-spacing: -.075em; font-weight: 720;
+    }
+    h1 span { color: var(--accent); }
+    .hero-copy { max-width: 650px; margin: 26px 0 0; color: #c5c9c1; font-size: clamp(1.05rem, 1.8vw, 1.22rem); line-height: 1.7; }
+    .hero-actions { display: flex; flex-wrap: wrap; gap: 13px; margin-top: 34px; }
+    .hero-note { margin: 21px 0 0; color: var(--muted); font-size: .88rem; }
+    .section { padding: clamp(74px, 9vw, 112px) 0; }
+    .section-heading { max-width: 680px; margin-bottom: 39px; }
+    .section-heading h2 { margin: 0; font-size: clamp(2.1rem, 4.4vw, 3.6rem); line-height: 1.06; letter-spacing: -.06em; }
+    .section-heading p { margin: 16px 0 0; max-width: 590px; color: var(--muted); }
+    .services { background: #141915; }
+    .service-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; }
+    .service-card {
+      position: relative; min-height: 208px; padding: 27px 25px 25px;
+      border: 1px solid var(--line); border-radius: 13px;
+      background: linear-gradient(145deg, rgba(255,255,255,.035), rgba(255,255,255,.012));
+      box-shadow: 0 12px 34px rgba(0,0,0,.1);
+    }
+    .service-index { color: var(--accent); font-size: .72rem; font-weight: 750; letter-spacing: .12em; }
+    .service-card h3 { margin: 21px 0 9px; font-size: 1.2rem; line-height: 1.25; letter-spacing: -.025em; }
+    .service-card p { margin: 0; color: var(--muted); font-size: .94rem; line-height: 1.65; }
+    .trust { position: relative; overflow: hidden; }
+    .trust-layout { display: grid; grid-template-columns: .82fr 1.18fr; gap: clamp(40px, 8vw, 110px); align-items: start; }
+    .rating-panel {
+      padding: 34px; border: 1px solid rgba(255,194,71,.3); border-radius: 15px;
+      background: linear-gradient(150deg, rgba(255,194,71,.11), rgba(255,194,71,.025));
+    }
+    .rating-label { color: var(--muted); font-size: .83rem; letter-spacing: .09em; text-transform: uppercase; }
+    .rating-number { display: block; margin: 9px 0 2px; color: var(--accent); font-size: clamp(4.4rem, 8vw, 6.2rem); font-weight: 700; letter-spacing: -.09em; line-height: 1; }
+    .rating-caption { color: var(--ink); font-size: 1rem; }
+    .rating-stars { margin-top: 18px; color: var(--accent); font-size: 1.1rem; letter-spacing: .16em; }
+    .trust-list { display: grid; gap: 0; }
+    .trust-item { display: grid; grid-template-columns: 38px 1fr; gap: 17px; padding: 22px 0; border-bottom: 1px solid var(--line); }
+    .trust-item:first-child { padding-top: 0; }
+    .trust-mark { width: 34px; height: 34px; display: grid; place-items: center; border: 1px solid rgba(255,194,71,.4); border-radius: 50%; color: var(--accent); font-size: .85rem; }
+    .trust-item h3 { margin: 0 0 5px; font-size: 1.03rem; }
+    .trust-item p { margin: 0; color: var(--muted); font-size: .94rem; }
+    .contact { border-top: 1px solid var(--line); background: #171c18; }
+    .contact-grid { display: grid; grid-template-columns: 1fr .92fr; gap: clamp(40px, 8vw, 100px); align-items: start; }
+    .contact h2 { margin: 0; font-size: clamp(2.5rem, 5vw, 4.2rem); line-height: 1; letter-spacing: -.07em; }
+    .contact-intro { max-width: 510px; margin: 18px 0 32px; color: var(--muted); }
+    .contact-phone { display: inline-block; margin: 0 0 25px; color: var(--accent); font-size: clamp(1.8rem, 4vw, 2.7rem); font-weight: 700; letter-spacing: -.045em; text-decoration-thickness: 1px; text-underline-offset: 6px; }
+    .address-label { display: block; margin-bottom: 5px; color: var(--muted); font-size: .78rem; font-weight: 700; letter-spacing: .12em; text-transform: uppercase; }
+    address { font-style: normal; font-size: 1.05rem; }
+    .contact-form { padding: clamp(23px, 4vw, 34px); border: 1px solid var(--line); border-radius: 14px; background: rgba(8, 11, 9, .28); }
+    .contact-form h3 { margin: 0 0 21px; font-size: 1.25rem; letter-spacing: -.025em; }
+    .field { margin-bottom: 17px; }
+    .field label { display: block; margin-bottom: 7px; color: #e3e5df; font-size: .87rem; font-weight: 650; }
+    .field input, .field textarea {
+      width: 100%; min-height: 48px; padding: 12px 14px; border: 1px solid rgba(237,242,232,.2); border-radius: 8px;
+      background: #111512; color: var(--ink); font: inherit;
+    }
+    .field textarea { min-height: 112px; resize: vertical; }
+    .field input::placeholder, .field textarea::placeholder { color: #929991; }
+    .form-note { margin: 13px 0 0; color: var(--muted); font-size: .8rem; }
+    .contact-form .button { width: 100%; margin-top: 2px; }
+    .site-footer { padding: 25px 0; border-top: 1px solid var(--line); color: var(--muted); font-size: .84rem; }
+    .footer-inner { display: flex; align-items: center; justify-content: space-between; gap: 18px; }
+    .footer-name { color: var(--ink); font-weight: 700; }
+    .concept-label { color: #c8cbc5; }
+    .mobile-call { display: none; }
+    @media (max-width: 820px) {
+      .service-grid { grid-template-columns: repeat(2, 1fr); }
+      .trust-layout { grid-template-columns: 1fr 1.15fr; gap: 34px; }
+      .rating-panel { padding: 27px; }
+      .contact-grid { gap: 36px; }
+    }
+    @media (max-width: 620px) {
+      html { scroll-padding-top: 82px; }
+      .wrap { width: min(var(--page), calc(100% - 36px)); }
+      .header-inner { min-height: 72px; gap: 10px; }
+      .brand-name { font-size: .98rem; }
+      .brand-trade { max-width: 205px; font-size: .68rem; line-height: 1.35; }
+      .header-call { min-height: 42px; padding: 0 13px; font-size: .81rem; white-space: nowrap; }
+      .hero { padding: 76px 0 81px; }
+      .hero::before { width: 390px; height: 390px; right: -255px; top: 63%; }
+      .hero::after { right: -10%; top: 62%; }
+      h1 { font-size: clamp(2.75rem, 12.5vw, 4.5rem); }
+      .hero-copy { font-size: 1rem; }
+      .hero-actions { display: grid; grid-template-columns: 1fr; max-width: 360px; }
+      .hero-actions .button { width: 100%; }
+      .section { padding: 70px 0; }
+      .service-grid { grid-template-columns: 1fr; gap: 11px; }
+      .service-card { min-height: 0; padding: 23px; }
+      .service-card h3 { margin-top: 15px; }
+      .trust-layout, .contact-grid { grid-template-columns: 1fr; }
+      .trust-layout { gap: 34px; }
+      .rating-panel { max-width: 100%; }
+      .contact-grid { gap: 38px; }
+      .footer-inner { align-items: flex-start; flex-direction: column; gap: 7px; }
+      body { padding-bottom: 72px; }
+      .mobile-call {
+        position: fixed; z-index: 30; right: 0; bottom: 0; left: 0;
+        display: flex; min-height: 68px; align-items: center; justify-content: center; gap: 11px;
+        padding: 10px 18px calc(10px + env(safe-area-inset-bottom));
+        border-top: 1px solid rgba(255,255,255,.13); background: rgba(17,21,18,.96); backdrop-filter: blur(14px);
+        color: var(--accent); font-size: 1.03rem; font-weight: 750; text-decoration: none;
+      }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
+      *, *::before, *::after { transition-duration: .01ms !important; }
+    }
+  </style>
+</head>
+<body>
+  <header class="site-header">
+    <div class="wrap header-inner">
+      <a class="brand" href="#top" aria-label="J.Knipe Electrical llc — home">
+        <span class="brand-name">J.Knipe Electrical llc</span>
+        <span class="brand-trade">Residential, commercial and industrial electrical installation</span>
+      </a>
+      <a class="button header-call" href="tel:+12673122127" aria-label="Call J.Knipe Electrical llc at (267) 312-2127">
+        <svg class="phone-icon" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M7.1 3.5h2.4l1.2 4.2-1.8 1.5a15.2 15.2 0 0 0 5.9 5.9l1.5-1.8 4.2 1.2v2.4c0 1.1-.9 2-2 2A15.5 15.5 0 0 1 5.1 5.5c0-1.1.9-2 2-2Z" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        (267) 312-2127
+      </a>
+    </div>
+  </header>
+
+  <main id="top">
+    <section class="hero" aria-labelledby="hero-title">
+      <div class="wrap">
+        <div class="hero-content">
+          <p class="eyebrow">Pottstown, Pennsylvania</p>
+          <h1 id="hero-title">Electrical installation for <span>every kind of space.</span></h1>
+          <p class="hero-copy">Residential, commercial and industrial electrical installation serving Pottstown and the surrounding counties of Berks, Bucks, Montgomery and Philadelphia.</p>
+          <div class="hero-actions">
+            <a class="button" href="tel:+12673122127" aria-label="Call (267) 312-2127">
+              <svg class="phone-icon" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M7.1 3.5h2.4l1.2 4.2-1.8 1.5a15.2 15.2 0 0 0 5.9 5.9l1.5-1.8 4.2 1.2v2.4c0 1.1-.9 2-2 2A15.5 15.5 0 0 1 5.1 5.5c0-1.1.9-2 2-2Z" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              (267) 312-2127
+            </a>
+            <a class="button button-outline" href="#contact">Request an appointment</a>
+          </div>
+          <p class="hero-note">Based in Pottstown, PA · Serving Berks, Bucks, Montgomery and Philadelphia counties</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section services" id="services" aria-labelledby="services-title">
+      <div class="wrap">
+        <div class="section-heading">
+          <p class="eyebrow">Electrical services</p>
+          <h2 id="services-title">Installation, from home to industry.</h2>
+          <p>Electrical installation for residential, commercial and industrial spaces, with a photo gallery of past jobs and current projects.</p>
+        </div>
+        <div class="service-grid">
+          <article class="service-card">
+            <span class="service-index">01</span>
+            <h3>Residential electrical</h3>
+            <p>Installation and electrical work for houses across the Pottstown area.</p>
+          </article>
+          <article class="service-card">
+            <span class="service-index">02</span>
+            <h3>Commercial electrical</h3>
+            <p>Electrical installation for business premises, planned around your operating hours.</p>
+          </article>
+          <article class="service-card">
+            <span class="service-index">03</span>
+            <h3>Industrial electrical</h3>
+            <p>Industrial installation work, including project work and current jobs.</p>
+          </article>
+          <article class="service-card">
+            <span class="service-index">04</span>
+            <h3>Project installation</h3>
+            <p>Full installations handled end to end, with the job photographed as it goes.</p>
+          </article>
+          <article class="service-card">
+            <span class="service-index">05</span>
+            <h3>Gallery of past work</h3>
+            <p>A gallery of completed jobs and current projects, so you can see the work before you call.</p>
+          </article>
+          <article class="service-card">
+            <span class="service-index">06</span>
+            <h3>Counties served</h3>
+            <p>Berks, Bucks, Montgomery and Philadelphia counties, based in Pottstown.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section trust" aria-labelledby="trust-title">
+      <div class="wrap trust-layout">
+        <div>
+          <div class="section-heading">
+            <p class="eyebrow">Local work, visible</p>
+            <h2 id="trust-title">See the work. Know the coverage.</h2>
+          </div>
+          <div class="rating-panel" aria-label="Google rating: 4.9 from 139 reviews">
+            <span class="rating-label">Google rating</span>
+            <span class="rating-number">4.9</span>
+            <span class="rating-caption">from 139 reviews</span>
+            <div class="rating-stars" aria-hidden="true">★★★★★</div>
+          </div>
+        </div>
+        <div class="trust-list">
+          <article class="trust-item">
+            <span class="trust-mark" aria-hidden="true">01</span>
+            <div>
+              <h3>Residential, commercial and industrial</h3>
+              <p>Electrical installation across homes, business premises and industrial sites.</p>
+            </div>
+          </article>
+          <article class="trust-item">
+            <span class="trust-mark" aria-hidden="true">02</span>
+            <div>
+              <h3>Based in Pottstown</h3>
+              <p>Serving Pottstown and the surrounding counties of Berks, Bucks, Montgomery and Philadelphia.</p>
+            </div>
+          </article>
+          <article class="trust-item">
+            <span class="trust-mark" aria-hidden="true">03</span>
+            <div>
+              <h3>Past jobs and current projects</h3>
+              <p>A photo gallery offers a look at completed work and current projects.</p>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section contact" id="contact" aria-labelledby="contact-title">
+      <div class="wrap contact-grid">
+        <div>
+          <p class="eyebrow">Get in touch</p>
+          <h2 id="contact-title">Talk through your project.</h2>
+          <p class="contact-intro">For electrical installation in Pottstown and the surrounding counties, call J.Knipe Electrical llc.</p>
+          <a class="contact-phone" href="tel:+12673122127">(267) 312-2127</a>
+          <span class="address-label">Address</span>
+          <address>69 S Evans St<br>Pottstown, PA 19464</address>
+        </div>
+        <form class="contact-form" aria-label="Contact details for a call">
+          <h3>What would you like to discuss?</h3>
+          <div class="field">
+            <label for="name">Name</label>
+            <input id="name" name="name" type="text" autocomplete="name">
+          </div>
+          <div class="field">
+            <label for="phone">Phone</label>
+            <input id="phone" name="phone" type="tel" autocomplete="tel">
+          </div>
+          <div class="field">
+            <label for="message">Message</label>
+            <textarea id="message" name="message" rows="4"></textarea>
+          </div>
+          <a class="button" role="button" href="tel:+12673122127">Call to book</a>
+          <p class="form-note">Use the fields as a guide for your call; selecting Call to book places a call.</p>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap footer-inner">
+      <span><span class="footer-name">J.Knipe Electrical llc</span> · Pottstown, PA</span>
+      <span class="concept-label">Concept preview — not the live site</span>
+    </div>
+  </footer>
+
+  <a class="mobile-call" href="tel:+12673122127" aria-label="Call J.Knipe Electrical llc at (267) 312-2127">
+    <svg class="phone-icon" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M7.1 3.5h2.4l1.2 4.2-1.8 1.5a15.2 15.2 0 0 0 5.9 5.9l1.5-1.8 4.2 1.2v2.4c0 1.1-.9 2-2 2A15.5 15.5 0 0 1 5.1 5.5c0-1.1.9-2 2-2Z" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    Call (267) 312-2127
+  </a>
+</body>
+</html>
