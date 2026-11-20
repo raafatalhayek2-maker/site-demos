@@ -1,0 +1,656 @@
+<!doctype html>
+<html lang='en'>
+<head>
+  <meta charset='utf-8'>
+  <meta name='viewport' content='width=device-width, initial-scale=1'>
+  <meta name='theme-color' content='#1c1f21'>
+  <title>Atlanta Car Care — Auto Repair in Atlanta</title>
+  <style>
+    :root {
+      color-scheme: light;
+      --ink: #202325;
+      --muted: #62686b;
+      --paper: #f5f4f1;
+      --white: #fff;
+      --line: #deded9;
+      --red: #c7352d;
+      --red-dark: #a92822;
+      --charcoal: #1c1f21;
+      --soft-dark: #292d2f;
+      --content: 1200px;
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      color: var(--ink);
+      background: var(--paper);
+      font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+      font-size: 16px;
+      line-height: 1.55;
+      -webkit-font-smoothing: antialiased;
+    }
+    a { color: inherit; }
+    button, input, textarea { font: inherit; }
+    .wrap { width: min(var(--content), calc(100% - 48px)); margin-inline: auto; }
+    .skip-link {
+      position: absolute;
+      z-index: 100;
+      top: 8px;
+      left: 8px;
+      padding: 10px 14px;
+      transform: translateY(-150%);
+      color: var(--white);
+      background: var(--charcoal);
+      border-radius: 8px;
+    }
+    .skip-link:focus { transform: translateY(0); }
+    :focus-visible { outline: 3px solid #f07870; outline-offset: 3px; }
+
+    .site-header {
+      position: sticky;
+      z-index: 50;
+      top: 0;
+      background: rgba(250, 249, 247, .96);
+      border-bottom: 1px solid rgba(32, 35, 37, .09);
+      backdrop-filter: blur(14px);
+    }
+    .header-inner {
+      min-height: 76px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 28px;
+    }
+    .brand {
+      display: inline-flex;
+      align-items: center;
+      gap: 11px;
+      text-decoration: none;
+      flex: 0 0 auto;
+    }
+    .brand-mark {
+      display: grid;
+      width: 39px;
+      height: 39px;
+      place-items: center;
+      color: var(--white);
+      background: var(--red);
+      border-radius: 8px;
+      box-shadow: 0 4px 10px rgba(199, 53, 45, .19);
+    }
+    .brand-mark svg { width: 26px; height: 26px; }
+    .brand-name {
+      color: var(--ink);
+      font-size: 16px;
+      font-weight: 760;
+      letter-spacing: -.035em;
+      line-height: 1.1;
+    }
+    .brand-name span {
+      display: block;
+      margin-top: 4px;
+      color: #73787a;
+      font-size: 9px;
+      font-weight: 750;
+      letter-spacing: .17em;
+      text-transform: uppercase;
+    }
+    .main-nav { display: flex; align-items: center; gap: 34px; margin-left: auto; }
+    .main-nav a {
+      color: #4e5355;
+      font-size: 13px;
+      font-weight: 650;
+      text-decoration: none;
+      transition: color .18s ease;
+    }
+    .main-nav a:hover { color: var(--red); }
+    .button {
+      min-height: 48px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      padding: 0 19px;
+      border: 1px solid transparent;
+      border-radius: 8px;
+      font-size: 13px;
+      font-weight: 760;
+      line-height: 1.2;
+      text-decoration: none;
+      transition: background-color .18s ease, border-color .18s ease, transform .18s ease;
+      cursor: pointer;
+    }
+    .button:hover { transform: translateY(-1px); }
+    .button-red { color: var(--white); background: var(--red); }
+    .button-red:hover { background: var(--red-dark); }
+    .header-call { min-height: 43px; padding-inline: 15px; white-space: nowrap; }
+    .button svg { width: 17px; height: 17px; flex: 0 0 auto; }
+
+    .hero {
+      position: relative;
+      overflow: hidden;
+      color: var(--white);
+      background: var(--charcoal);
+      isolation: isolate;
+    }
+    .hero::before {
+      position: absolute;
+      z-index: -1;
+      inset: 0;
+      background: radial-gradient(ellipse at 78% 44%, rgba(92, 99, 101, .27), transparent 42%),
+                  linear-gradient(115deg, transparent 0 68%, rgba(255, 255, 255, .025) 68% 68.2%, transparent 68.2%);
+      content: '';
+    }
+    .hero-inner {
+      min-height: 580px;
+      display: grid;
+      grid-template-columns: 1.08fr .92fr;
+      align-items: center;
+      gap: 50px;
+      padding-block: 72px 78px;
+    }
+    .hero-copy { position: relative; z-index: 1; }
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      margin: 0 0 21px;
+      color: var(--red);
+      font-size: 11px;
+      font-weight: 800;
+      letter-spacing: .16em;
+      line-height: 1.2;
+      text-transform: uppercase;
+    }
+    .eyebrow::before { width: 24px; height: 2px; background: currentColor; content: ''; }
+    .hero h1 {
+      max-width: 710px;
+      margin: 0;
+      color: var(--white);
+      font-size: clamp(43px, 5.35vw, 72px);
+      font-weight: 760;
+      letter-spacing: -.065em;
+      line-height: 1.02;
+    }
+    .hero h1 span { color: #f16b61; }
+    .hero-lede {
+      max-width: 550px;
+      margin: 24px 0 0;
+      color: #c4c8c9;
+      font-size: 17px;
+      line-height: 1.7;
+    }
+    .hero-actions { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 31px; }
+    .button-outline {
+      color: var(--white);
+      border-color: #646a6c;
+      background: rgba(255, 255, 255, .025);
+    }
+    .button-outline:hover { border-color: #aeb2b3; background: rgba(255, 255, 255, .08); }
+    .hero-location {
+      display: flex;
+      align-items: center;
+      gap: 9px;
+      margin-top: 28px;
+      color: #aeb4b6;
+      font-size: 12px;
+      font-weight: 600;
+    }
+    .hero-location svg { width: 15px; height: 15px; color: #ee6b62; flex: 0 0 auto; }
+    .hero-visual {
+      position: relative;
+      min-height: 424px;
+      display: grid;
+      overflow: hidden;
+      place-items: center;
+      border: 1px solid rgba(255, 255, 255, .12);
+      border-radius: 8px;
+      background: radial-gradient(circle at 50% 47%, #383d3f 0, #282c2e 47%, #222628 76%);
+      box-shadow: 0 25px 70px rgba(0, 0, 0, .24);
+    }
+    .hero-visual::before {
+      position: absolute;
+      inset: 0;
+      background: repeating-linear-gradient(135deg, transparent 0 22px, rgba(255, 255, 255, .025) 22px 23px, transparent 23px 46px);
+      content: '';
+    }
+    .hero-wheel { position: relative; z-index: 1; width: min(91%, 430px); height: auto; opacity: .94; }
+    .visual-label {
+      position: absolute;
+      z-index: 2;
+      top: 20px;
+      left: 20px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      color: #c1c6c7;
+      font-size: 10px;
+      font-weight: 780;
+      letter-spacing: .16em;
+      text-transform: uppercase;
+    }
+    .visual-label::before { width: 7px; height: 7px; border-radius: 50%; background: #ed5d53; content: ''; }
+    .visual-caption {
+      position: absolute;
+      z-index: 2;
+      right: 20px;
+      bottom: 19px;
+      color: #c1c6c7;
+      font-size: 10px;
+      font-weight: 760;
+      letter-spacing: .14em;
+      text-transform: uppercase;
+    }
+    .visual-rule { position: absolute; z-index: 2; bottom: 26px; left: 20px; width: 36px; height: 2px; background: var(--red); }
+
+    .section { padding-block: 94px; }
+    .section-heading { max-width: 650px; margin-bottom: 38px; }
+    .section-heading .eyebrow { margin-bottom: 14px; }
+    .section-heading h2 {
+      margin: 0;
+      color: var(--ink);
+      font-size: clamp(32px, 4vw, 46px);
+      font-weight: 750;
+      letter-spacing: -.055em;
+      line-height: 1.08;
+    }
+    .section-heading p { max-width: 540px; margin: 15px 0 0; color: var(--muted); font-size: 15px; }
+    .services-section { background: var(--paper); }
+    .services-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 16px; }
+    .service-card {
+      min-height: 190px;
+      padding: 25px 24px 23px;
+      border: 1px solid #e4e2dd;
+      border-radius: 8px;
+      background: var(--white);
+      box-shadow: 0 4px 14px rgba(28, 31, 33, .035);
+      transition: transform .18s ease, box-shadow .18s ease, border-color .18s ease;
+    }
+    .service-card:hover { transform: translateY(-3px); border-color: #d1ceca; box-shadow: 0 12px 26px rgba(28, 31, 33, .08); }
+    .service-icon {
+      width: 38px;
+      height: 38px;
+      display: grid;
+      place-items: center;
+      margin-bottom: 19px;
+      color: var(--red);
+      border: 1px solid #f0d5d2;
+      border-radius: 8px;
+      background: #fff8f7;
+    }
+    .service-icon svg { width: 21px; height: 21px; }
+    .service-card h3 { margin: 0; color: var(--ink); font-size: 16px; font-weight: 740; letter-spacing: -.025em; line-height: 1.35; }
+    .service-card p { margin: 8px 0 0; color: var(--muted); font-size: 13px; line-height: 1.55; }
+
+    .trust-section {
+      position: relative;
+      overflow: hidden;
+      color: var(--white);
+      background: var(--charcoal);
+    }
+    .trust-section::after {
+      position: absolute;
+      top: -210px;
+      right: -170px;
+      width: 510px;
+      height: 510px;
+      border: 1px solid rgba(255, 255, 255, .07);
+      border-radius: 50%;
+      box-shadow: 0 0 0 40px rgba(255, 255, 255, .018), 0 0 0 82px rgba(255, 255, 255, .014);
+      content: '';
+      pointer-events: none;
+    }
+    .trust-inner {
+      position: relative;
+      z-index: 1;
+      display: grid;
+      grid-template-columns: 1fr .9fr;
+      align-items: center;
+      gap: 80px;
+    }
+    .trust-copy .eyebrow { margin-bottom: 16px; }
+    .trust-copy h2 {
+      max-width: 490px;
+      margin: 0;
+      color: var(--white);
+      font-size: clamp(34px, 4vw, 49px);
+      font-weight: 750;
+      letter-spacing: -.06em;
+      line-height: 1.08;
+    }
+    .trust-copy p { max-width: 440px; margin: 17px 0 0; color: #b9bfc1; font-size: 15px; }
+    .rating-panel {
+      padding: 30px;
+      color: var(--ink);
+      border: 1px solid rgba(255, 255, 255, .08);
+      border-radius: 8px;
+      background: #f8f7f4;
+      box-shadow: 0 18px 44px rgba(0, 0, 0, .16);
+    }
+    .rating-top { display: flex; align-items: center; gap: 16px; padding-bottom: 25px; border-bottom: 1px solid #deded9; }
+    .rating-number { color: var(--ink); font-size: clamp(58px, 7vw, 76px); font-weight: 780; letter-spacing: -.075em; line-height: .95; }
+    .rating-detail { display: grid; gap: 4px; }
+    .rating-detail span:first-child { color: #3e4345; font-size: 14px; font-weight: 730; }
+    .rating-detail span:last-child { color: #777d7f; font-size: 12px; }
+    .review-count { display: flex; align-items: baseline; gap: 10px; padding-top: 21px; }
+    .review-count strong { color: var(--red); font-size: 31px; font-weight: 780; letter-spacing: -.055em; line-height: 1; }
+    .review-count span { color: #454a4c; font-size: 14px; font-weight: 700; }
+    .rating-note { margin: 15px 0 0; color: #727779; font-size: 12px; }
+
+    .contact-section { background: #ecebe7; }
+    .contact-layout { display: grid; grid-template-columns: .88fr 1.12fr; gap: 76px; align-items: start; }
+    .contact-copy .eyebrow { margin-bottom: 14px; }
+    .contact-copy h2 {
+      max-width: 430px;
+      margin: 0;
+      color: var(--ink);
+      font-size: clamp(34px, 4vw, 48px);
+      font-weight: 750;
+      letter-spacing: -.06em;
+      line-height: 1.08;
+    }
+    .contact-copy > p { max-width: 390px; margin: 16px 0 28px; color: var(--muted); font-size: 15px; }
+    .contact-detail { padding: 15px 0; border-top: 1px solid #d5d4cf; }
+    .contact-detail:last-child { border-bottom: 1px solid #d5d4cf; }
+    .contact-detail span { display: block; margin-bottom: 4px; color: #777d7f; font-size: 10px; font-weight: 800; letter-spacing: .15em; text-transform: uppercase; }
+    .contact-detail a, .contact-detail address { color: var(--ink); font-size: 15px; font-style: normal; font-weight: 690; text-decoration: none; }
+    .contact-detail a:hover { color: var(--red); text-decoration: underline; text-underline-offset: 3px; }
+    .contact-form {
+      padding: 29px;
+      border: 1px solid #e2e0dc;
+      border-radius: 8px;
+      background: var(--white);
+      box-shadow: 0 12px 32px rgba(28, 31, 33, .055);
+    }
+    .contact-form h3 { margin: 0 0 21px; color: var(--ink); font-size: 20px; font-weight: 740; letter-spacing: -.035em; }
+    .form-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+    .field { display: grid; gap: 7px; }
+    .field-wide { grid-column: 1 / -1; }
+    .field label { color: #414648; font-size: 12px; font-weight: 700; }
+    .field input, .field textarea {
+      width: 100%;
+      min-height: 46px;
+      padding: 11px 12px;
+      color: var(--ink);
+      border: 1px solid #d9d9d5;
+      border-radius: 8px;
+      background: #fdfdfc;
+      outline: none;
+      transition: border-color .18s ease, box-shadow .18s ease;
+    }
+    .field textarea { min-height: 112px; resize: vertical; }
+    .field input:focus, .field textarea:focus { border-color: var(--red); box-shadow: 0 0 0 3px rgba(199, 53, 45, .12); }
+    .form-submit { margin-top: 18px; }
+
+    .site-footer { color: #c2c6c7; background: #17191a; }
+    .footer-inner { min-height: 88px; display: flex; align-items: center; justify-content: space-between; gap: 20px; }
+    .footer-brand { color: var(--white); font-size: 14px; font-weight: 740; letter-spacing: -.02em; }
+    .footer-note { color: #9ea4a6; font-size: 12px; }
+    .mobile-call { display: none; }
+
+    @media (max-width: 900px) {
+      .hero-inner { gap: 30px; }
+      .hero-visual { min-height: 380px; }
+      .trust-inner { gap: 42px; }
+      .contact-layout { gap: 42px; }
+    }
+    @media (max-width: 760px) {
+      body { padding-bottom: calc(94px + env(safe-area-inset-bottom)); }
+      .wrap { width: min(100% - 40px, 560px); }
+      .header-inner { min-height: 0; flex-wrap: wrap; gap: 10px 14px; padding-block: 11px 10px; }
+      .brand { gap: 8px; }
+      .brand-mark { width: 35px; height: 35px; }
+      .brand-mark svg { width: 23px; height: 23px; }
+      .brand-name { font-size: 14px; }
+      .brand-name span { margin-top: 3px; font-size: 8px; }
+      .header-call { min-height: 39px; gap: 7px; padding-inline: 11px; font-size: 11px; }
+      .header-call svg { width: 15px; height: 15px; }
+      .main-nav { order: 3; width: 100%; justify-content: space-between; gap: 15px; padding: 4px 1px 1px; }
+      .main-nav a { font-size: 12px; }
+      .hero-inner { min-height: 0; grid-template-columns: 1fr; gap: 39px; padding-block: 59px 56px; }
+      .hero h1 { max-width: 600px; font-size: clamp(42px, 10vw, 62px); }
+      .hero-lede { margin-top: 19px; font-size: 15px; }
+      .hero-actions { margin-top: 25px; }
+      .hero-location { margin-top: 22px; }
+      .hero-visual { min-height: 330px; }
+      .hero-wheel { width: min(82%, 350px); }
+      .section { padding-block: 70px; }
+      .section-heading { margin-bottom: 27px; }
+      .services-grid { grid-template-columns: 1fr; gap: 12px; }
+      .service-card { min-height: 0; padding: 21px; }
+      .service-icon { margin-bottom: 14px; }
+      .trust-inner { grid-template-columns: 1fr; gap: 31px; }
+      .rating-panel { padding: 25px; }
+      .contact-layout { grid-template-columns: 1fr; gap: 34px; }
+      .contact-form { padding: 23px; }
+      .footer-inner { min-height: 82px; align-items: flex-start; flex-direction: column; justify-content: center; gap: 3px; padding-block: 15px; }
+      .mobile-call {
+        position: fixed;
+        z-index: 60;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        display: block;
+        padding: 9px 16px calc(9px + env(safe-area-inset-bottom));
+        background: var(--red);
+        box-shadow: 0 -6px 24px rgba(15, 17, 18, .17);
+      }
+      .mobile-call a {
+        width: min(100%, 560px);
+        min-height: 51px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 12px;
+        margin-inline: auto;
+        color: var(--white);
+        text-decoration: none;
+      }
+      .mobile-call-label { font-size: 12px; font-weight: 680; }
+      .mobile-call-number { font-size: 15px; font-weight: 800; letter-spacing: -.02em; white-space: nowrap; }
+      .mobile-call svg { width: 19px; height: 19px; flex: 0 0 auto; }
+    }
+    @media (max-width: 390px) {
+      .wrap { width: calc(100% - 32px); }
+      .header-inner { column-gap: 8px; }
+      .header-call { padding-inline: 9px; font-size: 10px; }
+      .hero-actions { align-items: stretch; flex-direction: column; }
+      .hero-actions .button { width: 100%; }
+      .form-grid { grid-template-columns: 1fr; }
+      .field-wide { grid-column: auto; }
+      .mobile-call { padding-inline: 12px; }
+      .mobile-call-label { font-size: 11px; }
+      .mobile-call-number { font-size: 14px; }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
+      *, *::before, *::after { scroll-behavior: auto !important; transition-duration: .01ms !important; animation-duration: .01ms !important; animation-iteration-count: 1 !important; }
+    }
+  </style>
+</head>
+<body>
+  <a class='skip-link' href='#main'>Skip to content</a>
+  <header class='site-header'>
+    <div class='header-inner wrap'>
+      <a class='brand' href='#top' aria-label='Atlanta Car Care home'>
+        <span class='brand-mark' aria-hidden='true'>
+          <svg viewBox='0 0 32 32' fill='none'>
+            <circle cx='16' cy='16' r='10.3' stroke='currentColor' stroke-width='2.2'/>
+            <circle cx='16' cy='16' r='3.5' stroke='currentColor' stroke-width='2.2'/>
+            <path d='M16 5.7v6.5M16 19.8v6.5M5.7 16h6.5m7.6 0h6.5M8.7 8.7l4.6 4.6m5.4 5.4 4.6 4.6m0-14.6-4.6 4.6m-5.4 5.4-4.6 4.6' stroke='currentColor' stroke-width='1.6' stroke-linecap='round'/>
+          </svg>
+        </span>
+        <span class='brand-name'>Atlanta Car Care<span>Auto repair</span></span>
+      </a>
+      <nav class='main-nav' aria-label='Main navigation'>
+        <a href='#services'>Services</a>
+        <a href='#why-us'>Why us</a>
+        <a href='#contact'>Contact</a>
+      </nav>
+      <a class='button button-red header-call' href='tel:+14043250063'>
+        <svg viewBox='0 0 24 24' fill='none' aria-hidden='true'><path d='M6.7 3.8h3l1.4 4-2 1.6a15 15 0 0 0 5.5 5.5l1.6-2 4 1.4v3c0 1-.8 1.8-1.8 1.8A15.8 15.8 0 0 1 4.9 5.6c0-1 .8-1.8 1.8-1.8Z' stroke='currentColor' stroke-width='1.8' stroke-linecap='round' stroke-linejoin='round'/></svg>
+        <span>+1 404-325-0063</span>
+      </a>
+    </div>
+  </header>
+
+  <main id='main'>
+    <section class='hero' id='top' aria-labelledby='hero-title'>
+      <div class='hero-inner wrap'>
+        <div class='hero-copy'>
+          <p class='eyebrow'>Auto repair · Atlanta, GA</p>
+          <h1 id='hero-title'>Straight answers on <span>Buford Highway</span>, and repairs done right.</h1>
+          <p class='hero-lede'>Atlanta Car Care provides auto repair at 2816 Buford Hwy NE, Atlanta, GA 30329.</p>
+          <div class='hero-actions'>
+            <a class='button button-red' href='tel:+14043250063'>
+              <svg viewBox='0 0 24 24' fill='none' aria-hidden='true'><path d='M6.7 3.8h3l1.4 4-2 1.6a15 15 0 0 0 5.5 5.5l1.6-2 4 1.4v3c0 1-.8 1.8-1.8 1.8A15.8 15.8 0 0 1 4.9 5.6c0-1 .8-1.8 1.8-1.8Z' stroke='currentColor' stroke-width='1.8' stroke-linecap='round' stroke-linejoin='round'/></svg>
+              Call +1 404-325-0063
+            </a>
+            <a class='button button-outline' href='#contact'>Request a visit</a>
+          </div>
+          <div class='hero-location'>
+            <svg viewBox='0 0 24 24' fill='none' aria-hidden='true'><path d='M19 10.1c0 5-7 10.1-7 10.1S5 15.1 5 10.1a7 7 0 1 1 14 0Z' stroke='currentColor' stroke-width='1.8'/><circle cx='12' cy='10' r='2.4' stroke='currentColor' stroke-width='1.8'/></svg>
+            <span>2816 Buford Hwy NE, Atlanta, GA 30329</span>
+          </div>
+        </div>
+        <div class='hero-visual' aria-hidden='true'>
+          <span class='visual-label'>Atlanta, Georgia</span>
+          <svg class='hero-wheel' viewBox='0 0 440 440' fill='none'>
+            <circle cx='220' cy='220' r='178' fill='#25292b' stroke='#737a7c' stroke-width='2'/>
+            <circle cx='220' cy='220' r='153' stroke='#505759' stroke-width='2'/>
+            <circle cx='220' cy='220' r='124' fill='#2c3133' stroke='#7c8385' stroke-width='2'/>
+            <circle cx='220' cy='220' r='96' stroke='#535a5c' stroke-width='2'/>
+            <circle cx='220' cy='220' r='54' fill='#25292b' stroke='#92999a' stroke-width='2'/>
+            <circle cx='220' cy='220' r='20' fill='#353b3d' stroke='#aab0b1' stroke-width='2'/>
+            <path d='M220 67v42m0 222v42M67 220h42m222 0h42M111.8 111.8l29.7 29.7m157 157 29.7 29.7m0-216.4-29.7 29.7m-157 157-29.7 29.7' stroke='#838b8d' stroke-width='5' stroke-linecap='round'/>
+            <circle cx='220' cy='135' r='7' fill='#c7352d'/>
+            <circle cx='220' cy='305' r='7' fill='#c7352d'/>
+            <circle cx='135' cy='220' r='7' fill='#c7352d'/>
+            <circle cx='305' cy='220' r='7' fill='#c7352d'/>
+            <circle cx='160' cy='160' r='6' fill='#aeb4b5'/>
+            <circle cx='280' cy='160' r='6' fill='#aeb4b5'/>
+            <circle cx='160' cy='280' r='6' fill='#aeb4b5'/>
+            <circle cx='280' cy='280' r='6' fill='#aeb4b5'/>
+            <path d='M220 42a178 178 0 0 1 125.9 52.1' stroke='#e35a50' stroke-width='3' stroke-linecap='round'/>
+          </svg>
+          <span class='visual-rule'></span>
+          <span class='visual-caption'>Auto repair</span>
+        </div>
+      </div>
+    </section>
+
+    <section class='section services-section' id='services' aria-labelledby='services-title'>
+      <div class='wrap'>
+        <div class='section-heading'>
+          <p class='eyebrow'>Services</p>
+          <h2 id='services-title'>Repair and maintenance, clearly laid out.</h2>
+          <p>Explore the auto repair services offered by Atlanta Car Care.</p>
+        </div>
+        <div class='services-grid'>
+          <article class='service-card'>
+            <span class='service-icon' aria-hidden='true'><svg viewBox='0 0 24 24' fill='none'><circle cx='12' cy='12' r='8.5' stroke='currentColor' stroke-width='1.7'/><circle cx='12' cy='12' r='3.2' stroke='currentColor' stroke-width='1.7'/><path d='M12 3.5v4.1M20.5 12h-4.1M12 20.5v-4.1M3.5 12h4.1' stroke='currentColor' stroke-width='1.7' stroke-linecap='round'/></svg></span>
+            <h3>Brake repair and replacement</h3>
+            <p>Repair or replacement for brake components.</p>
+          </article>
+          <article class='service-card'>
+            <span class='service-icon' aria-hidden='true'><svg viewBox='0 0 24 24' fill='none'><path d='M12 3.2s6.1 6.6 6.1 11a6.1 6.1 0 0 1-12.2 0c0-4.4 6.1-11 6.1-11Z' stroke='currentColor' stroke-width='1.7' stroke-linejoin='round'/><path d='M9.1 15.1a2.9 2.9 0 0 0 2.9 2.9' stroke='currentColor' stroke-width='1.7' stroke-linecap='round'/></svg></span>
+            <h3>Oil changes and routine maintenance</h3>
+            <p>Oil changes and routine maintenance for your vehicle.</p>
+          </article>
+          <article class='service-card'>
+            <span class='service-icon' aria-hidden='true'><svg viewBox='0 0 24 24' fill='none'><path d='M5 8.2h14v10.3H5zM8 8.2V5.5h8v2.7M8.2 12h2.1m3.4 0h2.1M8.2 15.3h2.1m3.4 0h2.1' stroke='currentColor' stroke-width='1.7' stroke-linecap='round' stroke-linejoin='round'/><path d='M3.2 11.1v4.2m17.6-4.2v4.2' stroke='currentColor' stroke-width='1.7' stroke-linecap='round'/></svg></span>
+            <h3>Engine diagnostics and check-engine light</h3>
+            <p>Diagnostics for engine concerns and check-engine lights.</p>
+          </article>
+          <article class='service-card'>
+            <span class='service-icon' aria-hidden='true'><svg viewBox='0 0 24 24' fill='none'><path d='M5 4.5v15m14-15v15M5 8h4l2.2 3.2L14 8h5M5 16h4l2.2-3.2L14 16h5' stroke='currentColor' stroke-width='1.7' stroke-linecap='round' stroke-linejoin='round'/></svg></span>
+            <h3>Suspension and steering repair</h3>
+            <p>Repair support for suspension and steering concerns.</p>
+          </article>
+          <article class='service-card'>
+            <span class='service-icon' aria-hidden='true'><svg viewBox='0 0 24 24' fill='none'><path d='M12 3.5v17M4.6 7.7l14.8 8.6M4.6 16.3l14.8-8.6M9.4 5l2.6 2.6L14.6 5M9.4 19l2.6-2.6 2.6 2.6M4.1 11l3.5 1-1 3.5m12.3-6.5-3.5 1 1 3.5' stroke='currentColor' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'/></svg></span>
+            <h3>A/C service and repair</h3>
+            <p>Service and repair for vehicle air conditioning.</p>
+          </article>
+          <article class='service-card'>
+            <span class='service-icon' aria-hidden='true'><svg viewBox='0 0 24 24' fill='none'><path d='M7 4.5h10a2 2 0 0 1 2 2v13H5v-13a2 2 0 0 1 2-2Z' stroke='currentColor' stroke-width='1.7' stroke-linejoin='round'/><path d='M9 4.5v-1h6v1M8.5 10h7m-7 3.5h7m-7 3.5h4' stroke='currentColor' stroke-width='1.7' stroke-linecap='round'/></svg></span>
+            <h3>Pre-purchase inspections</h3>
+            <p>A closer look before you purchase a vehicle.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class='section trust-section' id='why-us' aria-labelledby='trust-title'>
+      <div class='trust-inner wrap'>
+        <div class='trust-copy'>
+          <p class='eyebrow'>Why us</p>
+          <h2 id='trust-title'>A clear view of the numbers.</h2>
+          <p>A snapshot of customer feedback on Google.</p>
+        </div>
+        <div class='rating-panel' aria-label='Google rating: 4.7 out of 5 from 1,000 reviews'>
+          <div class='rating-top'>
+            <strong class='rating-number'>4.7</strong>
+            <div class='rating-detail'><span>out of 5</span><span>Google rating</span></div>
+          </div>
+          <div class='review-count'><strong>1,000</strong><span>Google reviews</span></div>
+          <p class='rating-note'>Rated by customers on Google.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class='section contact-section' id='contact' aria-labelledby='contact-title'>
+      <div class='contact-layout wrap'>
+        <div class='contact-copy'>
+          <p class='eyebrow'>Contact</p>
+          <h2 id='contact-title'>Talk with Atlanta Car Care.</h2>
+          <p>Call or find Atlanta Car Care at the address below.</p>
+          <div class='contact-detail'>
+            <span>Phone</span>
+            <a href='tel:+14043250063'>+1 404-325-0063</a>
+          </div>
+          <div class='contact-detail'>
+            <span>Address</span>
+            <address>2816 Buford Hwy NE, Atlanta, GA 30329</address>
+          </div>
+        </div>
+        <form class='contact-form'>
+          <h3>Request a visit</h3>
+          <div class='form-grid'>
+            <div class='field'>
+              <label for='name'>Name</label>
+              <input id='name' name='name' type='text' autocomplete='name'>
+            </div>
+            <div class='field'>
+              <label for='phone'>Phone</label>
+              <input id='phone' name='phone' type='tel' autocomplete='tel'>
+            </div>
+            <div class='field field-wide'>
+              <label for='message'>Message</label>
+              <textarea id='message' name='message' rows='4'></textarea>
+            </div>
+          </div>
+          <button class='button button-red form-submit' type='button'>Request a visit</button>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <footer class='site-footer'>
+    <div class='footer-inner wrap'>
+      <span class='footer-brand'>Atlanta Car Care</span>
+      <span class='footer-note'>Concept preview — not the live site</span>
+    </div>
+  </footer>
+
+  <aside class='mobile-call' aria-label='Call Atlanta Car Care'>
+    <a href='tel:+14043250063'>
+      <svg viewBox='0 0 24 24' fill='none' aria-hidden='true'><path d='M6.7 3.8h3l1.4 4-2 1.6a15 15 0 0 0 5.5 5.5l1.6-2 4 1.4v3c0 1-.8 1.8-1.8 1.8A15.8 15.8 0 0 1 4.9 5.6c0-1 .8-1.8 1.8-1.8Z' stroke='currentColor' stroke-width='1.8' stroke-linecap='round' stroke-linejoin='round'/></svg>
+      <span class='mobile-call-label'>Call Atlanta Car Care</span>
+      <strong class='mobile-call-number'>+1 404-325-0063</strong>
+    </a>
+  </aside>
+</body>
+</html>
