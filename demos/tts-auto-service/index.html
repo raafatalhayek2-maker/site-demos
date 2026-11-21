@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+  <meta charset='utf-8'>
+  <meta name='viewport' content='width=device-width, initial-scale=1'>
+  <meta name='theme-color' content='#171918'>
+  <title>TTS Auto Service | Auto Repair in Charlotte, NC</title>
+  <style>
+    :root {
+      color-scheme: light;
+      --charcoal: #171918;
+      --charcoal-soft: #242725;
+      --paper: #f6f5f1;
+      --white: #fff;
+      --ink: #202321;
+      --muted: #666c68;
+      --line: #dedfd9;
+      --orange: #ff6a2a;
+      --orange-dark: #c64110;
+      --content: 1160px;
+      --radius: 18px;
+    }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; scroll-padding-top: 96px; }
+    body {
+      margin: 0;
+      background: var(--paper);
+      color: var(--ink);
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+      -webkit-font-smoothing: antialiased;
+    }
+    a { color: inherit; }
+    a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visible {
+      outline: 3px solid var(--orange);
+      outline-offset: 3px;
+    }
+    .wrap { width: min(var(--content), calc(100% - 48px)); margin-inline: auto; }
+    .site-header {
+      position: sticky;
+      top: 0;
+      z-index: 20;
+      background: rgba(23, 25, 24, .96);
+      color: var(--white);
+      border-bottom: 1px solid rgba(255,255,255,.1);
+      backdrop-filter: blur(12px);
+    }
+    .header-inner { min-height: 76px; display: flex; align-items: center; justify-content: space-between; gap: 20px; }
+    .brand { display: inline-flex; align-items: center; gap: 12px; color: inherit; text-decoration: none; font-weight: 750; letter-spacing: -.03em; }
+    .brand-mark { width: 34px; height: 34px; display: grid; place-items: center; background: var(--orange); color: var(--charcoal); border-radius: 9px; font-size: 13px; font-weight: 900; letter-spacing: -.06em; }
+    .brand-name { font-size: 17px; }
+    .header-call {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 9px;
+      padding: 12px 17px;
+      border: 1px solid rgba(255,255,255,.22);
+      border-radius: 999px;
+      color: var(--white);
+      text-decoration: none;
+      font-size: 14px;
+      font-weight: 700;
+      transition: background .2s ease, border-color .2s ease, transform .2s ease;
+    }
+    .header-call:hover { background: var(--orange); border-color: var(--orange); color: var(--charcoal); transform: translateY(-1px); }
+    .phone-dot { width: 8px; height: 8px; border-radius: 50%; background: var(--orange); }
+    .hero {
+      position: relative;
+      overflow: hidden;
+      padding: 92px 0 100px;
+      color: var(--white);
+      background: radial-gradient(ellipse at 78% 18%, rgba(255,106,42,.17), transparent 36%), var(--charcoal);
+    }
+    .hero::after {
+      content: '';
+      position: absolute;
+      right: -150px;
+      bottom: -265px;
+      width: 590px;
+      height: 590px;
+      border: 1px solid rgba(255,255,255,.08);
+      border-radius: 50%;
+      box-shadow: 0 0 0 42px rgba(255,255,255,.025), 0 0 0 84px rgba(255,255,255,.02);
+      pointer-events: none;
+    }
+    .hero-grid { position: relative; z-index: 1; display: grid; grid-template-columns: 1.2fr .8fr; align-items: center; gap: 72px; }
+    .eyebrow { margin: 0 0 20px; color: var(--orange); font-size: 12px; font-weight: 800; letter-spacing: .16em; text-transform: uppercase; }
+    h1, h2, h3, p { margin-top: 0; }
+    h1 { max-width: 720px; margin-bottom: 22px; font-size: clamp(44px, 6.4vw, 76px); line-height: .99; letter-spacing: -.065em; font-weight: 760; }
+    .hero-copy { max-width: 560px; margin-bottom: 32px; color: #c4c8c4; font-size: 18px; line-height: 1.65; }
+    .actions { display: flex; flex-wrap: wrap; align-items: center; gap: 12px; }
+    .button { min-height: 52px; display: inline-flex; align-items: center; justify-content: center; gap: 10px; padding: 0 21px; border: 1px solid transparent; border-radius: 999px; text-decoration: none; font-size: 14px; font-weight: 750; transition: background .2s ease, border-color .2s ease, color .2s ease, transform .2s ease; }
+    .button:hover { transform: translateY(-2px); }
+    .button-primary { background: var(--orange); color: var(--charcoal); }
+    .button-primary:hover { background: #ff824c; }
+    .button-secondary { border-color: rgba(255,255,255,.28); color: var(--white); }
+    .button-secondary:hover { border-color: var(--white); background: rgba(255,255,255,.08); }
+    .hero-panel {
+      min-height: 330px;
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      overflow: hidden;
+      padding: 30px;
+      border: 1px solid rgba(255,255,255,.15);
+      border-radius: 24px;
+      background: linear-gradient(145deg, rgba(255,255,255,.08), rgba(255,255,255,.015));
+    }
+    .panel-top { display: flex; justify-content: space-between; align-items: center; color: #b8bcb9; font-size: 11px; font-weight: 750; letter-spacing: .15em; text-transform: uppercase; }
+    .panel-index { color: var(--orange); }
+    .panel-wordmark { position: relative; margin: 20px 0 10px; color: var(--white); font-size: clamp(62px, 9vw, 104px); font-weight: 850; line-height: .85; letter-spacing: -.09em; }
+    .panel-rule { width: 54px; height: 4px; margin: 25px 0 18px; background: var(--orange); }
+    .panel-caption { margin: 0; color: #c4c8c4; font-size: 13px; font-weight: 700; letter-spacing: .14em; text-transform: uppercase; }
+    .section { padding: 96px 0; }
+    .section-heading { max-width: 640px; margin-bottom: 42px; }
+    .section-heading .eyebrow { margin-bottom: 14px; }
+    h2 { margin-bottom: 14px; font-size: clamp(34px, 4vw, 50px); line-height: 1.05; letter-spacing: -.055em; }
+    .section-intro { margin: 0; color: var(--muted); font-size: 16px; line-height: 1.7; }
+    .services-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; }
+    .service-card { min-height: 196px; padding: 25px; border: 1px solid var(--line); border-radius: var(--radius); background: rgba(255,255,255,.65); transition: border-color .2s ease, transform .2s ease, box-shadow .2s ease; }
+    .service-card:hover { transform: translateY(-4px); border-color: rgba(255,106,42,.55); box-shadow: 0 14px 34px rgba(23,25,24,.07); }
+    .service-mark { width: 34px; height: 4px; margin-bottom: 24px; border-radius: 4px; background: var(--orange); }
+    .service-card h3 { margin-bottom: 9px; font-size: 19px; letter-spacing: -.025em; }
+    .service-card p { margin: 0; color: var(--muted); font-size: 14px; line-height: 1.6; }
+    .trust { padding: 72px 0; background: var(--charcoal); color: var(--white); }
+    .trust-inner { display: grid; grid-template-columns: 1fr 1fr; align-items: center; gap: 48px; }
+    .trust h2 { max-width: 500px; margin-bottom: 12px; }
+    .trust-copy { max-width: 440px; margin: 0; color: #c4c8c4; font-size: 15px; line-height: 1.7; }
+    .rating-card { display: flex; align-items: center; gap: 24px; padding: 28px 30px; border: 1px solid rgba(255,255,255,.16); border-radius: var(--radius); background: rgba(255,255,255,.045); }
+    .rating-number { color: var(--orange); font-size: clamp(66px, 8vw, 94px); line-height: .9; font-weight: 780; letter-spacing: -.08em; }
+    .rating-meta { padding-left: 24px; border-left: 1px solid rgba(255,255,255,.2); }
+    .rating-out-of { margin: 0 0 8px; color: #c4c8c4; font-size: 13px; }
+    .rating-reviews { margin: 0 0 6px; font-size: 17px; font-weight: 750; }
+    .rating-source { margin: 0; color: #c4c8c4; font-size: 13px; line-height: 1.5; }
+    .contact { padding: 96px 0 104px; }
+    .contact-grid { display: grid; grid-template-columns: .9fr 1.1fr; gap: 70px; align-items: start; }
+    .contact-copy h2 { max-width: 440px; }
+    .contact-details { margin-top: 34px; display: grid; gap: 22px; }
+    .detail-label { display: block; margin-bottom: 7px; color: var(--muted); font-size: 11px; font-weight: 800; letter-spacing: .14em; text-transform: uppercase; }
+    .detail-value { color: var(--ink); font-size: 17px; line-height: 1.55; font-weight: 650; text-decoration: none; }
+    a.detail-value:hover { color: var(--orange-dark); }
+    .preview-card { padding: 30px; border: 1px solid var(--line); border-radius: 20px; background: var(--white); box-shadow: 0 20px 55px rgba(23,25,24,.06); }
+    .preview-card h3 { margin-bottom: 8px; font-size: 22px; letter-spacing: -.035em; }
+    .preview-intro { margin-bottom: 24px; color: var(--muted); font-size: 14px; line-height: 1.6; }
+    .field { margin-bottom: 15px; }
+    .field label { display: block; margin-bottom: 7px; font-size: 13px; font-weight: 700; }
+    .field input, .field textarea { width: 100%; border: 1px solid #d9dcd7; border-radius: 10px; background: #fcfcfa; color: var(--ink); font: inherit; font-size: 14px; padding: 13px 14px; }
+    .field textarea { min-height: 100px; resize: vertical; }
+    .field input::placeholder, .field textarea::placeholder { color: #858b86; }
+    .preview-submit { width: 100%; min-height: 50px; border: 0; border-radius: 999px; background: #d9dcd7; color: #555b56; font: inherit; font-size: 14px; font-weight: 750; cursor: not-allowed; }
+    .preview-note { margin: 12px 0 0; color: var(--muted); font-size: 12px; line-height: 1.5; text-align: center; }
+    .site-footer { padding: 24px 0; border-top: 1px solid var(--line); }
+    .footer-inner { display: flex; justify-content: space-between; align-items: center; gap: 16px; }
+    .footer-name { margin: 0; font-size: 14px; font-weight: 750; }
+    .footer-note { margin: 0; color: var(--muted); font-size: 12px; }
+    .mobile-call { display: none; }
+    @media (max-width: 800px) {
+      .hero-grid { grid-template-columns: 1fr; gap: 42px; }
+      .hero-panel { min-height: 260px; }
+      .panel-wordmark { font-size: 82px; }
+      .services-grid { grid-template-columns: repeat(2, 1fr); }
+      .trust-inner { grid-template-columns: 1fr; gap: 30px; }
+      .contact-grid { grid-template-columns: 1fr; gap: 38px; }
+    }
+    @media (max-width: 540px) {
+      html { scroll-padding-top: 78px; }
+      .wrap { width: min(var(--content), calc(100% - 36px)); }
+      .header-inner { min-height: 66px; }
+      .brand-name { font-size: 15px; }
+      .brand-mark { width: 31px; height: 31px; }
+      .header-call { padding: 10px 13px; font-size: 13px; }
+      .phone-dot { display: none; }
+      .hero { padding: 68px 0 72px; }
+      .hero-copy { font-size: 16px; }
+      .actions { align-items: stretch; flex-direction: column; }
+      .button { width: 100%; }
+      .hero-panel { min-height: 230px; padding: 24px; }
+      .panel-wordmark { font-size: 72px; }
+      .section { padding: 72px 0; }
+      .section-heading { margin-bottom: 30px; }
+      .services-grid { grid-template-columns: 1fr; gap: 11px; }
+      .service-card { min-height: 0; padding: 22px; }
+      .service-mark { margin-bottom: 18px; }
+      .trust { padding: 62px 0; }
+      .rating-card { gap: 17px; padding: 23px 18px; }
+      .rating-meta { padding-left: 17px; }
+      .rating-number { font-size: 70px; }
+      .rating-reviews { font-size: 15px; }
+      .contact { padding: 72px 0 88px; }
+      .preview-card { padding: 23px 19px; }
+      .footer-inner { align-items: flex-start; flex-direction: column; }
+      .mobile-call {
+        position: fixed;
+        z-index: 30;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        display: block;
+        padding: 10px 16px calc(10px + env(safe-area-inset-bottom));
+        border-top: 1px solid rgba(255,255,255,.12);
+        background: rgba(23,25,24,.97);
+      }
+      .mobile-call a { width: 100%; min-height: 50px; display: flex; align-items: center; justify-content: center; border-radius: 999px; background: var(--orange); color: var(--charcoal); text-decoration: none; font-size: 15px; font-weight: 800; transition: background .2s ease; }
+      .mobile-call a:hover { background: #ff824c; }
+      body { padding-bottom: calc(74px + env(safe-area-inset-bottom)); }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after { scroll-behavior: auto !important; transition-duration: .01ms !important; }
+    }
+  </style>
+</head>
+<body>
+  <header class='site-header'>
+    <div class='wrap header-inner'>
+      <a class='brand' href='#top' aria-label='TTS Auto Service home'>
+        <span class='brand-mark' aria-hidden='true'>TTS</span>
+        <span class='brand-name'>TTS Auto Service</span>
+      </a>
+      <a class='header-call' href='tel:+17045250441'><span class='phone-dot' aria-hidden='true'></span>(704) 525-0441</a>
+    </div>
+  </header>
+  <main id='top'>
+    <section class='hero' aria-labelledby='hero-title'>
+      <div class='wrap hero-grid'>
+        <div>
+          <p class='eyebrow'>Auto repair · Charlotte, NC</p>
+          <h1 id='hero-title'>Auto repair, with a clear next step.</h1>
+          <p class='hero-copy'>Talk with TTS Auto Service about your vehicle’s repair needs in Charlotte, NC.</p>
+          <div class='actions'>
+            <a class='button button-primary' href='tel:+17045250441'>Call (704) 525-0441 <span aria-hidden='true'>↗</span></a>
+            <a class='button button-secondary' href='#contact'>Request a callback <span aria-hidden='true'>↓</span></a>
+          </div>
+        </div>
+        <div class='hero-panel' aria-label='TTS Auto Service, auto repair in Charlotte, North Carolina'>
+          <div class='panel-top'><span>TTS Auto Service</span><span class='panel-index'>Auto repair</span></div>
+          <div>
+            <div class='panel-wordmark' aria-hidden='true'>TTS</div>
+            <div class='panel-rule' aria-hidden='true'></div>
+            <p class='panel-caption'>Charlotte, NC</p>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class='section' aria-labelledby='services-title'>
+      <div class='wrap'>
+        <div class='section-heading'>
+          <p class='eyebrow'>Services</p>
+          <h2 id='services-title'>Repair services for the road ahead.</h2>
+          <p class='section-intro'>A range of common auto repair services, presented simply.</p>
+        </div>
+        <div class='services-grid'>
+          <article class='service-card'><div class='service-mark' aria-hidden='true'></div><h3>Brake service</h3><p>Service for brake system concerns and related repairs.</p></article>
+          <article class='service-card'><div class='service-mark' aria-hidden='true'></div><h3>Engine diagnostics</h3><p>Diagnostic service for engine-related concerns.</p></article>
+          <article class='service-card'><div class='service-mark' aria-hidden='true'></div><h3>Oil &amp; filter service</h3><p>Oil and filter service for routine vehicle maintenance.</p></article>
+          <article class='service-card'><div class='service-mark' aria-hidden='true'></div><h3>Tire service</h3><p>Service for common tire-related needs.</p></article>
+          <article class='service-card'><div class='service-mark' aria-hidden='true'></div><h3>Battery service</h3><p>Service for battery and starting system concerns.</p></article>
+          <article class='service-card'><div class='service-mark' aria-hidden='true'></div><h3>Heating &amp; A/C</h3><p>Service for vehicle heating and air conditioning concerns.</p></article>
+        </div>
+      </div>
+    </section>
+    <section class='trust' aria-labelledby='trust-title'>
+      <div class='wrap trust-inner'>
+        <div>
+          <p class='eyebrow'>Customer rating</p>
+          <h2 id='trust-title'>A rating you can see for yourself.</h2>
+          <p class='trust-copy'>This is the business’s Google rating.</p>
+        </div>
+        <div class='rating-card' aria-label='Google rating: 4.9 out of 5 from 315 reviews'>
+          <div class='rating-number'>4.9</div>
+          <div class='rating-meta'>
+            <p class='rating-out-of'>out of 5</p>
+            <p class='rating-reviews'>315 Google reviews</p>
+            <p class='rating-source'>Google rating for TTS Auto Service</p>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class='contact' id='contact' aria-labelledby='contact-title'>
+      <div class='wrap contact-grid'>
+        <div class='contact-copy'>
+          <p class='eyebrow'>Contact</p>
+          <h2 id='contact-title'>Let’s talk about your vehicle.</h2>
+          <p class='section-intro'>Call TTS Auto Service or find the shop at its Charlotte address.</p>
+          <div class='contact-details'>
+            <div><span class='detail-label'>Phone</span><a class='detail-value' href='tel:+17045250441'>(704) 525-0441</a></div>
+            <div><span class='detail-label'>Address</span><p class='detail-value'>4910 Old Pineville Rd<br>Charlotte, NC 28217</p></div>
+            <div><span class='detail-label'>Service area</span><p class='detail-value'>Charlotte, NC</p></div>
+          </div>
+        </div>
+        <div class='preview-card' role='group' aria-labelledby='form-title'>
+          <h3 id='form-title'>Request a callback</h3>
+          <p class='preview-intro'>Share your details in this form preview.</p>
+          <div class='field'><label for='visitor-name'>Name</label><input id='visitor-name' name='name' type='text' autocomplete='name' placeholder='Your name'></div>
+          <div class='field'><label for='visitor-phone'>Phone</label><input id='visitor-phone' name='phone' type='tel' autocomplete='tel' placeholder='Your phone number'></div>
+          <div class='field'><label for='visitor-message'>Message</label><textarea id='visitor-message' name='message' placeholder='How can we help?'></textarea></div>
+          <button class='preview-submit' type='button' disabled>Submit preview</button>
+          <p class='preview-note'>This form is a preview and is not connected.</p>
+        </div>
+      </div>
+    </section>
+  </main>
+  <footer class='site-footer'>
+    <div class='wrap footer-inner'>
+      <p class='footer-name'>TTS Auto Service</p>
+      <p class='footer-note'>Concept preview — not the live site</p>
+    </div>
+  </footer>
+  <div class='mobile-call'><a href='tel:+17045250441'>Call (704) 525-0441</a></div>
+</body>
+</html>
