@@ -1,0 +1,500 @@
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+  <meta charset='utf-8'>
+  <meta name='viewport' content='width=device-width, initial-scale=1'>
+  <meta name='color-scheme' content='light'>
+  <title>U.S. Electric Contractors | Charlotte, NC</title>
+  <style>
+    :root {
+      --navy: #0b1830;
+      --navy-soft: #142744;
+      --yellow: #f5d84a;
+      --paper: #f5f5f1;
+      --white: #ffffff;
+      --ink: #152238;
+      --muted: #626e7f;
+      --line: #dfe3e7;
+      --max-width: 1160px;
+      --radius: 18px;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; }
+    html { scroll-behavior: smooth; scroll-padding-top: 92px; }
+    body {
+      margin: 0;
+      color: var(--ink);
+      background: var(--paper);
+      font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+      -webkit-font-smoothing: antialiased;
+    }
+    a { color: inherit; }
+    a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visible {
+      outline: 3px solid #b18f00;
+      outline-offset: 4px;
+    }
+    .container { width: min(calc(100% - 48px), var(--max-width)); margin-inline: auto; }
+    .skip-link {
+      position: absolute;
+      top: -60px;
+      left: 16px;
+      z-index: 100;
+      padding: 12px 16px;
+      color: var(--navy);
+      background: var(--yellow);
+      border-radius: 8px;
+    }
+    .skip-link:focus { top: 12px; }
+
+    .site-header {
+      position: sticky;
+      top: 0;
+      z-index: 20;
+      color: var(--white);
+      background: rgba(11, 24, 48, .97);
+      border-bottom: 1px solid rgba(255, 255, 255, .12);
+      backdrop-filter: blur(12px);
+    }
+    .header-inner { min-height: 80px; display: flex; align-items: center; justify-content: space-between; gap: 20px; }
+    .brand { display: inline-flex; align-items: center; gap: 12px; text-decoration: none; }
+    .brand-mark {
+      position: relative;
+      display: grid;
+      width: 36px;
+      height: 36px;
+      flex: 0 0 36px;
+      place-items: center;
+      border: 1px solid rgba(245, 216, 74, .65);
+      border-radius: 10px;
+    }
+    .brand-mark::before {
+      content: '';
+      width: 10px;
+      height: 20px;
+      background: var(--yellow);
+      clip-path: polygon(55% 0, 100% 0, 68% 42%, 100% 42%, 22% 100%, 43% 55%, 10% 55%);
+    }
+    .brand-name { max-width: 210px; font-size: 15px; font-weight: 700; letter-spacing: -.025em; line-height: 1.2; }
+    .header-call {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 9px;
+      min-height: 44px;
+      padding: 0 17px;
+      color: var(--navy);
+      background: var(--yellow);
+      border-radius: 8px;
+      font-size: 14px;
+      font-weight: 750;
+      text-decoration: none;
+      white-space: nowrap;
+      transition: background .2s ease, transform .2s ease;
+    }
+    .header-call:hover, .button-primary:hover, .mobile-call:hover { background: #ffe66b; transform: translateY(-1px); }
+    .call-label { font-size: 11px; text-transform: uppercase; letter-spacing: .1em; }
+
+    .hero {
+      position: relative;
+      overflow: hidden;
+      color: var(--white);
+      background: radial-gradient(ellipse at 78% 42%, #1b3558 0, transparent 43%), var(--navy);
+    }
+    .hero::before {
+      position: absolute;
+      inset: 0;
+      content: '';
+      opacity: .13;
+      background-image: linear-gradient(rgba(255,255,255,.12) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,.12) 1px, transparent 1px);
+      background-size: 52px 52px;
+      mask-image: linear-gradient(90deg, transparent 30%, #000 100%);
+      pointer-events: none;
+    }
+    .hero-layout {
+      position: relative;
+      display: grid;
+      grid-template-columns: 1.15fr .85fr;
+      align-items: center;
+      gap: 54px;
+      min-height: 570px;
+      padding-block: 76px;
+    }
+    .hero-copy { max-width: 680px; }
+    .eyebrow {
+      margin: 0 0 20px;
+      color: #b18f00;
+      font-size: 11px;
+      font-weight: 800;
+      letter-spacing: .16em;
+      text-transform: uppercase;
+    }
+    .hero .eyebrow { color: var(--yellow); }
+    h1, h2, h3, p { margin-top: 0; }
+    h1 {
+      max-width: 760px;
+      margin-bottom: 22px;
+      font-size: clamp(46px, 6.1vw, 78px);
+      font-weight: 680;
+      letter-spacing: -.065em;
+      line-height: .99;
+    }
+    .hero-description { max-width: 540px; margin-bottom: 32px; color: #cbd4e0; font-size: 17px; line-height: 1.7; }
+    .hero-actions { display: flex; flex-wrap: wrap; gap: 12px; }
+    .button {
+      display: inline-flex;
+      min-height: 52px;
+      align-items: center;
+      justify-content: center;
+      padding: 0 20px;
+      border: 1px solid transparent;
+      border-radius: 8px;
+      font-size: 14px;
+      font-weight: 750;
+      text-decoration: none;
+      transition: background .2s ease, border-color .2s ease, transform .2s ease;
+    }
+    .button-primary { color: var(--navy); background: var(--yellow); }
+    .button-secondary { color: var(--white); border-color: rgba(255,255,255,.32); background: transparent; }
+    .button-secondary:hover { border-color: var(--yellow); background: rgba(255,255,255,.06); }
+    .hero-art { display: grid; min-height: 340px; place-items: center; }
+    .art-frame {
+      position: relative;
+      width: min(100%, 350px);
+      aspect-ratio: 1 / 1.04;
+      overflow: hidden;
+      border: 1px solid rgba(255,255,255,.24);
+      border-radius: 180px 180px 24px 24px;
+      background: linear-gradient(145deg, rgba(255,255,255,.08), rgba(255,255,255,.015));
+    }
+    .art-frame::before, .art-frame::after {
+      position: absolute;
+      content: '';
+      border: 1px solid rgba(245,216,74,.35);
+      border-radius: 50%;
+    }
+    .art-frame::before { width: 74%; aspect-ratio: 1; top: 13%; left: 13%; }
+    .art-frame::after { width: 53%; aspect-ratio: 1; top: 23.5%; left: 23.5%; border-color: rgba(255,255,255,.25); }
+    .art-core {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      width: 76px;
+      height: 76px;
+      background: var(--yellow);
+      border-radius: 17px;
+      box-shadow: 0 0 70px rgba(245,216,74,.22);
+      transform: translate(-50%, -50%) rotate(45deg);
+    }
+    .art-core::after {
+      position: absolute;
+      inset: 23px 30px;
+      content: '';
+      background: var(--navy);
+      clip-path: polygon(55% 0, 100% 0, 68% 42%, 100% 42%, 22% 100%, 43% 55%, 10% 55%);
+    }
+    .art-rule { position: absolute; top: 50%; left: 0; width: 100%; height: 1px; background: rgba(255,255,255,.2); }
+    .art-label { position: absolute; right: 18px; bottom: 18px; width: 10px; height: 10px; background: var(--yellow); border-radius: 50%; }
+
+    .section { padding-block: 104px; }
+    .section-heading { display: flex; align-items: end; justify-content: space-between; gap: 32px; margin-bottom: 38px; }
+    .section-heading h2, .contact-copy h2 {
+      max-width: 620px;
+      margin-bottom: 0;
+      color: var(--navy);
+      font-size: clamp(34px, 4vw, 52px);
+      font-weight: 650;
+      letter-spacing: -.055em;
+      line-height: 1.04;
+    }
+    .section-intro { max-width: 360px; margin: 0 0 4px; color: var(--muted); font-size: 15px; line-height: 1.7; }
+    .service-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 14px; }
+    .service-card {
+      min-height: 205px;
+      padding: 26px;
+      background: var(--white);
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      transition: border-color .2s ease, box-shadow .2s ease, transform .2s ease;
+    }
+    .service-card:hover { border-color: #c7b34f; box-shadow: 0 14px 34px rgba(11,24,48,.07); transform: translateY(-3px); }
+    .service-index { display: inline-block; margin-bottom: 28px; color: #8a7410; font-size: 11px; font-weight: 800; letter-spacing: .12em; }
+    .service-card h3 { margin-bottom: 9px; color: var(--navy); font-size: 19px; letter-spacing: -.025em; }
+    .service-card p { max-width: 310px; margin-bottom: 0; color: var(--muted); font-size: 14px; line-height: 1.65; }
+
+    .trust-section { padding-block: 0 104px; }
+    .trust-panel {
+      display: grid;
+      grid-template-columns: .85fr 1.15fr;
+      align-items: center;
+      gap: 48px;
+      padding: 54px 64px;
+      color: var(--white);
+      background: var(--navy);
+      border-radius: 22px;
+    }
+    .rating-number { display: block; color: var(--yellow); font-size: clamp(76px, 11vw, 126px); font-weight: 650; letter-spacing: -.09em; line-height: .9; }
+    .rating-copy { padding-left: 40px; border-left: 1px solid rgba(255,255,255,.25); }
+    .rating-copy .eyebrow { margin-bottom: 14px; }
+    .rating-copy h2 { margin-bottom: 12px; font-size: clamp(26px, 3vw, 36px); font-weight: 620; letter-spacing: -.04em; }
+    .rating-copy p:last-child { margin-bottom: 0; color: #cbd4e0; font-size: 14px; line-height: 1.7; }
+
+    .contact-section { padding-block: 102px; background: #e9ebea; }
+    .contact-layout { display: grid; grid-template-columns: 1fr .9fr; align-items: start; gap: 70px; }
+    .contact-copy h2 { margin-bottom: 18px; }
+    .contact-intro { max-width: 440px; margin-bottom: 34px; color: var(--muted); font-size: 15px; line-height: 1.7; }
+    .contact-detail { padding-block: 17px; border-top: 1px solid #cfd4d6; }
+    .detail-label { display: block; margin-bottom: 7px; color: #697482; font-size: 10px; font-weight: 800; letter-spacing: .13em; text-transform: uppercase; }
+    .contact-detail a, .contact-detail address { color: var(--navy); font-size: 17px; font-style: normal; font-weight: 650; line-height: 1.6; text-decoration: none; }
+    .contact-detail a:hover { text-decoration: underline; text-underline-offset: 4px; }
+    .service-area { margin: 22px 0 0; color: var(--navy); font-size: 14px; font-weight: 700; }
+    .preview-card { padding: 30px; background: var(--white); border: 1px solid var(--line); border-radius: var(--radius); box-shadow: 0 16px 40px rgba(11,24,48,.05); }
+    .preview-card h3 { margin-bottom: 6px; color: var(--navy); font-size: 21px; letter-spacing: -.03em; }
+    .preview-intro { margin-bottom: 22px; color: var(--muted); font-size: 13px; line-height: 1.6; }
+    .field { display: grid; gap: 7px; margin-bottom: 15px; }
+    .field label { color: var(--navy); font-size: 12px; font-weight: 700; }
+    .field input, .field textarea {
+      width: 100%;
+      min-height: 45px;
+      padding: 11px 12px;
+      color: var(--ink);
+      background: #fbfbfa;
+      border: 1px solid #d8dde1;
+      border-radius: 7px;
+      font: inherit;
+      font-size: 14px;
+    }
+    .field textarea { min-height: 92px; resize: vertical; }
+    .field input::placeholder, .field textarea::placeholder { color: #7a8490; }
+    .preview-submit {
+      width: 100%;
+      min-height: 48px;
+      color: #526073;
+      background: #e6e9eb;
+      border: 0;
+      border-radius: 7px;
+      font: inherit;
+      font-size: 14px;
+      font-weight: 750;
+      cursor: not-allowed;
+    }
+    .preview-note { margin: 12px 0 0; color: #667180; font-size: 12px; line-height: 1.55; }
+
+    .site-footer { padding-block: 26px; color: #e1e6ee; background: #081326; }
+    .footer-inner { display: flex; align-items: center; justify-content: space-between; gap: 20px; }
+    .footer-name { margin: 0; font-size: 13px; font-weight: 700; }
+    .footer-label { margin: 0; color: #c4ccd8; font-size: 12px; }
+    .mobile-callbar { display: none; }
+
+    @media (max-width: 850px) {
+      .hero-layout { grid-template-columns: 1fr .65fr; gap: 20px; }
+      .hero-art { min-height: 280px; }
+      .art-frame { width: min(100%, 290px); }
+      .section-heading { align-items: start; flex-direction: column; gap: 16px; }
+      .section-intro { max-width: 520px; }
+      .contact-layout { gap: 36px; }
+      .trust-panel { padding: 44px; }
+    }
+    @media (max-width: 680px) {
+      html { scroll-padding-top: 78px; }
+      body { padding-bottom: 78px; }
+      .container { width: min(calc(100% - 36px), var(--max-width)); }
+      .header-inner { min-height: 70px; gap: 10px; }
+      .brand { gap: 9px; }
+      .brand-mark { width: 32px; height: 32px; flex-basis: 32px; }
+      .brand-name { max-width: 145px; font-size: 13px; }
+      .header-call { min-height: 40px; gap: 6px; padding-inline: 10px; font-size: 12px; }
+      .call-label { display: none; }
+      .hero-layout { grid-template-columns: 1fr; min-height: auto; padding-block: 74px 62px; }
+      .hero-copy { position: relative; z-index: 1; }
+      h1 { max-width: 570px; font-size: clamp(44px, 12vw, 64px); }
+      .hero-description { font-size: 15px; }
+      .hero-art { position: absolute; right: -72px; bottom: -35px; width: 210px; min-height: 210px; opacity: .42; }
+      .art-frame { width: 200px; }
+      .art-core { width: 50px; height: 50px; border-radius: 12px; }
+      .art-core::after { inset: 15px 20px; }
+      .section { padding-block: 72px; }
+      .section-heading { margin-bottom: 26px; }
+      .section-heading h2, .contact-copy h2 { font-size: 38px; }
+      .service-grid { grid-template-columns: 1fr; gap: 10px; }
+      .service-card { min-height: 0; padding: 22px; }
+      .service-index { margin-bottom: 20px; }
+      .trust-section { padding-bottom: 72px; }
+      .trust-panel { grid-template-columns: 1fr; gap: 26px; padding: 34px 26px; border-radius: 16px; }
+      .rating-number { font-size: 88px; }
+      .rating-copy { padding: 24px 0 0; border-top: 1px solid rgba(255,255,255,.25); border-left: 0; }
+      .contact-section { padding-block: 72px; }
+      .contact-layout { grid-template-columns: 1fr; gap: 34px; }
+      .preview-card { padding: 23px; }
+      .footer-inner { align-items: flex-start; flex-direction: column; gap: 8px; }
+      .mobile-callbar {
+        position: fixed;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        z-index: 30;
+        display: block;
+        padding: 10px 16px calc(10px + env(safe-area-inset-bottom));
+        background: rgba(11,24,48,.98);
+        border-top: 1px solid rgba(255,255,255,.14);
+      }
+      .mobile-call {
+        display: flex;
+        width: 100%;
+        min-height: 50px;
+        align-items: center;
+        justify-content: center;
+        color: var(--navy);
+        background: var(--yellow);
+        border-radius: 8px;
+        font-size: 15px;
+        font-weight: 800;
+        text-decoration: none;
+        transition: background .2s ease, transform .2s ease;
+      }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after { scroll-behavior: auto !important; transition-duration: .01ms !important; }
+    }
+  </style>
+</head>
+<body>
+  <a class='skip-link' href='#main'>Skip to content</a>
+  <header class='site-header'>
+    <div class='container header-inner'>
+      <a class='brand' href='#top' aria-label='U.S. Electric Contractors home'>
+        <span class='brand-mark' aria-hidden='true'></span>
+        <span class='brand-name'>U.S. Electric Contractors</span>
+      </a>
+      <a class='header-call' href='tel:+19802251458' aria-label='Call U.S. Electric Contractors at (980) 225-1458'>
+        <span class='call-label'>Call</span><span>(980) 225-1458</span>
+      </a>
+    </div>
+  </header>
+
+  <main id='main'>
+    <section class='hero' id='top' aria-labelledby='hero-title'>
+      <div class='container hero-layout'>
+        <div class='hero-copy'>
+          <p class='eyebrow'>Electrical contractor · Charlotte, NC</p>
+          <h1 id='hero-title'>A clear next step for your electrical work.</h1>
+          <p class='hero-description'>Electrical contracting in Charlotte, NC. Call to discuss the work you have in mind.</p>
+          <div class='hero-actions'>
+            <a class='button button-primary' href='tel:+19802251458'>Call (980) 225-1458</a>
+            <a class='button button-secondary' href='#contact'>Request a callback</a>
+          </div>
+        </div>
+        <div class='hero-art' aria-hidden='true'>
+          <div class='art-frame'><span class='art-rule'></span><span class='art-core'></span><span class='art-label'></span></div>
+        </div>
+      </div>
+    </section>
+
+    <section class='section' id='services' aria-labelledby='services-title'>
+      <div class='container'>
+        <div class='section-heading'>
+          <div>
+            <p class='eyebrow'>Services</p>
+            <h2 id='services-title'>Electrical work for your space.</h2>
+          </div>
+          <p class='section-intro'>Explore common electrical services and get in touch to discuss the work you have in mind.</p>
+        </div>
+        <div class='service-grid'>
+          <article class='service-card'>
+            <span class='service-index'>01</span>
+            <h3>Electrical repairs</h3>
+            <p>Work on issues in existing electrical installations.</p>
+          </article>
+          <article class='service-card'>
+            <span class='service-index'>02</span>
+            <h3>Lighting installation</h3>
+            <p>Installation of lighting fixtures and related electrical connections.</p>
+          </article>
+          <article class='service-card'>
+            <span class='service-index'>03</span>
+            <h3>Panel upgrades</h3>
+            <p>Electrical panel updates for changing project needs.</p>
+          </article>
+          <article class='service-card'>
+            <span class='service-index'>04</span>
+            <h3>Wiring &amp; rewiring</h3>
+            <p>Wiring work for new projects and existing spaces.</p>
+          </article>
+          <article class='service-card'>
+            <span class='service-index'>05</span>
+            <h3>Outlets &amp; switches</h3>
+            <p>Installation or replacement of outlets, switches, and related devices.</p>
+          </article>
+          <article class='service-card'>
+            <span class='service-index'>06</span>
+            <h3>Electrical troubleshooting</h3>
+            <p>Investigating electrical concerns and possible next steps.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class='trust-section' aria-labelledby='rating-title'>
+      <div class='container'>
+        <div class='trust-panel'>
+          <div><span class='rating-number'>5.0</span></div>
+          <div class='rating-copy'>
+            <p class='eyebrow'>Google rating</p>
+            <h2 id='rating-title'>153 Google reviews</h2>
+            <p>This is the business's Google rating.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class='contact-section' id='contact' aria-labelledby='contact-title'>
+      <div class='container contact-layout'>
+        <div class='contact-copy'>
+          <p class='eyebrow'>Contact</p>
+          <h2 id='contact-title'>Start a conversation.</h2>
+          <p class='contact-intro'>Call U.S. Electric Contractors or use the form preview to see how a callback request could appear.</p>
+          <div class='contact-detail'>
+            <span class='detail-label'>Phone</span>
+            <a href='tel:+19802251458'>(980) 225-1458</a>
+          </div>
+          <div class='contact-detail'>
+            <span class='detail-label'>Address</span>
+            <address>3434 Monroe Rd<br>Charlotte, NC 28205</address>
+          </div>
+          <p class='service-area'>Service area: Charlotte, NC</p>
+        </div>
+        <div class='preview-card'>
+          <h3>Request a callback</h3>
+          <p class='preview-intro'>Share your contact details and a message.</p>
+          <form class='preview-form' aria-label='Callback request form preview'>
+            <div class='field'>
+              <label for='name'>Name</label>
+              <input id='name' name='name' type='text' autocomplete='name' placeholder='Your name'>
+            </div>
+            <div class='field'>
+              <label for='phone'>Phone</label>
+              <input id='phone' name='phone' type='tel' autocomplete='tel' placeholder='Your phone number'>
+            </div>
+            <div class='field'>
+              <label for='message'>Message</label>
+              <textarea id='message' name='message' placeholder='How can we help?'></textarea>
+            </div>
+            <button class='preview-submit' type='submit' disabled>Send request</button>
+            <p class='preview-note'>Form preview only — submitting is disabled.</p>
+          </form>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class='site-footer'>
+    <div class='container footer-inner'>
+      <p class='footer-name'>U.S. Electric Contractors</p>
+      <p class='footer-label'>Concept preview — not the live site</p>
+    </div>
+  </footer>
+
+  <div class='mobile-callbar'>
+    <a class='mobile-call' href='tel:+19802251458'>Call (980) 225-1458</a>
+  </div>
+</body>
+</html>
