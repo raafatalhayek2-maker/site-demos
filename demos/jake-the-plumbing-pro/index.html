@@ -1,0 +1,489 @@
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+  <meta charset='utf-8'>
+  <meta name='viewport' content='width=device-width, initial-scale=1'>
+  <meta name='theme-color' content='#111e2e'>
+  <title>Jake the Plumbing Pro | Plumbing</title>
+  <style>
+    :root {
+      color-scheme: light;
+      --ink: #152235;
+      --muted: #596779;
+      --navy: #111e2e;
+      --navy-soft: #1c2d42;
+      --paper: #f5f6f3;
+      --white: #ffffff;
+      --line: #dce1e3;
+      --accent: #f2a45b;
+      --accent-dark: #c46e2b;
+      --radius: 18px;
+      --content: 1160px;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; }
+    html { scroll-behavior: smooth; scroll-padding-top: 96px; }
+    body {
+      margin: 0;
+      background: var(--paper);
+      color: var(--ink);
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, Arial, sans-serif;
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+    }
+    a { color: inherit; }
+    a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visible {
+      outline: 3px solid var(--accent);
+      outline-offset: 3px;
+    }
+    .container { width: min(var(--content), calc(100% - 48px)); margin-inline: auto; }
+
+    .site-header {
+      position: sticky;
+      top: 0;
+      z-index: 20;
+      background: rgba(255, 255, 255, .96);
+      border-bottom: 1px solid rgba(21, 34, 53, .09);
+      backdrop-filter: blur(12px);
+    }
+    .header-inner {
+      min-height: 78px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+    }
+    .brand { display: grid; gap: 1px; min-width: 0; text-decoration: none; }
+    .brand-name { color: var(--navy); font-size: 19px; font-weight: 750; letter-spacing: -.035em; line-height: 1.2; }
+    .brand-trade { color: var(--muted); font-size: 10px; font-weight: 750; letter-spacing: .16em; text-transform: uppercase; }
+    .header-call {
+      display: inline-flex;
+      min-height: 46px;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      padding: 11px 18px;
+      border-radius: 999px;
+      background: var(--accent);
+      color: var(--navy);
+      font-size: 14px;
+      font-weight: 750;
+      text-decoration: none;
+      transition: background-color .2s ease, transform .2s ease;
+      white-space: nowrap;
+    }
+    .header-call:hover { background: #ffb978; transform: translateY(-2px); }
+
+    .hero { overflow: hidden; background: var(--navy); color: var(--white); }
+    .hero-inner {
+      display: grid;
+      grid-template-columns: minmax(0, 1.1fr) minmax(280px, .8fr);
+      align-items: center;
+      gap: clamp(40px, 7vw, 94px);
+      min-height: 590px;
+      padding-block: 76px;
+    }
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      margin: 0 0 22px;
+      color: #f4b87f;
+      font-size: 12px;
+      font-weight: 750;
+      letter-spacing: .17em;
+      text-transform: uppercase;
+    }
+    .eyebrow::before { width: 25px; height: 2px; background: var(--accent); content: ''; }
+    h1, h2, h3, p { margin-top: 0; }
+    .hero h1 {
+      max-width: 760px;
+      margin-bottom: 22px;
+      font-size: clamp(2.65rem, 5.2vw, 5rem);
+      font-weight: 760;
+      letter-spacing: -.065em;
+      line-height: 1.02;
+    }
+    .hero-copy > p:not(.eyebrow) {
+      max-width: 590px;
+      margin-bottom: 30px;
+      color: #d0d9e2;
+      font-size: 17px;
+      line-height: 1.75;
+    }
+    .hero-actions { display: flex; flex-wrap: wrap; align-items: center; gap: 13px; }
+    .button {
+      display: inline-flex;
+      min-height: 52px;
+      align-items: center;
+      justify-content: center;
+      padding: 13px 20px;
+      border: 1px solid transparent;
+      border-radius: 10px;
+      font-size: 14px;
+      font-weight: 750;
+      text-align: center;
+      text-decoration: none;
+      transition: background-color .2s ease, border-color .2s ease, color .2s ease, transform .2s ease;
+    }
+    .button:hover { transform: translateY(-2px); }
+    .button-primary { background: var(--accent); color: var(--navy); }
+    .button-primary:hover { background: #ffb978; }
+    .button-secondary { border-color: #627184; color: var(--white); }
+    .button-secondary:hover { border-color: #c7d2dd; background: rgba(255, 255, 255, .06); }
+
+    .hero-visual {
+      position: relative;
+      display: grid;
+      min-height: 350px;
+      place-items: center;
+      overflow: hidden;
+      border: 1px solid #33455a;
+      border-radius: 24px;
+      background: var(--navy-soft);
+    }
+    .visual-tag {
+      position: absolute;
+      top: 25px;
+      left: 26px;
+      color: #c2cbd5;
+      font-size: 11px;
+      font-weight: 750;
+      letter-spacing: .18em;
+    }
+    .visual-orbit {
+      position: relative;
+      display: grid;
+      width: 222px;
+      aspect-ratio: 1;
+      place-items: center;
+      border: 1px solid #617186;
+      border-radius: 50%;
+    }
+    .visual-orbit::before, .visual-orbit::after {
+      position: absolute;
+      border: 1px solid #43566d;
+      border-radius: 50%;
+      content: '';
+    }
+    .visual-orbit::before { inset: 19px; }
+    .visual-orbit::after { inset: 40px; border-color: #718198; }
+    .visual-core {
+      z-index: 1;
+      width: 54px;
+      height: 54px;
+      border: 10px solid var(--accent);
+      border-radius: 50%;
+      background: var(--navy-soft);
+      box-shadow: 0 0 0 9px rgba(242, 164, 91, .12);
+    }
+    .visual-rule { position: absolute; right: 27px; bottom: 29px; width: 55px; height: 3px; background: var(--accent); }
+
+    .section { padding-block: 92px; }
+    .section-heading { max-width: 650px; margin-bottom: 36px; }
+    .section-kicker {
+      margin-bottom: 10px;
+      color: var(--accent-dark);
+      font-size: 11px;
+      font-weight: 800;
+      letter-spacing: .17em;
+      text-transform: uppercase;
+    }
+    .section-heading h2, .contact-copy h2 {
+      margin-bottom: 0;
+      color: var(--navy);
+      font-size: clamp(2rem, 3.6vw, 3rem);
+      font-weight: 750;
+      letter-spacing: -.05em;
+      line-height: 1.1;
+    }
+    .service-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 16px; }
+    .service-card {
+      min-height: 190px;
+      padding: 25px 24px 23px;
+      border: 1px solid #e1e4e3;
+      border-radius: var(--radius);
+      background: var(--white);
+      box-shadow: 0 8px 24px rgba(21, 34, 53, .035);
+      transition: border-color .2s ease, box-shadow .2s ease, transform .2s ease;
+    }
+    .service-card:hover { transform: translateY(-4px); border-color: #d2a078; box-shadow: 0 14px 30px rgba(21, 34, 53, .09); }
+    .service-mark { width: 29px; height: 3px; margin-bottom: 24px; border-radius: 3px; background: var(--accent); }
+    .service-card h3 { margin-bottom: 8px; color: var(--navy); font-size: 18px; font-weight: 730; letter-spacing: -.025em; }
+    .service-card p { margin-bottom: 0; color: var(--muted); font-size: 14px; line-height: 1.65; }
+
+    .trust-section { padding-block: 0 92px; }
+    .trust-panel {
+      display: flex;
+      min-height: 245px;
+      align-items: center;
+      justify-content: center;
+      gap: clamp(28px, 6vw, 76px);
+      padding: 44px 30px;
+      border-radius: 24px;
+      background: var(--navy);
+      color: var(--white);
+      text-align: center;
+    }
+    .trust-stars { color: var(--accent); font-size: 20px; letter-spacing: .2em; }
+    .rating-number { display: block; margin-top: 5px; font-size: clamp(3.6rem, 7vw, 5.5rem); font-weight: 780; letter-spacing: -.075em; line-height: 1.05; }
+    .rating-copy { margin: 10px 0 0; color: #d7dfe7; font-size: 16px; }
+
+    .contact-section { padding-block: 0 96px; }
+    .contact-layout {
+      display: grid;
+      grid-template-columns: minmax(0, .9fr) minmax(0, 1.1fr);
+      gap: clamp(38px, 7vw, 90px);
+      align-items: start;
+    }
+    .contact-copy .section-kicker { margin-bottom: 12px; }
+    .contact-copy > p { max-width: 440px; margin: 17px 0 28px; color: var(--muted); }
+    .contact-detail { margin-top: 20px; }
+    .detail-label { display: block; margin-bottom: 4px; color: var(--muted); font-size: 11px; font-weight: 800; letter-spacing: .14em; text-transform: uppercase; }
+    .contact-detail a, .contact-detail address { color: var(--navy); font-size: 16px; font-style: normal; font-weight: 650; text-decoration: none; }
+    .contact-detail a:hover { color: var(--accent-dark); text-decoration: underline; text-underline-offset: 3px; }
+    .quote-card {
+      padding: clamp(23px, 4vw, 36px);
+      border: 1px solid #e0e4e3;
+      border-radius: 20px;
+      background: var(--white);
+      box-shadow: 0 14px 38px rgba(21, 34, 53, .06);
+    }
+    .form-topline { display: flex; align-items: center; justify-content: space-between; gap: 12px; margin-bottom: 22px; }
+    .form-topline h3 { margin: 0; color: var(--navy); font-size: 21px; letter-spacing: -.035em; }
+    .preview-label { padding: 5px 9px; border-radius: 999px; background: #fff1e3; color: #854615; font-size: 10px; font-weight: 800; letter-spacing: .08em; text-transform: uppercase; white-space: nowrap; }
+    .field { margin-bottom: 16px; }
+    .field label { display: block; margin-bottom: 7px; color: var(--ink); font-size: 13px; font-weight: 700; }
+    .field input, .field textarea {
+      display: block;
+      width: 100%;
+      min-height: 48px;
+      padding: 12px 14px;
+      border: 1px solid #cfd6da;
+      border-radius: 9px;
+      background: #fff;
+      color: var(--ink);
+      font: inherit;
+      font-size: 14px;
+      transition: border-color .2s ease, box-shadow .2s ease;
+    }
+    .field input::placeholder, .field textarea::placeholder { color: #84909a; }
+    .field input:focus, .field textarea:focus { border-color: var(--accent-dark); box-shadow: 0 0 0 3px rgba(242, 164, 91, .18); outline: none; }
+    .field textarea { min-height: 112px; resize: vertical; }
+    .form-submit { width: 100%; border: 0; cursor: pointer; font: inherit; }
+    .form-note { margin: 12px 0 0; color: var(--muted); font-size: 12px; text-align: center; }
+
+    .site-footer { padding-block: 25px; border-top: 1px solid var(--line); background: #fff; }
+    .footer-inner { display: flex; align-items: center; justify-content: space-between; gap: 16px; }
+    .footer-name { color: var(--navy); font-size: 14px; font-weight: 750; }
+    .footer-note { color: var(--muted); font-size: 12px; }
+    .mobile-call { display: none; }
+
+    @media (max-width: 900px) {
+      .hero-inner { grid-template-columns: 1fr; min-height: 0; }
+      .hero-visual { display: none; }
+      .hero-copy { max-width: 760px; }
+      .service-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    }
+    @media (max-width: 680px) {
+      html { scroll-padding-top: 78px; }
+      .container { width: min(100% - 36px, var(--content)); }
+      .header-inner { min-height: 69px; gap: 10px; }
+      .brand-name { font-size: 16px; }
+      .brand-trade { font-size: 9px; }
+      .header-call { min-height: 42px; padding: 10px 15px; font-size: 13px; }
+      .call-number { display: none; }
+      .hero-inner { padding-block: 70px 68px; }
+      .hero h1 { font-size: clamp(2.55rem, 12vw, 4rem); }
+      .hero-copy > p:not(.eyebrow) { font-size: 16px; }
+      .hero-actions { align-items: stretch; flex-direction: column; }
+      .hero-actions .button { width: 100%; }
+      .section { padding-block: 69px; }
+      .section-heading { margin-bottom: 26px; }
+      .service-grid { grid-template-columns: 1fr; gap: 12px; }
+      .service-card { min-height: 0; padding: 22px; }
+      .service-mark { margin-bottom: 18px; }
+      .trust-section { padding-block: 0 68px; }
+      .trust-panel { min-height: 220px; padding: 34px 18px; }
+      .contact-section { padding-block: 0 74px; }
+      .contact-layout { grid-template-columns: 1fr; gap: 34px; }
+      .quote-card { padding: 22px 18px; }
+      .footer-inner { align-items: flex-start; flex-direction: column; gap: 5px; }
+      .site-footer { padding-block: 20px; padding-bottom: calc(94px + env(safe-area-inset-bottom)); }
+      .mobile-call {
+        position: fixed;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        z-index: 30;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 14px;
+        padding: 12px 18px calc(12px + env(safe-area-inset-bottom));
+        border-top: 1px solid rgba(255, 255, 255, .16);
+        background: var(--navy);
+        box-shadow: 0 -8px 24px rgba(17, 30, 46, .16);
+      }
+      .mobile-call-label { color: #d5dde5; font-size: 11px; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; }
+      .mobile-call a {
+        display: inline-flex;
+        min-height: 44px;
+        align-items: center;
+        justify-content: center;
+        padding: 10px 16px;
+        border-radius: 9px;
+        background: var(--accent);
+        color: var(--navy);
+        font-size: 14px;
+        font-weight: 800;
+        text-decoration: none;
+        white-space: nowrap;
+      }
+      .mobile-call a:hover { background: #ffb978; }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
+      *, *::before, *::after { scroll-behavior: auto !important; transition-duration: .01ms !important; }
+    }
+  </style>
+</head>
+<body>
+  <header class='site-header'>
+    <div class='container header-inner'>
+      <a class='brand' href='#top' aria-label='Jake the Plumbing Pro home'>
+        <span class='brand-name'>Jake the Plumbing Pro</span>
+        <span class='brand-trade'>Plumbing</span>
+      </a>
+      <a class='header-call' href='tel:+12147518381' aria-label='Call Jake the Plumbing Pro at +1 214-751-8381'>
+        <span>Call</span><span class='call-number'>+1 214-751-8381</span>
+      </a>
+    </div>
+  </header>
+
+  <main id='top'>
+    <section class='hero' aria-labelledby='hero-title'>
+      <div class='container hero-inner'>
+        <div class='hero-copy'>
+          <p class='eyebrow'>Plumbing</p>
+          <h1 id='hero-title'>Plumbing repairs done right, without the runaround.</h1>
+          <p>From drains and pipes to fixtures, explore plumbing service options and get in touch to discuss the work you need.</p>
+          <div class='hero-actions'>
+            <a class='button button-primary' href='tel:+12147518381'>Call +1 214-751-8381</a>
+            <a class='button button-secondary' href='#contact'>Get in touch</a>
+          </div>
+        </div>
+        <div class='hero-visual' aria-hidden='true'>
+          <span class='visual-tag'>PLUMBING</span>
+          <div class='visual-orbit'><div class='visual-core'></div></div>
+          <span class='visual-rule'></span>
+        </div>
+      </div>
+    </section>
+
+    <section class='section' aria-labelledby='services-title'>
+      <div class='container'>
+        <div class='section-heading'>
+          <p class='section-kicker'>Services</p>
+          <h2 id='services-title'>Plumbing service options</h2>
+        </div>
+        <div class='service-grid'>
+          <article class='service-card'>
+            <div class='service-mark' aria-hidden='true'></div>
+            <h3>Drain cleaning</h3>
+            <p>Clearing buildup can help water move through a drain as intended.</p>
+          </article>
+          <article class='service-card'>
+            <div class='service-mark' aria-hidden='true'></div>
+            <h3>Pipe repair</h3>
+            <p>Repair work can address leaks or damage along plumbing pipes.</p>
+          </article>
+          <article class='service-card'>
+            <div class='service-mark' aria-hidden='true'></div>
+            <h3>Toilet repair</h3>
+            <p>Toilet repairs can address flushing, filling, or leaking concerns.</p>
+          </article>
+          <article class='service-card'>
+            <div class='service-mark' aria-hidden='true'></div>
+            <h3>Leak detection</h3>
+            <p>Finding a leak's source can help clarify the next repair step.</p>
+          </article>
+          <article class='service-card'>
+            <div class='service-mark' aria-hidden='true'></div>
+            <h3>Water heater service</h3>
+            <p>Water heater service focuses on the equipment that supplies hot water.</p>
+          </article>
+          <article class='service-card'>
+            <div class='service-mark' aria-hidden='true'></div>
+            <h3>Fixture installation</h3>
+            <p>Installing a fixture connects items such as faucets and sinks to plumbing.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class='trust-section' aria-label='Google rating'>
+      <div class='container trust-panel'>
+        <div>
+          <div class='trust-stars' aria-hidden='true'>★★★★★</div>
+          <span class='rating-number'>4.8</span>
+          <p class='rating-copy'>4.8 stars from 202 Google reviews</p>
+        </div>
+      </div>
+    </section>
+
+    <section class='contact-section' id='contact' aria-labelledby='contact-title'>
+      <div class='container contact-layout'>
+        <div class='contact-copy'>
+          <p class='section-kicker'>Contact</p>
+          <h2 id='contact-title'>Get in touch</h2>
+          <p>Call or use the preview form to share what you need.</p>
+          <div class='contact-detail'>
+            <span class='detail-label'>Phone</span>
+            <a href='tel:+12147518381'>+1 214-751-8381</a>
+          </div>
+          <div class='contact-detail'>
+            <span class='detail-label'>Address</span>
+            <address>1410 Dragon St Ste 716, Dallas, TX 75207, USA</address>
+          </div>
+        </div>
+
+        <div class='quote-card'>
+          <div class='form-topline'>
+            <h3>Request a quote</h3>
+            <span class='preview-label'>Preview form</span>
+          </div>
+          <form aria-label='Preview request a quote form'>
+            <div class='field'>
+              <label for='name'>Name</label>
+              <input id='name' name='name' type='text' autocomplete='name' placeholder='Your name' required>
+            </div>
+            <div class='field'>
+              <label for='phone'>Phone</label>
+              <input id='phone' name='phone' type='tel' autocomplete='tel' placeholder='Your phone number' required>
+            </div>
+            <div class='field'>
+              <label for='message'>Message</label>
+              <textarea id='message' name='message' placeholder='How can we help?' required></textarea>
+            </div>
+            <button class='button button-primary form-submit' type='submit'>Request a quote</button>
+            <p class='form-note'>Preview only — this form is not connected.</p>
+          </form>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <div class='mobile-call' aria-label='Call Jake the Plumbing Pro'>
+    <span class='mobile-call-label'>Call Jake the Plumbing Pro</span>
+    <a href='tel:+12147518381'>+1 214-751-8381</a>
+  </div>
+
+  <footer class='site-footer'>
+    <div class='container footer-inner'>
+      <span class='footer-name'>Jake the Plumbing Pro</span>
+      <span class='footer-note'>Concept preview — not the live site</span>
+    </div>
+  </footer>
+</body>
+</html>
