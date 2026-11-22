@@ -1,0 +1,437 @@
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+  <meta charset='utf-8'>
+  <meta name='viewport' content='width=device-width, initial-scale=1'>
+  <meta name='theme-color' content='#101c2b'>
+  <title>Dallas Finest Construction LLC | Concept Preview</title>
+  <style>
+    :root {
+      color-scheme: light;
+      --navy: #101c2b;
+      --navy-soft: #1a2b3d;
+      --ink: #182536;
+      --slate: #586779;
+      --muted: #697789;
+      --paper: #f4f3ef;
+      --white: #ffffff;
+      --line: #e1e4e7;
+      --accent: #d8aa61;
+      --accent-dark: #a96f22;
+      --shadow: 0 14px 34px rgba(16, 28, 43, 0.08);
+      --content: 1160px;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; }
+    html { scroll-behavior: smooth; scroll-padding-top: 100px; }
+    body {
+      margin: 0;
+      color: var(--ink);
+      background: var(--white);
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+      -webkit-font-smoothing: antialiased;
+      line-height: 1.6;
+    }
+    a { color: inherit; }
+    button, input, textarea { font: inherit; }
+    .container { width: min(var(--content), calc(100% - 48px)); margin-inline: auto; }
+
+    .site-header {
+      position: sticky;
+      top: 0;
+      z-index: 20;
+      background: rgba(255, 255, 255, 0.97);
+      border-bottom: 1px solid var(--line);
+    }
+    .header-inner {
+      min-height: 82px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+    }
+    .brand { display: flex; align-items: center; gap: 13px; min-width: 0; text-decoration: none; }
+    .brand-rule { width: 4px; height: 38px; flex: 0 0 4px; background: var(--accent); }
+    .brand-copy { display: grid; gap: 1px; }
+    .brand-name { color: var(--navy); font-size: 1rem; font-weight: 750; letter-spacing: -0.025em; line-height: 1.25; }
+    .trade-label { color: var(--muted); font-size: 0.7rem; font-weight: 700; letter-spacing: 0.11em; text-transform: uppercase; }
+    .header-call, .button {
+      min-height: 48px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 9px;
+      border: 1px solid transparent;
+      border-radius: 4px;
+      background: var(--accent);
+      color: #1a2028;
+      font-size: 0.9rem;
+      font-weight: 750;
+      text-decoration: none;
+      transition: background-color 180ms ease, color 180ms ease, border-color 180ms ease, transform 180ms ease, box-shadow 180ms ease;
+    }
+    .header-call { padding: 0 20px; white-space: nowrap; }
+    .header-call:hover, .button-primary:hover { background: #e5bb7b; box-shadow: 0 8px 18px rgba(216, 170, 97, 0.2); transform: translateY(-1px); }
+    a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visible {
+      outline: 3px solid #b5792e;
+      outline-offset: 3px;
+    }
+
+    .hero { overflow: hidden; background: var(--navy); color: var(--white); }
+    .hero-inner {
+      min-height: 530px;
+      display: grid;
+      grid-template-columns: minmax(0, 1.12fr) minmax(310px, 0.88fr);
+      align-items: center;
+      gap: clamp(40px, 7vw, 100px);
+      padding-block: 76px;
+    }
+    .eyebrow {
+      margin: 0 0 20px;
+      color: var(--accent);
+      font-size: 0.72rem;
+      font-weight: 750;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+    }
+    h1, h2, h3, p { margin-top: 0; }
+    .hero h1 {
+      max-width: 720px;
+      margin-bottom: 20px;
+      font-size: clamp(2.55rem, 5.3vw, 4.5rem);
+      font-weight: 680;
+      letter-spacing: -0.055em;
+      line-height: 1.06;
+    }
+    .hero-copy {
+      max-width: 590px;
+      margin-bottom: 30px;
+      color: #d2d9e0;
+      font-size: clamp(1rem, 1.4vw, 1.12rem);
+      line-height: 1.75;
+    }
+    .hero-actions { display: flex; flex-wrap: wrap; align-items: center; gap: 12px; }
+    .button { padding: 0 19px; }
+    .button-secondary {
+      border-color: rgba(255, 255, 255, 0.42);
+      background: transparent;
+      color: var(--white);
+    }
+    .button-secondary:hover { border-color: var(--accent); background: rgba(255, 255, 255, 0.07); transform: translateY(-1px); }
+
+    .hero-card {
+      position: relative;
+      min-height: 350px;
+      overflow: hidden;
+      padding: 30px;
+      border: 1px solid rgba(255, 255, 255, 0.15);
+      background: var(--navy-soft);
+    }
+    .hero-card-top { display: flex; justify-content: space-between; align-items: center; gap: 12px; }
+    .card-kicker { margin: 0; color: #c6d0da; font-size: 0.68rem; font-weight: 750; letter-spacing: 0.14em; text-transform: uppercase; }
+    .card-marker { width: 9px; height: 9px; border-radius: 50%; background: var(--accent); }
+    .hero-address { position: relative; z-index: 2; margin-top: 26px; }
+    .hero-address p { margin: 0; }
+    .hero-address .street { color: var(--white); font-size: 1.25rem; font-weight: 650; letter-spacing: -0.02em; }
+    .hero-address .city { color: #c6d0da; font-size: 0.95rem; }
+    .geometry { position: absolute; right: 22px; bottom: 22px; width: 78%; height: 48%; border: 1px solid rgba(216, 170, 97, 0.5); }
+    .geometry::before { position: absolute; top: 18px; left: 18px; width: 61%; height: 76%; border: 1px solid rgba(255, 255, 255, 0.26); content: ''; }
+    .geometry::after { position: absolute; right: 18px; bottom: 18px; width: 30%; height: 57%; border: 1px solid rgba(255, 255, 255, 0.26); content: ''; }
+    .geometry-bar { position: absolute; top: 0; left: 22%; width: 1px; height: 100%; background: rgba(255, 255, 255, 0.14); }
+
+    .section { padding-block: 88px; }
+    .section-heading { max-width: 660px; margin-bottom: 36px; }
+    .section-kicker { margin-bottom: 10px; color: var(--accent-dark); font-size: 0.7rem; font-weight: 800; letter-spacing: 0.15em; text-transform: uppercase; }
+    .section-heading h2, .contact-copy h2 {
+      margin-bottom: 12px;
+      color: var(--navy);
+      font-size: clamp(2rem, 3.6vw, 3rem);
+      font-weight: 680;
+      letter-spacing: -0.045em;
+      line-height: 1.12;
+    }
+    .section-heading p, .contact-intro { margin-bottom: 0; color: var(--slate); }
+    .services { background: var(--paper); }
+    .service-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 16px; }
+    .service-card {
+      min-height: 205px;
+      padding: 25px 24px;
+      border: 1px solid #e5e4df;
+      background: var(--white);
+      box-shadow: 0 3px 12px rgba(16, 28, 43, 0.025);
+      transition: transform 180ms ease, box-shadow 180ms ease, border-color 180ms ease;
+    }
+    .service-card:hover { transform: translateY(-3px); border-color: #d2b27e; box-shadow: var(--shadow); }
+    .service-number { display: block; margin-bottom: 24px; color: var(--accent-dark); font-size: 0.68rem; font-weight: 800; letter-spacing: 0.13em; }
+    .service-card h3 { margin-bottom: 9px; color: var(--navy); font-size: 1.14rem; font-weight: 700; letter-spacing: -0.025em; line-height: 1.3; }
+    .service-card p { margin-bottom: 0; color: var(--slate); font-size: 0.91rem; line-height: 1.65; }
+
+    .trust { padding-block: 62px; background: #e9e6de; }
+    .trust-inner { display: flex; align-items: center; justify-content: space-between; gap: 30px; }
+    .trust-label { margin: 0; color: var(--slate); font-size: 0.72rem; font-weight: 800; letter-spacing: 0.15em; text-transform: uppercase; }
+    .rating-line { display: flex; align-items: baseline; gap: 17px; margin: 0; color: var(--navy); }
+    .rating-number { font-size: clamp(4.2rem, 8vw, 6.4rem); font-weight: 700; letter-spacing: -0.08em; line-height: 1; }
+    .rating-text { font-size: clamp(1.05rem, 2vw, 1.4rem); font-weight: 650; letter-spacing: -0.02em; }
+    .trust-rule { width: 1px; height: 76px; background: #c8c4ba; }
+
+    .contact { background: var(--white); }
+    .contact-grid { display: grid; grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr); align-items: start; gap: clamp(44px, 8vw, 110px); }
+    .contact-copy h2 { max-width: 450px; }
+    .contact-intro { max-width: 430px; margin-bottom: 32px; line-height: 1.75; }
+    .contact-details { display: grid; gap: 22px; }
+    .detail-label { display: block; margin-bottom: 5px; color: var(--muted); font-size: 0.68rem; font-weight: 800; letter-spacing: 0.13em; text-transform: uppercase; }
+    .contact-details p, .contact-details address { margin: 0; color: var(--navy); font-size: 1rem; font-style: normal; font-weight: 600; }
+    .contact-details a { text-decoration-color: #b8c0c8; text-underline-offset: 4px; transition: color 180ms ease, text-decoration-color 180ms ease; }
+    .contact-details a:hover { color: var(--accent-dark); text-decoration-color: currentColor; }
+    .quote-card { padding: clamp(24px, 4vw, 38px); border: 1px solid var(--line); background: #fbfbfa; box-shadow: var(--shadow); }
+    .form-top { display: flex; align-items: center; justify-content: space-between; gap: 14px; margin-bottom: 24px; }
+    .form-top h3 { margin: 0; color: var(--navy); font-size: 1.35rem; font-weight: 700; letter-spacing: -0.03em; }
+    .preview-tag { padding: 5px 9px; border: 1px solid #d9c7a8; color: #77511e; font-size: 0.65rem; font-weight: 800; letter-spacing: 0.1em; text-transform: uppercase; white-space: nowrap; }
+    .form-fields { display: grid; gap: 16px; }
+    .field { display: grid; gap: 7px; }
+    .field label { color: var(--ink); font-size: 0.83rem; font-weight: 650; }
+    .field input, .field textarea {
+      width: 100%;
+      min-height: 48px;
+      padding: 11px 13px;
+      border: 1px solid #cbd1d7;
+      border-radius: 3px;
+      background: var(--white);
+      color: var(--ink);
+      transition: border-color 180ms ease, box-shadow 180ms ease;
+    }
+    .field textarea { min-height: 116px; resize: vertical; }
+    .field input::placeholder, .field textarea::placeholder { color: #7c8793; }
+    .field input:focus, .field textarea:focus { border-color: #9c6b2d; box-shadow: 0 0 0 3px rgba(216, 170, 97, 0.18); outline: none; }
+    .form-button { width: 100%; min-height: 50px; margin-top: 4px; border: 0; border-radius: 3px; background: var(--navy); color: var(--white); cursor: pointer; font-weight: 700; transition: background-color 180ms ease, transform 180ms ease; }
+    .form-button:hover { background: #24384d; transform: translateY(-1px); }
+
+    .site-footer { padding-block: 25px; background: var(--navy); color: #eef1f4; }
+    .footer-inner { display: flex; align-items: center; justify-content: space-between; gap: 18px; }
+    .footer-inner p { margin: 0; font-size: 0.85rem; font-weight: 650; }
+    .footer-note { color: #c5ced7; font-size: 0.78rem !important; font-weight: 500 !important; }
+    .mobile-call-bar { display: none; }
+
+    @media (max-width: 800px) {
+      .hero-inner { grid-template-columns: minmax(0, 1fr) minmax(260px, 0.8fr); gap: 30px; }
+      .hero-card { min-height: 320px; padding: 24px; }
+      .service-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+      .contact-grid { gap: 44px; }
+    }
+    @media (max-width: 640px) {
+      html { scroll-padding-top: 82px; }
+      .container { width: min(var(--content), calc(100% - 40px)); }
+      .header-inner { min-height: 72px; gap: 12px; }
+      .brand { gap: 10px; }
+      .brand-rule { height: 34px; }
+      .brand-name { max-width: 190px; font-size: 0.9rem; }
+      .trade-label { font-size: 0.63rem; }
+      .header-call { min-height: 42px; padding-inline: 13px; font-size: 0.82rem; }
+      .hero-inner { min-height: auto; grid-template-columns: 1fr; gap: 36px; padding-block: 66px 54px; }
+      .hero h1 { max-width: 560px; font-size: clamp(2.55rem, 11vw, 3.55rem); }
+      .hero-copy { font-size: 1rem; }
+      .hero-card { min-height: 270px; }
+      .section { padding-block: 68px; }
+      .section-heading { margin-bottom: 27px; }
+      .service-grid { gap: 12px; }
+      .service-card { min-height: 200px; padding: 20px 17px; }
+      .service-card h3 { font-size: 1.03rem; }
+      .service-card p { font-size: 0.87rem; }
+      .service-number { margin-bottom: 19px; }
+      .trust { padding-block: 44px; }
+      .trust-inner { align-items: flex-start; gap: 18px; }
+      .trust-rule { height: 64px; }
+      .rating-line { gap: 12px; }
+      .rating-text { max-width: 210px; line-height: 1.45; }
+      .contact-grid { grid-template-columns: 1fr; gap: 36px; }
+      .quote-card { padding: 23px 19px; }
+      .footer-inner { align-items: flex-start; flex-direction: column; gap: 7px; }
+      .mobile-call-bar {
+        position: fixed;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        z-index: 30;
+        display: block;
+        padding: 10px 20px calc(10px + env(safe-area-inset-bottom));
+        border-top: 1px solid rgba(255, 255, 255, 0.12);
+        background: var(--navy);
+      }
+      .mobile-call-link {
+        min-height: 48px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 3px;
+        background: var(--accent);
+        color: #1a2028;
+        font-size: 0.93rem;
+        font-weight: 800;
+        text-decoration: none;
+        transition: background-color 180ms ease;
+      }
+      .mobile-call-link:hover { background: #e5bb7b; }
+      body { padding-bottom: 76px; }
+    }
+    @media (max-width: 380px) {
+      .brand-name { max-width: 145px; font-size: 0.82rem; }
+      .header-call { padding-inline: 10px; font-size: 0.78rem; }
+      .service-grid { grid-template-columns: 1fr; }
+      .service-card { min-height: auto; }
+      .service-number { margin-bottom: 13px; }
+      .trust-inner { gap: 12px; }
+      .rating-line { gap: 9px; }
+      .rating-text { font-size: 0.98rem; }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
+      *, *::before, *::after { transition-duration: 0.01ms !important; }
+    }
+  </style>
+</head>
+<body>
+  <header class='site-header'>
+    <div class='container header-inner'>
+      <a class='brand' href='#top' aria-label='Dallas Finest Construction LLC home'>
+        <span class='brand-rule' aria-hidden='true'></span>
+        <span class='brand-copy'>
+          <span class='brand-name'>Dallas Finest Construction LLC</span>
+          <span class='trade-label'>General contracting</span>
+        </span>
+      </a>
+      <a class='header-call' href='tel:+12148757510' aria-label='Call +1 214-875-7510'>Call now</a>
+    </div>
+  </header>
+
+  <main id='top'>
+    <section class='hero' aria-labelledby='hero-title'>
+      <div class='container hero-inner'>
+        <div>
+          <p class='eyebrow'>General contracting · Dallas, TX</p>
+          <h1 id='hero-title'>Construction work planned, priced and delivered properly.</h1>
+          <p class='hero-copy'>A clear place to review general contracting services and get in touch about a project.</p>
+          <div class='hero-actions'>
+            <a class='button button-primary' href='tel:+12148757510'>Call +1 214-875-7510</a>
+            <a class='button button-secondary' href='#contact'>Contact</a>
+          </div>
+        </div>
+        <aside class='hero-card' aria-label='Business address'>
+          <div class='hero-card-top'>
+            <p class='card-kicker'>Address</p>
+            <span class='card-marker' aria-hidden='true'></span>
+          </div>
+          <div class='hero-address'>
+            <p class='street'>1550 E Missouri Ave</p>
+            <p class='city'>Dallas, TX 75216, USA</p>
+          </div>
+          <div class='geometry' aria-hidden='true'><span class='geometry-bar'></span></div>
+        </aside>
+      </div>
+    </section>
+
+    <section class='section services' aria-labelledby='services-title'>
+      <div class='container'>
+        <div class='section-heading'>
+          <p class='section-kicker'>Services</p>
+          <h2 id='services-title'>General contracting services</h2>
+          <p>Explore common project types.</p>
+        </div>
+        <div class='service-grid'>
+          <article class='service-card'>
+            <span class='service-number' aria-hidden='true'>01</span>
+            <h3>Kitchen remodels</h3>
+            <p>A kitchen remodel can reshape a home's layout, finishes and everyday use.</p>
+          </article>
+          <article class='service-card'>
+            <span class='service-number' aria-hidden='true'>02</span>
+            <h3>Bathroom remodels</h3>
+            <p>A bathroom renovation can update surfaces, fixtures and the room's layout.</p>
+          </article>
+          <article class='service-card'>
+            <span class='service-number' aria-hidden='true'>03</span>
+            <h3>Room additions</h3>
+            <p>A room addition creates more interior space by extending a building.</p>
+          </article>
+          <article class='service-card'>
+            <span class='service-number' aria-hidden='true'>04</span>
+            <h3>Whole-home renovations</h3>
+            <p>A whole-home renovation brings updates to multiple areas of a property.</p>
+          </article>
+          <article class='service-card'>
+            <span class='service-number' aria-hidden='true'>05</span>
+            <h3>Exterior and structural work</h3>
+            <p>Exterior and structural projects address a building's form and function.</p>
+          </article>
+          <article class='service-card'>
+            <span class='service-number' aria-hidden='true'>06</span>
+            <h3>Commercial build-outs</h3>
+            <p>A commercial build-out adapts an interior space for a business use.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class='trust' aria-labelledby='rating-title'>
+      <div class='container trust-inner'>
+        <p class='trust-label' id='rating-title'>Google rating</p>
+        <span class='trust-rule' aria-hidden='true'></span>
+        <p class='rating-line'><span class='rating-number'>5</span><span class='rating-text'>stars from 25 Google reviews</span></p>
+      </div>
+    </section>
+
+    <section class='section contact' id='contact' aria-labelledby='contact-title'>
+      <div class='container contact-grid'>
+        <div class='contact-copy'>
+          <p class='section-kicker'>Contact</p>
+          <h2 id='contact-title'>Get in touch about your project.</h2>
+          <p class='contact-intro'>Use the phone link or the preview form to get in touch.</p>
+          <div class='contact-details'>
+            <div>
+              <span class='detail-label'>Phone</span>
+              <p><a href='tel:+12148757510'>+1 214-875-7510</a></p>
+            </div>
+            <div>
+              <span class='detail-label'>Address</span>
+              <address>1550 E Missouri Ave, Dallas, TX 75216, USA</address>
+            </div>
+          </div>
+        </div>
+        <div class='quote-card'>
+          <div class='form-top'>
+            <h3>Request a quote</h3>
+            <span class='preview-tag'>Preview form</span>
+          </div>
+          <form aria-label='Preview form for requesting a quote'>
+            <div class='form-fields'>
+              <div class='field'>
+                <label for='name'>Name</label>
+                <input id='name' name='name' type='text' autocomplete='name' placeholder='Your name'>
+              </div>
+              <div class='field'>
+                <label for='phone'>Phone</label>
+                <input id='phone' name='phone' type='tel' autocomplete='tel' placeholder='Your phone number'>
+              </div>
+              <div class='field'>
+                <label for='message'>Message</label>
+                <textarea id='message' name='message' rows='4' placeholder='Tell us about your project'></textarea>
+              </div>
+              <button class='form-button' type='button'>Request a quote</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <div class='mobile-call-bar'>
+    <a class='mobile-call-link' href='tel:+12148757510' aria-label='Call +1 214-875-7510'>Call +1 214-875-7510</a>
+  </div>
+
+  <footer class='site-footer'>
+    <div class='container footer-inner'>
+      <p>Dallas Finest Construction LLC</p>
+      <p class='footer-note'>Concept preview — not the live site</p>
+    </div>
+  </footer>
+</body>
+</html>
