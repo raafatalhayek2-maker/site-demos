@@ -1,0 +1,560 @@
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+  <meta charset='utf-8'>
+  <meta name='viewport' content='width=device-width, initial-scale=1'>
+  <meta name='theme-color' content='#102631'>
+  <meta name='description' content='Explore pest control services and get in touch with Eco-Safe Pest Control.'>
+  <title>Eco-Safe Pest Control | Pest Control</title>
+  <style>
+    :root {
+      color-scheme: light;
+      --ink: #162a34;
+      --navy: #102631;
+      --navy-soft: #1b3a45;
+      --paper: #f6f7f2;
+      --white: #ffffff;
+      --muted: #5c6e73;
+      --accent: #c8eb73;
+      --line: #dbe3dd;
+      --shadow: 0 20px 55px rgba(16, 38, 49, .12);
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      background: var(--paper);
+      color: var(--ink);
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+      line-height: 1.55;
+      -webkit-font-smoothing: antialiased;
+    }
+    a { color: inherit; text-decoration: none; }
+    button, input, textarea { font: inherit; }
+    a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visible {
+      outline: 3px solid #78a92a;
+      outline-offset: 4px;
+    }
+    .container { width: min(1160px, calc(100% - 48px)); margin-inline: auto; }
+    .site-header {
+      position: sticky;
+      z-index: 20;
+      top: 0;
+      background: var(--navy);
+      color: var(--white);
+      border-bottom: 1px solid rgba(255, 255, 255, .1);
+    }
+    .header-inner {
+      min-height: 82px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 22px;
+    }
+    .brand { display: flex; align-items: center; gap: 13px; min-width: 0; }
+    .brand-mark {
+      width: 38px;
+      height: 38px;
+      flex: 0 0 38px;
+      display: grid;
+      place-items: center;
+      border: 1px solid rgba(200, 235, 115, .68);
+      border-radius: 50%;
+      color: var(--accent);
+      font-size: 13px;
+      font-weight: 800;
+      letter-spacing: -.06em;
+    }
+    .brand-copy { display: grid; line-height: 1.15; }
+    .brand-name { font-size: 17px; font-weight: 750; letter-spacing: -.025em; white-space: nowrap; }
+    .trade-label { margin-top: 5px; color: #b7c6c8; font-size: 10px; font-weight: 700; letter-spacing: .16em; text-transform: uppercase; }
+    .header-call, .button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 9px;
+      min-height: 50px;
+      padding: 0 21px;
+      border: 1px solid transparent;
+      border-radius: 999px;
+      background: var(--accent);
+      color: #172b25;
+      font-size: 14px;
+      font-weight: 760;
+      transition: transform .2s ease, background-color .2s ease, box-shadow .2s ease;
+      white-space: nowrap;
+    }
+    .header-call:hover, .button-primary:hover {
+      transform: translateY(-2px);
+      background: #d7f394;
+      box-shadow: 0 9px 22px rgba(0, 0, 0, .15);
+    }
+    .call-compact { display: none; }
+
+    .hero {
+      position: relative;
+      overflow: hidden;
+      background: var(--navy);
+      color: var(--white);
+    }
+    .hero-inner {
+      min-height: 590px;
+      display: grid;
+      grid-template-columns: minmax(0, 1.08fr) minmax(320px, .92fr);
+      align-items: center;
+      gap: 50px;
+      padding-block: 78px 86px;
+    }
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      margin: 0 0 22px;
+      color: #c4d3d2;
+      font-size: 11px;
+      font-weight: 750;
+      letter-spacing: .18em;
+      text-transform: uppercase;
+    }
+    .eyebrow::before {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: var(--accent);
+      content: '';
+    }
+    h1 {
+      max-width: 720px;
+      margin: 0;
+      font-size: clamp(3.4rem, 6.3vw, 5.65rem);
+      font-weight: 760;
+      letter-spacing: -.065em;
+      line-height: .99;
+    }
+    h1 span { color: var(--accent); }
+    .hero-copy {
+      max-width: 525px;
+      margin: 25px 0 0;
+      color: #c3d0d0;
+      font-size: 17px;
+      line-height: 1.7;
+    }
+    .hero-actions { display: flex; flex-wrap: wrap; gap: 13px; margin-top: 32px; }
+    .button-secondary {
+      border-color: rgba(255, 255, 255, .3);
+      background: transparent;
+      color: var(--white);
+    }
+    .button-secondary:hover {
+      transform: translateY(-2px);
+      border-color: rgba(255, 255, 255, .65);
+      background: rgba(255, 255, 255, .07);
+    }
+    .hero-art { position: relative; min-height: 380px; display: grid; place-items: center; }
+    .art-ring {
+      position: absolute;
+      width: 340px;
+      height: 340px;
+      border: 1px solid rgba(200, 235, 115, .19);
+      border-radius: 50%;
+    }
+    .art-ring-one { transform: translate(20px, -7px); }
+    .art-ring-two { width: 270px; height: 270px; transform: translate(-16px, 15px); border-color: rgba(255, 255, 255, .16); }
+    .art-card {
+      position: relative;
+      width: min(310px, 82%);
+      height: 260px;
+      overflow: hidden;
+      padding: 25px;
+      border: 1px solid rgba(255, 255, 255, .14);
+      border-radius: 22px;
+      background: var(--navy-soft);
+      box-shadow: 0 30px 70px rgba(0, 0, 0, .2);
+    }
+    .art-card::after {
+      position: absolute;
+      right: -43px;
+      bottom: -73px;
+      width: 205px;
+      height: 205px;
+      border: 1px solid rgba(200, 235, 115, .35);
+      border-radius: 50%;
+      content: '';
+    }
+    .art-label { color: #c4d3d2; font-size: 10px; font-weight: 750; letter-spacing: .2em; }
+    .art-graphic {
+      position: absolute;
+      top: 65px;
+      left: 50%;
+      width: 132px;
+      height: 132px;
+      transform: translateX(-50%);
+      border: 1px solid rgba(200, 235, 115, .64);
+      border-radius: 50%;
+    }
+    .art-graphic::before, .art-graphic::after {
+      position: absolute;
+      border: 1px solid rgba(255, 255, 255, .28);
+      border-radius: 50%;
+      content: '';
+    }
+    .art-graphic::before { inset: 15px; }
+    .art-graphic::after { inset: 34px; border-color: rgba(200, 235, 115, .75); }
+    .art-center {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      width: 10px;
+      height: 10px;
+      transform: translate(-50%, -50%);
+      border-radius: 50%;
+      background: var(--accent);
+    }
+
+    .services-section { padding: 96px 0 102px; }
+    .section-heading { max-width: 670px; margin-bottom: 39px; }
+    .section-kicker {
+      margin: 0 0 12px;
+      color: #55715b;
+      font-size: 11px;
+      font-weight: 800;
+      letter-spacing: .17em;
+      text-transform: uppercase;
+    }
+    h2 {
+      margin: 0;
+      color: var(--ink);
+      font-size: clamp(2.25rem, 4.3vw, 3.5rem);
+      font-weight: 740;
+      letter-spacing: -.055em;
+      line-height: 1.06;
+    }
+    .section-intro { max-width: 550px; margin: 17px 0 0; color: var(--muted); font-size: 16px; }
+    .service-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 16px; }
+    .service-card {
+      min-height: 192px;
+      padding: 25px 25px 24px;
+      border: 1px solid var(--line);
+      border-radius: 17px;
+      background: var(--white);
+      box-shadow: 0 5px 16px rgba(16, 38, 49, .025);
+      transition: transform .22s ease, box-shadow .22s ease, border-color .22s ease;
+    }
+    .service-card:hover { transform: translateY(-4px); border-color: #c5d5c8; box-shadow: var(--shadow); }
+    .service-index {
+      display: inline-grid;
+      width: 31px;
+      height: 31px;
+      place-items: center;
+      margin-bottom: 23px;
+      border-radius: 50%;
+      background: #edf4df;
+      color: #496231;
+      font-size: 11px;
+      font-weight: 800;
+    }
+    .service-card h3 { margin: 0; color: var(--ink); font-size: 18px; font-weight: 730; letter-spacing: -.025em; }
+    .service-card p { margin: 8px 0 0; color: var(--muted); font-size: 14px; line-height: 1.6; }
+
+    .trust-section { padding: 0 0 100px; }
+    .trust-panel {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 36px;
+      padding: 49px 58px;
+      border: 1px solid #dbe6d5;
+      border-radius: 24px;
+      background: #eaf0e6;
+    }
+    .trust-panel h2 { max-width: 440px; font-size: clamp(2rem, 3.5vw, 3rem); }
+    .rating-block { min-width: 320px; }
+    .rating-score { display: flex; align-items: center; gap: 17px; }
+    .rating-number { color: var(--navy); font-size: clamp(4.4rem, 7vw, 6.2rem); font-weight: 760; letter-spacing: -.08em; line-height: .95; }
+    .rating-stars { color: #687f2e; font-size: 23px; letter-spacing: .1em; white-space: nowrap; }
+    .rating-statement { margin: 14px 0 0; color: #344b42; font-size: 15px; font-weight: 650; }
+
+    .contact-section { padding: 0 0 100px; scroll-margin-top: 100px; }
+    .contact-panel {
+      display: grid;
+      grid-template-columns: .9fr 1.1fr;
+      gap: 68px;
+      padding: 54px;
+      border-radius: 24px;
+      background: var(--navy);
+      color: var(--white);
+      box-shadow: var(--shadow);
+    }
+    .contact-copy h2 { max-width: 390px; color: var(--white); font-size: clamp(2.2rem, 4vw, 3.3rem); }
+    .contact-copy > p { max-width: 390px; margin: 17px 0 29px; color: #bfcdcd; }
+    .contact-details { display: grid; gap: 18px; }
+    .detail-label { display: block; margin-bottom: 4px; color: #aebfc0; font-size: 10px; font-weight: 800; letter-spacing: .16em; text-transform: uppercase; }
+    .contact-details a, .contact-details address { color: var(--white); font-size: 15px; font-style: normal; font-weight: 600; }
+    .contact-details a:hover { color: var(--accent); }
+    .quote-form {
+      padding: 31px;
+      border-radius: 18px;
+      background: var(--white);
+      color: var(--ink);
+    }
+    .preview-label {
+      display: inline-block;
+      margin-bottom: 10px;
+      color: #55715b;
+      font-size: 10px;
+      font-weight: 800;
+      letter-spacing: .17em;
+      text-transform: uppercase;
+    }
+    .quote-form h3 { margin: 0 0 22px; font-size: 25px; font-weight: 740; letter-spacing: -.04em; }
+    .field { margin-top: 15px; }
+    .field label { display: block; margin-bottom: 7px; color: #34474e; font-size: 13px; font-weight: 700; }
+    .field input, .field textarea {
+      display: block;
+      width: 100%;
+      min-height: 48px;
+      padding: 12px 14px;
+      border: 1px solid #d6dfd9;
+      border-radius: 9px;
+      background: #fbfcfa;
+      color: var(--ink);
+      transition: border-color .2s ease, box-shadow .2s ease;
+    }
+    .field textarea { min-height: 105px; resize: vertical; }
+    .field input:focus, .field textarea:focus { border-color: #7c9a45; box-shadow: 0 0 0 3px rgba(124, 154, 69, .15); outline: none; }
+    .form-submit { width: 100%; margin-top: 20px; border: 0; cursor: pointer; }
+
+    .site-footer { padding: 25px 0; background: #0b1d25; color: #dce5e4; }
+    .footer-inner { display: flex; align-items: center; justify-content: space-between; gap: 18px; }
+    .footer-name { font-size: 14px; font-weight: 700; }
+    .footer-note { color: #aab9bb; font-size: 12px; }
+    .mobile-call-bar { display: none; }
+
+    @media (max-width: 900px) {
+      .hero-inner { grid-template-columns: minmax(0, 1fr) minmax(250px, .8fr); gap: 24px; }
+      .hero-art { transform: scale(.9); }
+      .service-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+      .contact-panel { gap: 38px; padding: 42px; }
+    }
+    @media (max-width: 700px) {
+      .container { width: min(100% - 36px, 560px); }
+      .header-inner { min-height: 72px; gap: 10px; }
+      .brand { gap: 9px; }
+      .brand-mark { width: 34px; height: 34px; flex-basis: 34px; font-size: 12px; }
+      .brand-name { font-size: 15px; }
+      .trade-label { font-size: 9px; }
+      .header-call { min-height: 43px; padding-inline: 16px; font-size: 13px; }
+      .call-wide { display: none; }
+      .call-compact { display: inline; }
+      .hero-inner { min-height: auto; grid-template-columns: 1fr; padding-block: 72px 77px; }
+      h1 { max-width: 600px; font-size: clamp(2.85rem, 10.8vw, 4.4rem); }
+      .hero-copy { max-width: 480px; font-size: 16px; }
+      .hero-art { display: none; }
+      .services-section { padding: 73px 0 78px; }
+      .section-heading { margin-bottom: 28px; }
+      .service-grid { gap: 12px; }
+      .service-card { min-height: auto; padding: 22px; }
+      .service-index { margin-bottom: 16px; }
+      .trust-section { padding-bottom: 76px; }
+      .trust-panel { align-items: flex-start; flex-direction: column; gap: 25px; padding: 33px 26px; }
+      .rating-block { min-width: 0; }
+      .rating-number { font-size: 4.5rem; }
+      .contact-section { padding-bottom: 75px; }
+      .contact-panel { grid-template-columns: 1fr; gap: 30px; padding: 30px 22px; }
+      .quote-form { padding: 24px 20px; }
+      .footer-inner { align-items: flex-start; flex-direction: column; gap: 5px; }
+      body { padding-bottom: calc(76px + env(safe-area-inset-bottom)); }
+      .mobile-call-bar {
+        position: fixed;
+        z-index: 30;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        display: block;
+        padding: 11px 18px calc(11px + env(safe-area-inset-bottom));
+        border-top: 1px solid rgba(255, 255, 255, .12);
+        background: var(--navy);
+      }
+      .mobile-call-link {
+        display: flex;
+        min-height: 49px;
+        align-items: center;
+        justify-content: center;
+        border-radius: 999px;
+        background: var(--accent);
+        color: #172b25;
+        font-size: 15px;
+        font-weight: 780;
+        transition: background-color .2s ease, transform .2s ease;
+      }
+      .mobile-call-link:hover { transform: translateY(-1px); background: #d7f394; }
+    }
+    @media (max-width: 430px) {
+      .container { width: calc(100% - 34px); }
+      .brand-name { font-size: 14px; }
+      .header-call { padding-inline: 14px; }
+      .hero-actions { align-items: stretch; flex-direction: column; }
+      .hero-actions .button { width: 100%; }
+      .service-grid { grid-template-columns: 1fr; }
+      .rating-score { gap: 12px; }
+      .rating-stars { font-size: 20px; }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
+      *, *::before, *::after { transition-duration: .01ms !important; }
+    }
+  </style>
+</head>
+<body>
+  <header class='site-header'>
+    <div class='container header-inner'>
+      <a class='brand' href='#top' aria-label='Eco-Safe Pest Control home'>
+        <span class='brand-mark' aria-hidden='true'>EC</span>
+        <span class='brand-copy'>
+          <span class='brand-name'>Eco-Safe Pest Control</span>
+          <span class='trade-label'>Pest control</span>
+        </span>
+      </a>
+      <a class='header-call' href='tel:+12143585201' aria-label='Call +1 214-358-5201'>
+        <span class='call-wide'>Call +1 214-358-5201</span>
+        <span class='call-compact'>Call</span>
+      </a>
+    </div>
+  </header>
+
+  <main id='top'>
+    <section class='hero' aria-labelledby='hero-title'>
+      <div class='container hero-inner'>
+        <div class='hero-content'>
+          <p class='eyebrow'>Pest control</p>
+          <h1 id='hero-title'>Pest problems handled <span>properly</span> the first time.</h1>
+          <p class='hero-copy'>Explore pest control services and get in touch to discuss what you need.</p>
+          <div class='hero-actions'>
+            <a class='button button-primary' href='tel:+12143585201'>Call +1 214-358-5201</a>
+            <a class='button button-secondary' href='#contact'>Get in touch</a>
+          </div>
+        </div>
+        <div class='hero-art' aria-hidden='true'>
+          <div class='art-ring art-ring-one'></div>
+          <div class='art-ring art-ring-two'></div>
+          <div class='art-card'>
+            <span class='art-label'>PEST CONTROL</span>
+            <div class='art-graphic'><span class='art-center'></span></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class='services-section' id='services' aria-labelledby='services-title'>
+      <div class='container'>
+        <div class='section-heading'>
+          <p class='section-kicker'>Services</p>
+          <h2 id='services-title'>Pest control services</h2>
+          <p class='section-intro'>Choose a service category to start the conversation.</p>
+        </div>
+        <div class='service-grid'>
+          <article class='service-card'>
+            <span class='service-index' aria-hidden='true'>01</span>
+            <h3>General pest control</h3>
+            <p>A broad approach to common pest concerns.</p>
+          </article>
+          <article class='service-card'>
+            <span class='service-index' aria-hidden='true'>02</span>
+            <h3>Termite treatment</h3>
+            <p>A service category for termite-related concerns.</p>
+          </article>
+          <article class='service-card'>
+            <span class='service-index' aria-hidden='true'>03</span>
+            <h3>Mosquito control</h3>
+            <p>A service category focused on mosquito concerns.</p>
+          </article>
+          <article class='service-card'>
+            <span class='service-index' aria-hidden='true'>04</span>
+            <h3>Bed bug treatment</h3>
+            <p>A service category for bed bug-related concerns.</p>
+          </article>
+          <article class='service-card'>
+            <span class='service-index' aria-hidden='true'>05</span>
+            <h3>Rodent control</h3>
+            <p>A service category for rodent-related concerns.</p>
+          </article>
+          <article class='service-card'>
+            <span class='service-index' aria-hidden='true'>06</span>
+            <h3>Seasonal prevention</h3>
+            <p>Seasonal approaches to managing pest concerns.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class='trust-section' aria-labelledby='rating-title'>
+      <div class='container'>
+        <div class='trust-panel'>
+          <div>
+            <p class='section-kicker'>Google rating</p>
+            <h2 id='rating-title'>A customer rating at a glance</h2>
+          </div>
+          <div class='rating-block'>
+            <div class='rating-score' aria-label='4.9 stars'>
+              <span class='rating-number'>4.9</span>
+              <span class='rating-stars' aria-hidden='true'>★★★★★</span>
+            </div>
+            <p class='rating-statement'>4.9 stars from 1026 Google reviews</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class='contact-section' id='contact' aria-labelledby='contact-title'>
+      <div class='container'>
+        <div class='contact-panel'>
+          <div class='contact-copy'>
+            <p class='section-kicker'>Contact</p>
+            <h2 id='contact-title'>Talk about what you need.</h2>
+            <p>Call or use the preview form to share what you need.</p>
+            <div class='contact-details'>
+              <div>
+                <span class='detail-label'>Phone</span>
+                <a href='tel:+12143585201'>+1 214-358-5201</a>
+              </div>
+              <div>
+                <span class='detail-label'>Address</span>
+                <address>10132 Monroe Dr, Dallas, TX 75229, USA</address>
+              </div>
+            </div>
+          </div>
+          <form class='quote-form' aria-label='Request a quote preview form'>
+            <span class='preview-label'>Preview form</span>
+            <h3>Request a quote</h3>
+            <div class='field'>
+              <label for='name'>Name</label>
+              <input id='name' name='name' type='text' autocomplete='name'>
+            </div>
+            <div class='field'>
+              <label for='phone'>Phone</label>
+              <input id='phone' name='phone' type='tel' autocomplete='tel'>
+            </div>
+            <div class='field'>
+              <label for='message'>Message</label>
+              <textarea id='message' name='message' rows='4'></textarea>
+            </div>
+            <button class='button button-primary form-submit' type='submit'>Request a quote</button>
+          </form>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <div class='mobile-call-bar'>
+    <a class='mobile-call-link' href='tel:+12143585201' aria-label='Call Eco-Safe Pest Control at +1 214-358-5201'>Call +1 214-358-5201</a>
+  </div>
+
+  <footer class='site-footer'>
+    <div class='container footer-inner'>
+      <span class='footer-name'>Eco-Safe Pest Control</span>
+      <span class='footer-note'>Concept preview — not the live site</span>
+    </div>
+  </footer>
+</body>
+</html>
