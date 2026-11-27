@@ -1,0 +1,608 @@
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+  <meta charset='utf-8'>
+  <meta name='viewport' content='width=device-width, initial-scale=1'>
+  <meta name='theme-color' content='#f6f4ef'>
+  <meta name='description' content='Plumbing and sewer services in Phoenix, AZ. Contact Pink Plumbing and Sewer at (602) 562-5290.'>
+  <title>Pink Plumbing and Sewer | Phoenix, AZ</title>
+  <style>
+    :root {
+      color-scheme: light;
+      --paper: #f6f4ef;
+      --surface: #fffefa;
+      --ink: #17292d;
+      --muted: #536367;
+      --line: #dce1de;
+      --pink: #a93252;
+      --pink-dark: #852740;
+      --pink-pale: #f4e6e9;
+      --night: #14282c;
+      --night-muted: #c4d0ce;
+      --max: 1240px;
+    }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; scroll-padding-top: 110px; }
+    body {
+      margin: 0;
+      background: var(--paper);
+      color: var(--ink);
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+      font-size: 16px;
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+    }
+    a { color: inherit; text-decoration: none; }
+    a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visible {
+      outline: 3px solid #df8298;
+      outline-offset: 4px;
+    }
+    ::selection { background: #f0cbd4; color: var(--ink); }
+    .skip-link {
+      position: absolute;
+      z-index: 20;
+      top: -60px;
+      left: 18px;
+      padding: 10px 14px;
+      background: var(--ink);
+      color: white;
+      border-radius: 6px;
+    }
+    .skip-link:focus { top: 12px; }
+    .site-header {
+      position: sticky;
+      z-index: 10;
+      top: 0;
+      background: rgba(246, 244, 239, .96);
+      border-bottom: 1px solid rgba(23, 41, 45, .1);
+      backdrop-filter: blur(14px);
+    }
+    .header-inner {
+      width: min(100%, var(--max));
+      min-height: 82px;
+      margin: 0 auto;
+      padding: 0 36px;
+      display: grid;
+      grid-template-columns: 1fr auto auto;
+      align-items: center;
+      gap: 34px;
+    }
+    .brand { display: inline-flex; align-items: center; gap: 12px; min-width: 0; }
+    .brand-mark {
+      width: 42px;
+      height: 42px;
+      flex: 0 0 42px;
+      display: grid;
+      place-items: center;
+      border-radius: 12px;
+      background: var(--pink);
+      color: white;
+      font-size: 20px;
+      font-weight: 750;
+      letter-spacing: -.07em;
+    }
+    .brand-copy { display: grid; line-height: 1.2; }
+    .brand-name { font-size: 15px; font-weight: 750; letter-spacing: -.025em; }
+    .brand-trade { margin-top: 5px; color: var(--muted); font-size: 9px; font-weight: 750; letter-spacing: .16em; }
+    .main-nav { display: flex; align-items: center; gap: 30px; }
+    .main-nav a { color: #34464a; font-size: 13px; font-weight: 650; transition: color .2s ease; }
+    .main-nav a:hover { color: var(--pink); }
+    .button {
+      min-height: 48px;
+      padding: 0 20px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 9px;
+      border: 1px solid transparent;
+      border-radius: 7px;
+      background: var(--pink);
+      color: white;
+      font: inherit;
+      font-size: 13px;
+      font-weight: 750;
+      letter-spacing: .01em;
+      cursor: pointer;
+      transition: background .2s ease, transform .2s ease, box-shadow .2s ease;
+    }
+    .button:hover { background: var(--pink-dark); box-shadow: 0 8px 18px rgba(133, 39, 64, .16); transform: translateY(-1px); }
+    .button-dark { background: var(--ink); }
+    .button-dark:hover { background: #263c41; }
+    .button-outline { border-color: rgba(23, 41, 45, .22); background: transparent; color: var(--ink); }
+    .button-outline:hover { border-color: var(--pink); background: var(--pink-pale); color: var(--ink); box-shadow: none; }
+    .call-short { display: none; }
+    .hero {
+      width: min(100%, var(--max));
+      margin: 0 auto;
+      padding: 84px 36px 104px;
+      display: grid;
+      grid-template-columns: minmax(0, 1.08fr) minmax(360px, .92fr);
+      align-items: center;
+      gap: clamp(46px, 7vw, 100px);
+    }
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      color: var(--pink-dark);
+      font-size: 10px;
+      font-weight: 800;
+      letter-spacing: .17em;
+      text-transform: uppercase;
+    }
+    .eyebrow-dot { width: 7px; height: 7px; border-radius: 50%; background: var(--pink); }
+    h1, h2, h3, p { margin-top: 0; }
+    h1 {
+      max-width: 720px;
+      margin: 22px 0 20px;
+      font-size: clamp(48px, 6.35vw, 82px);
+      line-height: .99;
+      letter-spacing: -.075em;
+      font-weight: 720;
+    }
+    .hero-copy > p {
+      max-width: 530px;
+      margin-bottom: 30px;
+      color: var(--muted);
+      font-size: 17px;
+      line-height: 1.75;
+    }
+    .hero-actions { display: flex; flex-wrap: wrap; gap: 12px; }
+    .hero-location {
+      margin-top: 34px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      color: var(--muted);
+      font-size: 12px;
+      font-weight: 650;
+    }
+    .location-mark { width: 24px; height: 1px; background: var(--pink); }
+    .hero-art {
+      position: relative;
+      isolation: isolate;
+      min-height: 490px;
+      overflow: hidden;
+      border-radius: 12px;
+      background: linear-gradient(145deg, #203c40 0%, #14282c 72%);
+      box-shadow: 0 26px 60px rgba(19, 40, 44, .16);
+    }
+    .hero-art::before {
+      position: absolute;
+      z-index: -1;
+      inset: 0;
+      background-image: linear-gradient(rgba(255,255,255,.055) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,.055) 1px, transparent 1px);
+      background-size: 34px 34px;
+      content: '';
+      mask-image: linear-gradient(145deg, black, transparent 84%);
+    }
+    .art-orbit {
+      position: absolute;
+      top: 50px;
+      right: -68px;
+      width: 350px;
+      height: 350px;
+      border: 1px solid rgba(226, 238, 234, .25);
+      border-radius: 50%;
+      box-shadow: 0 0 0 34px rgba(226, 238, 234, .035), 0 0 0 68px rgba(226, 238, 234, .025);
+    }
+    .art-pipe {
+      position: absolute;
+      top: 27%;
+      left: 17%;
+      width: 61%;
+      height: 31%;
+      border: 8px solid #dc7890;
+      border-bottom: 0;
+      border-radius: 19px 19px 0 0;
+      opacity: .96;
+    }
+    .art-pipe::before {
+      position: absolute;
+      top: -20px;
+      left: 42%;
+      width: 42px;
+      height: 42px;
+      border: 7px solid #dc7890;
+      border-radius: 50%;
+      background: #193338;
+      content: '';
+    }
+    .art-pipe::after {
+      position: absolute;
+      right: -15px;
+      bottom: -2px;
+      width: 30px;
+      height: 30px;
+      border: 7px solid #dc7890;
+      border-radius: 50%;
+      background: #193338;
+      content: '';
+    }
+    .art-node {
+      position: absolute;
+      width: 10px;
+      height: 10px;
+      border: 2px solid #f0c2ce;
+      border-radius: 50%;
+      background: #dc7890;
+      box-shadow: 0 0 0 7px rgba(220, 120, 144, .14);
+    }
+    .node-one { top: 20%; left: 17%; }
+    .node-two { top: 58%; right: 20%; }
+    .art-mark {
+      position: absolute;
+      top: 28px;
+      left: 30px;
+      color: rgba(255, 255, 255, .92);
+      font-size: 30px;
+      font-weight: 800;
+      letter-spacing: -.1em;
+    }
+    .art-mark span { color: #e18aa0; }
+    .art-label {
+      position: absolute;
+      right: 28px;
+      bottom: 28px;
+      left: 28px;
+      padding-top: 18px;
+      display: flex;
+      align-items: end;
+      justify-content: space-between;
+      gap: 18px;
+      border-top: 1px solid rgba(255, 255, 255, .22);
+      color: white;
+    }
+    .art-label span { color: #d0dcd9; font-size: 10px; font-weight: 750; letter-spacing: .16em; }
+    .art-label strong { font-size: 12px; font-weight: 700; letter-spacing: .08em; }
+    .section { padding: 98px 36px; }
+    .section-inner { width: min(100%, var(--max)); margin: 0 auto; }
+    .section-heading {
+      margin-bottom: 42px;
+      display: flex;
+      align-items: end;
+      justify-content: space-between;
+      gap: 28px;
+    }
+    .section-heading h2, .proof-copy h2, .contact-copy h2 {
+      margin: 14px 0 0;
+      font-size: clamp(36px, 4.5vw, 56px);
+      line-height: 1.05;
+      letter-spacing: -.06em;
+      font-weight: 700;
+    }
+    .section-heading > p { max-width: 360px; margin-bottom: 4px; color: var(--muted); font-size: 14px; }
+    .services-section { background: #eeede7; }
+    .services-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 14px; }
+    .service-card {
+      min-height: 218px;
+      padding: 26px 26px 24px;
+      border: 1px solid rgba(23, 41, 45, .09);
+      border-radius: 9px;
+      background: var(--surface);
+      box-shadow: 0 8px 24px rgba(23, 41, 45, .035);
+      transition: transform .2s ease, box-shadow .2s ease;
+    }
+    .service-card:hover { transform: translateY(-3px); box-shadow: 0 14px 32px rgba(23, 41, 45, .08); }
+    .service-index {
+      width: 34px;
+      height: 34px;
+      margin-bottom: 28px;
+      display: grid;
+      place-items: center;
+      border-radius: 50%;
+      background: var(--pink-pale);
+      color: var(--pink-dark);
+      font-size: 10px;
+      font-weight: 800;
+      letter-spacing: .04em;
+    }
+    .service-card h3 { margin: 0 0 8px; font-size: 18px; line-height: 1.3; letter-spacing: -.035em; }
+    .service-card p { max-width: 330px; margin: 0; color: var(--muted); font-size: 13px; line-height: 1.7; }
+    .proof-section { background: var(--night); color: white; }
+    .proof-layout {
+      display: grid;
+      grid-template-columns: minmax(0, .9fr) minmax(0, 1.1fr);
+      align-items: center;
+      gap: 70px;
+    }
+    .proof-section .eyebrow { color: #f1aabd; }
+    .proof-copy h2 { max-width: 500px; }
+    .proof-copy p { max-width: 430px; margin: 20px 0 0; color: var(--night-muted); font-size: 15px; }
+    .proof-stats {
+      min-height: 228px;
+      padding: 36px;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      align-items: center;
+      border: 1px solid rgba(255, 255, 255, .16);
+      border-radius: 10px;
+      background: rgba(255, 255, 255, .045);
+    }
+    .proof-stat { padding: 6px 24px; }
+    .proof-stat + .proof-stat { border-left: 1px solid rgba(255, 255, 255, .2); }
+    .proof-number { display: block; color: white; font-size: clamp(52px, 6vw, 76px); line-height: .95; letter-spacing: -.075em; font-weight: 700; }
+    .proof-label { display: block; margin-top: 14px; color: #d4dddb; font-size: 12px; font-weight: 650; letter-spacing: .035em; }
+    .contact-section { background: var(--paper); }
+    .contact-layout {
+      display: grid;
+      grid-template-columns: minmax(0, .86fr) minmax(0, 1.14fr);
+      align-items: start;
+      gap: clamp(40px, 8vw, 110px);
+    }
+    .contact-copy h2 { max-width: 420px; }
+    .contact-copy > p { max-width: 400px; margin: 20px 0 32px; color: var(--muted); font-size: 14px; }
+    .contact-details { display: grid; gap: 20px; }
+    .detail-label { display: block; margin-bottom: 5px; color: var(--muted); font-size: 10px; font-weight: 800; letter-spacing: .15em; text-transform: uppercase; }
+    .detail-value { color: var(--ink); font-size: 16px; font-weight: 650; line-height: 1.65; }
+    .detail-value a { text-decoration: underline; text-decoration-color: rgba(169, 50, 82, .45); text-underline-offset: 4px; }
+    .quote-form {
+      padding: clamp(24px, 4vw, 40px);
+      border: 1px solid var(--line);
+      border-radius: 10px;
+      background: var(--surface);
+      box-shadow: 0 18px 44px rgba(23, 41, 45, .065);
+    }
+    .quote-form h3 { margin: 0 0 5px; font-size: 24px; line-height: 1.2; letter-spacing: -.04em; }
+    .form-note { margin: 0 0 24px; color: var(--muted); font-size: 12px; }
+    .form-field { margin-bottom: 16px; }
+    .form-field label { display: block; margin-bottom: 7px; color: #34464a; font-size: 12px; font-weight: 700; }
+    .form-field input, .form-field textarea {
+      width: 100%;
+      min-height: 48px;
+      padding: 12px 13px;
+      border: 1px solid #cbd3d0;
+      border-radius: 5px;
+      background: white;
+      color: var(--ink);
+      font: inherit;
+      font-size: 14px;
+    }
+    .form-field textarea { min-height: 104px; resize: vertical; }
+    .form-field input::placeholder, .form-field textarea::placeholder { color: #6e7b7d; }
+    .form-submit { width: 100%; margin-top: 4px; }
+    .form-disclaimer { margin: 12px 0 0; color: var(--muted); font-size: 11px; text-align: center; }
+    .site-footer { padding: 26px 36px; border-top: 1px solid var(--line); background: #eeede7; }
+    .footer-inner {
+      width: min(100%, var(--max));
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+    }
+    .footer-name { font-size: 13px; font-weight: 750; letter-spacing: -.015em; }
+    .footer-label { color: var(--muted); font-size: 11px; }
+    .mobile-call-bar { display: none; }
+    @media (max-width: 900px) {
+      .header-inner { padding: 0 26px; gap: 22px; }
+      .main-nav { gap: 19px; }
+      .hero { padding: 70px 26px 82px; grid-template-columns: minmax(0, 1fr) minmax(300px, .84fr); gap: 42px; }
+      h1 { font-size: clamp(48px, 7vw, 68px); }
+      .hero-art { min-height: 420px; }
+      .section { padding: 78px 26px; }
+      .services-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+      .proof-layout { gap: 40px; }
+      .proof-stats { padding: 26px 18px; }
+      .proof-stat { padding: 6px 18px; }
+      .contact-layout { gap: 44px; }
+    }
+    @media (max-width: 600px) {
+      html { scroll-padding-top: 120px; }
+      body { padding-bottom: calc(72px + env(safe-area-inset-bottom)); }
+      .header-inner {
+        min-height: 0;
+        padding: 11px 18px 10px;
+        grid-template-columns: 1fr auto;
+        gap: 10px 14px;
+      }
+      .brand-mark { width: 37px; height: 37px; flex-basis: 37px; border-radius: 10px; }
+      .brand-name { font-size: 13px; }
+      .brand-trade { font-size: 8px; }
+      .header-call { min-height: 40px; padding: 0 13px; font-size: 12px; }
+      .call-full { display: none; }
+      .call-short { display: inline; }
+      .main-nav { grid-column: 1 / -1; justify-content: space-between; gap: 12px; padding: 4px 2px 1px; }
+      .main-nav a { font-size: 12px; }
+      .hero { padding: 54px 20px 62px; grid-template-columns: 1fr; gap: 38px; }
+      h1 { max-width: 510px; margin: 18px 0 16px; font-size: clamp(46px, 13vw, 66px); }
+      .hero-copy > p { margin-bottom: 24px; font-size: 15px; }
+      .hero-actions { display: grid; grid-template-columns: 1fr; }
+      .hero-actions .button { width: 100%; }
+      .hero-location { margin-top: 24px; }
+      .hero-art { min-height: 350px; }
+      .art-orbit { top: 28px; right: -104px; width: 290px; height: 290px; }
+      .art-pipe { top: 29%; left: 17%; width: 62%; height: 31%; border-width: 6px; }
+      .art-pipe::before, .art-pipe::after { border-width: 5px; }
+      .art-label { right: 20px; bottom: 20px; left: 20px; }
+      .section { padding: 66px 20px; }
+      .section-heading { margin-bottom: 29px; display: block; }
+      .section-heading h2, .proof-copy h2, .contact-copy h2 { font-size: 39px; }
+      .section-heading > p { margin-top: 14px; font-size: 13px; }
+      .services-grid { grid-template-columns: 1fr; gap: 10px; }
+      .service-card { min-height: 0; padding: 22px; }
+      .service-index { margin-bottom: 20px; }
+      .proof-layout, .contact-layout { grid-template-columns: 1fr; gap: 32px; }
+      .proof-copy p { font-size: 14px; }
+      .proof-stats { min-height: 180px; padding: 24px 12px; }
+      .proof-stat { padding: 6px 14px; }
+      .proof-number { font-size: 58px; }
+      .proof-label { font-size: 11px; }
+      .contact-copy > p { margin: 16px 0 26px; }
+      .quote-form { padding: 24px 20px; }
+      .site-footer { padding: 22px 20px; }
+      .footer-inner { align-items: flex-start; flex-direction: column; gap: 5px; }
+      .mobile-call-bar {
+        position: fixed;
+        z-index: 12;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        min-height: calc(70px + env(safe-area-inset-bottom));
+        padding: 10px 18px calc(10px + env(safe-area-inset-bottom));
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background: rgba(246, 244, 239, .97);
+        border-top: 1px solid rgba(23, 41, 45, .12);
+        backdrop-filter: blur(12px);
+      }
+      .mobile-call-bar .button { width: min(100%, 500px); min-height: 48px; }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
+      *, *::before, *::after { transition-duration: .01ms !important; }
+    }
+  </style>
+</head>
+<body>
+  <a class='skip-link' href='#main'>Skip to content</a>
+  <header class='site-header'>
+    <div class='header-inner'>
+      <a class='brand' href='#top' aria-label='Pink Plumbing and Sewer home'>
+        <span class='brand-mark' aria-hidden='true'>P</span>
+        <span class='brand-copy'>
+          <span class='brand-name'>Pink Plumbing and Sewer</span>
+          <span class='brand-trade'>PLUMBING + SEWER</span>
+        </span>
+      </a>
+      <nav class='main-nav' aria-label='Main navigation'>
+        <a href='#services'>Services</a>
+        <a href='#why-us'>Why us</a>
+        <a href='#contact'>Contact</a>
+      </nav>
+      <a class='button header-call' href="tel:+16025625290"><span class='call-full'>Call (602) 562-5290</span><span class='call-short'>Call now</span></a>
+    </div>
+  </header>
+  <main id='main'>
+    <section class='hero' id='top' aria-labelledby='hero-title'>
+      <div class='hero-copy'>
+        <span class='eyebrow'><span class='eyebrow-dot' aria-hidden='true'></span>PHOENIX, ARIZONA</span>
+        <h1 id='hero-title'>A clear next step for plumbing &amp; sewer.</h1>
+        <p>Pink Plumbing and Sewer provides plumbing and sewer service in Phoenix, AZ. Call to discuss what you need.</p>
+        <div class='hero-actions'>
+          <a class='button' href="tel:+16025625290">Call now <span aria-hidden='true'>↗</span></a>
+          <a class='button button-outline' href='#contact'>Request a quote <span aria-hidden='true'>↓</span></a>
+        </div>
+        <div class='hero-location'><span class='location-mark' aria-hidden='true'></span>Phoenix, AZ</div>
+      </div>
+      <div class='hero-art' aria-hidden='true'>
+        <div class='art-orbit'></div>
+        <div class='art-pipe'></div>
+        <span class='art-node node-one'></span>
+        <span class='art-node node-two'></span>
+        <div class='art-mark'>P<span>+</span></div>
+        <div class='art-label'><span>PLUMBING + SEWER</span><strong>PHOENIX, AZ</strong></div>
+      </div>
+    </section>
+    <section class='section services-section' id='services' aria-labelledby='services-title'>
+      <div class='section-inner'>
+        <div class='section-heading'>
+          <div>
+            <span class='eyebrow'><span class='eyebrow-dot' aria-hidden='true'></span>PLUMBING SERVICES</span>
+            <h2 id='services-title'>Help for the lines, fixtures, and flow.</h2>
+          </div>
+          <p>Explore plumbing and sewer service options from Pink Plumbing and Sewer.</p>
+        </div>
+        <div class='services-grid'>
+          <article class='service-card'>
+            <span class='service-index' aria-hidden='true'>01</span>
+            <h3>Drain cleaning</h3>
+            <p>Service for clogged or slow-moving drains.</p>
+          </article>
+          <article class='service-card'>
+            <span class='service-index' aria-hidden='true'>02</span>
+            <h3>Water heater service</h3>
+            <p>Help with water heater concerns and service needs.</p>
+          </article>
+          <article class='service-card'>
+            <span class='service-index' aria-hidden='true'>03</span>
+            <h3>Leak detection &amp; repair</h3>
+            <p>Locate plumbing leaks and address the source.</p>
+          </article>
+          <article class='service-card'>
+            <span class='service-index' aria-hidden='true'>04</span>
+            <h3>Sewer line service</h3>
+            <p>Service for sewer line concerns and disruptions.</p>
+          </article>
+          <article class='service-card'>
+            <span class='service-index' aria-hidden='true'>05</span>
+            <h3>Fixture &amp; faucet installation</h3>
+            <p>Installation of faucets and plumbing fixtures.</p>
+          </article>
+          <article class='service-card'>
+            <span class='service-index' aria-hidden='true'>06</span>
+            <h3>Repiping</h3>
+            <p>Pipe replacement as part of a plumbing system update.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+    <section class='section proof-section' id='why-us' aria-labelledby='proof-title'>
+      <div class='section-inner proof-layout'>
+        <div class='proof-copy'>
+          <span class='eyebrow'><span class='eyebrow-dot' aria-hidden='true'></span>GOOGLE REVIEWS</span>
+          <h2 id='proof-title'>A strong rating on Google.</h2>
+          <p>Pink Plumbing and Sewer has a 4.9 Google rating from 191 reviews.</p>
+        </div>
+        <div class='proof-stats' aria-label='Google rating and review count'>
+          <div class='proof-stat'>
+            <span class='proof-number'>4.9</span>
+            <span class='proof-label'>Google rating</span>
+          </div>
+          <div class='proof-stat'>
+            <span class='proof-number'>191</span>
+            <span class='proof-label'>Google reviews</span>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class='section contact-section' id='contact' aria-labelledby='contact-title'>
+      <div class='section-inner contact-layout'>
+        <div class='contact-copy'>
+          <span class='eyebrow'><span class='eyebrow-dot' aria-hidden='true'></span>CONTACT</span>
+          <h2 id='contact-title'>Let’s talk plumbing.</h2>
+          <p>Call Pink Plumbing and Sewer or find the Phoenix address below.</p>
+          <div class='contact-details'>
+            <div>
+              <span class='detail-label'>Phone</span>
+              <div class='detail-value'><a href="tel:+16025625290">(602) 562-5290</a></div>
+            </div>
+            <div>
+              <span class='detail-label'>Address</span>
+              <address class='detail-value'>2375 E Camelback Rd #600<br>Phoenix, AZ 85016</address>
+            </div>
+          </div>
+        </div>
+        <form class='quote-form' aria-label='Concept quote request form'>
+          <h3>Request a quote</h3>
+          <p class='form-note'>Concept form — not connected.</p>
+          <div class='form-field'>
+            <label for='name'>Name</label>
+            <input id='name' name='name' type='text' autocomplete='name'>
+          </div>
+          <div class='form-field'>
+            <label for='phone'>Phone</label>
+            <input id='phone' name='phone' type='tel' autocomplete='tel'>
+          </div>
+          <div class='form-field'>
+            <label for='message'>What do you need help with?</label>
+            <textarea id='message' name='message' rows='4'></textarea>
+          </div>
+          <button class='button button-dark form-submit' type='button' aria-describedby='form-disclaimer'>Request a quote</button>
+          <p class='form-disclaimer' id='form-disclaimer'>Concept preview only; this form does not send information.</p>
+        </form>
+      </div>
+    </section>
+  </main>
+  <footer class='site-footer'>
+    <div class='footer-inner'>
+      <span class='footer-name'>Pink Plumbing and Sewer</span>
+      <span class='footer-label'>Concept preview — not the live site</span>
+    </div>
+  </footer>
+  <div class='mobile-call-bar'>
+    <a class='button' href="tel:+16025625290">Call Pink Plumbing and Sewer</a>
+  </div>
+</body>
+</html>
