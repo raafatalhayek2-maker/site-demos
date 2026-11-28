@@ -1,0 +1,292 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#102329">
+  <title>Everingham Electric | Electrical Contractor</title>
+  <meta name="description" content="Everingham Electric is an electrical contractor in St. Petersburg, Florida. Call (727) 422-8455.">
+  <style>
+    :root {
+      color-scheme: light;
+      --ink: #14262b;
+      --muted: #58696d;
+      --paper: #f7f8f5;
+      --white: #fff;
+      --line: #dce3df;
+      --deep: #102329;
+      --deep-soft: #18343a;
+      --accent: #e7ad54;
+      --accent-light: #f6d18f;
+      --focus: #087e8b;
+      --wrap: 1160px;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    }
+    *, *::before, *::after { box-sizing: border-box; }
+    html { scroll-behavior: smooth; scroll-padding-top: 96px; }
+    body { margin: 0; color: var(--ink); background: var(--paper); line-height: 1.6; -webkit-font-smoothing: antialiased; }
+    a { color: inherit; }
+    a:focus-visible { outline: 3px solid var(--focus); outline-offset: 4px; border-radius: 3px; }
+    .wrap { width: min(calc(100% - 48px), var(--wrap)); margin-inline: auto; }
+    .site-header { position: sticky; top: 0; z-index: 10; background: rgba(255,255,255,.96); border-bottom: 1px solid rgba(20,38,43,.1); backdrop-filter: blur(14px); }
+    .header-inner { min-height: 78px; display: flex; align-items: center; justify-content: space-between; gap: 24px; }
+    .brand { display: inline-flex; align-items: center; gap: 13px; text-decoration: none; }
+    .brand-mark { width: 38px; height: 38px; display: grid; place-items: center; border-radius: 12px; background: var(--deep); color: var(--accent-light); }
+    .brand-mark svg { width: 21px; height: 21px; }
+    .brand-copy { display: grid; line-height: 1.2; }
+    .brand-name { font-size: 16px; font-weight: 750; letter-spacing: -.025em; }
+    .brand-kind { margin-top: 4px; color: var(--muted); font-size: 10px; font-weight: 700; letter-spacing: .12em; text-transform: uppercase; }
+    .header-right { display: flex; align-items: center; gap: 30px; }
+    .nav-link { color: #3d5054; font-size: 13px; font-weight: 650; text-decoration: none; transition: color .2s ease; }
+    .nav-link:hover { color: #000; }
+    .call-button { min-height: 44px; padding: 0 18px; display: inline-flex; align-items: center; justify-content: center; gap: 9px; border-radius: 7px; background: var(--deep); color: var(--white); font-size: 13px; font-weight: 700; text-decoration: none; transition: background .2s ease, transform .2s ease; }
+    .call-button:hover { background: #25464c; transform: translateY(-1px); }
+    .call-button svg { width: 16px; height: 16px; flex: none; }
+    .hero { position: relative; overflow: hidden; background: var(--deep); color: var(--white); }
+    .hero::before { content: ""; position: absolute; inset: 0; background: radial-gradient(ellipse at 80% 48%, rgba(65,111,109,.34), transparent 36%), linear-gradient(115deg, transparent 48%, rgba(255,255,255,.025) 48.1%, transparent 48.3%); pointer-events: none; }
+    .hero-inner { position: relative; min-height: 570px; padding-block: 84px 90px; display: grid; grid-template-columns: 1.06fr .94fr; align-items: center; gap: 60px; }
+    .hero-copy { max-width: 600px; }
+    .eyebrow { margin: 0 0 20px; display: flex; align-items: center; gap: 11px; color: var(--accent-light); font-size: 11px; font-weight: 750; letter-spacing: .16em; text-transform: uppercase; }
+    .eyebrow::before { content: ""; width: 25px; height: 1px; background: var(--accent); }
+    h1 { max-width: 620px; margin: 0; font-size: clamp(44px, 6vw, 76px); line-height: .99; letter-spacing: -.065em; font-weight: 740; }
+    .hero-description { max-width: 500px; margin: 25px 0 0; color: #c5d0ce; font-size: 17px; line-height: 1.7; }
+    .hero-actions { margin-top: 34px; display: flex; flex-wrap: wrap; gap: 12px; }
+    .button { min-height: 52px; padding: 0 21px; display: inline-flex; align-items: center; justify-content: center; gap: 10px; border: 1px solid transparent; border-radius: 6px; font-size: 14px; font-weight: 750; text-decoration: none; transition: transform .2s ease, background .2s ease, border-color .2s ease; }
+    .button:hover { transform: translateY(-2px); }
+    .button-primary { background: var(--accent); color: #17272a; }
+    .button-primary:hover { background: var(--accent-light); }
+    .button-secondary { border-color: rgba(255,255,255,.32); color: var(--white); background: rgba(255,255,255,.035); }
+    .button-secondary:hover { border-color: rgba(255,255,255,.7); background: rgba(255,255,255,.08); }
+    .button svg { width: 17px; height: 17px; }
+    .hero-art { min-height: 350px; position: relative; display: grid; place-items: center; isolation: isolate; }
+    .art-grid { position: absolute; inset: 7% 0; opacity: .34; background-image: linear-gradient(rgba(197,216,208,.12) 1px, transparent 1px), linear-gradient(90deg, rgba(197,216,208,.12) 1px, transparent 1px); background-size: 43px 43px; mask-image: radial-gradient(ellipse, #000 10%, transparent 72%); }
+    .art-ring { position: absolute; width: min(78%, 330px); aspect-ratio: 1; border: 1px solid rgba(224,239,229,.22); border-radius: 50%; box-shadow: 0 0 0 28px rgba(224,239,229,.025), 0 0 0 60px rgba(224,239,229,.02); }
+    .art-ring::before, .art-ring::after { content: ""; position: absolute; border: 1px solid rgba(224,239,229,.18); border-radius: 50%; }
+    .art-ring::before { inset: 17px; }
+    .art-ring::after { inset: 42px; border-color: rgba(231,173,84,.3); }
+    .art-core { position: relative; z-index: 1; width: 148px; height: 168px; display: grid; place-items: center; border: 1px solid rgba(255,255,255,.28); border-radius: 38px 38px 38px 12px; background: linear-gradient(145deg, #e7ad54, #d79337); box-shadow: 0 25px 75px rgba(0,0,0,.3), inset 0 1px 0 rgba(255,255,255,.36); transform: rotate(7deg); }
+    .art-core svg { width: 66px; height: 76px; transform: rotate(-7deg); }
+    .art-dot { position: absolute; z-index: 2; width: 9px; height: 9px; border: 2px solid var(--deep); border-radius: 50%; background: var(--accent-light); box-shadow: 0 0 0 5px rgba(231,173,84,.16); }
+    .art-dot.one { top: 19%; right: 21%; }
+    .art-dot.two { bottom: 18%; left: 21%; width: 7px; height: 7px; }
+    .services-section { padding-block: 104px 110px; }
+    .section-heading { max-width: 620px; margin-bottom: 42px; }
+    .section-kicker { margin: 0 0 12px; color: #8c642c; font-size: 11px; font-weight: 750; letter-spacing: .16em; text-transform: uppercase; }
+    h2 { margin: 0; font-size: clamp(34px, 4vw, 50px); line-height: 1.08; letter-spacing: -.05em; font-weight: 730; }
+    .section-intro { max-width: 520px; margin: 15px 0 0; color: var(--muted); font-size: 16px; }
+    .service-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 15px; }
+    .service-card { min-height: 215px; padding: 26px 23px; display: flex; flex-direction: column; border: 1px solid var(--line); border-radius: 9px; background: var(--white); box-shadow: 0 4px 18px rgba(21,45,44,.025); transition: transform .22s ease, box-shadow .22s ease, border-color .22s ease; }
+    .service-card:hover { transform: translateY(-4px); border-color: #c5d2cc; box-shadow: 0 13px 32px rgba(21,45,44,.08); }
+    .service-number { width: 32px; height: 32px; margin-bottom: 30px; display: grid; place-items: center; border: 1px solid #d8dfd9; border-radius: 50%; color: #80602f; font-size: 11px; font-weight: 750; }
+    .service-card h3 { margin: 0; font-size: 18px; letter-spacing: -.025em; line-height: 1.25; }
+    .service-card p { margin: 10px 0 0; color: var(--muted); font-size: 13px; line-height: 1.65; }
+    .trust-section { padding-block: 48px; background: #eaf0ec; border-block: 1px solid #dce5df; }
+    .trust-inner { display: flex; align-items: center; justify-content: space-between; gap: 32px; }
+    .trust-title { max-width: 250px; margin: 0; font-size: 20px; line-height: 1.3; letter-spacing: -.03em; }
+    .trust-stats { display: flex; align-items: center; gap: clamp(34px, 8vw, 100px); }
+    .trust-stat { display: flex; align-items: baseline; gap: 12px; }
+    .trust-value { color: var(--deep); font-size: clamp(33px, 4vw, 46px); font-weight: 760; letter-spacing: -.065em; line-height: 1; }
+    .trust-label { max-width: 100px; color: #526367; font-size: 12px; font-weight: 650; line-height: 1.45; }
+    .contact-section { padding-block: 104px 112px; }
+    .contact-card { position: relative; overflow: hidden; padding: clamp(30px, 6vw, 68px); display: grid; grid-template-columns: 1fr .78fr; gap: 54px; border-radius: 12px; background: var(--deep); color: var(--white); }
+    .contact-card::after { content: ""; position: absolute; width: 370px; height: 370px; right: -145px; bottom: -225px; border: 1px solid rgba(231,173,84,.32); border-radius: 50%; box-shadow: 0 0 0 35px rgba(231,173,84,.035), 0 0 0 75px rgba(231,173,84,.025); pointer-events: none; }
+    .contact-copy, .contact-details { position: relative; z-index: 1; }
+    .contact-copy .section-kicker { color: var(--accent-light); }
+    .contact-copy h2 { max-width: 490px; }
+    .contact-copy p { max-width: 450px; margin: 17px 0 26px; color: #c5d0ce; font-size: 15px; }
+    .contact-details { align-self: center; padding: 27px 28px; border: 1px solid rgba(255,255,255,.17); border-radius: 8px; background: rgba(255,255,255,.045); }
+    .detail-label { margin: 0 0 8px; color: #aabbb7; font-size: 10px; font-weight: 750; letter-spacing: .15em; text-transform: uppercase; }
+    .contact-phone { display: inline-block; color: var(--white); font-size: clamp(21px, 2.7vw, 28px); font-weight: 700; letter-spacing: -.035em; text-decoration: none; }
+    .contact-phone:hover { color: var(--accent-light); }
+    .contact-divider { height: 1px; margin: 23px 0; background: rgba(255,255,255,.15); }
+    address { color: #e0e8e4; font-size: 15px; font-style: normal; line-height: 1.7; }
+    .site-footer { padding-block: 26px; border-top: 1px solid var(--line); background: #f1f3ef; }
+    .footer-inner { display: flex; align-items: center; justify-content: space-between; gap: 20px; }
+    .footer-name { margin: 0; font-size: 13px; font-weight: 750; letter-spacing: -.01em; }
+    .footer-note { margin: 0; color: #647276; font-size: 12px; }
+    .mobile-call-bar { display: none; }
+    @media (max-width: 900px) {
+      .hero-inner { gap: 24px; }
+      .service-grid { grid-template-columns: repeat(2, 1fr); }
+      .contact-card { gap: 32px; }
+    }
+    @media (max-width: 760px) {
+      html { scroll-padding-top: 82px; }
+      body { padding-bottom: 78px; }
+      .wrap { width: min(calc(100% - 36px), var(--wrap)); }
+      .header-inner { min-height: 70px; }
+      .header-right { gap: 0; }
+      .header-right .nav-link { display: none; }
+      .header-inner > .header-right .call-button { min-height: 41px; padding-inline: 13px; font-size: 12px; }
+      .hero-inner { min-height: auto; padding-block: 72px 62px; grid-template-columns: 1fr; gap: 15px; }
+      .hero-copy { max-width: 590px; }
+      h1 { font-size: clamp(45px, 12vw, 70px); }
+      .hero-description { font-size: 16px; }
+      .hero-art { min-height: 290px; margin-top: 6px; }
+      .art-ring { width: 240px; }
+      .art-core { width: 120px; height: 138px; border-radius: 30px 30px 30px 10px; }
+      .art-core svg { width: 55px; height: 64px; }
+      .services-section { padding-block: 76px 78px; }
+      .section-heading { margin-bottom: 30px; }
+      .service-grid { gap: 11px; }
+      .service-card { min-height: 205px; padding: 20px 17px; }
+      .service-number { margin-bottom: 24px; }
+      .service-card h3 { font-size: 16px; }
+      .service-card p { font-size: 12px; }
+      .trust-section { padding-block: 34px; }
+      .trust-inner { align-items: flex-start; flex-direction: column; gap: 23px; }
+      .trust-title { max-width: none; font-size: 18px; }
+      .trust-stats { width: 100%; justify-content: space-between; gap: 12px; }
+      .trust-stat { gap: 8px; }
+      .trust-value { font-size: 36px; }
+      .trust-label { max-width: 82px; font-size: 11px; }
+      .contact-section { padding-block: 72px 76px; }
+      .contact-card { grid-template-columns: 1fr; gap: 30px; padding: 32px 24px; }
+      .contact-details { padding: 22px; }
+      .contact-phone { font-size: 25px; }
+      .site-footer { padding-block: 21px; }
+      .footer-inner { align-items: flex-start; flex-direction: column; gap: 5px; }
+      .mobile-call-bar { position: fixed; z-index: 20; right: 0; bottom: 0; left: 0; display: block; padding: 10px 18px max(10px, env(safe-area-inset-bottom)); border-top: 1px solid rgba(255,255,255,.15); background: rgba(16,35,41,.97); box-shadow: 0 -8px 24px rgba(10,25,27,.16); }
+      .mobile-call-bar a { min-height: 48px; display: flex; align-items: center; justify-content: center; gap: 10px; border-radius: 6px; background: var(--accent); color: #17272a; font-size: 14px; font-weight: 750; text-decoration: none; }
+      .mobile-call-bar a:hover { background: var(--accent-light); }
+      .mobile-call-bar svg { width: 17px; height: 17px; }
+    }
+    @media (max-width: 390px) {
+      .brand-name { font-size: 14px; }
+      .brand-mark { width: 34px; height: 34px; }
+      .header-inner > .header-right .call-button { padding-inline: 10px; font-size: 11px; }
+      .service-grid { grid-template-columns: 1fr; }
+      .service-card { min-height: 170px; }
+      .service-number { margin-bottom: 20px; }
+      .trust-value { font-size: 32px; }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after { scroll-behavior: auto !important; transition-duration: .01ms !important; animation-duration: .01ms !important; animation-iteration-count: 1 !important; }
+    }
+  </style>
+</head>
+<body>
+  <header class="site-header">
+    <div class="wrap header-inner">
+      <a class="brand" href="#top" aria-label="Everingham Electric home">
+        <span class="brand-mark" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none"><path d="M13.6 2.8 5.2 13h5.7l-.6 8.2L18.8 11h-5.7l.5-8.2Z" fill="currentColor"/></svg>
+        </span>
+        <span class="brand-copy"><span class="brand-name">Everingham Electric</span><span class="brand-kind">Electrical contractor</span></span>
+      </a>
+      <div class="header-right">
+        <a class="nav-link" href="#services">Services</a>
+        <a class="nav-link" href="#contact">Contact</a>
+        <a class="call-button" href="tel:+17274228455">
+          <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M7.2 3.5h2.5l1.2 4.1-1.8 1.7a15 15 0 0 0 5.6 5.6l1.7-1.8 4.1 1.2v2.5c0 1.1-.9 2-2 2A15.5 15.5 0 0 1 5.2 5.5c0-1.1.9-2 2-2Z" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/></svg>
+          <span>(727) 422-8455</span>
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <main id="top">
+    <section class="hero" aria-labelledby="hero-title">
+      <div class="wrap hero-inner">
+        <div class="hero-copy">
+          <p class="eyebrow">Electrical contractor</p>
+          <h1 id="hero-title">Safe, Code-Correct Electrical Work</h1>
+          <p class="hero-description">Electrical work with safety and code-correct results at the center, for residential and commercial needs.</p>
+          <div class="hero-actions">
+            <a class="button button-primary" href="tel:+17274228455">
+              <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M7.2 3.5h2.5l1.2 4.1-1.8 1.7a15 15 0 0 0 5.6 5.6l1.7-1.8 4.1 1.2v2.5c0 1.1-.9 2-2 2A15.5 15.5 0 0 1 5.2 5.5c0-1.1.9-2 2-2Z" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/></svg>
+              Call now
+            </a>
+            <a class="button button-secondary" href="#contact">Request a visit</a>
+          </div>
+        </div>
+        <div class="hero-art" aria-hidden="true">
+          <div class="art-grid"></div>
+          <div class="art-ring"></div>
+          <span class="art-dot one"></span><span class="art-dot two"></span>
+          <div class="art-core"><svg viewBox="0 0 64 76" fill="none"><path d="M36.5 4 10 42h18l-2.5 30L54 32H36l.5-28Z" fill="#102329"/></svg></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="services-section" id="services" aria-labelledby="services-title">
+      <div class="wrap">
+        <div class="section-heading">
+          <p class="section-kicker">Services</p>
+          <h2 id="services-title">Electrical services</h2>
+          <p class="section-intro">Service work, wiring, commercial electrical, and troubleshooting.</p>
+        </div>
+        <div class="service-grid">
+          <article class="service-card">
+            <span class="service-number" aria-hidden="true">01</span>
+            <h3>Service Work</h3>
+            <p>Electrical service work for a range of needs.</p>
+          </article>
+          <article class="service-card">
+            <span class="service-number" aria-hidden="true">02</span>
+            <h3>Residential Wiring</h3>
+            <p>Wiring work for residential spaces.</p>
+          </article>
+          <article class="service-card">
+            <span class="service-number" aria-hidden="true">03</span>
+            <h3>Commercial Electrical</h3>
+            <p>Electrical work for commercial spaces.</p>
+          </article>
+          <article class="service-card">
+            <span class="service-number" aria-hidden="true">04</span>
+            <h3>Electrical Troubleshooting</h3>
+            <p>Troubleshooting to help identify electrical issues.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="trust-section" aria-label="Google rating and reviews">
+      <div class="wrap trust-inner">
+        <h2 class="trust-title">Google rating and reviews</h2>
+        <div class="trust-stats">
+          <div class="trust-stat"><span class="trust-value">4.8</span><span class="trust-label">Google rating</span></div>
+          <div class="trust-stat"><span class="trust-value">152</span><span class="trust-label">Google reviews</span></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="contact-section" id="contact" aria-labelledby="contact-title">
+      <div class="wrap">
+        <div class="contact-card">
+          <div class="contact-copy">
+            <p class="section-kicker">Contact</p>
+            <h2 id="contact-title">Get in touch with Everingham Electric</h2>
+            <p>Call to discuss electrical service, wiring, commercial electrical, or troubleshooting.</p>
+            <a class="button button-primary" href="tel:+17274228455">
+              <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M7.2 3.5h2.5l1.2 4.1-1.8 1.7a15 15 0 0 0 5.6 5.6l1.7-1.8 4.1 1.2v2.5c0 1.1-.9 2-2 2A15.5 15.5 0 0 1 5.2 5.5c0-1.1.9-2 2-2Z" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/></svg>
+              Call now
+            </a>
+          </div>
+          <div class="contact-details">
+            <p class="detail-label">Phone</p>
+            <a class="contact-phone" href="tel:+17274228455">(727) 422-8455</a>
+            <div class="contact-divider"></div>
+            <p class="detail-label">Address</p>
+            <address>3620 18th Ave S<br>St. Petersburg, FL 33711</address>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap footer-inner">
+      <p class="footer-name">Everingham Electric</p>
+      <p class="footer-note">Concept preview — not the live site</p>
+    </div>
+  </footer>
+
+  <div class="mobile-call-bar">
+    <a href="tel:+17274228455" aria-label="Call Everingham Electric at (727) 422-8455">
+      <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M7.2 3.5h2.5l1.2 4.1-1.8 1.7a15 15 0 0 0 5.6 5.6l1.7-1.8 4.1 1.2v2.5c0 1.1-.9 2-2 2A15.5 15.5 0 0 1 5.2 5.5c0-1.1.9-2 2-2Z" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/></svg>
+      Call (727) 422-8455
+    </a>
+  </div>
+</body>
+</html>
